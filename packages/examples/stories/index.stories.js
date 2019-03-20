@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { config, withDesigns } from 'storybook-addon-designs'
+import { config, withDesign } from 'storybook-addon-designs'
 
 import { Button } from '@storybook/react/demo'
 
 // TODO: Replace urls with sample ones
 storiesOf('Figma', module)
-  .addDecorator(withDesigns)
+  .addDecorator(withDesign)
   .add('Embed file', () => <Button>Hello Button</Button>, {
     design: config({
       type: 'figma',
@@ -37,7 +37,7 @@ storiesOf('Figma', module)
   })
 
 storiesOf('iframe', module)
-  .addDecorator(withDesigns)
+  .addDecorator(withDesign)
   .add('Embed site', () => <Button>Hello Button</Button>, {
     design: config({
       type: 'iframe',

@@ -11,7 +11,7 @@ const wrapper: StoryWrapper = (getStory, context, { parameters }) => {
   return getStory(context)
 }
 
-export const withDesigns = makeDecorator({
+export const withDesign = makeDecorator({
   name: 'withDesign',
   parameterName: 'design',
   skipIfNoParameterOrOptions: true,

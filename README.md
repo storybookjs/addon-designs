@@ -30,10 +30,10 @@ import 'storybook-addon-designs/register'
 3. Add it to story!
 
 ```js
-import { withDesigns } from 'storybook-addon-designs'
+import { withDesign } from 'storybook-addon-designs'
 
 storiesOf('My stories', module)
-  .addDecorator(withDesigns)
+  .addDecorator(withDesign)
   .add('My awesome story', () => <Button>Hello, World!</Button>, {
     design: {
       type: 'figma',
@@ -44,7 +44,7 @@ storiesOf('My stories', module)
 
 ## Usage
 
-Add `withDesigns` decorator then put `design` parameter to your story.
+Add `withDesign` decorator then put `design` parameter to your story.
 
 > NOTE: If you omit `design` parameter, the addon does nothing.
 
