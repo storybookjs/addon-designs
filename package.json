@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "repository": "git@github.com:pocka/storybook-addon-designs.git",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "lerna": "^3.13.1",
+    "prettier": "^1.16.4"
+  },
+  "scripts": {
+    "build": "lerna run build --stream",
+    "dev": "lerna run dev --stream",
+    "example": "lerna run storybook --scope examples --stream",
+    "example:build": "lerna run build-storybook --stream"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

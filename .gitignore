@@ -1,0 +1,7 @@
+# Do not add your OS/IDE/Editor specific files to here.
+# Please use global ignore instead, FTW.
+# https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
+
+node_modules
+
+*.log
