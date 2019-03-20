@@ -31,6 +31,6 @@
     "build": "tsc",
     "test": "echo 'No tests' && exit 0",
     "clean": "rm -r lib",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "cp ../../README.md ./ && yarn build"
   }
 }
