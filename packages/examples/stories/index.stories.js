@@ -3,42 +3,44 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { config, withDesign } from 'storybook-addon-designs'
 
-import { Button } from '@storybook/react/demo'
+import { Button } from './Button'
 
 // TODO: Replace urls with sample ones
 storiesOf('Figma', module)
   .addDecorator(withDesign)
-  .add('Embed file', () => <Button>Hello Button</Button>, {
-    design: config({
-      type: 'figma',
-      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
-    })
-  })
-  .add('Embed node', () => <Button>Hello Button</Button>, {
+  .add('Embed file', () => <Button>Button</Button>, {
     design: config({
       type: 'figma',
       url:
-        'https://www.figma.com/file/QBZlTbC1ale5fEavWqkzLSAR/storybook-addon-vue-info?node-id=3%3A24'
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
     })
   })
-  .add('Embed prototype', () => <Button>Hello Button</Button>, {
+  .add('Embed node', () => <Button>Button</Button>, {
     design: config({
       type: 'figma',
       url:
-        'https://www.figma.com/proto/QBZlTbC1ale5fEavWqkzLSAR/storybook-addon-vue-info'
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
     })
   })
-  .add('Allowing fullscreen', () => <Button>Hello Button</Button>, {
+  .add('Embed prototype', () => <Button>Button</Button>, {
     design: config({
       type: 'figma',
-      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File',
+      url:
+        'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    })
+  })
+  .add('Allowing fullscreen', () => <Button disabled>Button</Button>, {
+    design: config({
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
       allowFullscreen: true
     })
   })
 
 storiesOf('iframe', module)
   .addDecorator(withDesign)
-  .add('Embed site', () => <Button>Hello Button</Button>, {
+  .add('Embed site', () => <Button>Button</Button>, {
     design: config({
       type: 'iframe',
       url: 'https://www.wikipedia.org/'
