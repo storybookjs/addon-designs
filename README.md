@@ -16,7 +16,7 @@
 
 A [Storybook](https://github.com/storybooks/storybook) addon that embed Figma or websites in the addon panel for better design-development workflow.
 
-- Demo (WIP)
+- [Demo](https://pocka.github.io/storybook-addon-designs)
 
 ## Requirements
 
