@@ -1,7 +1,7 @@
 import { addParameters, configure } from '@storybook/react'
 import { create } from '@storybook/theming'
 
-import logo from '@storybook-addon-designs/assets/logo.png'
+import logo from '@storybook-addon-designs/assets/logo-with-text.png'
 
 import pkg from 'storybook-addon-designs/package.json'
 
