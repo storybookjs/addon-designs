@@ -1,4 +1,4 @@
-export type Config = IFrameConfig | FigmaConfig
+export type Config = IFrameConfig | FigmaConfig | PdfConfig
 
 /**
  * Options for rendering iframe.
@@ -16,4 +16,8 @@ export interface FigmaConfig extends IFrameConfigBase {
   type: 'figma'
 
   embedHost?: string
+}
+
+export interface PdfConfig extends IFrameConfigBase {
+  type: 'pdf'
 }

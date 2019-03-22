@@ -5,6 +5,8 @@ import { config, withDesign } from 'storybook-addon-designs'
 
 import { Button } from './Button'
 
+import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
+
 // TODO: Replace urls with sample ones
 storiesOf('Figma', module)
   .addDecorator(withDesign)
@@ -44,5 +46,14 @@ storiesOf('iframe', module)
     design: config({
       type: 'iframe',
       url: 'https://www.wikipedia.org/'
+    })
+  })
+
+storiesOf('PDF', module)
+  .addDecorator(withDesign)
+  .add('Embed PDF', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf
     })
   })

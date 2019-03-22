@@ -8,6 +8,7 @@ import { Events } from '../../addon'
 
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
+import { Pdf } from './Pdf'
 
 interface Props {
   channel: ReturnType<typeof addons['getChannel']>
@@ -43,6 +44,8 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
       return <IFrame config={config} />
     case 'figma':
       return <Figma config={config} />
+    case 'pdf':
+      return <Pdf config={config} />
   }
 
   return null
