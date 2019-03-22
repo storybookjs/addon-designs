@@ -17,7 +17,7 @@
     "storybook-addon-designs": "^5.0.0-alpha.3"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -s ../assets",
+    "build-storybook": "build-storybook -s ../assets"
   }
 }
