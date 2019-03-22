@@ -13,10 +13,16 @@ action "Install" {
   args = "install"
 }
 
+action "Build" {
+  uses = "borales/actions-yarn@master"
+  args = "build"
+  needs = ["Install"]
+}
+
 action "Build examples" {
   uses = "borales/actions-yarn@master"
   args = "example:build"
-  needs = ["Install"]
+  needs = ["Install", "Build"]
 }
 
 action "Deploy example to ghpages" {
