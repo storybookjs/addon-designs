@@ -1,11 +1,6 @@
-workflow "New workflow" {
+workflow "On push" {
   on = "push"
   resolves = ["Deploy example to ghpages"]
-}
-
-action "Master branch only" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
 }
 
 action "Install" {
@@ -22,7 +17,13 @@ action "Build" {
 action "Build examples" {
   uses = "borales/actions-yarn@master"
   args = "example:build"
-  needs = ["Install", "Build"]
+  needs = ["Build"]
+}
+
+action "Prepare deploy to ghpages" {
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+  needs = ["Build examples"]
 }
 
 action "Deploy example to ghpages" {
@@ -31,5 +32,5 @@ action "Deploy example to ghpages" {
     BUILD_DIR = "packages/examples/storybook-static/"
   }
   secrets = ["GH_PAT"]
-  needs = ["Master branch only", "Build examples"]
+  needs = ["Prepare deploy to ghpages"]
 }
