@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:pocka/storybook-addon-designs.git",
+  "homepage": "https://github.com/pocka/storybook-addon-designs",
   "author": "pocka <pockawoooh@gmail.com>",
   "license": "MIT",
   "files": [
