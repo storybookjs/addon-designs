@@ -1,49 +1,59 @@
-workflow "On push" {
+workflow "master" {
   on = "push"
-  resolves = ["Deploy example to ghpages", "Publish"]
+  resolves = ["[master] Deploy examples"]
 }
 
-action "Install" {
-  uses = "borales/actions-yarn@master"
-  args = "install"
-}
-
-action "Build only on master" {
+action "[master] Ensure branch" {
   uses = "actions/bin/filter@master"
   args = "branch master"
-  needs = ["Install"]
 }
 
-action "Build" {
+action "[master] Install" {
+  uses = "borales/actions-yarn@master"
+  args = "install"
+  needs = ["[master] Ensure branch"]
+}
+
+action "[master] Build" {
   uses = "borales/actions-yarn@master"
   args = "build"
-  needs = ["Build only on master"]
+  needs = ["[master] Install"]
 }
 
-action "Build examples" {
+action "[master] Build examples" {
   uses = "borales/actions-yarn@master"
   args = "example:build"
-  needs = ["Build"]
+  needs = ["[master] Build"]
 }
 
-action "Deploy example to ghpages" {
+action "[master] Deploy examples" {
   uses = "maxheld83/ghpages@v0.2.1"
   env = {
     BUILD_DIR = "packages/examples/storybook-static/"
   }
   secrets = ["GH_PAT"]
-  needs = ["Build examples"]
+  needs = ["[master] Build examples"]
 }
 
-action "Publish only on tag" {
+workflow "tags" {
+  on = "push"
+  resolves = ["[tags] Publish"]
+}
+
+action "[tags] Ensure branch" {
   uses = "actions/bin/filter@master"
   args = "tag"
-  needs = ["Install"]
 }
 
-action "Publish" {
+action "[tags] Install" {
+  uses = "borales/actions-yarn@master"
+  args = "install"
+  needs = ["[tags] Ensure branch"]
+}
+
+action "[tags] Publish" {
   uses = "borales/actions-yarn@master"
   args = "lerna publish from-git"
-  needs = ["Publish only on tag"]
+  needs = ["[tags] Install"]
   secrets = ["NPM_AUTH_TOKEN"]
 }
