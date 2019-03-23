@@ -2,6 +2,7 @@
 import { SFC, useEffect, useState } from 'react'
 import { jsx } from '@storybook/theming'
 import addons from '@storybook/addons'
+import { STORY_CHANGED } from '@storybook/core-events'
 
 import { Config } from '../../config'
 import { Events } from '../../addon'
@@ -22,16 +23,20 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
   const [config, setConfig] = useState<Config>()
 
   useEffect(() => {
-    channel.on(Events.UpdateConfig, setConfig)
+    const onStoryChanged = (id: string) => {
+      const cfg = api.getParameters(id, 'design')
 
-    const clearOnStoryCb = api.onStory(() => {
-      // Clear panel on story changes
-      setConfig(undefined)
-    })
+      if (cfg !== config) {
+        setConfig(cfg)
+      }
+    }
+
+    channel.on(Events.UpdateConfig, setConfig)
+    channel.on(STORY_CHANGED, onStoryChanged)
 
     return () => {
       channel.removeListener(Events.UpdateConfig, setConfig)
-      clearOnStoryCb()
+      channel.removeListener(STORY_CHANGED, onStoryChanged)
     }
   }, [])
 
