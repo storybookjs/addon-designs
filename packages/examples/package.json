@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "5.0.0-alpha.5",
+  "version": "5.0.0-alpha.6",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.9",
@@ -17,7 +17,7 @@
     "@storybook/react": "^5.0.3",
     "@storybook/theming": "^5.0.3",
     "babel-loader": "^8.0.5",
-    "storybook-addon-designs": "^5.0.0-alpha.5"
+    "storybook-addon-designs": "^5.0.0-alpha.6"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006 -s ../assets",
