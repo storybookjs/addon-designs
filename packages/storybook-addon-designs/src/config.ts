@@ -18,6 +18,12 @@ export interface FigmaConfig extends IFrameConfigBase {
   embedHost?: string
 }
 
-export interface PdfConfig extends IFrameConfigBase {
+export interface PdfConfig {
   type: 'pdf'
+
+  url: string
+
+  scale?: number
+  offset?: [number, number]
+  page?: number
 }

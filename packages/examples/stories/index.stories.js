@@ -57,3 +57,32 @@ storiesOf('PDF', module)
       url: samplePdf
     })
   })
+  .add('Set scale', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      scale: 2
+    })
+  })
+  .add('Set offset', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      offset: [-100, -100]
+    })
+  })
+  .add('Set page', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      page: 2
+    })
+  })
+  .add('Set both scale and offset', () => <Button disabled>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      offset: [-300, 140],
+      scale: 2
+    })
+  })

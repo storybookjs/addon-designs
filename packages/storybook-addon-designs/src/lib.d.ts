@@ -3,6 +3,44 @@ declare module '!!file-loader!*' {
   export default path
 }
 
+declare module '@storybook/components' {
+  import { ComponentType } from 'react'
+
+  type C = ComponentType<any>
+
+  export const Badge: C
+  export const Link: C
+  export const DocumentFormatting: C
+  export const SyntaxHighlighter: C
+  export const ActionBar: C
+  export const Spaced: C
+  export const ScrollArea: C
+  export const Button: C
+  export const Form: {
+    Field: C
+    Input: C
+    Select: C
+    Textarea: C
+    Button: C
+  }
+  export const WithTooltip: C
+  export const TooltipMessage: C
+  export const TooltipNote: C
+  export const TooltipLinkList: C
+  export const Tabs: C
+  export const TabsState: C
+  export const TabBar: C
+  export const TabWrapper: C
+  export const IconButton: C
+  export const TabButton: C
+  export const Separator: C
+  export const Bar: C
+  export const FlexBar: C
+  export const Icons: C
+  export const StorybookLogo: C
+  export const StorybookIcon: C
+}
+
 declare module 'react-pdf/dist/entry.webpack' {
   import { ComponentType, ReactNode, Ref } from 'react'
   import {
