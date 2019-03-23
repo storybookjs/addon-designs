@@ -22,3 +22,7 @@ export const withDesign = makeDecorator({
  * Dumb function to ensure typings or enchance IDE auto completion.
  */
 export const config = (c: Config): Config => c
+
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline()
+}
