@@ -15,6 +15,7 @@ declare module '@storybook/components' {
   export const ActionBar: C
   export const Spaced: C
   export const ScrollArea: C
+  export const Placeholder: C
   export const Button: C
   export const Form: {
     Field: C

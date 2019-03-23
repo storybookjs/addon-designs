@@ -2,7 +2,13 @@
 import { Fragment, useCallback, ComponentPropsWithoutRef, SFC } from 'react'
 import { css, jsx, Theme } from '@storybook/theming'
 
-import { FlexBar, IconButton, Icons, Separator } from '@storybook/components'
+import {
+  FlexBar,
+  IconButton,
+  Icons,
+  Placeholder,
+  Separator
+} from '@storybook/components'
 
 import { Document, Page } from 'react-pdf/dist/entry.webpack'
 
@@ -20,6 +26,8 @@ interface Props {
 type OnLoadSuccess = NonNullable<
   ComponentPropsWithoutRef<typeof Document>['onLoadSuccess']
 >
+
+const loadingMessage = <Placeholder>Loading PDF...</Placeholder>
 
 export const Pdf: SFC<Props> = ({ config }) => {
   const page = usePage(config.page)
@@ -73,8 +81,17 @@ export const Pdf: SFC<Props> = ({ config }) => {
         </Fragment>
       </FlexBar>
       <Pan css={$pdf} defaultValue={config.offset}>
-        <Document file={config.url} onLoadSuccess={onLoadPdf}>
-          <Page css={$page} pageNumber={page.current} scale={scale} />
+        <Document
+          file={config.url}
+          loading={loadingMessage}
+          onLoadSuccess={onLoadPdf}
+        >
+          <Page
+            css={$page}
+            loading={loadingMessage}
+            pageNumber={page.current}
+            scale={scale}
+          />
         </Document>
       </Pan>
     </div>
