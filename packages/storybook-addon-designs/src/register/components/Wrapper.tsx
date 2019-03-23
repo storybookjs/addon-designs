@@ -21,9 +21,12 @@ interface Props {
 
 export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
   const [config, setConfig] = useState<Config>()
+  const [storyId, changeStory] = useState<string>()
 
   useEffect(() => {
     const onStoryChanged = (id: string) => {
+      changeStory(id)
+
       const cfg = api.getParameters(id, 'design')
 
       if (cfg !== config) {
@@ -46,11 +49,11 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
 
   switch (config.type) {
     case 'iframe':
-      return <IFrame config={config} />
+      return <IFrame key={storyId} config={config} />
     case 'figma':
-      return <Figma config={config} />
+      return <Figma key={storyId} config={config} />
     case 'pdf':
-      return <Pdf config={config} />
+      return <Pdf key={storyId} config={config} />
   }
 
   return null
