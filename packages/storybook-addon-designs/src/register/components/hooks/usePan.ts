@@ -1,4 +1,10 @@
-import { useCallback, useState, DependencyList, MouseEventHandler } from 'react'
+import {
+  useCallback,
+  useState,
+  DependencyList,
+  MouseEventHandler,
+  TouchEventHandler
+} from 'react'
 
 export type Point2D = [number, number]
 
@@ -7,6 +13,10 @@ interface PanController {
   onMouseMove: MouseEventHandler
   onMouseUp: MouseEventHandler
   onMouseLeave: MouseEventHandler
+  onTouchStart: TouchEventHandler
+  onTouchMove: TouchEventHandler
+  onTouchCancel: TouchEventHandler
+  onTouchEnd: TouchEventHandler
 }
 
 /**
@@ -35,32 +45,62 @@ export const usePan: UsePan = (cb, deps) => {
     [setPanState, savePosition]
   )
 
-  const onMouseMove = useCallback<PanController['onMouseMove']>(
+  const onTouchStart = useCallback<PanController['onTouchStart']>(
     ev => {
+      const touch = ev.touches[0]
+
+      savePosition([touch.screenX, touch.screenY])
+      setPanState(true)
+    },
+    [setPanState, savePosition]
+  )
+
+  const move = useCallback(
+    (p: Point2D) => {
       if (!isPanning) {
         return
       }
 
-      const { screenX, screenY } = ev
+      savePosition(prev => {
+        cb([p[0] - prev[0], p[1] - prev[1]])
 
-      savePosition(lastPosition => {
-        const movement: Point2D = [
-          screenX - lastPosition[0],
-          screenY - lastPosition[1]
-        ]
-
-        cb(movement)
-
-        return [screenX, screenY]
+        return p
       })
     },
     [savePosition, isPanning, ...deps]
   )
 
-  const clear = useCallback<PanController['onMouseUp']>(() => {
+  const onMouseMove = useCallback<PanController['onMouseMove']>(
+    ev => {
+      const { screenX, screenY } = ev
+
+      move([screenX, screenY])
+    },
+    [move]
+  )
+
+  const onTouchMove = useCallback<PanController['onTouchMove']>(
+    ev => {
+      const { screenX, screenY } = ev.touches[0]
+
+      move([screenX, screenY])
+    },
+    [savePosition, isPanning, ...deps]
+  )
+
+  const clear = useCallback(() => {
     savePosition([0, 0])
     setPanState(false)
   }, [setPanState, savePosition])
 
-  return { onMouseDown, onMouseMove, onMouseUp: clear, onMouseLeave: clear }
+  return {
+    onMouseDown,
+    onMouseMove,
+    onMouseUp: clear,
+    onMouseLeave: clear,
+    onTouchStart,
+    onTouchMove,
+    onTouchCancel: clear,
+    onTouchEnd: clear
+  }
 }
