@@ -53,7 +53,7 @@ action "[tags] Install" {
 
 action "[tags] Publish" {
   uses = "borales/actions-yarn@master"
-  args = "lerna publish from-package"
+  args = "lerna publish from-package -y"
   needs = ["[tags] Install"]
   secrets = ["NPM_AUTH_TOKEN"]
 }
