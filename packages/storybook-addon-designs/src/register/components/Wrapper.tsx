@@ -5,7 +5,7 @@ import addons from '@storybook/addons'
 import { STORY_CHANGED } from '@storybook/core-events'
 
 import { Config } from '../../config'
-import { Events } from '../../addon'
+import { Events, ParameterName } from '../../addon'
 
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
@@ -27,7 +27,7 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     const onStoryChanged = (id: string) => {
       changeStory(id)
 
-      const cfg = api.getParameters(id, 'design')
+      const cfg = api.getParameters(id, ParameterName)
 
       if (cfg !== config) {
         setConfig(cfg)
