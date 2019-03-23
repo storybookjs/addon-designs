@@ -24,6 +24,11 @@ export const usePan: UsePan = (cb, deps) => {
 
   const onMouseDown = useCallback<PanController['onMouseDown']>(
     ev => {
+      // Ensure to turn on pan mode only for main button down
+      if (ev.button !== 0) {
+        return
+      }
+
       savePosition([ev.screenX, ev.screenY])
       setPanState(true)
     },
