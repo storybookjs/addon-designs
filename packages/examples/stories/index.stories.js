@@ -5,6 +5,8 @@ import { config, withDesign } from 'storybook-addon-designs'
 
 import { Button } from './Button'
 
+import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
+
 // TODO: Replace urls with sample ones
 storiesOf('Figma', module)
   .addDecorator(withDesign)
@@ -44,5 +46,43 @@ storiesOf('iframe', module)
     design: config({
       type: 'iframe',
       url: 'https://www.wikipedia.org/'
+    })
+  })
+
+storiesOf('PDF', module)
+  .addDecorator(withDesign)
+  .add('Embed PDF', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf
+    })
+  })
+  .add('Set scale', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      scale: 2
+    })
+  })
+  .add('Set offset', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      offset: [-100, -100]
+    })
+  })
+  .add('Set page', () => <Button>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      page: 2
+    })
+  })
+  .add('Set both scale and offset', () => <Button disabled>Button</Button>, {
+    design: config({
+      type: 'pdf',
+      url: samplePdf,
+      offset: [-300, 140],
+      scale: 2
     })
   })

@@ -2,12 +2,14 @@
 import { SFC, useEffect, useState } from 'react'
 import { jsx } from '@storybook/theming'
 import addons from '@storybook/addons'
+import { STORY_CHANGED } from '@storybook/core-events'
 
 import { Config } from '../../config'
 import { Events } from '../../addon'
 
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
+import { Pdf } from './Pdf'
 
 interface Props {
   channel: ReturnType<typeof addons['getChannel']>
@@ -19,18 +21,25 @@ interface Props {
 
 export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
   const [config, setConfig] = useState<Config>()
+  const [storyId, changeStory] = useState<string>()
 
   useEffect(() => {
-    channel.on(Events.UpdateConfig, setConfig)
+    const onStoryChanged = (id: string) => {
+      changeStory(id)
 
-    const clearOnStoryCb = api.onStory(() => {
-      // Clear panel on story changes
-      setConfig(undefined)
-    })
+      const cfg = api.getParameters(id, 'design')
+
+      if (cfg !== config) {
+        setConfig(cfg)
+      }
+    }
+
+    channel.on(Events.UpdateConfig, setConfig)
+    channel.on(STORY_CHANGED, onStoryChanged)
 
     return () => {
       channel.removeListener(Events.UpdateConfig, setConfig)
-      clearOnStoryCb()
+      channel.removeListener(STORY_CHANGED, onStoryChanged)
     }
   }, [])
 
@@ -40,9 +49,11 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
 
   switch (config.type) {
     case 'iframe':
-      return <IFrame config={config} />
+      return <IFrame key={storyId} config={config} />
     case 'figma':
-      return <Figma config={config} />
+      return <Figma key={storyId} config={config} />
+    case 'pdf':
+      return <Pdf key={storyId} config={config} />
   }
 
   return null
