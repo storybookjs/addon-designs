@@ -8,22 +8,22 @@ action "Install" {
   args = "install"
 }
 
+action "Build only on master" {
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+  needs = ["Install"]
+}
+
 action "Build" {
   uses = "borales/actions-yarn@master"
   args = "build"
-  needs = ["Install"]
+  needs = ["Build only on master"]
 }
 
 action "Build examples" {
   uses = "borales/actions-yarn@master"
   args = "example:build"
   needs = ["Build"]
-}
-
-action "Prepare deploy to ghpages" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-  needs = ["Build examples"]
 }
 
 action "Deploy example to ghpages" {
@@ -33,4 +33,17 @@ action "Deploy example to ghpages" {
   }
   secrets = ["GH_PAT"]
   needs = ["Prepare deploy to ghpages"]
+}
+
+action "Publish only on tag" {
+  uses = "actions/bin/filter@master"
+  args = "tag"
+  needs = ["Install"]
+}
+
+action "Publish" {
+  uses = "borales/actions-yarn@master"
+  args = "lerna publish from-git"
+  needs = "Publish only on tag"
+  ["NPM_AUTH_TOKEN"]
 }
