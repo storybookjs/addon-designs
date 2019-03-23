@@ -1,6 +1,6 @@
 workflow "On push" {
   on = "push"
-  resolves = ["Deploy example to ghpages"]
+  resolves = ["Deploy example to ghpages", "Publish"]
 }
 
 action "Install" {
@@ -32,7 +32,7 @@ action "Deploy example to ghpages" {
     BUILD_DIR = "packages/examples/storybook-static/"
   }
   secrets = ["GH_PAT"]
-  needs = ["Prepare deploy to ghpages"]
+  needs = ["Build examples"]
 }
 
 action "Publish only on tag" {
@@ -44,6 +44,6 @@ action "Publish only on tag" {
 action "Publish" {
   uses = "borales/actions-yarn@master"
   args = "lerna publish from-git"
-  needs = "Publish only on tag"
+  needs = ["Publish only on tag"]
   secrets = ["NPM_AUTH_TOKEN"]
 }
