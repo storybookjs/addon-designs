@@ -45,5 +45,5 @@ action "Publish" {
   uses = "borales/actions-yarn@master"
   args = "lerna publish from-git"
   needs = "Publish only on tag"
-  ["NPM_AUTH_TOKEN"]
+  secrets = ["NPM_AUTH_TOKEN"]
 }
