@@ -5,6 +5,7 @@ import { config, withDesign } from 'storybook-addon-designs'
 
 import { Button } from './Button'
 
+import sampleImage from '@storybook-addon-designs/assets/sample.png'
 import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
 
 storiesOf('Examples|Figma', module)
@@ -81,6 +82,23 @@ storiesOf('Examples|PDF', module)
     design: config({
       type: 'pdf',
       url: samplePdf,
+      offset: [-300, 140],
+      scale: 2
+    })
+  })
+
+storiesOf('Examples|Image', module)
+  .addDecorator(withDesign)
+  .add('Embed image', () => <Button>Button</Button>, {
+    design: config({
+      type: 'image',
+      url: sampleImage
+    })
+  })
+  .add('Set scale and offset', () => <Button disabled>Button</Button>, {
+    design: config({
+      type: 'image',
+      url: sampleImage,
       offset: [-300, 140],
       scale: 2
     })
