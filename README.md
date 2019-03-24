@@ -71,6 +71,22 @@ For more detailed information, see [type definition file](./packages/storybook-a
 - `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed).
 - `pdf` ... Embed PDF document.
 
+### Utility dumb function
+
+If you want type support for type checking or IDE auto completion, use exported [`config` function](./packages/storybook-addon-designs/src/index.ts#L24).
+
+```ts
+import { config } from 'storybook-addon-designs'
+
+storiesOf('foo', module).add('bar', () => <Button>Hello, World!</Button>, {
+  design: config({
+    // IDE would auto complete keys and `type` values!
+    type: 'iframe',
+    url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
+  })
+})
+```
+
 ## Similar projects
 
 - [storybook-addon-figma](https://github.com/hharnisc/storybook-addon-figma)
