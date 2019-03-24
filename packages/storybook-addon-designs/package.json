@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-designs",
-  "version": "5.0.0-alpha.8",
+  "version": "5.0.0-alpha.9",
   "description": "Storybook addon for embedding your design preview in addon panel",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
