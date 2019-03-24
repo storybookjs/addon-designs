@@ -70,6 +70,7 @@ For more detailed information, see [type definition file](./packages/storybook-a
 - `iframe` ... Embed `<iframe/>`.
 - `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed).
 - `pdf` ... Embed PDF document.
+- `image` ... Embed image.
 
 ### Utility dumb function
 
