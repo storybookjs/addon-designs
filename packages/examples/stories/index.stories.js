@@ -7,7 +7,7 @@ import { Button } from './Button'
 
 import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
 
-storiesOf('Figma', module)
+storiesOf('Examples|Figma', module)
   .addDecorator(withDesign)
   .add('Embed file', () => <Button>Button</Button>, {
     design: config({
@@ -39,7 +39,7 @@ storiesOf('Figma', module)
     })
   })
 
-storiesOf('iframe', module)
+storiesOf('Examples|iframe', module)
   .addDecorator(withDesign)
   .add('Embed site', () => <Button>Button</Button>, {
     design: config({
@@ -48,7 +48,7 @@ storiesOf('iframe', module)
     })
   })
 
-storiesOf('PDF', module)
+storiesOf('Examples|PDF', module)
   .addDecorator(withDesign)
   .add('Embed PDF', () => <Button>Button</Button>, {
     design: config({
@@ -85,3 +85,18 @@ storiesOf('PDF', module)
       scale: 2
     })
   })
+
+storiesOf('Tests|Placeholder', module)
+  .addDecorator(withDesign)
+  .add('Show placeholder when no `design` parameter', () => (
+    <Button>Button</Button>
+  ))
+  .add(
+    'Show error message when `type` is not supported',
+    () => <Button>Button</Button>,
+    {
+      design: {
+        type: 'foo'
+      }
+    }
+  )

@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { SFC, useEffect, useState } from 'react'
+import { Fragment, SFC, useEffect, useState } from 'react'
 import { jsx } from '@storybook/theming'
 import addons from '@storybook/addons'
 import { STORY_CHANGED } from '@storybook/core-events'
+
+import { Link, Placeholder } from '@storybook/components'
 
 import { Config } from '../../config'
 import { Events, ParameterName } from '../../addon'
@@ -43,8 +45,28 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     }
   }, [])
 
-  if (!active || !config) {
+  if (!active) {
     return null
+  }
+
+  if (!config) {
+    return (
+      <Placeholder>
+        <Fragment>No designs found</Fragment>
+        <Fragment>
+          Learn how to{' '}
+          <Link
+            href="https://github.com/pocka/storybook-addon-designs#usage"
+            target="_blank"
+            rel="noopener"
+            withArrow
+            cancel={false}
+          >
+            display design preview for the story
+          </Link>
+        </Fragment>
+      </Placeholder>
+    )
   }
 
   switch (config.type) {
@@ -56,7 +78,23 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
       return <Pdf key={storyId} config={config} />
   }
 
-  return null
+  return (
+    <Placeholder>
+      <Fragment>Invalid config type</Fragment>
+      <Fragment>
+        Config type you set is not supported. Please choose one from{' '}
+        <Link
+          href="https://github.com/pocka/storybook-addon-designs#available-types"
+          target="_blank"
+          rel="noopener"
+          withArrow
+          cancel={false}
+        >
+          available config types
+        </Link>
+      </Fragment>
+    </Placeholder>
+  )
 }
 
 export default Wrapper
