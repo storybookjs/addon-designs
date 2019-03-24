@@ -1,4 +1,4 @@
-export type Config = IFrameConfig | FigmaConfig | PdfConfig
+export type Config = IFrameConfig | FigmaConfig | PdfConfig | ImageConfig
 
 /**
  * Options for rendering iframe.
@@ -35,16 +35,9 @@ export interface FigmaConfig extends IFrameConfigBase {
 }
 
 /**
- * Render PDF file.
+ * Common options for types user can move or scale the design preview.
  */
-export interface PdfConfig {
-  type: 'pdf'
-
-  /**
-   * An URL for the PDF file.
-   */
-  url: string
-
+export interface TransformableConfigBase {
   /**
    * Default scale value.
    * Must be greater than 0.
@@ -57,9 +50,33 @@ export interface PdfConfig {
    * Incresing Y value moves document down.
    */
   offset?: [number, number]
+}
+
+/**
+ * Render PDF file.
+ */
+export interface PdfConfig extends TransformableConfigBase {
+  type: 'pdf'
+
+  /**
+   * An URL for the PDF file.
+   */
+  url: string
 
   /**
    * Default page number to show.
    */
   page?: number
+}
+
+/**
+ * Render image.
+ */
+export interface ImageConfig extends TransformableConfigBase {
+  type: 'image'
+
+  /**
+   * An URL(URI) for the image.
+   */
+  url: string
 }

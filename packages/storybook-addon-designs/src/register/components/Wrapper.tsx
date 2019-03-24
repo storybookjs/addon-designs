@@ -11,6 +11,7 @@ import { Events, ParameterName } from '../../addon'
 
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
+import { ImagePreview } from './Image'
 import { Pdf } from './Pdf'
 
 interface Props {
@@ -76,6 +77,8 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
       return <Figma key={storyId} config={config} />
     case 'pdf':
       return <Pdf key={storyId} config={config} />
+    case 'image':
+      return <ImagePreview key={storyId} config={config} />
   }
 
   return (
