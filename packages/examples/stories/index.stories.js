@@ -7,7 +7,6 @@ import { Button } from './Button'
 
 import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
 
-// TODO: Replace urls with sample ones
 storiesOf('Figma', module)
   .addDecorator(withDesign)
   .add('Embed file', () => <Button>Button</Button>, {
