@@ -63,46 +63,14 @@ Add `withDesign` decorator then put `design` parameter to your story.
 > NOTE: If you omit `design` parameter, the addon does nothing.
 
 The type of `design` parameter is differ by embed type.
-If you have basic knowledge of TypeScript, [type definition file](./packages/storybook-addon-designs/src/config.ts) will help you a lot.
+For more detailed information, see [type definition file](./packages/storybook-addon-designs/src/config.ts).
 
-### `iframe` type
+### Available types
 
-Just show the specified website in `<iframe>` element.
+- `iframe` ... Embed `<iframe/>`.
+- `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed).
+- `pdf` ... Embed PDF document.
 
-```js
-{
-  type: 'iframe',
-
-  // An URL to show in iframe
-  url: 'https://foo.bar',
-
-  // Optional. Whether to allow embed sites to enter fullscreen mode.
-  // default: false
-  allowFullscreen: true
-}
-```
-
-### `figma` type
-
-Embedding [Figma Live Embed Kit](https://www.figma.com/developers/embed).
-Copy the URL from the browser search bar then paste it to `url` field.
-
-```js
-{
-  type: 'figma',
-
-  // An URL for the file/node/prototype
-  // Just copy&paste browsers URL bar!
-  url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931'
-
-  // (From Figma's doc)
-  // ... something that identifies your site.
-  embedHost: 'storybook'
-
-  // In addition to these options, this type inherit options from `iframe` type
-}
-```
-
-## Related projects
+## Similar projects
 
 - [storybook-addon-figma](https://github.com/hharnisc/storybook-addon-figma)
