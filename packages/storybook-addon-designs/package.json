@@ -40,6 +40,6 @@
     "react-pdf": "^4.0.5"
   },
   "publishConfig": {
-    "tag": "alpha"
+    "tag": "latest"
   }
 }
