@@ -13,6 +13,7 @@ import {
 import { Document, Page } from 'react-pdf/dist/entry.webpack'
 
 import { Pan } from './Pan'
+import { ZoomButtons } from './ZoomButtons'
 
 import { PdfConfig } from '../../config'
 
@@ -51,15 +52,11 @@ export const Pdf: SFC<Props> = ({ config }) => {
             <b>PDF</b>
           </p>
           <Separator />
-          <IconButton onClick={zoomIn}>
-            <Icons icon="zoom" />
-          </IconButton>
-          <IconButton onClick={zoomOut}>
-            <Icons icon="zoomout" />
-          </IconButton>
-          <IconButton onClick={resetZoom}>
-            <Icons icon="zoomreset" />
-          </IconButton>
+          <ZoomButtons
+            onReset={resetZoom}
+            onZoomIn={zoomIn}
+            onZoomOut={zoomOut}
+          />
           <Separator />
           <IconButton
             css={$disabled}
