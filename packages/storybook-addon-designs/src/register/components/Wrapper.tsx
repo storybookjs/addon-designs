@@ -4,7 +4,7 @@ import { jsx } from '@storybook/theming'
 import addons from '@storybook/addons'
 import { STORY_CHANGED } from '@storybook/core-events'
 
-import { Link, Placeholder } from '@storybook/components'
+import { Link, Placeholder, TabsState } from '@storybook/components'
 
 import { Config } from '../../config'
 import { Events, ParameterName } from '../../addon'
@@ -23,7 +23,7 @@ interface Props {
 }
 
 export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
-  const [config, setConfig] = useState<Config>()
+  const [config, setConfig] = useState<Config | Config[]>()
   const [storyId, changeStory] = useState<string>()
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     return null
   }
 
-  if (!config) {
+  if (!config || ('length' in config && config.length === 0)) {
     return (
       <Placeholder>
         <Fragment>No designs found</Fragment>
@@ -70,33 +70,57 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     )
   }
 
-  switch (config.type) {
-    case 'iframe':
-      return <IFrame key={storyId} config={config} />
-    case 'figma':
-      return <Figma key={storyId} config={config} />
-    case 'pdf':
-      return <Pdf key={storyId} config={config} />
-    case 'image':
-      return <ImagePreview key={storyId} config={config} />
+  const panels = [...(config instanceof Array ? config : [config])].map<
+    [JSX.Element, { id: string; title: string }]
+  >((cfg, i) => {
+    const meta = {
+      id: `addon-designs-tab--${i}`,
+      title: cfg.name || cfg.type.toUpperCase()
+    }
+
+    switch (cfg.type) {
+      case 'iframe':
+        return [<IFrame config={cfg} />, meta]
+      case 'figma':
+        return [<Figma config={cfg} />, meta]
+      case 'pdf':
+        return [<Pdf config={cfg} />, meta]
+      case 'image':
+        return [<ImagePreview key={storyId} config={cfg} />, meta]
+    }
+
+    return [
+      <Placeholder>
+        <Fragment>Invalid config type</Fragment>
+        <Fragment>
+          Config type you set is not supported. Please choose one from{' '}
+          <Link
+            href="https://github.com/pocka/storybook-addon-designs#available-types"
+            target="_blank"
+            rel="noopener"
+            withArrow
+            cancel={false}
+          >
+            available config types
+          </Link>
+        </Fragment>
+      </Placeholder>,
+      meta
+    ]
+  })
+
+  if (panels.length === 1) {
+    return <div key={storyId}>{panels[0][0]}</div>
   }
 
   return (
-    <Placeholder>
-      <Fragment>Invalid config type</Fragment>
-      <Fragment>
-        Config type you set is not supported. Please choose one from{' '}
-        <Link
-          href="https://github.com/pocka/storybook-addon-designs#available-types"
-          target="_blank"
-          rel="noopener"
-          withArrow
-          cancel={false}
-        >
-          available config types
-        </Link>
-      </Fragment>
-    </Placeholder>
+    <TabsState key={storyId} absolute={true} initial={panels[0][1].id}>
+      {panels.map(([el, meta]) => (
+        <div key={meta.id} id={meta.id} title={meta.title}>
+          {el}
+        </div>
+      ))}
+    </TabsState>
   )
 }
 

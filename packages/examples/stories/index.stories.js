@@ -104,6 +104,37 @@ storiesOf('Examples|Image', module)
     })
   })
 
+storiesOf('Examples|Advanced', module)
+  .addDecorator(withDesign)
+  .add('Embed multiple designs', () => <Button>Button</Button>, {
+    design: config([
+      {
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+      },
+      {
+        type: 'pdf',
+        url: samplePdf
+      }
+    ])
+  })
+  .add('Set tab names', () => <Button>Button</Button>, {
+    design: config([
+      {
+        name: 'Foo',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+      },
+      {
+        name: 'Bar',
+        type: 'pdf',
+        url: samplePdf
+      }
+    ])
+  })
+
 storiesOf('Tests|Placeholder', module)
   .addDecorator(withDesign)
   .add('Show placeholder when no `design` parameter', () => (
