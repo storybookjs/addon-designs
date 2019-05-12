@@ -1,9 +1,16 @@
 export type Config = IFrameConfig | FigmaConfig | PdfConfig | ImageConfig
 
+export interface ConfigBase {
+  /**
+   * A name of the tab.
+   */
+  name?: string
+}
+
 /**
  * Options for rendering iframe.
  */
-export interface IFrameConfigBase {
+export interface IFrameConfigBase extends ConfigBase {
   /**
    * An URL to show.
    */
@@ -37,7 +44,7 @@ export interface FigmaConfig extends IFrameConfigBase {
 /**
  * Common options for types user can move or scale the design preview.
  */
-export interface TransformableConfigBase {
+export interface TransformableConfigBase extends ConfigBase {
   /**
    * Default scale value.
    * Must be greater than 0.

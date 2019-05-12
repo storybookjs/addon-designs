@@ -88,6 +88,25 @@ storiesOf('foo', module).add('bar', () => <Button>Hello, World!</Button>, {
 })
 ```
 
+### Multiple designs for single story
+
+You can attach more than one designs by passing array of config to `design` parameter.
+
+```js
+design: [
+  {
+    type: 'pdf',
+    url: 'https://my-pdf'
+  },
+  {
+    // Specify tab name by passing "name" prop
+    name: 'Image Preview',
+    type: 'image',
+    url: 'https://my-image'
+  }
+]
+```
+
 ## Similar projects
 
 - [storybook-addon-figma](https://github.com/hharnisc/storybook-addon-figma)
