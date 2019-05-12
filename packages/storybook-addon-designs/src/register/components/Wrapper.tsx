@@ -70,9 +70,9 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     )
   }
 
-  const panels: [JSX.Element, { id: string; title: string }][] = [
-    ...(config instanceof Array ? config : [config])
-  ].map((cfg, i) => {
+  const panels = [...(config instanceof Array ? config : [config])].map<
+    [JSX.Element, { id: string; title: string }]
+  >((cfg, i) => {
     const meta = {
       id: `addon-designs-tab--${i}`,
       title: cfg.name || cfg.type.toUpperCase()
