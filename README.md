@@ -72,7 +72,7 @@ For more detailed information, see [type definition file](./packages/storybook-a
 - `pdf` ... Embed PDF document.
 - `image` ... Embed image.
 
-### Utility dumb function
+### Utility function
 
 If you want type support for type checking or IDE auto completion, use exported [`config` function](./packages/storybook-addon-designs/src/index.ts#L24).
 
