@@ -149,3 +149,18 @@ storiesOf('Tests|Placeholder', module)
       }
     }
   )
+
+storiesOf('Tests|Issues/#14', module)
+  .addDecorator(withDesign)
+  .add('Do not persist addon panel (step 1)', () => <Button>Button</Button>, {
+    design: config({
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    })
+  })
+
+storiesOf('Tests|Issues/#14', module).add(
+  'Do not persist addon panel (step 2)',
+  () => <Button>Button</Button>
+)
