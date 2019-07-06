@@ -32,9 +32,7 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
 
       const cfg = api.getParameters(id, ParameterName)
 
-      if (cfg !== config) {
-        setConfig(cfg)
-      }
+      setConfig(prev => (cfg !== prev ? cfg : prev))
     }
 
     channel.on(Events.UpdateConfig, setConfig)
