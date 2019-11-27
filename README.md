@@ -26,14 +26,14 @@ This addon should work well with any framework: If you find the case the addon n
 
 ## Getting started
 
-1. Install
+### 1. Install
 
 ```sh
 npm install --save-dev storybook-addon-designs
 # yarn add -D storybook-addon-designs
 ```
 
-2. Register the addon in `addons.js`
+### 2. Register the addon in `addons.js`
 
 ```js
 // .storybook/addons.js
@@ -41,7 +41,33 @@ npm install --save-dev storybook-addon-designs
 import 'storybook-addon-designs/register'
 ```
 
-3. Add it to story!
+### 3. Add it to story!
+
+CSF (Component Story Format)
+
+```js
+import { withDesign } from 'storybook-addon-designs'
+
+export default {
+  title: 'My stories',
+  component: Button,
+  decorators: [withDesign]
+}
+
+export const myStory = () => <Button>Hello, World!</Button>
+
+myStory.story = {
+  name: 'My awesome story',
+  paramters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
+    }
+  }
+}
+```
+
+`storiesOf` API
 
 ```js
 import { withDesign } from 'storybook-addon-designs'
@@ -54,6 +80,24 @@ storiesOf('My stories', module)
       url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
     }
   })
+```
+
+MDX
+
+```jsx
+import { Meta, Story } from '@storybook/addon-docs/blocks'
+
+<Meta title="My stories"/>
+
+<Story
+  name="My awesome story"
+  parameters={{
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
+    }
+  }}
+/>
 ```
 
 ## Usage
@@ -105,34 +149,6 @@ design: [
     url: 'https://my-image'
   }
 ]
-```
-
-## Story Syntax
-### StoriesOf
-```ts
-import { config } from 'storybook-addon-designs'
-
-storiesOf('foo', module).add('bar', () => <Button>Hello, World!</Button>, {
-  design: config({
-    // IDE would auto complete keys and `type` values!
-    type: 'iframe',
-    url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
-  })
-})
-```
-
-### CSF
-```ts
-export default {
-  title: 'MyComponent',
-  component: MyComponent,
-  paramters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
-    }
-  }
-}
 ```
 
 ## Similar projects
