@@ -107,6 +107,34 @@ design: [
 ]
 ```
 
+## Story Syntax
+### StoriesOf
+```ts
+import { config } from 'storybook-addon-designs'
+
+storiesOf('foo', module).add('bar', () => <Button>Hello, World!</Button>, {
+  design: config({
+    // IDE would auto complete keys and `type` values!
+    type: 'iframe',
+    url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
+  })
+})
+```
+
+### CSF
+```ts
+export default {
+  title: 'MyComponent',
+  component: MyComponent,
+  paramters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
+    }
+  }
+}
+```
+
 ## Similar projects
 
 - [storybook-addon-figma](https://github.com/hharnisc/storybook-addon-figma)
