@@ -58,7 +58,7 @@ export const myStory = () => <Button>Hello, World!</Button>
 
 myStory.story = {
   name: 'My awesome story',
-  paramters: {
+  parameters: {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
