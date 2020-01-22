@@ -164,3 +164,7 @@ storiesOf('Tests|Issues/#14', module).add(
   'Do not persist addon panel (step 2)',
   () => <Button>Button</Button>
 )
+
+storiesOf('Tests|Issues/#29', module)
+  .addDecorator(withDesign)
+  .add('Do not crash even there is no parameter', () => <Button>Button</Button>)
