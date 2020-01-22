@@ -7,7 +7,9 @@
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,
-    "outDir": "lib"
+    "outDir": "lib",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
   "exclude": ["node_modules", "lib"]
