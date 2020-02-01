@@ -12,6 +12,7 @@ import { Events, ParameterName } from '../../addon'
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
 import { ImagePreview } from './Image'
+import { LinkPanel } from './LinkPanel'
 import { Pdf } from './Pdf'
 
 interface Props {
@@ -85,6 +86,8 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
         return [<Pdf config={cfg} />, meta]
       case 'image':
         return [<ImagePreview key={storyId} config={cfg} />, meta]
+      case 'link':
+        return [<LinkPanel config={cfg} />, meta]
     }
 
     return [

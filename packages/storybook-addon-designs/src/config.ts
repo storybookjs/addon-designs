@@ -1,4 +1,9 @@
-export type Config = IFrameConfig | FigmaConfig | PdfConfig | ImageConfig
+export type Config =
+  | IFrameConfig
+  | FigmaConfig
+  | PdfConfig
+  | ImageConfig
+  | LinkConfig
 
 export interface ConfigBase {
   /**
@@ -86,4 +91,39 @@ export interface ImageConfig extends TransformableConfigBase {
    * An URL(URI) for the image.
    */
   url: string
+}
+
+/**
+ * Display a link.
+ */
+export interface LinkConfig extends ConfigBase {
+  type: 'link'
+
+  /**
+   * An URL to open.
+   */
+  url: string
+
+  /**
+   * Link text. Just shows an url if omitted.
+   */
+  label?: string
+
+  /**
+   * Whether to show a right-arrow at the end of a label.
+   * @default true
+   */
+  showArrow?: boolean
+
+  /**
+   * "target" attribute for the link.
+   * @default "_blank"
+   */
+  target?: string
+
+  /**
+   * "rel" attribute for the link.
+   * @default "noopener"
+   */
+  rel?: string
 }
