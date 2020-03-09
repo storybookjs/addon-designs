@@ -35,15 +35,68 @@ export interface IFrameConfig extends IFrameConfigBase {
 }
 
 /**
+ * See <https://www.figma.com/developers/api#oauth2>
+ */
+export interface FigmaOAuthCredential {
+  /**
+   * client_id
+   */
+  oauthClientId: string
+
+  /**
+   * client_secret
+   */
+  oauthClientSecret: string
+}
+
+/**
+ * See <https://www.figma.com/developers/api#access-tokens>
+ */
+export interface FigmaPatCredential {
+  /**
+   * Personal access token
+   */
+  personalAccessToken: string
+}
+
+type FigmaCredential = FigmaOAuthCredential | FigmaPatCredential
+
+/**
+ * <https://www.figma.com/developers/api#get-images-endpoint>
+ */
+export interface FigmaApiRenderOptions {
+  /**
+   * A string enum for the image output format, can be jpg, png, svg, or pdf
+   */
+  format: 'jpg' | 'png' | 'svg' | 'pdf'
+
+  /**
+   * A number between 0.01 and 4, the image scaling factor
+   */
+  scale: number
+}
+
+/**
  * Render Figma Live Preview.
  */
-export interface FigmaConfig extends IFrameConfigBase {
+export interface FigmaConfig<Credential = FigmaCredential>
+  extends IFrameConfigBase {
   type: 'figma'
 
   /**
    * A string identifies your site.
    */
   embedHost?: string
+
+  /**
+   * Options for the Figma REST API.
+   */
+  renderOptions: Partial<FigmaApiRenderOptions>
+
+  /**
+   * Credential for the Figma REST API.
+   */
+  credential?: Credential
 }
 
 /**
