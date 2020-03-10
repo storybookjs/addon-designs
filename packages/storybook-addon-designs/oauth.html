@@ -1,0 +1,19 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+      const url = new URL(location.href)
+
+      window.opener.postMessage(
+        JSON.stringify({
+          type: 'OAUTH_COMPLETE',
+          payload: {
+            code: url.searchParams.get('code'),
+            state: url.searchParams.get('state')
+          }
+        }),
+        location.origin
+      )
+    </script>
+  </body>
+</html>

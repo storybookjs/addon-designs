@@ -33,11 +33,19 @@ npm install --save-dev storybook-addon-designs
 # yarn add -D storybook-addon-designs
 ```
 
-### 2. Register the addon in `addons.js`
+### 2. Register the addon in `main.js`
+
+```js
+// .storybook/main.js
+module.exports = {
+  addons: ['storybook-addon-designs']
+}
+```
+
+If you're using Storybook@5.0.x, use this module instead.
 
 ```js
 // .storybook/addons.js
-
 import 'storybook-addon-designs/register'
 ```
 
@@ -112,7 +120,7 @@ For more detailed information, see [type definition file](./packages/storybook-a
 ### Available types
 
 - `iframe` ... Embed `<iframe/>`.
-- `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed).
+- `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed), or image rendered by Figma REST API (for private files).
 - `pdf` ... Embed PDF document.
 - `image` ... Embed image.
 - `link` ... Display a link.

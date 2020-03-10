@@ -1,1 +1,1 @@
-import './lib/register/index'
+require('./lib/register/index')
