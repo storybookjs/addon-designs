@@ -2,6 +2,7 @@
   
   <img src="./packages/assets/logo.png" width="104" alt="logo">
   <br/>
+  <br/>
 
 [![npm version](https://badge.fury.io/js/storybook-addon-designs.svg)](https://badge.fury.io/js/storybook-addon-designs)
 [![Monthly download](https://img.shields.io/npm/dm/storybook-addon-designs.svg)](https://www.npmjs.com/package/storybook-addon-designs)
