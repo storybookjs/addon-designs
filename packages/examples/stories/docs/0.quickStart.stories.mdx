@@ -1,0 +1,101 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { TabsState } from '@storybook/components'
+
+<Meta title="Docs/Quick start" />
+
+# Quick Start
+
+First you need to install the addon.
+
+<TabsState initial="yarn">
+  <div id="yarn" title="Yarn"><div>
+
+```sh
+yarn add -D storybook-addon-designs
+```
+
+  </div></div>
+  <div id="npm" title="NPM"><div>
+
+```sh
+npm i -D storybook-addon-designs
+```
+
+  </div></div>
+</TabsState>
+
+Then register it.
+
+<TabsState initial="mainjs">
+  <div id="mainjs" title="main.js"><div>
+
+If you're using Storybook@5.1.0 or later, you can simply put the addon name to `main.js`.
+
+```js
+// .storybook/main.js
+module.exports = {
+  addons: ['storybook-addon-designs']
+}
+```
+
+  </div></div>
+  <div id="addonsjs" title="addons.js (legacy)"><div>
+
+```js
+// .storybook/addons.js
+import 'storybook-addon-designs/register'
+```
+
+  </div></div>
+</TabsState>
+
+Now, you can embed designs to your Storybook.
+All you need to do is put a `design` parameter to your story.
+
+<TabsState initial="csf">
+  <div id="csf" title="CSF"><div>
+
+```js
+// myStories.stories.jsx
+export default {
+  title: 'myStories'
+}
+
+export const myStory = () => <MyComponent/>
+
+myStory.story = {
+  paramaters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    }
+  }
+}
+```
+
+## Documentation notes
+
+In this document, we'll omit `export default` statement unless it's needed.
+
+  </div></div>
+  <div id="storiesof" title="storiesOf API (legacy)"><div>
+
+```js
+// myStories.stories.jsx
+storiesOf('myStories', module)
+  .add('myStory', () => <MyComponent/>, {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    }
+  })
+```
+
+## Documentation notes
+
+In this document, we use [CSF (Component Story Format)][csf-docs] for all code examples.
+
+  </div></div>
+</TabsState>
+
+[csf-docs]: https://storybook.js.org/docs/formats/component-story-format/

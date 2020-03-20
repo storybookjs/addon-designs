@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Subtitle } from '@storybook/addon-docs/blocks'
+
+<Meta title="Docs/Embed Figma files" />
+
+# Embed Figma designs
+
+<Subtitle>
+  This document describes how to embed your Figma files/frames to your
+  Storybook.
+</Subtitle>
+
+## Embed files
+
+To embed your Figma files, use `figma` type and put an URL for the file to `url` field.
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    }
+  }
+}
+```
+
+The `url` is an URL when you open your Figma file in browser.
+If you're using Figma Desktop App, click the `Share` button then `Copy link` button.
+
+## Embed frames
+
+To embed a specific frame in your Figma file, paste an URL for the frame instead.
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
+    }
+  }
+}
+```
+
+If you're using Figma Desktop App, check `Link to selected frame` in a share dialog and `Copy link` button.
