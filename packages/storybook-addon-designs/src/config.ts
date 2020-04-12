@@ -10,6 +10,12 @@ export interface ConfigBase {
    * A name of the tab.
    */
   name?: string
+
+  /**
+   * Whether to render a tab content when the tab is inactive.
+   * @default true
+   */
+  offscreen?: boolean
 }
 
 /**
