@@ -42,6 +42,7 @@ module.exports = {
   addons: [
     'storybook-addon-designs',
     // Or as a Tab instead of a Panel
+    ['storybook-addon-designs', { target: 'tab' }]
   ]
 }
 ```
