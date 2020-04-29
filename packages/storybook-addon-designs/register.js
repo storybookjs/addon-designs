@@ -1,1 +1,1 @@
-require('./lib/register/index')
+require('./lib/register').default('panel')

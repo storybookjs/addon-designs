@@ -1,1 +1,1 @@
-require('./lib/register/tab')
+require('./lib/register').default('tab')
