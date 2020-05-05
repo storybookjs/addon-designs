@@ -2,14 +2,16 @@
   "name": "storybook-addon-designs",
   "version": "5.2.0",
   "description": "Storybook addon for embedding your design preview in addon panel",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "repository": "git@github.com:pocka/storybook-addon-designs.git",
   "homepage": "https://github.com/pocka/storybook-addon-designs",
   "author": "pocka <pockawoooh@gmail.com>",
   "license": "MIT",
   "files": [
-    "lib",
+    "esm",
+    "cjs",
     "register.js"
   ],
   "devDependencies": {
@@ -31,9 +33,11 @@
   },
   "scripts": {
     "dev": "tsc --watch --preserveWatchOutput",
-    "build": "tsc",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir cjs",
     "test": "echo 'No tests' && exit 0",
-    "clean": "rm -r lib",
+    "clean": "rm -r esm cjs",
     "prepublishOnly": "cp ../../README.md ./ && yarn build"
   },
   "dependencies": {
