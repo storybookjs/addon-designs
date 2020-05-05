@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "lib": ["dom", "dom.iterable", "esnext"],
-    "target": "es2015",
+    "target": "ES5",
     "module": "es2015",
     "moduleResolution": "node",
     "jsx": "react",
