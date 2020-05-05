@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.2.1] - 2020-05-05
+
+### Fixed
+
+- Fix the addon code is not being transpiled down to ES5. (PR: [#51](https://github.com/pocka/storybook-addon-designs/pull/51))
+- Provide CommonJS modules for non-webpack environments (e.g. Storyshots+Jest). (PR: [#52](https://github.com/pocka/storybook-addon-designs/pull/52))
+
 ## [5.2.0] - 2020-02-01
 
 ### Added
