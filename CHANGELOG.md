@@ -7,11 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- Support private Figma files. (PR: [#33](https://github.com/pocka/storybook-addon-designs/pull/33))
-- `offscreen` option. (PR: [#40](https://github.com/pocka/storybook-addon-designs/pull/40))
-
 ## [5.2.0] - 2020-02-01
 
 ### Added
