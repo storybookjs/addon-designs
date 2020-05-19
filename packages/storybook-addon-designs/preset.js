@@ -7,8 +7,8 @@ module.exports = {
     return [
       ...entries,
       options.target === 'tab'
-        ? require.resolve('./register')
-        : require.resolve('./register-tab')
+        ? require.resolve('./register-tab')
+        : require.resolve('./register')
     ]
   },
   async webpack(config) {
