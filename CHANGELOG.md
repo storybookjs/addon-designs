@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `offscreen` option. (PR: [#40](https://github.com/pocka/storybook-addon-designs/pull/40))
+- `renderTarget` preset option. (PR: [#47](https://github.com/pocka/storybook-addon-designs/pull/47))
+
+### Fixed
+
+- Fix Figma preview's scale value goes too small when the preview located at second tab or later one. (PR: [#40](https://github.com/pocka/storybook-addon-designs/pull/40))
 
 ## [5.2.1] - 2020-05-05
 
