@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `offscreen` option. (PR: [#40](https://github.com/pocka/storybook-addon-designs/pull/40))
 - `renderTarget` preset option. (PR: [#47](https://github.com/pocka/storybook-addon-designs/pull/47))
+- An addon preset file so you can write `addons: ["storybook-addon-designs"]` in `main.js`.
 
 ### Fixed
 
