@@ -1,6 +1,10 @@
 module.exports = {
-  stories: ['../../examples/stories/**/*.stories.{js,jsx}'],
+  stories: [
+    '../../examples/stories/**/*.stories.mdx',
+    '../../examples/stories/**/*.stories.{js,jsx}'
+  ],
   addons: [
+    '@storybook/addon-docs',
     {
       name: 'storybook-addon-designs',
       options: {
