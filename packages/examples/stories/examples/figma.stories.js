@@ -23,6 +23,17 @@ embedFile.story = {
 
 export const embedNode = () => <Button>Button</Button>
 
+export const embedPrivateFile = () => <Button>Button</Button>
+
+embedPrivateFile.story = {
+  parameters: {
+    design: config({
+      type: 'figma',
+      url: 'https://www.figma.com/file/WOpzYgwlTe1UV6MpJP6SMv/private-test'
+    })
+  }
+}
+
 embedNode.story = {
   parameters: {
     design: config({
