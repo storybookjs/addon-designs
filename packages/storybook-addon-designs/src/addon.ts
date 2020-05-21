@@ -9,6 +9,11 @@ export const AddonName = 'STORYBOOK_ADDON_DESIGNS'
 export const PanelName = AddonName + '/panel'
 
 /**
+ * The name of the tab.
+ */
+export const TabName = AddonName + '/tab'
+
+/**
  * Addon events.
  */
 export const Events = {

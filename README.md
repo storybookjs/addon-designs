@@ -39,7 +39,14 @@ npm install --save-dev storybook-addon-designs
 ```js
 // .storybook/main.js
 module.exports = {
-  addons: ['storybook-addon-designs']
+  addons: [
+    'storybook-addon-designs',
+    // Or as a Tab instead of a Panel
+    {
+      name: 'storybook-addon-designs',
+      options: { target: 'tab' }
+    }
+  ]
 }
 ```
 
@@ -48,6 +55,8 @@ If you're using Storybook@5.0.x, use this module instead.
 ```js
 // .storybook/addons.js
 import 'storybook-addon-designs/register'
+// Or as a Tab instead of a Panel
+import 'storybook-addon-designs/register-tab'
 ```
 
 ### 3. Add it to story!
