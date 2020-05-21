@@ -54,6 +54,7 @@ If you're using Storybook@5.0.x, use this module instead.
 
 ```js
 // .storybook/addons.js
+
 import 'storybook-addon-designs/register'
 // Or as a Tab instead of a Panel
 import 'storybook-addon-designs/register-tab'
@@ -130,7 +131,7 @@ For more detailed information, see [type definition file](./packages/storybook-a
 ### Available types
 
 - `iframe` ... Embed `<iframe/>`.
-- `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed), or image rendered by Figma REST API (for private files).
+- `figma` ... Embed [Figma Live Embed Kit](https://www.figma.com/developers/embed).
 - `pdf` ... Embed PDF document.
 - `image` ... Embed image.
 - `link` ... Display a link.
