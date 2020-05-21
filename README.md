@@ -44,7 +44,7 @@ module.exports = {
     // Or as a Tab instead of a Panel
     {
       name: 'storybook-addon-designs',
-      options: { target: 'tab' }
+      options: { renderTarget: 'tab' }
     }
   ]
 }

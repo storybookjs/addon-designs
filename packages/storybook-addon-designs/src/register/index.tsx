@@ -6,7 +6,7 @@ import { AddonName, PanelName } from '../addon'
 
 import { Wrapper } from './components/Wrapper'
 
-export default function register(target: 'panel' | 'tab') {
+export default function register(renderTarget: 'panel' | 'tab') {
   addons.register(AddonName, api => {
     const title = 'Design'
     const render = ({ active, key }: { active: boolean; key: string }) => (
@@ -18,7 +18,7 @@ export default function register(target: 'panel' | 'tab') {
       />
     )
 
-    if (target === 'tab') {
+    if (renderTarget === 'tab') {
       addons.add(PanelName, {
         title,
         render,

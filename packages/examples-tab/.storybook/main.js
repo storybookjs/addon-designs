@@ -4,7 +4,7 @@ module.exports = {
     {
       name: 'storybook-addon-designs',
       options: {
-        target: 'tab'
+        renderTarget: 'tab'
       }
     }
   ],

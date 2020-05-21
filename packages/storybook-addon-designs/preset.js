@@ -6,7 +6,7 @@ module.exports = {
   managerEntries(entries = [], options = {}) {
     return [
       ...entries,
-      options.target === 'tab'
+      options.renderTarget === 'tab'
         ? require.resolve('./register-tab')
         : require.resolve('./register')
     ]
