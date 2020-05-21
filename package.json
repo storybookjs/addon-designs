@@ -12,9 +12,7 @@
   "scripts": {
     "build": "lerna run build --stream",
     "dev": "lerna run dev --stream",
-    "example": "yarn workspace examples storybook",
-    "example:build": "yarn workspace examples build-storybook",
-    "now-build": "yarn build && yarn example:build"
+    "example": "yarn workspace examples storybook"
   },
   "prettier": {
     "semi": false,
