@@ -2,11 +2,18 @@ import React from 'react'
 
 import { config, withDesign } from 'storybook-addon-designs'
 
-import { Button } from '../Button'
+import { Button } from '../../Button'
+
+import Docs from './examples.mdx'
 
 export default {
-  title: 'Examples/Figma',
-  decorators: [withDesign]
+  title: 'Docs/Figma/Examples',
+  decorators: [withDesign],
+  parameters: {
+    docs: {
+      page: Docs
+    }
+  }
 }
 
 export const embedFile = () => <Button>Button</Button>
@@ -21,7 +28,17 @@ embedFile.story = {
   }
 }
 
-export const embedNode = () => <Button>Button</Button>
+export const embedFrame = () => <Button>Button</Button>
+
+embedFrame.story = {
+  parameters: {
+    design: config({
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
+    })
+  }
+}
 
 export const embedPrivateFile = () => <Button>Button</Button>
 
@@ -30,16 +47,6 @@ embedPrivateFile.story = {
     design: config({
       type: 'figma',
       url: 'https://www.figma.com/file/WOpzYgwlTe1UV6MpJP6SMv/private-test'
-    })
-  }
-}
-
-embedNode.story = {
-  parameters: {
-    design: config({
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
     })
   }
 }
@@ -56,9 +63,9 @@ embedPrototype.story = {
   }
 }
 
-export const allowingFullscreen = () => <Button>Button</Button>
+export const allowFullscreen = () => <Button>Button</Button>
 
-allowingFullscreen.story = {
+allowFullscreen.story = {
   parameters: {
     design: config({
       type: 'figma',

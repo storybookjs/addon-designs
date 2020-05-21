@@ -1,0 +1,104 @@
+import { Subtitle } from '@storybook/addon-docs/blocks'
+
+# Figma embeds examples
+
+<Subtitle>A list of examples for Figma embedding.</Subtitle>
+
+- [Embed files](#embed-files)
+- [Embed frames](#embed-frames)
+- [Embed prototype](#embed-prototype)
+- [Embed with fullscreen button](#embed-with-fullscreen-button)
+
+## Embed files
+
+To embed your Figma files, use `figma` type and put an URL for the file to `url` field.
+
+[Example](/?path=/story/docs-figma-examples--embed-file)
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    }
+  }
+}
+```
+
+The `url` is an URL when you open your Figma file in browser.
+If you're using Figma Desktop App, click the `Share` button then `Copy link` button.
+
+You can also embed private files, as same as public ones ([Example](/?path=/story/docs-figma-examples--embed-private-file)).
+
+## Embed frames
+
+To embed a specific frame in your Figma file, paste an URL for the frame instead.
+
+[Example](/?path=/story/docs-figma-examples--embed-frame)
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
+    }
+  }
+}
+```
+
+If you're using Figma Desktop App, check `Link to selected frame` in a share dialog and `Copy link` button.
+
+## Embed prototype
+
+Embedding prototypes is also the same.
+Go to [Presentation View](https://help.figma.com/hc/en-us/articles/360040318013-Set-prototype-Presentation-View-options)
+and copy a browser URL, then paste it at your story parameter's `url` field.
+
+[Example](/?path=/story/docs-figma-examples--embed-prototype)
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+    }
+  }
+}
+```
+
+## Embed with fullscreen button
+
+To allow Figma embeds frame to go fullscreen, set an `allowFullscreen` option.
+
+[Example](/?path=/story/docs-figma-examples--allow-fullscreen)
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      allowFullscreen: true
+    }
+  }
+}
+```
