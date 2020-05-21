@@ -1,1 +1,3 @@
-require('./lib/register').default('tab')
+import register from './esm/register/index'
+
+register('tab')

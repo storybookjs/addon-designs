@@ -1,1 +1,3 @@
-require('./lib/register').default('panel')
+import register from './esm/register/index'
+
+register('panel')
