@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Subtitle } from '@storybook/addon-docs/blocks'
+import { LinkTo } from '@storybook/addon-links'
+import { Badge } from '@storybook/components'
+
+<Meta title="Docs/Link/README" />
+
+# Embedding links
+
+<Subtitle>
+  This document describes how to embed external links to your Storybook.
+</Subtitle>
+
+## Usage
+
+Set `type: "link"` and pass the URL.
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'link',
+      url: '<URL>'
+    }
+  }
+}
+```
+
+You can find more detailed instructions [here](/?path=/docs/docs-link-examples--embed-link).
+
+## Parameter options
+
+| Option name                                      | Type           | Default value    | Description                                           |
+| ------------------------------------------------ | -------------- | ---------------- | ----------------------------------------------------- |
+| `type` <Badge status="positive">required</Badge> | `"link"`       |                  | Fixed parameter.                                      |
+| `url` <Badge status="positive">required</Badge>  | `string` (URL) |                  | An URL.                                               |
+| `label`                                          | `string`       | A value of `url` | A label text for the link.                            |
+| `showArrow`                                      | `boolean`      | `true`           | Whether to display an arrow icon next to the link.    |
+| `target`                                         | `string`       | `"_blank"`       | `"target"` attribute for the link (`<a target></a>`). |
+| `rel`                                            | `string`       | `"noopener"`     | `"rel"` attribute for the link (`<a rel></a>`).       |
