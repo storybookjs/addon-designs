@@ -4,6 +4,10 @@ import { Subtitle } from '@storybook/addon-docs/blocks'
 
 <Subtitle>A list of examples for image embedding.</Subtitle>
 
+- [Basic embedding](#basic-embedding)
+- [Embed with import](#embed-with-import)
+- [Setting scale and offset](#setting-scale-and-offset)
+
 ## Basic embedding
 
 To simply embed an image, put an URL of the image to an `url` option.
@@ -19,9 +23,9 @@ myStory.story = {
     design: {
       type: 'image',
       url:
-        'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg'
-    }
-  }
+        'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
+    },
+  },
 }
 ```
 
@@ -42,9 +46,9 @@ myStory.story = {
   parameters: {
     design: {
       type: 'image',
-      url: sampleImage
-    }
-  }
+      url: sampleImage,
+    },
+  },
 }
 ```
 
@@ -66,8 +70,8 @@ myStory.story = {
       type: 'image',
       url: sampleImage,
       offset: [-300, 140],
-      scale: 2
-    }
-  }
+      scale: 2,
+    },
+  },
 }
 ```

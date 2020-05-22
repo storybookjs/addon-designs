@@ -4,6 +4,10 @@ import { Subtitle } from '@storybook/addon-docs/blocks'
 
 <Subtitle>A list of examples for link embedding.</Subtitle>
 
+- [Basic embedding](#basic-embedding)
+- [Specify label text](#specify-label-text)
+- [Hide an arrow icon](#hide-an-arrow-icon)
+
 ## Basic embedding
 
 To simply display a link, set an URL to an `url` option.
@@ -19,9 +23,9 @@ myStory.story = {
     design: {
       type: 'link',
       url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    }
-  }
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
+  },
 }
 ```
 
@@ -41,9 +45,9 @@ myStory.story = {
       type: 'link',
       url:
         'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      label: 'Open design in new tab'
-    }
-  }
+      label: 'Open design in new tab',
+    },
+  },
 }
 ```
 
@@ -63,8 +67,8 @@ myStory.story = {
       type: 'link',
       url:
         'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      showArrow: false
-    }
-  }
+      showArrow: false,
+    },
+  },
 }
 ```

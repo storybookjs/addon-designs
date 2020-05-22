@@ -4,6 +4,10 @@ import { Subtitle } from '@storybook/addon-docs/blocks'
 
 <Subtitle>A list of examples for PDF embedding.</Subtitle>
 
+- [Basic embedding](#basic-embedding)
+- [Changing initial page to show](#changing-initial-page-to-show)
+- [Setting scale and offset](#setting-scale-and-offset)
+
 ## Basic embedding
 
 To simply embed a PDF document, pass it to an `url` option.
@@ -22,9 +26,9 @@ myStory.story = {
   parameters: {
     design: {
       type: 'pdf',
-      url: myPdf
-    }
-  }
+      url: myPdf,
+    },
+  },
 }
 ```
 
@@ -45,9 +49,9 @@ myStory.story = {
     design: {
       type: 'pdf',
       url: myPdf,
-      page: 2
-    }
-  }
+      page: 2,
+    },
+  },
 }
 ```
 
@@ -69,8 +73,8 @@ myStory.story = {
       type: 'pdf',
       url: myPdf,
       offset: [-300, 140],
-      scale: 2
-    }
-  }
+      scale: 2,
+    },
+  },
 }
 ```

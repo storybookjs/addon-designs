@@ -6,6 +6,9 @@ import { Subtitle } from '@storybook/addon-docs/blocks'
   A list of examples for <code>&lt;iframe&gt;</code> embedding.
 </Subtitle>
 
+- [Basic embedding](#basic-embedding)
+- [Allowing fullscreen](#allowing-fullscreen)
+
 ## Basic embedding
 
 To simply embed a website, just copy-and-paste an URL of the website.
@@ -20,9 +23,9 @@ myStory.story = {
   parameters: {
     design: {
       type: 'iframe',
-      url: 'https://www.wikipedia.org/'
-    }
-  }
+      url: 'https://www.wikipedia.org/',
+    },
+  },
 }
 ```
 
@@ -41,8 +44,8 @@ myStory.story = {
     design: {
       type: 'iframe',
       url: 'https://www.youtube.com/embed/JhpyGdvsApo',
-      allowFullscreen: true
-    }
-  }
+      allowFullscreen: true,
+    },
+  },
 }
 ```
