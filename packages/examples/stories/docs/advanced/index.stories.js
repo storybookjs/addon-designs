@@ -2,13 +2,16 @@ import React from 'react'
 
 import { config, withDesign } from 'storybook-addon-designs'
 
-import { Button } from '../Button'
+import { Button } from '../../Button'
 
-import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
+import Docs from './docs.mdx'
 
 export default {
-  title: 'Examples/Advanced',
-  decorators: [withDesign]
+  title: 'Docs/Advanced usage',
+  decorators: [withDesign],
+  parameters: {
+    docs: { page: Docs }
+  }
 }
 
 export const embedMultipleDesigns = () => <Button>Button</Button>
@@ -22,8 +25,9 @@ embedMultipleDesigns.story = {
           'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
       },
       {
-        type: 'pdf',
-        url: samplePdf
+        type: 'link',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
       }
     ])
   }
@@ -42,8 +46,9 @@ setTabNames.story = {
       },
       {
         name: 'Bar',
-        type: 'pdf',
-        url: samplePdf
+        type: 'link',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
       }
     ])
   }

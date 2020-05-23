@@ -2,18 +2,37 @@ import React from 'react'
 
 import { config, withDesign } from 'storybook-addon-designs'
 
-import { Button } from '../Button'
+import { Button } from '../../Button'
+
+import Docs from './examples.mdx'
 
 import sampleImage from '@storybook-addon-designs/assets/sample.png'
 
 export default {
-  title: 'Examples/Images',
-  decorators: [withDesign]
+  title: 'Docs/Image/Examples',
+  decorators: [withDesign],
+  parameters: {
+    docs: {
+      page: Docs
+    }
+  }
 }
 
 export const embedImage = () => <Button>Button</Button>
 
 embedImage.story = {
+  parameters: {
+    design: config({
+      type: 'image',
+      url:
+        'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg'
+    })
+  }
+}
+
+export const embedImageWithImport = () => <Button>Button</Button>
+
+embedImageWithImport.story = {
   parameters: {
     design: config({
       type: 'image',

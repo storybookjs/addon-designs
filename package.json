@@ -7,7 +7,7 @@
   ],
   "devDependencies": {
     "lerna": "^3.13.1",
-    "prettier": "^1.16.4"
+    "prettier": "^2.0.5"
   },
   "scripts": {
     "build": "lerna run build --stream",

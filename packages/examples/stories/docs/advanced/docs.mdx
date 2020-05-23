@@ -1,0 +1,113 @@
+import { Subtitle } from '@storybook/addon-docs/blocks'
+import { TabsState } from '@storybook/components'
+
+import { TabLink } from './TabLink'
+
+# Advanced usage
+
+<Subtitle>A list of advanced usages.</Subtitle>
+
+- [Embed multiple designs](#embed-multiple-designs)
+- [Render as tab instead of addon panel](#render-as-tab-instead-of-addon-panel)
+
+## Embed multiple designs
+
+You can embed more than one designs by passing an array to the `design` parameter.
+
+[Example](/?path=/story/docs-advanced-usage--embed-multiple-designs)
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: [
+      {
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      },
+      {
+        type: 'link',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      },
+    ],
+  },
+}
+```
+
+To change the name of tabs, pass `name` option to each object.
+
+[Example](/?path=/story/docs-advanced-usage--set-tab-names)
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: [
+      {
+        name: 'Foo',
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      },
+      {
+        name: 'Bar',
+        type: 'link',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      },
+    ],
+  },
+}
+```
+
+Here is a list of tab-related parameter options.
+
+| Option name | Type      | Default value     | Description                                                                       |
+| ----------- | --------- | ----------------- | --------------------------------------------------------------------------------- |
+| `name`      | `string`  | A value of `type` | A name of the tab.                                                                |
+| `offscreen` | `boolean` | `true`            | Whether to render the tab even when it's inactive. Doesn't effect for some types. |
+
+## Render as tab instead of addon panel
+
+The addon can render contents to `Design` tab instead of in an addon panel.
+To do this, you need to set `"tab"` to a `renderTarget` preset option.
+The default value is `"panel"`.
+
+<TabLink
+  tabItem={<a href="/">Go back to panel mode</a>}
+  panelItem={<a href="/tab/">Go to tab mode</a>}
+/>
+
+<TabsState initial="mainjs">
+  <div id="mainjs" title="main.js"><div>
+
+```js
+// .storybook/main.js
+module.exports = {
+  addons: [
+    {
+      name: 'storybook-addon-designs',
+      options: {
+        renderTarget: 'tab',
+      },
+    },
+  ],
+}
+```
+
+  </div></div>
+  <div id="addonsjs" title="addons.js (legacy)"><div>
+
+```js
+// .storybook/addons.js
+import 'storybook-addon-designs/register-tab'
+```
+
+  </div></div>
+</TabsState>

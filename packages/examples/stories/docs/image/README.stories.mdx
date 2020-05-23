@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Subtitle } from '@storybook/addon-docs/blocks'
+import { LinkTo } from '@storybook/addon-links'
+import { Badge } from '@storybook/components'
+
+<Meta title="Docs/Image/README" />
+
+# Embedding images
+
+<Subtitle>
+  This document describes how to embed arbitary images to your Storybook.
+</Subtitle>
+
+## Usage
+
+Set `type: "image"` and pass the URL to the image.
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'image',
+      url: '<URL>'
+    }
+  }
+}
+```
+
+You can also import images and pass them to an `url` option.
+Webpack loaders Storybook configured make this possible.
+
+```js
+// myStories.stories.jsx
+import myImage from '/path/to/image.png' // or .svg, .jpg, etc...
+
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'image',
+      url: myImage
+    }
+  }
+}
+```
+
+You can find more detailed instructions [here](/?path=/docs/docs-image-examples--embed-image).
+
+## Parameter options
+
+| Option name                                      | Type               | Default value | Description                          |
+| ------------------------------------------------ | ------------------ | ------------- | ------------------------------------ |
+| `type` <Badge status="positive">required</Badge> | `"image"`          |               | Fixed parameter.                     |
+| `url` <Badge status="positive">required</Badge>  | `string` (URL)     |               | An URI of the image.                 |
+| `scale`                                          | `number`           | `1`           | Default scaling value for the image. |
+| `offset`                                         | `[number, number]` | `[0, 0]`      | Position offsets (`[x, y]`).         |
