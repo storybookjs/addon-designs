@@ -2,7 +2,7 @@
 import addons, { types } from '@storybook/addons'
 import { jsx } from '@storybook/theming'
 
-import { AddonName, PanelName } from '../addon'
+import { AddonName, PanelName, ParameterName } from '../addon'
 
 import { Wrapper } from './components/Wrapper'
 
@@ -23,11 +23,12 @@ export default function register(renderTarget: 'panel' | 'tab') {
         title,
         render,
         type: types.TAB,
+        paramKey: ParameterName,
         route: ({ storyId }) => `/design/${storyId}`,
         match: ({ viewMode }) => viewMode === 'design'
       })
     } else {
-      addons.addPanel(PanelName, { title, render })
+      addons.addPanel(PanelName, { title, paramKey: ParameterName, render })
     }
   })
 }
