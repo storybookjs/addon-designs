@@ -1,6 +1,6 @@
 import addons, { makeDecorator, StoryWrapper } from '@storybook/addons'
 
-import { Events, ParameterName } from './addon'
+import { Events, PARAM_KEY } from './addon'
 import { Config } from './config'
 
 const wrapper: StoryWrapper = (getStory, context, { parameters }) => {
@@ -13,7 +13,7 @@ const wrapper: StoryWrapper = (getStory, context, { parameters }) => {
 
 export const withDesign = makeDecorator({
   name: 'withDesign',
-  parameterName: ParameterName,
+  parameterName: PARAM_KEY,
   skipIfNoParametersOrOptions: true,
   wrapper
 })
@@ -22,6 +22,8 @@ export const withDesign = makeDecorator({
  * Dumb function to ensure typings or enchance IDE auto completion.
  */
 export const config = (c: Config | Config[]) => c
+
+export { PARAM_KEY };
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline()

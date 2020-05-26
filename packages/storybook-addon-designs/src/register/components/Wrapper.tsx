@@ -7,7 +7,7 @@ import { STORY_CHANGED } from '@storybook/core-events'
 import { Link, Placeholder, TabsState } from '@storybook/components'
 
 import { Config } from '../../config'
-import { Events, ParameterName } from '../../addon'
+import { Events, PARAM_KEY } from '../../addon'
 
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
@@ -31,7 +31,7 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     const onStoryChanged = (id: string) => {
       changeStory(id)
 
-      const cfg = api.getParameters(id, ParameterName)
+      const cfg = api.getParameters(id, PARAM_KEY)
 
       setConfig(prev => (cfg !== prev ? cfg : prev))
     }

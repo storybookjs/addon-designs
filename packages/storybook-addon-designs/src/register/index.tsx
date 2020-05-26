@@ -2,14 +2,14 @@
 import addons from '@storybook/addons'
 import { jsx } from '@storybook/theming'
 
-import { AddonName, PanelName, ParameterName } from '../addon'
+import { AddonName, PanelName, PARAM_KEY } from '../addon'
 
 import { Wrapper } from './components/Wrapper'
 
 addons.register(AddonName, api => {
   addons.addPanel(PanelName, {
     title: 'Design',
-    paramKey: ParameterName,
+    paramKey: PARAM_KEY,
     render({ active, key }) {
       return (
         <Wrapper

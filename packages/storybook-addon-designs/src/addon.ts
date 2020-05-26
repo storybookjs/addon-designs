@@ -18,4 +18,4 @@ export const Events = {
 /**
  * A key of story parameters.
  */
-export const ParameterName = 'design'
+export const PARAM_KEY = 'design'
