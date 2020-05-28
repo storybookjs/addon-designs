@@ -23,7 +23,7 @@ export const withDesign = makeDecorator({
  */
 export const config = (c: Config | Config[]) => c
 
-export { PARAM_KEY };
+export { PARAM_KEY, Config };
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline()
