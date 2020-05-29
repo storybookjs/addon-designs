@@ -15,10 +15,10 @@
     "register.js"
   ],
   "devDependencies": {
-    "@storybook/addons": "^5.0.3",
-    "@storybook/components": "^5.0.3",
-    "@storybook/core-events": "^5.0.3",
-    "@storybook/theming": "^5.0.3",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/components": "^5.3.19",
+    "@storybook/core-events": "^5.3.19",
+    "@storybook/theming": "^5.3.19",
     "@types/pdfjs-dist": "^2.0.0",
     "@types/react": "^16.8.8",
     "@types/webpack-env": "^1.13.9",
