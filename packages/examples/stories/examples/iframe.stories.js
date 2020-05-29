@@ -5,7 +5,7 @@ import { config, withDesign } from 'storybook-addon-designs'
 import { Button } from '../Button'
 
 export default {
-  title: 'Examples/iframe',
+  title: 'Examples/Iframe',
   decorators: [withDesign]
 }
 

@@ -5,13 +5,14 @@ import { config, withDesign } from 'storybook-addon-designs'
 import { Button } from '../Button'
 
 export default {
-  title: 'Examples/link',
+  title: 'Examples/Link',
   decorators: [withDesign]
 }
 
 export const showALink = () => <Button>Button</Button>
 
 showALink.story = {
+  name: 'Show a Link',
   parameters: {
     design: config({
       type: 'link',
@@ -24,6 +25,7 @@ showALink.story = {
 export const setALabel = () => <Button>Button</Button>
 
 setALabel.story = {
+  name: 'Set a Label',
   parameters: {
     design: config({
       type: 'link',

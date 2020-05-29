@@ -7,19 +7,15 @@ export default {
   decorators: [withDesign]
 }
 
-export const disabled = () => (
+export const withoutDesign = () => (
   <>
     <pre>{`
-      Story without the Design panel, configured with
-
-      parameters: {
-        design: { disabled: true }
-      }
+      Story without the Design panel
     `}</pre>
   </>
 );
 
-disabled.story = {
+withoutDesign.story = {
   parameters: {
     design: { disabled: true }
   }

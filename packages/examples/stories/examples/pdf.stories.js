@@ -58,9 +58,9 @@ setPage.story = {
   }
 }
 
-export const setBothScaleAndOffset = () => <Button>Button</Button>
+export const setScaleAndOffset = () => <Button>Button</Button>
 
-setBothScaleAndOffset.story = {
+setScaleAndOffset.story = {
   parameters: {
     design: config({
       type: 'pdf',
