@@ -26,3 +26,8 @@ export const config = (c: Config | Config[]) => c
 if (module && module.hot && module.hot.decline) {
   module.hot.decline()
 }
+
+/**
+ * Useful exports for third party developers
+ */
+export { Config, ParameterName as PARAM_KEY }
