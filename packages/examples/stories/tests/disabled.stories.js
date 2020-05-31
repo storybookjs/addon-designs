@@ -2,18 +2,14 @@ import React from 'react'
 
 import { withDesign } from 'storybook-addon-designs'
 
+import { Button } from '../Button'
+
 export default {
   title: 'Tests/Disabled',
   decorators: [withDesign]
 }
 
-export const withoutDesign = () => (
-  <>
-    <pre>{`
-      Story without the Design panel
-    `}</pre>
-  </>
-);
+export const withoutDesign = () => <Button>Button</Button>
 
 withoutDesign.story = {
   parameters: {
