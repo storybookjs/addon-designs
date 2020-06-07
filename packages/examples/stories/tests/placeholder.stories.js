@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { config, withDesign } from 'storybook-addon-designs'
+import { withDesign } from 'storybook-addon-designs'
 
 import { Button } from '../Button'
 
