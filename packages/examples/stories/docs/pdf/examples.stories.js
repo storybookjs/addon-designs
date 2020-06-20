@@ -2,13 +2,18 @@ import React from 'react'
 
 import { config, withDesign } from 'storybook-addon-designs'
 
-import { Button } from '../Button'
+import { Button } from '../../Button'
+
+import Docs from './examples.mdx'
 
 import samplePdf from '@storybook-addon-designs/assets/sample.pdf'
 
 export default {
-  title: 'Examples/PDF',
-  decorators: [withDesign]
+  title: 'Docs/PDF/Examples',
+  decorators: [withDesign],
+  parameters: {
+    docs: { page: Docs }
+  }
 }
 
 export const embedPDF = () => <Button>Button</Button>
@@ -18,30 +23,6 @@ embedPDF.story = {
     design: config({
       type: 'pdf',
       url: samplePdf
-    })
-  }
-}
-
-export const setScale = () => <Button>Button</Button>
-
-setScale.story = {
-  parameters: {
-    design: config({
-      type: 'pdf',
-      url: samplePdf,
-      scale: 2
-    })
-  }
-}
-
-export const setOffset = () => <Button>Button</Button>
-
-setOffset.story = {
-  parameters: {
-    design: config({
-      type: 'pdf',
-      url: samplePdf,
-      offset: [-100, -100]
     })
   }
 }
@@ -58,9 +39,9 @@ setPage.story = {
   }
 }
 
-export const setBothScaleAndOffset = () => <Button>Button</Button>
+export const setScaleAndOffset = () => <Button>Button</Button>
 
-setBothScaleAndOffset.story = {
+setScaleAndOffset.story = {
   parameters: {
     design: config({
       type: 'pdf',

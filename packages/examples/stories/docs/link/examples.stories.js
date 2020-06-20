@@ -2,16 +2,21 @@ import React from 'react'
 
 import { config, withDesign } from 'storybook-addon-designs'
 
-import { Button } from '../Button'
+import { Button } from '../../Button'
+
+import Docs from './examples.mdx'
 
 export default {
-  title: 'Examples/link',
-  decorators: [withDesign]
+  title: 'Docs/Link/Examples',
+  decorators: [withDesign],
+  parameters: {
+    docs: { page: Docs }
+  }
 }
 
-export const showALink = () => <Button>Button</Button>
+export const embedLink = () => <Button>Button</Button>
 
-showALink.story = {
+embedLink.story = {
   parameters: {
     design: config({
       type: 'link',
@@ -21,9 +26,9 @@ showALink.story = {
   }
 }
 
-export const setALabel = () => <Button>Button</Button>
+export const setLabel = () => <Button>Button</Button>
 
-setALabel.story = {
+setLabel.story = {
   parameters: {
     design: config({
       type: 'link',

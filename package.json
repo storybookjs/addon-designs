@@ -7,14 +7,13 @@
   ],
   "devDependencies": {
     "lerna": "^3.13.1",
-    "prettier": "^1.16.4"
+    "prettier": "^2.0.5"
   },
   "scripts": {
     "build": "lerna run build --stream",
     "dev": "lerna run dev --stream",
     "example": "yarn workspace examples storybook",
-    "example:build": "yarn workspace examples build-storybook",
-    "now-build": "yarn build && yarn example:build"
+    "build:example": "yarn workspace examples build-storybook && yarn workspace examples-tab build-storybook && cp -r packages/examples-tab/storybook-static packages/examples/storybook-static/tab"
   },
   "prettier": {
     "semi": false,

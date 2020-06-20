@@ -10,6 +10,13 @@ export interface ConfigBase {
    * A name of the tab.
    */
   name?: string
+
+  /**
+   * Whether to render a tab content when the tab is inactive.
+   * This option is available only when there are more than 2 designs for a story.
+   * @default true
+   */
+  offscreen?: boolean
 }
 
 /**

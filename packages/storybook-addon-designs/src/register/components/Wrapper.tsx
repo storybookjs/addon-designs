@@ -14,6 +14,7 @@ import { IFrame } from './IFrame'
 import { ImagePreview } from './Image'
 import { LinkPanel } from './LinkPanel'
 import { Pdf } from './Pdf'
+import { Tab, Tabs } from './Tabs'
 
 interface Props {
   channel: ReturnType<typeof addons['getChannel']>
@@ -69,60 +70,71 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
     )
   }
 
-  const panels = [...(config instanceof Array ? config : [config])].map<
-    [JSX.Element, { id: string; title: string }]
-  >((cfg, i) => {
-    const meta = {
-      id: `addon-designs-tab--${i}`,
-      title: cfg.name || cfg.type.toUpperCase()
+  const tabs = [...(config instanceof Array ? config : [config])].map<Tab>(
+    (cfg, i) => {
+      const meta: Omit<Tab, 'content'> = {
+        id: `addon-designs-tab--${i}`,
+        name: cfg.name || cfg.type.toUpperCase(),
+        offscreen: cfg.offscreen ?? true
+      }
+
+      switch (cfg.type) {
+        case 'iframe':
+          return {
+            ...meta,
+            content: <IFrame config={cfg} />
+          }
+        case 'figma':
+          return {
+            ...meta,
+            content: <Figma config={cfg} />,
+            offscreen: false
+          }
+        case 'pdf':
+          return {
+            ...meta,
+            content: <Pdf config={cfg} />
+          }
+        case 'image':
+          return {
+            ...meta,
+            content: <ImagePreview key={storyId} config={cfg} />
+          }
+        case 'link':
+          return {
+            ...meta,
+            content: <LinkPanel config={cfg} />
+          }
+      }
+
+      return {
+        ...meta,
+        content: (
+          <Placeholder>
+            <Fragment>Invalid config type</Fragment>
+            <Fragment>
+              Config type you set is not supported. Please choose one from{' '}
+              <Link
+                href="https://github.com/pocka/storybook-addon-designs#available-types"
+                target="_blank"
+                rel="noopener"
+                withArrow
+                cancel={false}
+              >
+                available config types
+              </Link>
+            </Fragment>
+          </Placeholder>
+        )
+      }
     }
+  )
 
-    switch (cfg.type) {
-      case 'iframe':
-        return [<IFrame config={cfg} />, meta]
-      case 'figma':
-        return [<Figma config={cfg} />, meta]
-      case 'pdf':
-        return [<Pdf config={cfg} />, meta]
-      case 'image':
-        return [<ImagePreview key={storyId} config={cfg} />, meta]
-      case 'link':
-        return [<LinkPanel config={cfg} />, meta]
-    }
-
-    return [
-      <Placeholder>
-        <Fragment>Invalid config type</Fragment>
-        <Fragment>
-          Config type you set is not supported. Please choose one from{' '}
-          <Link
-            href="https://github.com/pocka/storybook-addon-designs#available-types"
-            target="_blank"
-            rel="noopener"
-            withArrow
-            cancel={false}
-          >
-            available config types
-          </Link>
-        </Fragment>
-      </Placeholder>,
-      meta
-    ]
-  })
-
-  if (panels.length === 1) {
-    return <div key={storyId}>{panels[0][0]}</div>
+  if (tabs.length === 1) {
+    return <div key={storyId}>{tabs[0].content}</div>
   }
 
-  return (
-    <TabsState key={storyId} absolute={true} initial={panels[0][1].id}>
-      {panels.map(([el, meta]) => (
-        <div key={meta.id} id={meta.id} title={meta.title}>
-          {el}
-        </div>
-      ))}
-    </TabsState>
-  )
+  return <Tabs key={storyId} tabs={tabs} />
 }
 
 export default Wrapper

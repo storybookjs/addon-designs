@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Subtitle } from '@storybook/addon-docs/blocks'
+import { LinkTo } from '@storybook/addon-links'
+import { Badge } from '@storybook/components'
+
+<Meta title="Docs/Figma/README" />
+
+# Embedding Figma designs
+
+<Subtitle>
+  This document describes how to embed your Figma files/frames to your
+  Storybook.
+</Subtitle>
+
+## Requirements
+
+Storybook-Figma integration requires no extra libraries.
+All you need to do is make sure you have a Figma account and file to embed.
+
+## Usage
+
+Put a `design` parameter into your story with `type: "figma"` and `url` pointing your Figma file/frame/prototype.
+
+```js
+// myStories.stories.jsx
+export const myStory = () => <MyComponent />
+
+myStory.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url: '<YOUR_FIGMA_ITEM_URL>'
+    }
+  }
+}
+```
+
+You can find more detailed instructions [here](/?path=/docs/docs-figma-examples--embed-file).
+
+## Parameter options
+
+| Option name                                      | Type           | Default value                  | Description                                            |
+| ------------------------------------------------ | -------------- | ------------------------------ | ------------------------------------------------------ |
+| `type` <Badge status="positive">required</Badge> | `"figma"`      |                                | Fixed parameter.                                       |
+| `url` <Badge status="positive">required</Badge>  | `string` (URL) |                                | An URL to a Figma file/frame/prototype.                |
+| `allowFullscreen`                                | `boolean`      | `false`                        | Whether to allow `<iframe>` to go fullscreen.          |
+| `embedHost`                                      | `string`       | A value of `location.hostname` | Embeds host identifier. ([More info][figma-embed-doc]) |
+
+[figma-embed-doc]: https://www.figma.com/developers/embed
