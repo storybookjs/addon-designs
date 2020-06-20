@@ -28,7 +28,7 @@ jobs:
       - name: Build addon
         run: yarn build
       - name: Build examples
-        run: yarn example:build
+        run: yarn build:example
       - name: Deploy examples
         uses: maxheld83/ghpages@v0.3.0
         env:
