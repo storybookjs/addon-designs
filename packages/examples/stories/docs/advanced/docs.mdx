@@ -1,6 +1,8 @@
 import { Subtitle } from '@storybook/addon-docs/blocks'
 import { TabsState } from '@storybook/components'
 
+import { Figma, IFrame } from 'storybook-addon-designs/blocks'
+
 import { TabLink } from './TabLink'
 
 # Advanced usage
@@ -9,6 +11,7 @@ import { TabLink } from './TabLink'
 
 - [Embed multiple designs](#embed-multiple-designs)
 - [Render as tab instead of addon panel](#render-as-tab-instead-of-addon-panel)
+- [Doc Blocks](#doc-blocks)
 
 ## Embed multiple designs
 
@@ -111,3 +114,21 @@ import 'storybook-addon-designs/register-tab'
 
   </div></div>
 </TabsState>
+
+## Doc Blocks
+
+The addon provides React components for addon-docs, so you can embed design specs to your Docs like this:
+
+<Figma
+  height="30%"
+  collapsable
+  url="https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample"
+/>
+
+<IFrame
+  height="50%"
+  collapsable
+  defaultCollapsed
+  placeholder="iframe embeds"
+  url="https://www.wikipedia.org"
+/>
