@@ -69,4 +69,5 @@ myStory.story = {
 
 ## Similar projects
 
-- [storybook-addon-figma](https://github.com/hharnisc/storybook-addon-figma)
+- Adobe XD: [storybook-addon-xd-designs](https://github.com/morgs32/storybook-addon-xd-designs)
+- Zeplin: [storybook-zeplin](https://github.com/mertkahyaoglu/storybook-zeplin)
