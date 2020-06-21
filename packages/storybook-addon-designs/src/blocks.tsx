@@ -40,60 +40,108 @@ const CollapsedText = styled(Placeholder)`
 `
 
 export interface BlocksCommonProps {
+  /**
+   * **Doc Block Props**
+   *
+   * A `class` prop passed down to embed wrapper.
+   */
   className?: string
+  /**
+   * **Doc Block Props**
+   *
+   * A `style` passed down to embed wrapper.
+   */
   style?: CSSProperties
 
+  /**
+   * **Doc Block Props**
+   *
+   * Height of the block. Numbers will be converted into pixels.
+   * Relative value (%) is based on width of the block.
+   */
   height?: string | number
 
+  /**
+   * **Doc Block Props**
+   *
+   * Whether to allow the block to toggle collapse/expand.
+   * @default true
+   */
   collapsable?: boolean
+
+  /**
+   * **Doc Block Props**
+   *
+   * Render the block with collapsed initially?
+   * Available when `collapsable` is set to `true`.
+   * @default false
+   */
   defaultCollapsed?: boolean
+
+  /**
+   * **Doc Block Props**
+   *
+   * Placeholder text shown when the block is collapsed.
+   * Default value differs by a type of the block (e.g. "Design (Figma)").
+   */
   placeholder?: string
+
+  /**
+   * **Doc Block Props**
+   *
+   * Whether to show an "Open in new tab" button.
+   * @default true
+   */
+  showLink?: boolean
 }
 
-const DocBlockBase: FC<BlocksCommonProps> = ({
+export const DocBlockBase: FC<BlocksCommonProps> = ({
   children,
-  collapsable,
-  defaultCollapsed,
-  placeholder = 'Design spec (collapsed)',
+  collapsable = true,
+  defaultCollapsed = false,
+  placeholder,
+  showLink = true,
   ...rest
 }) => {
   const [collapsed, setCollapsed] = useState(!!defaultCollapsed)
 
+  const showOpenInNewTab = showLink && 'url' in rest
+
   return (
     <Html.ResetWrapper>
-      <Wrapper collapsed={collapsed} {...rest}>
-        {collapsed ? <CollapsedText>{placeholder}</CollapsedText> : children}
-        {collapsable && (
-          <ActionBar
-            actionItems={[
-              {
-                title: collapsed ? 'Show' : 'Hide',
-                onClick: () => setCollapsed((v) => !v),
-              },
-              'url' in rest && {
-                title: 'Open in new tab',
-                onClick: () => window.open((rest as any).url, '_blank'),
-              },
-            ]}
-          />
+      <Wrapper collapsed={collapsable && collapsed} {...rest}>
+        {collapsable && collapsed ? (
+          <CollapsedText>{placeholder}</CollapsedText>
+        ) : (
+          children
         )}
+        <ActionBar
+          actionItems={[
+            collapsable && {
+              title: collapsed ? 'Show' : 'Hide',
+              onClick: () => setCollapsed(v => !v)
+            },
+            showOpenInNewTab && {
+              title: 'Open in new tab',
+              onClick: () => window.open((rest as any).url, '_blank')
+            }
+          ].filter(Boolean)}
+        />
       </Wrapper>
     </Html.ResetWrapper>
   )
 }
 
-export const Figma: FC<Omit<config.FigmaConfig, 'type'> & BlocksCommonProps> = (
-  props
-) => (
-  <DocBlockBase {...props}>
+export const Figma: FC<Omit<config.FigmaConfig, 'type'> &
+  BlocksCommonProps> = ({ placeholder, ...props }) => (
+  <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
     <FigmaInternal config={{ type: 'figma', ...props }} />
   </DocBlockBase>
 )
 
-export const IFrame: FC<
-  Omit<config.IFrameConfig, 'type'> & BlocksCommonProps
-> = (props) => (
-  <DocBlockBase {...props}>
+export const IFrame: FC<Omit<config.IFrameConfig, 'type'> &
+  BlocksCommonProps> = ({ placeholder, ...props }) => (
+  <DocBlockBase placeholder={placeholder ?? 'Design (iframe)'} {...props}>
     <IFrameInternal config={props} />
   </DocBlockBase>
 )
