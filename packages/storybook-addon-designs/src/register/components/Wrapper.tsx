@@ -1,13 +1,10 @@
 /** @jsx jsx */
-import { Fragment, SFC, useEffect, useState } from 'react'
+import { Fragment, SFC } from 'react'
 import { jsx } from '@storybook/theming'
-import addons from '@storybook/addons'
-import { STORY_CHANGED } from '@storybook/core-events'
 
-import { Link, Placeholder, TabsState } from '@storybook/components'
+import { Link, Placeholder } from '@storybook/components'
 
 import { Config } from '../../config'
-import { Events, ParameterName } from '../../addon'
 
 import { Figma } from './Figma'
 import { IFrame } from './IFrame'
@@ -17,39 +14,10 @@ import { Pdf } from './Pdf'
 import { Tab, Tabs } from './Tabs'
 
 interface Props {
-  channel: ReturnType<typeof addons['getChannel']>
-
-  api: any
-
-  active: boolean
+  config?: Config | Config[]
 }
 
-export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
-  const [config, setConfig] = useState<Config | Config[]>()
-  const [storyId, changeStory] = useState<string>()
-
-  useEffect(() => {
-    const onStoryChanged = (id: string) => {
-      changeStory(id)
-
-      const cfg = api.getParameters(id, ParameterName)
-
-      setConfig(prev => (cfg !== prev ? cfg : prev))
-    }
-
-    channel.on(Events.UpdateConfig, setConfig)
-    channel.on(STORY_CHANGED, onStoryChanged)
-
-    return () => {
-      channel.removeListener(Events.UpdateConfig, setConfig)
-      channel.removeListener(STORY_CHANGED, onStoryChanged)
-    }
-  }, [])
-
-  if (!active) {
-    return null
-  }
-
+export const Wrapper: SFC<Props> = ({ config }) => {
   if (!config || ('length' in config && config.length === 0)) {
     return (
       <Placeholder>
@@ -98,7 +66,7 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
         case 'image':
           return {
             ...meta,
-            content: <ImagePreview key={storyId} config={cfg} />
+            content: <ImagePreview config={cfg} />
           }
         case 'link':
           return {
@@ -131,10 +99,10 @@ export const Wrapper: SFC<Props> = ({ active, api, channel }) => {
   )
 
   if (tabs.length === 1) {
-    return <div key={storyId}>{tabs[0].content}</div>
+    return <div>{tabs[0].content}</div>
   }
 
-  return <Tabs key={storyId} tabs={tabs} />
+  return <Tabs tabs={tabs} />
 }
 
 export default Wrapper

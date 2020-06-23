@@ -4,7 +4,7 @@ import { jsx } from '@storybook/theming'
 
 import { AddonName, PanelName, ParameterName } from '../addon'
 
-import { Wrapper } from './components/Wrapper'
+import { Wrapper } from './containers/Wrapper'
 
 export default function register(renderTarget: 'panel' | 'tab') {
   addons.register(AddonName, api => {
