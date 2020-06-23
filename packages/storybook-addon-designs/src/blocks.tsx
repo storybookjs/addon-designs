@@ -149,7 +149,7 @@ export const IFrame: FC<Omit<config.IFrameConfig, 'type'> &
 )
 
 // Image would do shadowing the native variable (Image constructor, which creates
-// HTMLImageElement), but I think it doesn't matter since there is less change to
+// HTMLImageElement), but I think it doesn't matter since there is less chance to
 // use Image constructor in MDX.
 export const Image: FC<Omit<config.ImageConfig, 'type'> &
   BlocksCommonProps> = ({ placeholder, ...props }) => (
