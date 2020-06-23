@@ -1,0 +1,39 @@
+import {
+  Meta,
+  Preview,
+  Props,
+  Source,
+  Story,
+} from '@storybook/addon-docs/blocks'
+import { Design } from '../../../../storybook-addon-designs/src/blocks'
+
+<Meta title="Internal/Blocks/Design" />
+
+# Design Doc Block
+
+Design Doc Block takes a story ID and shows design embeds based on the story's parameter.
+All you need to do is refer to a story you want to display.
+
+<Props of={Design} />
+
+<Preview>
+  <Story
+    name="foo"
+    parameters={{
+      design: {
+        type: 'figma',
+        url:
+          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      },
+    }}
+  >
+    <button>Button</button>
+  </Story>
+</Preview>
+
+<Design storyId="internal-blocks-design--foo" />
+
+<Source
+  language="jsx"
+  code={`<Design storyId="internal-blocks-design--foo" />`}
+/>

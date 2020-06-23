@@ -18,6 +18,8 @@
   ],
   "devDependencies": {
     "@storybook/addons": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/client-api": "^5.3.19",
     "@storybook/components": "^5.3.19",
     "@storybook/core-events": "^5.3.19",
     "@storybook/theming": "^5.3.19",

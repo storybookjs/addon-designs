@@ -3,6 +3,18 @@ declare module '!!file-loader!*' {
   export default path
 }
 
+// TODO: Remove these Storybook defs after SB@6 stable was released
+declare module '@storybook/addon-docs/blocks' {
+  import { Context } from 'react'
+  import { StoryStore } from '@storybook/client-api'
+
+  interface ContextValue {
+    storyStore?: StoryStore
+  }
+
+  export const DocsContext: Context<ContextValue>
+}
+
 declare module '@storybook/components' {
   import { ComponentType } from 'react'
 
@@ -49,7 +61,7 @@ declare module 'react-pdf/dist/entry.webpack' {
     PDFDocumentProxy,
     PDFPageProxy,
     PDFRenderTextLayer,
-    PDFTreeNode
+    PDFTreeNode,
   } from 'pdfjs-dist'
 
   export const pdfjs: any
