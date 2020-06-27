@@ -1,0 +1,72 @@
+import { Meta, Props, Source } from '@storybook/addon-docs/blocks'
+import {
+  DocBlockBase,
+  IFrame
+} from '../../../../storybook-addon-designs/src/blocks'
+
+<Meta title="Internal/Blocks/Common" />
+
+# Doc Block
+
+Stories here demonstrates Doc Block specific props and behaviors.
+These props and behaviors are same among every Design Doc Blocks.
+
+<Props of={DocBlockBase} />
+
+# Variants
+
+<br />
+
+## Change heights
+
+You can specify block's height by setting `height` prop.
+Values with percentage (e.g. `50%`) is computed based on the block's width, think as ratio to a width.
+
+<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />`}/>
+<IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />
+
+---
+
+<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />`}/>
+<IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />
+
+---
+
+<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />`}/>
+<IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />
+
+## Collapse / Expand
+
+Design Doc Blocks has an ability to toggle collapse / expand itself, which is set to `true` by default.
+You can turn off the feature by passing `false` to `collapsable` prop or change the default state with `defaultCollapsed` prop.
+
+<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />`}/>
+<IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />
+
+---
+
+<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />`}/>
+<IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />
+
+Also, you can customize the text shown when the block is collapsed with `placeholder` prop.
+
+<Source language="jsx" code={`<IFrame
+\r  url="https://www.wikipedia.org"
+\r  height={100}
+\r  defaultCollapsed
+\r  placeholder="Foo"
+/>`}/>
+<IFrame
+  url="https://www.wikipedia.org"
+  height={100}
+  defaultCollapsed
+  placeholder="Foo"
+/>
+
+## Open in new tab
+
+By default, Design Doc Blocks show an `Open in new tab` to allow users to open the embed content in a new tab.
+You can disable it by passing `false` to `showLink` prop.
+
+<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height={100} showLink={false} />`}/>
+<IFrame url="https://www.wikipedia.org" height={100} showLink={false} />

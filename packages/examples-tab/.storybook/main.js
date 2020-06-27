@@ -1,3 +1,5 @@
+const main = require('../../examples/.storybook/main')
+
 module.exports = {
   stories: [
     '../../examples/stories/**/*.stories.mdx',
@@ -12,7 +14,9 @@ module.exports = {
       }
     }
   ],
-  webpackFinal(config) {
+  webpackFinal(_config) {
+    const config = main.webpackFinal(_config)
+
     return {
       ...config,
       module: {
