@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.4.1] - 2020-07-31
+
+### Fixed
+
+- Fix `blocks.js` is missing from published package ([#64](https://github.com/pocka/storybook-addon-designs/issues/64)).
+
 ## [5.4.0] - 2020-06-27
 
 ### Added
