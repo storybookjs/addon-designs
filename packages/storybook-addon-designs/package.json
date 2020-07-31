@@ -12,6 +12,7 @@
   "files": [
     "esm",
     "cjs",
+    "blocks.js",
     "register.js",
     "register-tab.js",
     "preset.js"
