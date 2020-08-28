@@ -23,9 +23,9 @@ myStory.story = {
   parameters: {
     design: {
       type: 'image',
-      url: '<URL>'
-    }
-  }
+      url: '<URL>',
+    },
+  },
 }
 ```
 
@@ -38,13 +38,11 @@ import myImage from '/path/to/image.png' // or .svg, .jpg, etc...
 
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'image',
-      url: myImage
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'image',
+    url: myImage,
+  },
 }
 ```
 

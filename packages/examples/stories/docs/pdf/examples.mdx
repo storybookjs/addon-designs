@@ -22,12 +22,10 @@ import myPdf from '/path/to/file.pdf'
 
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'pdf',
-      url: myPdf,
-    },
+myStory.parameters = {
+  design: {
+    type: 'pdf',
+    url: myPdf,
   },
 }
 ```
@@ -44,13 +42,11 @@ import myPdf from '/path/to/file.pdf'
 
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'pdf',
-      url: myPdf,
-      page: 2,
-    },
+myStory.parameters = {
+  design: {
+    type: 'pdf',
+    url: myPdf,
+    page: 2,
   },
 }
 ```
@@ -67,14 +63,12 @@ import myPdf from '/path/to/file.pdf'
 
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'pdf',
-      url: myPdf,
-      offset: [-300, 140],
-      scale: 2,
-    },
+myStory.parameters = {
+  design: {
+    type: 'pdf',
+    url: myPdf,
+    offset: [-300, 140],
+    scale: 2,
   },
 }
 ```

@@ -56,13 +56,10 @@ export default {
 
 export const myStory = () => <Button>Hello, World!</Button>
 
-myStory.story = {
-  name: 'My awesome story',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File',
-    },
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File',
   },
 }
 ```

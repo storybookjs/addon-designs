@@ -34,7 +34,7 @@ If you're using Storybook@5.1.0 or later, you can simply put the addon name to `
 ```js
 // .storybook/main.js
 module.exports = {
-  addons: ['storybook-addon-designs']
+  addons: ['storybook-addon-designs'],
 }
 ```
 
@@ -62,18 +62,46 @@ import { withDesign } from 'storybook-addon-designs'
 
 export default {
   title: 'myStories',
-  decorators: [withDesign]
+  decorators: [withDesign],
 }
 
-export const myStory = () => <MyComponent/>
+export const myStory = () => <MyComponent />
+
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  },
+}
+```
+
+## Documentation notes
+
+In this document, we'll write `export default` statement only when it's matter.
+
+  </div></div>
+  <div id="csf_5" title="CSF (Storybook 5.x)"><div>
+
+```js
+// myStories.stories.jsx
+import { withDesign } from 'storybook-addon-designs'
+
+export default {
+  title: 'myStories',
+  decorators: [withDesign],
+}
+
+export const myStory = () => <MyComponent />
 
 myStory.story = {
   paramaters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    }
-  }
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
+  },
 }
 ```
 
@@ -114,11 +142,12 @@ import { withDesign } from 'storybook-addon-designs'
 
 storiesOf('myStories', module)
   .addDecorator(withDesign)
-  .add('myStory', () => <MyComponent/>, {
+  .add('myStory', () => <MyComponent />, {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    }
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
   })
 ```
 

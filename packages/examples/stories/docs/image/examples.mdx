@@ -18,13 +18,11 @@ To simply embed an image, put an URL of the image to an `url` option.
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'image',
-      url:
-        'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
-    },
+myStory.parameters = {
+  design: {
+    type: 'image',
+    url:
+      'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
   },
 }
 ```
@@ -42,12 +40,10 @@ import sampleImage from '/path/to/image.png'
 
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'image',
-      url: sampleImage,
-    },
+myStory.parameters = {
+  design: {
+    type: 'image',
+    url: sampleImage,
   },
 }
 ```
@@ -64,14 +60,12 @@ import sampleImage from '/path/to/image.png'
 
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'image',
-      url: sampleImage,
-      offset: [-300, 140],
-      scale: 2,
-    },
+myStory.parameters = {
+  design: {
+    type: 'image',
+    url: sampleImage,
+    offset: [-300, 140],
+    scale: 2,
   },
 }
 ```

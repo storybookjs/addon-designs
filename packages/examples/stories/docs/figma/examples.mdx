@@ -19,14 +19,12 @@ To embed your Figma files, use `figma` type and put an URL for the file to `url`
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  },
 }
 ```
 
@@ -45,14 +43,12 @@ To embed a specific frame in your Figma file, paste an URL for the frame instead
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5',
+  },
 }
 ```
 
@@ -70,14 +66,12 @@ and copy a browser URL, then paste it at your story parameter's `url` field.
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'figma',
-      url:
-        'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  },
 }
 ```
 
@@ -91,14 +85,12 @@ To allow Figma embeds frame to go fullscreen, set an `allowFullscreen` option.
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      allowFullscreen: true
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    allowFullscreen: true,
+  },
 }
 ```

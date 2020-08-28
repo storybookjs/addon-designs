@@ -19,13 +19,11 @@ Set `type: "link"` and pass the URL.
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'link',
-      url: '<URL>'
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'link',
+    url: '<URL>',
+  },
 }
 ```
 

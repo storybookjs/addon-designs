@@ -23,21 +23,19 @@ You can embed more than one designs by passing an array to the `design` paramete
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: [
-      {
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      },
-      {
-        type: 'link',
-        url:
-          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      },
-    ],
-  },
+myStory.parameters = {
+  design: [
+    {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
+    {
+      type: 'link',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
+  ],
 }
 ```
 
@@ -49,23 +47,21 @@ To change the name of tabs, pass `name` option to each object.
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: [
-      {
-        name: 'Foo',
-        type: 'figma',
-        url:
-          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      },
-      {
-        name: 'Bar',
-        type: 'link',
-        url:
-          'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      },
-    ],
-  },
+myStory.parameters = {
+  design: [
+    {
+      name: 'Foo',
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
+    {
+      name: 'Bar',
+      type: 'link',
+      url:
+        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    },
+  ],
 }
 ```
 

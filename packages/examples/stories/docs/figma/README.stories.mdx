@@ -25,13 +25,11 @@ Put a `design` parameter into your story with `type: "figma"` and `url` pointing
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'figma',
-      url: '<YOUR_FIGMA_ITEM_URL>'
-    }
-  }
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url: '<YOUR_FIGMA_ITEM_URL>',
+  },
 }
 ```
 
