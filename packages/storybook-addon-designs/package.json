@@ -31,9 +31,9 @@
     "typescript": "^3.7.0"
   },
   "peerDependencies": {
-    "@storybook/addons": "^5.0.0",
-    "@storybook/components": "^5.0.0",
-    "@storybook/theming": "^5.0.0",
+    "@storybook/addons": "^5.0.0 || ^6.0.0",
+    "@storybook/components": "^5.0.0 || ^6.0.0",
+    "@storybook/theming": "^5.0.0 || ^6.0.0",
     "react": ">=16.8.0"
   },
   "scripts": {
