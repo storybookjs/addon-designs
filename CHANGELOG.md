@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.4.2] - 2020-09-16
+
+### Added
+
+- Support for Storybook 6.x ([#67](https://github.com/pocka/storybook-addon-designs/issues/67#issuecomment-692846928)).
+
 ## [5.4.1] - 2020-07-31
 
 ### Fixed
