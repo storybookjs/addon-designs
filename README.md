@@ -68,3 +68,4 @@ myStory.parameters = {
 
 - Adobe XD: [storybook-addon-xd-designs](https://github.com/morgs32/storybook-addon-xd-designs)
 - Zeplin: [storybook-zeplin](https://github.com/mertkahyaoglu/storybook-zeplin)
+- Abstract: [storybook-addons-abstract](https://github.com/amccloud/storybook-addons-abstract)
