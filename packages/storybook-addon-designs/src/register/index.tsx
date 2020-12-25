@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import addons, { types } from '@storybook/addons'
+import addons, { types, Addon } from '@storybook/addons'
 import { jsx } from '@storybook/theming'
 
 import { AddonName, PanelName, ParameterName } from '../addon'
@@ -9,12 +9,12 @@ import { Wrapper } from './containers/Wrapper'
 export default function register(renderTarget: 'panel' | 'tab') {
   addons.register(AddonName, api => {
     const title = 'Design'
-    const render = ({ active, key }: { active: boolean; key: string }) => (
+    const render: Addon['render'] = ({ active, key }) => (
       <Wrapper
         key={key}
         channel={addons.getChannel()}
         api={api}
-        active={active}
+        active={!!active}
       />
     )
 

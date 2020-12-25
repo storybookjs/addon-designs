@@ -3,21 +3,21 @@
   "version": "5.4.2",
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.0.9",
-    "react": "^16.8.4"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.4.2",
     "@storybook-addon-designs/assets": "^5.3.0",
-    "@storybook/addon-actions": "5.3.19",
-    "@storybook/addon-docs": "5.3.19",
-    "@storybook/addon-links": "5.3.19",
-    "@storybook/addon-storysource": "5.3.19",
-    "@storybook/addons": "5.3.19",
-    "@storybook/react": "5.3.19",
-    "@storybook/theming": "5.3.19",
+    "@storybook/addon-actions": "6.1.11",
+    "@storybook/addon-docs": "6.1.11",
+    "@storybook/addon-links": "6.1.11",
+    "@storybook/addon-storysource": "6.1.11",
+    "@storybook/addons": "6.1.11",
+    "@storybook/react": "6.1.11",
+    "@storybook/theming": "6.1.11",
     "babel-loader": "^8.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
     "storybook-addon-designs": "^5.4.2",
@@ -26,13 +26,5 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 -s ../assets",
     "build-storybook": "build-storybook -s ../assets"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-react-jsx"
-    ]
   }
 }
