@@ -20,7 +20,7 @@
     "@storybook/theming": "6.1.11",
     "babel-loader": "^8.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
-    "storybook-addon-designs": "^5.4.2",
+    "storybook-addon-designs": "*",
     "ts-loader": "^7.0.5"
   },
   "scripts": {

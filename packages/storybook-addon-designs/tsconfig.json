@@ -3,7 +3,7 @@
     "strict": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "target": "ES5",
-    "module": "es2015",
+    "module": "ESNext",
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,

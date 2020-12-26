@@ -1,9 +1,4 @@
-export type Config =
-  | IFrameConfig
-  | FigmaConfig
-  | PdfConfig
-  | ImageConfig
-  | LinkConfig
+export type Config = IFrameConfig | FigmaConfig | ImageConfig | LinkConfig
 
 export interface ConfigBase {
   /**
@@ -69,23 +64,6 @@ export interface TransformableConfigBase extends ConfigBase {
    * Incresing Y value moves document down.
    */
   offset?: [number, number]
-}
-
-/**
- * Render PDF file.
- */
-export interface PdfConfig extends TransformableConfigBase {
-  type: 'pdf'
-
-  /**
-   * An URL for the PDF file.
-   */
-  url: string
-
-  /**
-   * Default page number to show.
-   */
-  page?: number
 }
 
 /**

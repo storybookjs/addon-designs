@@ -24,7 +24,6 @@
     "@storybook/components": "^6.1.11",
     "@storybook/core-events": "^6.1.11",
     "@storybook/theming": "^6.1.11",
-    "@types/pdfjs-dist": "^2.0.0",
     "@types/react": "^16.8.8",
     "@types/webpack-env": "^1.13.9",
     "react": "^16.8.4",
@@ -44,9 +43,6 @@
     "test": "echo 'No tests' && exit 0",
     "clean": "rm -r esm cjs",
     "prepublishOnly": "cp ../../README.md ./ && yarn build"
-  },
-  "dependencies": {
-    "react-pdf": "^4.0.5"
   },
   "publishConfig": {
     "tag": "latest"

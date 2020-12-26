@@ -8,7 +8,6 @@ import { jsx, styled } from '@storybook/theming'
 import { Figma as FigmaInternal } from './register/components/Figma'
 import { IFrame as IFrameInternal } from './register/components/IFrame'
 import { ImagePreview } from './register/components/Image'
-import { Pdf as PDFInternal } from './register/components/Pdf'
 import { Wrapper as WrapperInternal } from './register/components/Wrapper'
 
 import * as config from './config'
@@ -161,15 +160,6 @@ export const Image: FC<
 > = ({ placeholder, ...props }) => (
   <DocBlockBase placeholder={placeholder ?? 'Design (Image)'} {...props}>
     <ImagePreview config={{ type: 'image', ...props }} />
-  </DocBlockBase>
-)
-
-export const PDF: FC<Omit<config.PdfConfig, 'type'> & BlocksCommonProps> = ({
-  placeholder,
-  ...props
-}) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (PDF)'} {...props}>
-    <PDFInternal config={{ type: 'pdf', ...props }} />
   </DocBlockBase>
 )
 
