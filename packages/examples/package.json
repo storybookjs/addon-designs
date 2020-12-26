@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "5.4.2",
+  "version": "6.0.0-alpha.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.4",
@@ -10,7 +10,7 @@
     "@babel/core": "^7.4.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.4.2",
-    "@storybook-addon-designs/assets": "^5.3.0",
+    "@storybook-addon-designs/assets": "^6.0.0-alpha.0",
     "@storybook/addon-actions": "6.1.11",
     "@storybook/addon-docs": "6.1.11",
     "@storybook/addon-links": "6.1.11",
@@ -20,7 +20,7 @@
     "@storybook/theming": "6.1.11",
     "babel-loader": "^8.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
-    "storybook-addon-designs": "*",
+    "storybook-addon-designs": "^6.0.0-alpha.0",
     "ts-loader": "^7.0.5"
   },
   "scripts": {
