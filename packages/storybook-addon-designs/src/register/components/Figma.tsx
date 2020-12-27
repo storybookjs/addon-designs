@@ -6,10 +6,9 @@ import { IFrame } from './IFrame'
 
 import { FigmaConfig, IFrameConfigBase } from '../../config'
 
-const isFigmaURL = (url: string) =>
-  /https:\/\/([w.-]+.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/.test(
-    url
-  )
+export const figmaURLPattern = /https:\/\/([w.-]+.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/
+
+export const isFigmaURL = (url: string) => figmaURLPattern.test(url)
 
 interface Props {
   config: FigmaConfig
@@ -30,13 +29,11 @@ export const Figma: SFC<Props> = ({ config }) => {
     }
 
     const embedHost = config.embedHost || location.hostname
-    const url = `https://www.figma.com/embed?embed_host=${embedHost}&url=${
-      config.url
-    }`
+    const url = `https://www.figma.com/embed?embed_host=${embedHost}&url=${config.url}`
 
     return {
       url,
-      allowFullscreen: config.allowFullscreen
+      allowFullscreen: config.allowFullscreen,
     }
   }, [config.url, config.allowFullscreen, config.embedHost])
 

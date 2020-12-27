@@ -1,4 +1,9 @@
-export type Config = IFrameConfig | FigmaConfig | ImageConfig | LinkConfig
+export type Config =
+  | IFrameConfig
+  | FigmaConfig
+  | FigspecConfig
+  | ImageConfig
+  | LinkConfig
 
 export interface ConfigBase {
   /**
@@ -46,6 +51,23 @@ export interface FigmaConfig extends IFrameConfigBase {
    * A string identifies your site.
    */
   embedHost?: string
+}
+
+/**
+ * Render Figma files or frames via [figspec](https://github.com/pocka/figspec).
+ */
+export interface FigspecConfig extends ConfigBase {
+  type: 'experimental-figspec'
+
+  /**
+   * An URL for the Figma file or frame.
+   */
+  url: string
+
+  /**
+   * Personal Access Token for your Figma account.
+   */
+  accessToken: string
 }
 
 /**

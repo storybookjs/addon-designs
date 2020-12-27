@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Fragment, SFC } from 'react'
+import { Fragment, lazy, Suspense, SFC } from 'react'
 import { jsx } from '@storybook/theming'
 
 import { Link, Placeholder } from '@storybook/components'
@@ -11,6 +11,8 @@ import { IFrame } from './IFrame'
 import { ImagePreview } from './Image'
 import { LinkPanel } from './LinkPanel'
 import { Tab, Tabs } from './Tabs'
+
+const Figspec = lazy(() => import('./Figspec'))
 
 interface Props {
   config?: Config | Config[]
@@ -56,6 +58,15 @@ export const Wrapper: SFC<Props> = ({ config }) => {
             ...meta,
             content: <Figma config={cfg} />,
             offscreen: false,
+          }
+        case 'experimental-figspec':
+          return {
+            ...meta,
+            content: (
+              <Suspense fallback="Preparing Figspec viewer...">
+                <Figspec config={cfg} />
+              </Suspense>
+            ),
           }
         case 'image':
           return {
