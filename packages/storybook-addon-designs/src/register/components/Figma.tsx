@@ -30,15 +30,13 @@ export const Figma: SFC<Props> = ({ config }) => {
     }
 
     const embedHost = config.embedHost || location.hostname
-    const url = `https://www.figma.com/embed?embed_host=${embedHost}&url=${
-      config.url
-    }`
+    const url = `https://www.figma.com/embed?embed_host=${embedHost}&url=${config.url}`
 
     return {
       url,
-      allowFullscreen: config.allowFullscreen
+      allowFullscreen: config.allowFullscreen,
     }
   }, [config.url, config.allowFullscreen, config.embedHost])
 
-  return <IFrame config={iframeConfig} />
+  return <IFrame defer config={iframeConfig} />
 }
