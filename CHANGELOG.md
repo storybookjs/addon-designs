@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.4.3] - 2021-01-13
+
+### Fixed
+
+- Fix `allowFullscreen` option is outdated on each render ([#78](https://github.com/pocka/storybook-addon-designs/pull/78)).
+
 ## [5.4.2] - 2020-09-16
 
 ### Added
