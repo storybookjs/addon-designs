@@ -37,5 +37,5 @@ export const Figma: SFC<Props> = ({ config }) => {
     }
   }, [config.url, config.allowFullscreen, config.embedHost])
 
-  return <IFrame config={iframeConfig} />
+  return <IFrame defer config={iframeConfig} />
 }
