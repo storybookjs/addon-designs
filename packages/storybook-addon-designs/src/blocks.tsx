@@ -6,6 +6,7 @@ import * as Html from '@storybook/components/html'
 import { jsx, styled } from '@storybook/theming'
 
 import { Figma as FigmaInternal } from './register/components/Figma'
+import { Figspec as FigmaSpecInternal } from './register/components/Figspec'
 import { IFrame as IFrameInternal } from './register/components/IFrame'
 import { ImagePreview } from './register/components/Image'
 import { Wrapper as WrapperInternal } from './register/components/Wrapper'
@@ -141,6 +142,14 @@ export const Figma: FC<
 > = ({ placeholder, ...props }) => (
   <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
     <FigmaInternal config={{ type: 'figma', ...props }} />
+  </DocBlockBase>
+)
+
+export const FigmaSpec: FC<
+  Omit<config.FigspecConfig, 'type'> & BlocksCommonProps
+> = ({ placeholder, ...props }) => (
+  <DocBlockBase placeholder={placeholder ?? 'Design (Figma-Spec)'} {...props}>
+    <FigmaSpecInternal config={{ type: 'experimental-figspec', ...props }} />
   </DocBlockBase>
 )
 
