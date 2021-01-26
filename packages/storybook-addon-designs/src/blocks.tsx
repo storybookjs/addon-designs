@@ -6,6 +6,7 @@ import * as Html from '@storybook/components/html'
 import { jsx, styled } from '@storybook/theming'
 
 import { Figma as FigmaInternal } from './register/components/Figma'
+import { Figspec as FigspecInternal } from './register/components/Figspec'
 import { IFrame as IFrameInternal } from './register/components/IFrame'
 import { ImagePreview } from './register/components/Image'
 import { Wrapper as WrapperInternal } from './register/components/Wrapper'
@@ -143,6 +144,22 @@ export const Figma: FC<
     <FigmaInternal config={{ type: 'figma', ...props }} />
   </DocBlockBase>
 )
+
+/**
+ * @experimental
+ */
+export const Figspec: FC<
+  Omit<config.FigspecConfig, 'type'> & BlocksCommonProps
+> = ({ placeholder, ...props }) => {
+  console.warn(
+    "🚨 `Figspec` block is currently experimental and requires you to include your figma's access token in your storybook build, use with caution!"
+  )
+  return (
+    <DocBlockBase placeholder={placeholder ?? 'Design (Figma-Spec)'} {...props}>
+      <FigspecInternal config={{ type: 'experimental-figspec', ...props }} />
+    </DocBlockBase>
+  )
+}
 
 export const IFrame: FC<
   Omit<config.IFrameConfig, 'type'> & BlocksCommonProps
