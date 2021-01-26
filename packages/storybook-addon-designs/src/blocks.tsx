@@ -145,13 +145,21 @@ export const Figma: FC<
   </DocBlockBase>
 )
 
+/**
+ * @experimental
+ */
 export const Figspec: FC<
   Omit<config.FigspecConfig, 'type'> & BlocksCommonProps
-> = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (Figma-Spec)'} {...props}>
-    <FigspecInternal config={{ type: 'experimental-figspec', ...props }} />
-  </DocBlockBase>
-)
+> = ({ placeholder, ...props }) => {
+  console.warn(
+    "🚨 `Figspec` block is currently experimental and requires you to include your figma's access token in your storybook build, use with caution!"
+  )
+  return (
+    <DocBlockBase placeholder={placeholder ?? 'Design (Figma-Spec)'} {...props}>
+      <FigspecInternal config={{ type: 'experimental-figspec', ...props }} />
+    </DocBlockBase>
+  )
+}
 
 export const IFrame: FC<
   Omit<config.IFrameConfig, 'type'> & BlocksCommonProps
