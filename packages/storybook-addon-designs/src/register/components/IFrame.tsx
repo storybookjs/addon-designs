@@ -18,6 +18,7 @@ interface Props {
 
 export const IFrame: SFC<Props> = ({ config, defer = false }) => {
   const [url, setUrl] = useState(defer ? undefined : config.url)
+  const [loaded, setLoaded] = useState(false)
 
   // Defer loading iframe URL.
   // Some sites (e.g. Figma) detects Fullscreen API capability on
@@ -42,13 +43,18 @@ export const IFrame: SFC<Props> = ({ config, defer = false }) => {
     return () => cancelAnimationFrame(handle)
   }, [defer, config.url])
 
+  useEffect(() => {
+    setLoaded(false)
+  }, [url])
+
   return (
     <div css={$container}>
-      <Placeholder css={$loading}>Loading...</Placeholder>
+      {!loaded && <Placeholder css={$loading}>Loading...</Placeholder>}
       <iframe
         css={$iframe}
         src={url}
         allowFullScreen={config.allowFullscreen}
+        onLoad={() => setLoaded(true)}
       />
     </div>
   )
