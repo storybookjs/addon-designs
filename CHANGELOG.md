@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.4.4] - 2021-02-18
+
+### Fixed
+
+- Hide loading placeholder for `type: "iframe"` when the embedded iframe is loaded ([#81](https://github.com/pocka/storybook-addon-designs/issues/81)).
+
 ## [5.4.3] - 2021-01-13
 
 ### Fixed
