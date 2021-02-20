@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.4.5] - 2021-02-20
+
+### Fixed
+
+- Fix tab contents does not switch between stories ([#83](https://github.com/pocka/storybook-addon-designs/issues/83)).
+
 ## [5.4.4] - 2021-02-18
 
 ### Fixed

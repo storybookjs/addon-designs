@@ -42,7 +42,7 @@ export const Wrapper: SFC<Props> = ({ config }) => {
   const tabs = [...(config instanceof Array ? config : [config])].map<Tab>(
     (cfg, i) => {
       const meta: Omit<Tab, 'content'> = {
-        id: `addon-designs-tab--${i}`,
+        id: JSON.stringify(cfg),
         name: cfg.name || cfg.type.toUpperCase(),
         offscreen: cfg.offscreen ?? true,
       }
