@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useEffect, useState } from 'react'
 import { jsx } from '@storybook/theming'
 
 import { Tabs as SbTabs } from '@storybook/components'
@@ -18,9 +18,13 @@ export interface TabsProps {
 export const Tabs: FC<TabsProps> = ({ tabs }) => {
   const [selected, setSelected] = useState(tabs[0].id)
 
+  useEffect(() => {
+    setSelected(tabs[0].id)
+  }, [tabs])
+
   return (
     <SbTabs absolute selected={selected} actions={{ onSelect: setSelected }}>
-      {tabs.map(tab => (
+      {tabs.map((tab) => (
         <div key={tab.id} id={tab.id} title={tab.name}>
           {tab.offscreen || selected === tab.id ? tab.content : null}
         </div>

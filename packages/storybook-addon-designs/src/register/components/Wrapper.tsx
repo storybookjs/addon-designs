@@ -41,37 +41,37 @@ export const Wrapper: SFC<Props> = ({ config }) => {
   const tabs = [...(config instanceof Array ? config : [config])].map<Tab>(
     (cfg, i) => {
       const meta: Omit<Tab, 'content'> = {
-        id: `addon-designs-tab--${i}`,
+        id: JSON.stringify(cfg),
         name: cfg.name || cfg.type.toUpperCase(),
-        offscreen: cfg.offscreen ?? true
+        offscreen: cfg.offscreen ?? true,
       }
 
       switch (cfg.type) {
         case 'iframe':
           return {
             ...meta,
-            content: <IFrame config={cfg} />
+            content: <IFrame config={cfg} />,
           }
         case 'figma':
           return {
             ...meta,
             content: <Figma config={cfg} />,
-            offscreen: false
+            offscreen: false,
           }
         case 'pdf':
           return {
             ...meta,
-            content: <Pdf config={cfg} />
+            content: <Pdf config={cfg} />,
           }
         case 'image':
           return {
             ...meta,
-            content: <ImagePreview config={cfg} />
+            content: <ImagePreview config={cfg} />,
           }
         case 'link':
           return {
             ...meta,
-            content: <LinkPanel config={cfg} />
+            content: <LinkPanel config={cfg} />,
           }
       }
 
@@ -93,7 +93,7 @@ export const Wrapper: SFC<Props> = ({ config }) => {
               </Link>
             </Fragment>
           </Placeholder>
-        )
+        ),
       }
     }
   )
