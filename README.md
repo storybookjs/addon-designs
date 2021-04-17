@@ -30,14 +30,13 @@ This addon should work well with any framework: If you find the case the addon n
 ### 1. Install
 
 ```sh
-npm install --save-dev storybook-addon-designs@alpha
-# yarn add -D storybook-addon-designs@alpha
+npm install --save-dev storybook-addon-designs@beta
+# yarn add -D storybook-addon-designs@beta
 ```
 
 ### 2. Register the addon in `main.js`
 
 ```js
-// .storybook/main.js
 module.exports = {
   addons: ['storybook-addon-designs'],
 }
