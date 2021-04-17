@@ -20,7 +20,6 @@ You can embed more than one designs by passing an array to the `design` paramete
 [Example](/?path=/story/docs-advanced-usage--embed-multiple-designs)
 
 ```js
-// myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
 myStory.parameters = {
@@ -44,7 +43,6 @@ To change the name of tabs, pass `name` option to each object.
 [Example](/?path=/story/docs-advanced-usage--set-tab-names)
 
 ```js
-// myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
 myStory.parameters = {
@@ -87,7 +85,6 @@ The default value is `"panel"`.
   <div id="mainjs" title="main.js"><div>
 
 ```js
-// .storybook/main.js
 module.exports = {
   addons: [
     {
@@ -115,10 +112,26 @@ import 'storybook-addon-designs/register-tab'
 
 The addon provides React components for addon-docs, so you can embed design specs to your Docs:
 
+```mdx
+import { Figma } from 'storybook-addon-designs/blocks'
+
 <Figma
   height="30%"
   collapsable
   url="https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample"
 />
+```
+
+<Figma
+  height="30%"
+  collapsable
+  url="https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample"
+/>
+
+The `"storybook-addon-designs/blocks"` module exports `Figma`, `IFrame`, `Image` and `Figspec` blocks, which are corresponds to each design types.
+
+In addition to these, the module also exports `Design` special block.
+It takes just a story ID and embeds designs.
+It's useful when you're using customized Docs Page.
 
 For more details, please refer to [Internal/Blocks/Common](/?path=/docs/internal-blocks-common--page).
