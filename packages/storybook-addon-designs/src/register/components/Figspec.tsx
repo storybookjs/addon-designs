@@ -79,12 +79,14 @@ export const Figspec: FC<Props> = ({ config }) => {
 
       const nodeId = url.searchParams.get('node-id')
 
-      if (!config.accessToken) {
+      const accessToken = config.accessToken || process.env.STORYBOOK_FIGMA_ACCESS_TOKEN
+
+      if (!accessToken) {
         throw new Error('Personal Access Token is required.')
       }
 
       const headers = {
-        'X-FIGMA-TOKEN': config.accessToken,
+        'X-FIGMA-TOKEN': accessToken,
       }
 
       const nodeUrl = new URL(`https://api.figma.com/v1/files/${fileKey}`)

@@ -31,10 +31,10 @@ Since `@figspec/components` being WebComponents, browser support is limited to t
 ## Usage
 
 Put a `design` parameter into your story with `type: "experimental-figspec"` and `url` pointing your Figma file/frame/prototype.
-You also need `accessToken` representing your [Figma Personal Access Token](https://www.figma.com/developers/api#access-tokens).
+
+You also provide your [Figma Personal Access Token](https://www.figma.com/developers/api#access-tokens) in `accessToken` field or `STORYBOOK_FIGMA_ACCESS_TOKEN` environment variable.
 
 ```js
-// myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
 myStory.parameters = {
@@ -46,10 +46,14 @@ myStory.parameters = {
 }
 ```
 
+```sh
+$ STORYBOOK_FIGMA_ACCESS_TOKEN=xxxx npm run storybook
+```
+
 ## Parameter options
 
 | Option name                                             | Type                     | Default value | Description                                 |
-| ------------------------------------------------------- | ------------------------ | ------------- | ------------------------------------------- | --------------------------------- |
+| ------------------------------------------------------- | ------------------------ | ------------- | ------------------------------------------- |
 | `type` <Badge status="positive">required</Badge>        | `"experimental-figspec"` |               | Fixed parameter. Will be changed v6.0-beta. |
 | `url` <Badge status="positive">required</Badge>         | `string` (URL)           |               | An URL to a Figma file/frame/prototype.     |
 | `accessToken` <Badge status="positive">required</Badge> | `string`                 |               |                                             | Your Figma Personal Access Token. |
