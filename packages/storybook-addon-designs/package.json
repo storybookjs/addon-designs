@@ -55,11 +55,10 @@
   "keywords": [
     "storybook-addon",
     "design",
-    "figma",
-    "popular"
+    "figma"
   ],
   "storybook": {
     "icon": "https://raw.githubusercontent.com/pocka/storybook-addon-designs/master/packages/assets/logo.png",
-    "displayName": "Figma designs"
+    "displayName": "Designs"
   }
 }
