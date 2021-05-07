@@ -13,11 +13,9 @@ export default {
 
 export const hideLoadingPlaceholderWhenLoaded = () => <Button>Button</Button>
 
-hideLoadingPlaceholderWhenLoaded.story = {
-  parameters: {
-    design: config({
-      type: 'iframe',
-      url: sampleImage,
-    }),
-  },
+hideLoadingPlaceholderWhenLoaded.parameters = {
+  design: config({
+    type: 'iframe',
+    url: sampleImage,
+  }),
 }

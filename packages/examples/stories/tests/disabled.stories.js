@@ -6,13 +6,11 @@ import { Button } from '../Button'
 
 export default {
   title: 'Tests/Disabled',
-  decorators: [withDesign]
+  decorators: [withDesign],
 }
 
 export const withoutDesign = () => <Button>Button</Button>
 
-withoutDesign.story = {
-  parameters: {
-    design: { disabled: true }
-  }
+withoutDesign.parameters = {
+  design: { disabled: true },
 }

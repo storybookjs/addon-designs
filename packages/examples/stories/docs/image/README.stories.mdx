@@ -19,12 +19,10 @@ Set `type: "image"` and pass the URL to the image.
 // myStories.stories.jsx
 export const myStory = () => <MyComponent />
 
-myStory.story = {
-  parameters: {
-    design: {
-      type: 'image',
-      url: '<URL>',
-    },
+myStory.parameters = {
+  design: {
+    type: 'image',
+    url: '<URL>',
   },
 }
 ```

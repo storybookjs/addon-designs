@@ -10,44 +10,38 @@ export default {
   title: 'Docs/Link/Examples',
   decorators: [withDesign],
   parameters: {
-    docs: { page: Docs }
-  }
+    docs: { page: Docs },
+  },
 }
 
 export const embedLink = () => <Button>Button</Button>
 
-embedLink.story = {
-  parameters: {
-    design: config({
-      type: 'link',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    })
-  }
+embedLink.parameters = {
+  design: config({
+    type: 'link',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  }),
 }
 
 export const setLabel = () => <Button>Button</Button>
 
-setLabel.story = {
-  parameters: {
-    design: config({
-      type: 'link',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      label: 'Open design in new tab'
-    })
-  }
+setLabel.parameters = {
+  design: config({
+    type: 'link',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    label: 'Open design in new tab',
+  }),
 }
 
 export const hideArrowIcon = () => <Button>Button</Button>
 
-hideArrowIcon.story = {
-  parameters: {
-    design: config({
-      type: 'link',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      showArrow: false
-    })
-  }
+hideArrowIcon.parameters = {
+  design: config({
+    type: 'link',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    showArrow: false,
+  }),
 }

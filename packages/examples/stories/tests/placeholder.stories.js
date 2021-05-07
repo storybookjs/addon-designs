@@ -6,22 +6,18 @@ import { Button } from '../Button'
 
 export default {
   title: 'Tests/Placeholder',
-  decorators: [withDesign]
+  decorators: [withDesign],
 }
 
 export const showPlaceholder = () => <Button>Button</Button>
 
-showPlaceholder.story = {
-  name: 'Show placeholder when no `design` parameter'
-}
+showPlaceholder.storyName = 'Show placeholder when no `design` parameter'
 
 export const showError = () => <Button>Button</Button>
 
-showError.story = {
-  name: 'Show error message when `type` is not supported',
-  parameters: {
-    design: {
-      type: 'foo'
-    }
-  }
+showError.storyName = 'Show error message when `type` is not supported'
+showError.parameters = {
+  design: {
+    type: 'foo',
+  },
 }

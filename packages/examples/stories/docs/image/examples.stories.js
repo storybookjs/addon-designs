@@ -13,43 +13,37 @@ export default {
   decorators: [withDesign],
   parameters: {
     docs: {
-      page: Docs
-    }
-  }
+      page: Docs,
+    },
+  },
 }
 
 export const embedImage = () => <Button>Button</Button>
 
-embedImage.story = {
-  parameters: {
-    design: config({
-      type: 'image',
-      url:
-        'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg'
-    })
-  }
+embedImage.parameters = {
+  design: config({
+    type: 'image',
+    url:
+      'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
+  }),
 }
 
 export const embedImageWithImport = () => <Button>Button</Button>
 
-embedImageWithImport.story = {
-  parameters: {
-    design: config({
-      type: 'image',
-      url: sampleImage
-    })
-  }
+embedImageWithImport.parameters = {
+  design: config({
+    type: 'image',
+    url: sampleImage,
+  }),
 }
 
 export const setScaleAndOffset = () => <Button>Button</Button>
 
-setScaleAndOffset.story = {
-  parameters: {
-    design: config({
-      type: 'image',
-      url: sampleImage,
-      offset: [-300, 140],
-      scale: 2
-    })
-  }
+setScaleAndOffset.parameters = {
+  design: config({
+    type: 'image',
+    url: sampleImage,
+    offset: [-300, 140],
+    scale: 2,
+  }),
 }

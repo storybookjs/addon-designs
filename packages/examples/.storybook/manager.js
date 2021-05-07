@@ -8,6 +8,7 @@ addons.setConfig({
   theme: create({
     brandTitle: 'storybook-addon-designs',
     brandImage: logo,
-    brandUrl: pkg.homepage
-  })
+    brandUrl: pkg.homepage,
+  }),
+  showRoots: true,
 })

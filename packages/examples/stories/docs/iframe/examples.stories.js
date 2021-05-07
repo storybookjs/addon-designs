@@ -11,30 +11,26 @@ export default {
   decorators: [withDesign],
   parameters: {
     docs: {
-      page: Docs
-    }
-  }
+      page: Docs,
+    },
+  },
 }
 
 export const embedSite = () => <Button>Button</Button>
 
-embedSite.story = {
-  parameters: {
-    design: config({
-      type: 'iframe',
-      url: 'https://www.wikipedia.org/'
-    })
-  }
+embedSite.parameters = {
+  design: config({
+    type: 'iframe',
+    url: 'https://www.wikipedia.org/',
+  }),
 }
 
 export const allowFullscreen = () => <Button>😻</Button>
 
-allowFullscreen.story = {
-  parameters: {
-    design: config({
-      type: 'iframe',
-      url: 'https://www.youtube.com/embed/JhpyGdvsApo',
-      allowFullscreen: true
-    })
-  }
+allowFullscreen.parameters = {
+  design: config({
+    type: 'iframe',
+    url: 'https://www.youtube.com/embed/JhpyGdvsApo',
+    allowFullscreen: true,
+  }),
 }

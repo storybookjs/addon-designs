@@ -11,67 +11,57 @@ export default {
   decorators: [withDesign],
   parameters: {
     docs: {
-      page: Docs
-    }
-  }
+      page: Docs,
+    },
+  },
 }
 
 export const embedFile = () => <Button>Button</Button>
 
-embedFile.story = {
-  parameters: {
-    design: config({
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    })
-  }
+embedFile.parameters = {
+  design: config({
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  }),
 }
 
 export const embedFrame = () => <Button>Button</Button>
 
-embedFrame.story = {
-  parameters: {
-    design: config({
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5'
-    })
-  }
+embedFrame.parameters = {
+  design: config({
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5',
+  }),
 }
 
 export const embedPrivateFile = () => <Button>Button</Button>
 
-embedPrivateFile.story = {
-  parameters: {
-    design: config({
-      type: 'figma',
-      url: 'https://www.figma.com/file/WOpzYgwlTe1UV6MpJP6SMv/private-test'
-    })
-  }
+embedPrivateFile.parameters = {
+  design: config({
+    type: 'figma',
+    url: 'https://www.figma.com/file/WOpzYgwlTe1UV6MpJP6SMv/private-test',
+  }),
 }
 
 export const embedPrototype = () => <Button>Button</Button>
 
-embedPrototype.story = {
-  parameters: {
-    design: config({
-      type: 'figma',
-      url:
-        'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
-    })
-  }
+embedPrototype.parameters = {
+  design: config({
+    type: 'figma',
+    url:
+      'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  }),
 }
 
 export const allowFullscreen = () => <Button>Button</Button>
 
-allowFullscreen.story = {
-  parameters: {
-    design: config({
-      type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-      allowFullscreen: true
-    })
-  }
+allowFullscreen.parameters = {
+  design: config({
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    allowFullscreen: true,
+  }),
 }

@@ -3,11 +3,9 @@ import React from 'react'
 import { Button } from '../../../Button'
 
 export default {
-  title: 'Tests/Issues/#14'
+  title: 'Tests/Issues/#14/Step2',
 }
 
 export const step2 = () => <Button>Button</Button>
 
-step2.story = {
-  name: 'Do not persist addon panel (step 2)'
-}
+step2.storyName = 'Do not persist addon panel'
