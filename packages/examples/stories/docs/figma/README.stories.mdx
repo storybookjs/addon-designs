@@ -45,3 +45,10 @@ You can find more detailed instructions [here](/?path=/docs/docs-figma-examples-
 | `embedHost`                                      | `string`       | A value of `location.hostname` | Embeds host identifier. ([More info][figma-embed-doc]) |
 
 [figma-embed-doc]: https://www.figma.com/developers/embed
+
+## Troubleshooting
+
+### Can't pass Figma's authentication page
+
+Figma may not be able to authenticate you if your browser blocks third-party cookies.
+In that case, add your Storybook host to the exceptions ([#96](https://github.com/pocka/storybook-addon-designs/issues/96#issuecomment-812481819)).
