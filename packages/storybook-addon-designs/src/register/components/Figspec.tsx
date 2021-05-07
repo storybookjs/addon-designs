@@ -54,6 +54,23 @@ function unwrapJson(res: Response) {
   return res.status !== 200 ? Promise.reject(res.statusText) : res.json()
 }
 
+/**
+ * Safely get Figma API access token.
+ */
+function getAccessToken(cfg: FigspecConfig): string | null {
+  if (cfg.accessToken) {
+    return cfg.accessToken
+  }
+
+  try {
+    return process.env.STORYBOOK_FIGMA_ACCESS_TOKEN ?? null
+  } catch (err) {
+    // The only case here is no DefinePlugin entry for `process.env` nor
+    // `process.env.STORYBOOK_FIGMA_ACCESS_TOKEN`. We can safely ignore this.
+    return null
+  }
+}
+
 interface Props {
   config: FigspecConfig
 }
@@ -79,7 +96,7 @@ export const Figspec: FC<Props> = ({ config }) => {
 
       const nodeId = url.searchParams.get('node-id')
 
-      const accessToken = config.accessToken || process.env.STORYBOOK_FIGMA_ACCESS_TOKEN
+      const accessToken = getAccessToken(config)
 
       if (!accessToken) {
         throw new Error('Personal Access Token is required.')
