@@ -2,7 +2,7 @@
 import { CSSProperties, FC, useContext, useState } from 'react'
 import { DocsContext } from '@storybook/addon-docs/blocks'
 import { ActionBar, Placeholder } from '@storybook/components'
-import * as Html from '@storybook/components/html'
+import { components } from '@storybook/components'
 import { jsx, styled } from '@storybook/theming'
 
 import { Figma as FigmaInternal } from './register/components/Figma'
@@ -113,7 +113,7 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
   const showOpenInNewTab = showLink && 'url' in rest
 
   return (
-    <Html.ResetWrapper>
+    <components.resetwrapper>
       <Wrapper collapsed={collapsable && collapsed} {...rest}>
         {collapsable && collapsed ? (
           <CollapsedText>{placeholder}</CollapsedText>
@@ -130,10 +130,10 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
               title: 'Open in new tab',
               onClick: () => window.open((rest as any).url, '_blank'),
             },
-          ].filter(Boolean)}
+          ].filter((s): s is Exclude<typeof s, false> => !!s)}
         />
       </Wrapper>
-    </Html.ResetWrapper>
+    </components.resetwrapper>
   )
 }
 
