@@ -10,12 +10,7 @@ export default function register(renderTarget: 'panel' | 'tab') {
   addons.register(AddonName, api => {
     const title = 'Design'
     const render: Addon['render'] = ({ active, key }) => (
-      <Wrapper
-        key={key}
-        channel={addons.getChannel()}
-        api={api}
-        active={!!active}
-      />
+      <Wrapper key={key} active={!!active} />
     )
 
     if (renderTarget === 'tab') {
