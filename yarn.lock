@@ -1227,7 +1227,7 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@figspec/components@^0.1.1", "@figspec/components@^0.1.2":
+"@figspec/components@^0.1.1":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@figspec/components/-/components-0.1.6.tgz#bf834309e931d88cc29fa4091ce7cba973bcb503"
   integrity sha512-IfK/VWC5P/Hyz48qkct8sD34Yhh0Cosgd637rR2412EMgXtkpqlbDPLqAQjPsgYgNCjsee4Wmx9JC3vPx0dD0Q==
@@ -1235,10 +1235,18 @@
     copy-to-clipboard "^3.0.0"
     lit-element "^2.4.0"
 
-"@figspec/react@^0.1.4":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@figspec/react/-/react-0.1.5.tgz#777e67e2bb8dd80ef14d6fd373320d12d27c8e7c"
-  integrity sha512-XIVBoj+E3vTWHcAo0Rii6uKtT+wbxRe16Ehj3RURo4BJ0D28eC30KaN7KrG3kQKzBLbuEHyk9215QrgtOo+UMw==
+"@figspec/components@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@figspec/components/-/components-0.1.8.tgz#a6cf28e66aaaaf8cfe75b53bccb4443692b12285"
+  integrity sha512-jSk3aREVOvQRncC/2HyieeOPxkjQmKyWn6prfXC+ijOHwIeR6jzhv5C/ryk4ZW2msXYAtPtIBL+/iF2pQVJ/Sg==
+  dependencies:
+    copy-to-clipboard "^3.0.0"
+    lit-element "^2.4.0"
+
+"@figspec/react@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@figspec/react/-/react-0.1.6.tgz#b5868d87f48270a901031aae847cfc76458ed5b6"
+  integrity sha512-oi0JL8uIXgJ+PWRl4LDxJ7WWa80E3jdYmi6wsHAFDq1vT0rKuyhqimEJzCezIrHHz4fXKpNRO98TO7ccma6hjw==
   dependencies:
     "@figspec/components" "^0.1.1"
 
