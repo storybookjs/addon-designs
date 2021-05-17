@@ -30,11 +30,11 @@ const fullscreen = css`
 type RenderItem =
   | {
       type: 'file'
-      props: Pick<FigspecFileViewerProps, 'documentNode' | 'renderedImages'>
+      props: Pick<FigspecFileViewerProps, 'documentNode' | 'renderedImages' | 'link'>
     }
   | {
       type: 'frame'
-      props: Pick<FigspecFrameViewerProps, 'nodes' | 'renderedImage'>
+      props: Pick<FigspecFrameViewerProps, 'nodes' | 'renderedImage' | 'link'>
     }
 
 type Remote<T, E = Error> =
@@ -136,6 +136,7 @@ export const Figspec: FC<Props> = ({ config }) => {
             props: {
               documentNode,
               renderedImages: images.images,
+              link: config.url
             },
           },
         })
@@ -165,6 +166,7 @@ export const Figspec: FC<Props> = ({ config }) => {
           props: {
             nodes,
             renderedImage: Object.values(images.images)[0],
+            link: config.url
           },
         },
       })
