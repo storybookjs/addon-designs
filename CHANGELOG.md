@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.0.0] - 2021-05-17
+
+### Removed
+
+- PDF embedding ([5085b1c](https://github.com/pocka/storybook-addon-designs/commit/5085b1c9a9b0829fa5e2ed1ebba11c46d54dcb1a)).
+- Support for Storybook@v5.x ([6598be6](https://github.com/pocka/storybook-addon-designs/commit/6598be61ae6869ff6b50e502330d4fcd71b44d8f)).
+
+### Added
+
+- Experimental [Figspec](https://github.com/pocka/figspec) embedding (enchanced Figma embeds powered by Figma API), see [here][figspec-usage] for the usage ([7066b62](https://github.com/pocka/storybook-addon-designs/commit/7066b62a2836f4b8b480b81e1c17d60f3f41b752)).
+
+[figspec-usage]: https://pocka.github.io/storybook-addon-designs/?path=/story/docs-figma-figspec-readme--page
+
+### Fixed
+
+- Improve reliablity between story/design changes ([#97](https://github.com/pocka/storybook-addon-designs/pull/97)).
+- Remove `peerDependencies`, which is used as constraints for transitive dependencies ([94bcd84](https://github.com/pocka/storybook-addon-designs/commit/94bcd84aa2013d06c63f5502b085b031a1deb459)).
+
 ## [5.4.5] - 2021-02-20
 
 ### Fixed
