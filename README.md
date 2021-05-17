@@ -30,8 +30,8 @@ This addon should work well with any framework: If you find the case the addon n
 ### 1. Install
 
 ```sh
-npm install --save-dev storybook-addon-designs@beta
-# yarn add -D storybook-addon-designs@beta
+npm install --save-dev storybook-addon-designs
+# yarn add -D storybook-addon-designs
 ```
 
 ### 2. Register the addon in `main.js`
