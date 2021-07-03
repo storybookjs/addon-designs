@@ -24,6 +24,7 @@
     "@figspec/components": "^0.1.8",
     "@storybook/addon-docs": "6.3.2",
     "@storybook/addons": "6.3.2",
+    "@storybook/api": "6.3.2",
     "@storybook/client-api": "6.3.2",
     "@storybook/components": "6.3.2",
     "@storybook/core-events": "6.3.2",

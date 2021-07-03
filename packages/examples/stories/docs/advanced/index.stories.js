@@ -14,6 +14,17 @@ export default {
   },
 }
 
+export const setTabName = () => <Button>Button</Button>
+
+setTabName.parameters = {
+  design: config({
+    name: 'Wireframe',
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  }),
+}
+
 export const embedMultipleDesigns = () => <Button>Button</Button>
 
 embedMultipleDesigns.parameters = {

@@ -9,9 +9,29 @@ import { TabLink } from './TabLink'
 
 <Subtitle>A list of advanced usages.</Subtitle>
 
+- [Change tab title](#change-tab-title)
 - [Embed multiple designs](#embed-multiple-designs)
 - [Render as tab instead of addon panel](#render-as-tab-instead-of-addon-panel)
 - [Doc Blocks](#doc-blocks)
+
+## Change tab title
+
+You can change the addon tab title (defaulted to `Design`) by setting `name` property of the `design` parameter.
+
+[Example](/?path=/story/docs-advanced-usage--set-tab-name)
+
+```js
+export const myStory = () => <MyComponent />
+
+myStory.parameters = {
+  design: {
+    name: 'Wireframe',
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+  },
+}
+```
 
 ## Embed multiple designs
 
