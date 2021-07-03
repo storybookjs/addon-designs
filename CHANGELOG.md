@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.0.1] - 2021-07-04
+
+### Fixed
+
+- Fix our Doc Blocks causes a runtime error on some Storybook versions ([#110](https://github.com/pocka/storybook-addon-designs/pull/110)).
+
 ## [6.0.0] - 2021-05-17
 
 ### Removed
