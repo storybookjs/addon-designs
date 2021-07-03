@@ -31,6 +31,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improve reliablity between story/design changes ([#97](https://github.com/pocka/storybook-addon-designs/pull/97)).
 - Remove `peerDependencies`, which is used as constraints for transitive dependencies ([94bcd84](https://github.com/pocka/storybook-addon-designs/commit/94bcd84aa2013d06c63f5502b085b031a1deb459)).
 
+## [5.4.6] - 2021-07-04
+
+### Fixed
+
+- Fix our Doc Blocks causes a runtime error on some Storybook versions ([61ce68e](https://github.com/pocka/storybook-addon-designs/commit/61ce68e8613878cc28c8b9837d45c206b2ba8119)).
+
 ## [5.4.5] - 2021-02-20
 
 ### Fixed
