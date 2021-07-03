@@ -2,7 +2,6 @@
 import { CSSProperties, FC, useContext, useState } from 'react'
 import { DocsContext } from '@storybook/addon-docs/blocks'
 import { ActionBar, Placeholder } from '@storybook/components'
-import * as Html from '@storybook/components/html'
 import { jsx, styled } from '@storybook/theming'
 
 import { Figma as FigmaInternal } from './register/components/Figma'
@@ -13,6 +12,19 @@ import { Wrapper as WrapperInternal } from './register/components/Wrapper'
 
 import * as config from './config'
 import { ParameterName } from './addon'
+
+// Since the exports of `@storybook/components` is unstable, I couldn't manage
+// to import the `components.resetWrapper` while maintaining version requirements.
+// This component does similar to the official one at minimum.
+// https://github.com/storybookjs/storybook/blob/4bd2fc9b0677190c59e60fd63841294ab88e80c5/lib/components/src/typography/DocumentFormatting.tsx#L364-L372
+// https://github.com/storybookjs/storybook/blob/4bd2fc9b0677190c59e60fd63841294ab88e80c5/lib/components/src/typography/shared.tsx#L42-L51
+const ResetWrapper = styled.div(
+  ({ theme }) => `
+  font-family: ${theme.typography.fonts.base};
+  font-size: ${theme.typography.size.s3}px;
+  margin: 0;
+`
+)
 
 const Wrapper = styled.div<BlocksCommonProps & { collapsed: boolean }>(
   ({ theme, height = '60%', collapsed }) => `
@@ -113,7 +125,7 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
   const showOpenInNewTab = showLink && 'url' in rest
 
   return (
-    <Html.ResetWrapper>
+    <ResetWrapper>
       <Wrapper collapsed={collapsable && collapsed} {...rest}>
         {collapsable && collapsed ? (
           <CollapsedText>{placeholder}</CollapsedText>
@@ -133,7 +145,7 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
           ].filter(Boolean)}
         />
       </Wrapper>
-    </Html.ResetWrapper>
+    </ResetWrapper>
   )
 }
 
