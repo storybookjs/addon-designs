@@ -1,0 +1,78 @@
+name: Bug report
+description: File a bug report
+labels:
+  - 'category: bug'
+body:
+  - type: checkboxes
+    id: design_types
+    attributes:
+      label: Affected design types
+      description: Which design `type` is affected by the bug?
+      options:
+        - label: figma
+        - label: experimental-figspec
+        - label: link
+        - label: image
+        - label: iframe
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the bug
+      description: |
+        A clear and concise description of what the bug is.
+        If there is an error message related to the bug, please include the error message.
+      placeholder: Design tab does not appear on addon panel.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How to reproduce the bug?
+      description: |
+        Please describe how to reproduce the bug.
+        If you have a reproduction repository or sandbox, please attach the link.
+      placeholder: |
+        1. Open official examples page
+        2. Navigate to "Docs / Figma / Examples - Embed File"
+        3. See the error message
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behaviour
+    attributes:
+      label: Expected behaviour
+      description: A clear and concise description of what you expected to happen.
+      placeholder: Story renders without any errors.
+    validations:
+      required: true
+  - type: checkboxes
+    id: browsers
+    attributes:
+      label: Environment
+      description: If your problem is specific to some browsers, select these ones.
+      options:
+        - label: Chrome / Chromium / Chromium based browsers
+        - label: Firefox
+        - label: macOS Safari
+        - label: iOS Safari
+        - label: Samsung Internet
+        - label: Other
+  - type: input
+    id: affected_versions
+    attributes:
+      label: Affected versions
+      description: |
+        Which version of `storybook-addon-designs` do you use?
+        You can find the installed version by `npm list storybook-addon-designs --depth 0` or `yarn list --pattern storybook-addon-designs --depth 0`.
+        If you know which version introduced the bug, please write that instead.
+      placeholder: '6.0.1'
+    validations:
+      required: true
+  - type: input
+    id: storybook_core_versions
+    attributes:
+      label: Storybook versions
+      description: Which version of `@storybook/*` do you use?
+      placeholder: '6.3.0'
+    validations:
+      required: true
