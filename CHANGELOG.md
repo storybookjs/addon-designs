@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.1.0] - 2021-08-22
+
+### Added
+
+- An ability to customize addon tab name via `name` property ([#112](https://github.com/pocka/storybook-addon-designs/pull/112)).
+- Show the number of design specs in addon tab name ([#112](https://github.com/pocka/storybook-addon-designs/pull/112)).
+
 ## [6.0.1] - 2021-07-04
 
 ### Fixed
