@@ -5,32 +5,26 @@ import { Badge } from '@storybook/components'
 
 <Meta title="Docs/Figma (Figspec)/README" />
 
-# Embedding Figma designs via Figspec (Experimental)
+# Embedding Figma designs via Figspec
 
 <Subtitle>
   This document describes how to embed your Figma files/frames to your Storybook
   using <a href="https://github.com/pocka/figspec">Figspec</a>.
 </Subtitle>
 
-You can embed Figma files or frames with enchanced spec viewer (Figspec) with `experimental-figspec` type.
+You can embed Figma files or frames with enchanced spec viewer (Figspec) with `figspec` type.
 The addon will calls Figma API with provided Figma Token and renders your Figma files or frames using Figspec components with the result.
 
 **This feature requires you to include your Figma API Access Token to Storybook bundle.
 Make sure your Storybook is private and Understand the risk.**
 
-## Requirements
-
-You need to install both `@figspec/react` and `@figspec/components`.
-
-```sh
-$ yarn add -D @figspec/react @figspec/components
-```
+## Limitations
 
 Since `@figspec/components` being WebComponents, browser support is limited to those support CustomElements v1 and Shadow DOM.
 
 ## Usage
 
-Put a `design` parameter into your story with `type: "experimental-figspec"` and `url` pointing your Figma file/frame/prototype.
+Put a `design` parameter into your story with `type: "figspec"` and `url` pointing your Figma file/frame/prototype.
 
 You also provide your [Figma Personal Access Token](https://www.figma.com/developers/api#access-tokens) in `accessToken` field or `STORYBOOK_FIGMA_ACCESS_TOKEN` environment variable.
 
@@ -39,7 +33,7 @@ export const myStory = () => <MyComponent />
 
 myStory.parameters = {
   design: {
-    type: 'experimental-figspec',
+    type: 'figspec',
     url: '<YOUR_FIGMA_ITEM_URL>',
     accessToken: '<YOUR_FIGMA_ACCESS_TOKEN>',
   },
@@ -52,8 +46,8 @@ $ STORYBOOK_FIGMA_ACCESS_TOKEN=xxxx npm run storybook
 
 ## Parameter options
 
-| Option name                                             | Type                     | Default value | Description                                 |
-| ------------------------------------------------------- | ------------------------ | ------------- | ------------------------------------------- |
-| `type` <Badge status="positive">required</Badge>        | `"experimental-figspec"` |               | Fixed parameter. Will be changed v6.0-beta. |
-| `url` <Badge status="positive">required</Badge>         | `string` (URL)           |               | An URL to a Figma file/frame/prototype.     |
-| `accessToken` <Badge status="positive">required</Badge> | `string`                 |               |                                             | Your Figma Personal Access Token. |
+| Option name                                             | Type           | Default value | Description                             |
+| ------------------------------------------------------- | -------------- | ------------- | --------------------------------------- |
+| `type` <Badge status="positive">required</Badge>        | `"figspec"`    |               | Fixed parameter.                        |
+| `url` <Badge status="positive">required</Badge>         | `string` (URL) |               | An URL to a Figma file/frame/prototype. |
+| `accessToken` <Badge status="positive">required</Badge> | `string`       |               | Your Figma Personal Access Token.       |

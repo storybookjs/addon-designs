@@ -149,48 +149,39 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
   )
 }
 
-export const Figma: FC<
-  Omit<config.FigmaConfig, 'type'> & BlocksCommonProps
-> = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
-    <FigmaInternal config={{ type: 'figma', ...props }} />
-  </DocBlockBase>
-)
+export const Figma: FC<Omit<config.FigmaConfig, 'type'> & BlocksCommonProps> =
+  ({ placeholder, ...props }) => (
+    <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
+      <FigmaInternal config={{ type: 'figma', ...props }} />
+    </DocBlockBase>
+  )
 
-/**
- * @experimental
- */
 export const Figspec: FC<
   Omit<config.FigspecConfig, 'type'> & BlocksCommonProps
 > = ({ placeholder, ...props }) => {
-  console.warn(
-    "🚨 `Figspec` block is currently experimental and requires you to include your figma's access token in your storybook build, use with caution!"
-  )
   return (
     <DocBlockBase placeholder={placeholder ?? 'Design (Figma-Spec)'} {...props}>
-      <FigspecInternal config={{ type: 'experimental-figspec', ...props }} />
+      <FigspecInternal config={{ type: 'figspec', ...props }} />
     </DocBlockBase>
   )
 }
 
-export const IFrame: FC<
-  Omit<config.IFrameConfig, 'type'> & BlocksCommonProps
-> = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (iframe)'} {...props}>
-    <IFrameInternal config={props} />
-  </DocBlockBase>
-)
+export const IFrame: FC<Omit<config.IFrameConfig, 'type'> & BlocksCommonProps> =
+  ({ placeholder, ...props }) => (
+    <DocBlockBase placeholder={placeholder ?? 'Design (iframe)'} {...props}>
+      <IFrameInternal config={props} />
+    </DocBlockBase>
+  )
 
 // Image would do shadowing the native variable (Image constructor, which creates
 // HTMLImageElement), but I think it doesn't matter since there is less chance to
 // use Image constructor in MDX.
-export const Image: FC<
-  Omit<config.ImageConfig, 'type'> & BlocksCommonProps
-> = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (Image)'} {...props}>
-    <ImagePreview config={{ type: 'image', ...props }} />
-  </DocBlockBase>
-)
+export const Image: FC<Omit<config.ImageConfig, 'type'> & BlocksCommonProps> =
+  ({ placeholder, ...props }) => (
+    <DocBlockBase placeholder={placeholder ?? 'Design (Image)'} {...props}>
+      <ImagePreview config={{ type: 'image', ...props }} />
+    </DocBlockBase>
+  )
 
 const AbsoluteLocater = styled.div`
   position: absolute;

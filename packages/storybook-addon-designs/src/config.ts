@@ -57,7 +57,7 @@ export interface FigmaConfig extends IFrameConfigBase {
  * Render Figma files or frames via [figspec](https://github.com/pocka/figspec).
  */
 export interface FigspecConfig extends ConfigBase {
-  type: 'experimental-figspec'
+  type: 'figspec' | 'experimental-figspec'
 
   /**
    * An URL for the Figma file or frame.
