@@ -1,9 +1,9 @@
 {
   "name": "examples-tab",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "private": true,
   "dependencies": {
-    "examples": "^6.1.0"
+    "examples": "^6.2.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6007 -s ../assets",

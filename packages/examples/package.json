@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.4",
@@ -20,7 +20,7 @@
     "@storybook/theming": "6.3.2",
     "babel-loader": "^8.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
-    "storybook-addon-designs": "^6.1.0",
+    "storybook-addon-designs": "^6.2.0",
     "ts-loader": "^7.0.5"
   },
   "scripts": {
