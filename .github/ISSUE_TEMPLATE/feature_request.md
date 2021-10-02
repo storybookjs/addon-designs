@@ -19,7 +19,7 @@ A clear and concise description of any alternative solutions or features you've 
 **Design types**
 
 - [ ] `figma`
-- [ ] `experimental-figspec`
+- [ ] `figspec`
 - [ ] `link`
 - [ ] `image`
 - [ ] `iframe`

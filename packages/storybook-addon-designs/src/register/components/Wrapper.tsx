@@ -59,7 +59,14 @@ export const Wrapper: SFC<Props> = ({ config }) => {
             content: <Figma config={cfg} />,
             offscreen: false,
           }
+        case 'figspec':
         case 'experimental-figspec':
+          if (cfg.type === 'experimental-figspec') {
+            console.warn(
+              '[storybook-addon-designs] `experimental-figspec` is deprecated. We will remove it in v7.0. Please replace it to `figspec` type.'
+            )
+          }
+
           return {
             ...meta,
             content: (

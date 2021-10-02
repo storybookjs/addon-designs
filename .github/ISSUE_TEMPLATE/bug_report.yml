@@ -10,7 +10,7 @@ body:
       description: Which design `type` is affected by the bug?
       options:
         - label: figma
-        - label: experimental-figspec
+        - label: figspec
         - label: link
         - label: image
         - label: iframe

@@ -1195,21 +1195,21 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@figspec/components@^0.1.1", "@figspec/components@^0.1.8":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@figspec/components/-/components-0.1.10.tgz#cd80a9ef66dbf35c4a36ae182dc8fc5405aa7c33"
-  integrity sha512-1Iy87RbTwwoxpXYLNkYRWpIYc/Ao02+56WVzp7TC9k52h3dv9+TJDvzqFpTmA9v1uaCQqnH4hq4LrJjciYpUoA==
+"@figspec/components@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@figspec/components/-/components-1.0.0.tgz#b1ddf0593173157cb5e79e50073ca1491bb7c6dc"
+  integrity sha512-a8sgP0YLJ3H0g0pdZPYecxfp9JNVQUTaaU3xcSci8duHXTGkJ7X8QPPCBbyhB+MoxMxnsAh8GjkfZHEr9oIoPQ==
   dependencies:
     copy-to-clipboard "^3.0.0"
     lit-element "^2.4.0"
     lit-html "^1.1.1"
 
-"@figspec/react@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@figspec/react/-/react-0.1.6.tgz#b5868d87f48270a901031aae847cfc76458ed5b6"
-  integrity sha512-oi0JL8uIXgJ+PWRl4LDxJ7WWa80E3jdYmi6wsHAFDq1vT0rKuyhqimEJzCezIrHHz4fXKpNRO98TO7ccma6hjw==
+"@figspec/react@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@figspec/react/-/react-1.0.0.tgz#226ff85e146038b284ddf1ddbc086d2d14fe370a"
+  integrity sha512-BkOu3RsKF5vCtPoqsc6Oeyxw4wr9GesFrB9/wDHFqgjzhWsw8erFxCsPxsjdlJD8d8OWVHoM6SWxAaGe/pLdxg==
   dependencies:
-    "@figspec/components" "^0.1.1"
+    "@figspec/components" "^1.0.0"
 
 "@gar/promisify@^1.0.1":
   version "1.1.2"

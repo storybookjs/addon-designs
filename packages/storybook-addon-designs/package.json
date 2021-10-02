@@ -18,10 +18,10 @@
     "preset.js"
   ],
   "dependencies": {
-    "@figspec/react": "^0.1.6"
+    "@figspec/react": "^1.0.0"
   },
   "devDependencies": {
-    "@figspec/components": "^0.1.8",
+    "@figspec/components": "^1.0.0",
     "@storybook/addon-docs": "6.3.2",
     "@storybook/addons": "6.3.2",
     "@storybook/api": "6.3.2",
