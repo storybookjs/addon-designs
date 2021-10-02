@@ -67,6 +67,7 @@ export const Wrapper: SFC<Props> = ({ config }) => {
                 <Figspec config={cfg} />
               </Suspense>
             ),
+            offscreen: false,
           }
         case 'image':
           return {
