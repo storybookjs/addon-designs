@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.2.0] - 2021-10-03
+
+### Deprecated
+
+- `experimental-figspec` type. Use `figspec` type instead. The parameter interface is same, just replace the `type` property. ([#127](https://github.com/pocka/storybook-addon-designs/pull/127))
+
+### Added
+
+- `figspec` type ([#127](https://github.com/pocka/storybook-addon-designs/pull/127)).
+
 ## [6.1.0] - 2021-08-22
 
 ### Added
