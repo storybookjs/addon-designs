@@ -36,7 +36,7 @@ export default function register(renderTarget: 'panel' | 'tab') {
 
     if (renderTarget === 'tab') {
       addons.add(PanelName, {
-        title,
+        title: DEFAULT_TAB_NAME,
         render,
         type: types.TAB,
         paramKey: ParameterName,
