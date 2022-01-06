@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.2.1] - 2022-01-06
+
+### Fixed
+
+- Fix `Design` tab does not appear when `renderTarget: "tab"`. ([#134](https://github.com/pocka/storybook-addon-designs/issues/134))
+
 ## [6.2.0] - 2021-10-03
 
 ### Deprecated
