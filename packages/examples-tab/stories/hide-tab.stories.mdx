@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Subtitle } from '@storybook/addon-docs/blocks'
+import { LinkTo } from '@storybook/addon-links'
+import { Badge } from '@storybook/components'
+
+import { PanelName } from 'storybook-addon-designs'
+
+<Meta title="Docs/Advanced Usage/Configure Tab" />
+
+# Hide "Design" Tab
+
+<Subtitle>Tab renderer specific usage</Subtitle>
+
+You can hide `Design` tab by setting `previewTabs["STORYBOOK_ADDON_DESIGNS/panel"].hidden = true` parameter. For convenience, the addon exports the tab name as `PanelName`.
+
+```js
+// your.stories.js
+export const myStory = () => <MyComponent />
+
+myStory.parameteras = {
+  previewTabs: {
+    'STORYBOOK_ADDON_DESIGNS/panel': {
+      hidden: true,
+    },
+  },
+}
+
+// or...
+import { PanelName as DesignsAddon } from 'storybook-addon-designs'
+
+export const myStory = () => <MyComponent />
+
+myStory.parameteras = {
+  previewTabs: {
+    [DesignsAddon]: {
+      hidden: true,
+    },
+  },
+}
+```
+
+<Canvas>
+  <Story
+    name="Sample"
+    parameters={{
+      viewMode: 'docs',
+      previewTabs: { [PanelName]: { hidden: true } },
+    }}
+  >
+    <button>Button</button>
+  </Story>
+</Canvas>

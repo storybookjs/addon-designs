@@ -3,16 +3,17 @@ const main = require('../../examples/.storybook/main')
 module.exports = {
   stories: [
     '../../examples/stories/**/*.stories.mdx',
-    '../../examples/stories/**/*.stories.{js,jsx}'
+    '../../examples/stories/**/*.stories.{js,jsx}',
+    '../stories/**/*.stories.{js,jsx,mdx}',
   ],
   addons: [
     '@storybook/addon-docs',
     {
       name: 'storybook-addon-designs',
       options: {
-        renderTarget: 'tab'
-      }
-    }
+        renderTarget: 'tab',
+      },
+    },
   ],
   webpackFinal(_config) {
     const config = main.webpackFinal(_config)
@@ -27,13 +28,13 @@ module.exports = {
             use: [
               {
                 loader: 'babel-loader',
-                options: require('../../examples/package.json').babel
-              }
-            ]
+                options: require('../../examples/package.json').babel,
+              },
+            ],
           },
-          ...config.module.rules
-        ]
-      }
+          ...config.module.rules,
+        ],
+      },
     }
-  }
+  },
 }

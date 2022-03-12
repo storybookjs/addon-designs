@@ -1,6 +1,6 @@
 import addons, { makeDecorator, StoryWrapper } from '@storybook/addons'
 
-import { Events, ParameterName } from './addon'
+import { Events, PanelName, ParameterName } from './addon'
 import { Config } from './config'
 
 const wrapper: StoryWrapper = (getStory, context, { parameters }) => {
@@ -15,7 +15,7 @@ export const withDesign = makeDecorator({
   name: 'withDesign',
   parameterName: ParameterName,
   skipIfNoParametersOrOptions: true,
-  wrapper
+  wrapper,
 })
 
 /**
@@ -28,6 +28,6 @@ if (module && module.hot && module.hot.decline) {
 }
 
 /**
- * Useful exports for third party developers
+ * Useful exports for third party developers and advanced usages
  */
-export { Config, ParameterName as PARAM_KEY }
+export { Config, ParameterName as PARAM_KEY, PanelName }
