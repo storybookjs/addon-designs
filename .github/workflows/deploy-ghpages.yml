@@ -26,7 +26,7 @@ jobs:
       - name: Build examples
         run: yarn build:example
       - name: Deploy examples
-        uses: maxheld83/ghpages@v0.3.0
-        env:
-          BUILD_DIR: packages/examples/storybook-static/
-          GH_PAT: ${{ secrets.GH_PAT }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/examples/storybook-static
