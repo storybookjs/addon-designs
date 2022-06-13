@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.3.1] - 2022-06-14
+
+### Fixed
+
+- Include `blocks.d.ts` in published tarball. ([d966871](https://github.com/pocka/storybook-addon-designs/commit/d966871785d87e7f919b37bb686460bb51e21697))
+
 ## [6.3.0] - 2022-06-14
 
 ### Added
