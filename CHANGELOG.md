@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Export panel name as `PanelName`. ([851b486](https://github.com/pocka/storybook-addon-designs/commit/851b486543475384173532be27702e6a776b827d))
 
+### Fixed
+
+- Add type definition file for `storybook-addon-designs/blocks`.
+
 ## [6.2.1] - 2022-01-06
 
 ### Fixed

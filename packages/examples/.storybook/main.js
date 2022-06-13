@@ -10,7 +10,10 @@ const tsconfig = path.resolve(
 const addonPath = path.resolve(__dirname, '../../storybook-addon-designs')
 
 module.exports = {
-  stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.{js,jsx}'],
+  stories: [
+    '../stories/**/*.stories.mdx',
+    '../stories/**/*.stories.{js,jsx,ts,tsx}',
+  ],
   addons: [
     'storybook-addon-designs',
     '@storybook/addon-docs',
