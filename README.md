@@ -45,12 +45,9 @@ module.exports = {
 ### 3. Add it to story!
 
 ```js
-import { withDesign } from 'storybook-addon-designs'
-
 export default {
   title: 'My stories',
   component: Button,
-  decorators: [withDesign],
 }
 
 export const myStory = () => <Button>Hello, World!</Button>

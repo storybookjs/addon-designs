@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { config, withDesign } from 'storybook-addon-designs'
+import { config } from 'storybook-addon-designs'
 
 import { Button } from '../../Button'
 
@@ -10,7 +10,6 @@ import sampleImage from '@storybook-addon-designs/assets/sample.png'
 
 export default {
   title: 'Docs/Image/Examples',
-  decorators: [withDesign],
   parameters: {
     docs: {
       page: Docs,
@@ -23,8 +22,7 @@ export const embedImage = () => <Button>Button</Button>
 embedImage.parameters = {
   design: config({
     type: 'image',
-    url:
-      'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
+    url: 'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
   }),
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { config, withDesign } from 'storybook-addon-designs'
+import { config } from 'storybook-addon-designs'
 
 import { Button } from '../../Button'
 
@@ -8,7 +8,6 @@ import Docs from './docs.mdx'
 
 export default {
   title: 'Docs/Advanced usage',
-  decorators: [withDesign],
   parameters: {
     docs: { page: Docs },
   },
@@ -20,8 +19,7 @@ setTabName.parameters = {
   design: config({
     name: 'Wireframe',
     type: 'figma',
-    url:
-      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
   }),
 }
 
@@ -31,13 +29,11 @@ embedMultipleDesigns.parameters = {
   design: config([
     {
       type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
     },
     {
       type: 'link',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
     },
   ]),
 }
@@ -49,14 +45,12 @@ setTabNames.parameters = {
     {
       name: 'Foo',
       type: 'figma',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
     },
     {
       name: 'Bar',
       type: 'link',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
     },
   ]),
 }
