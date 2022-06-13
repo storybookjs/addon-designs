@@ -12,17 +12,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Read .nvmrc
-        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
-        id: nvm
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-      - name: Install Yarn
-        run: npm i -g yarn
+          node-version-file: .nvmrc
+          cache: yarn
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: Publish
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
