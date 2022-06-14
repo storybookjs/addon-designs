@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { CSSProperties, FC, useContext, useState } from 'react'
-import { DocsContext } from '@storybook/addon-docs/blocks'
+import { DocsContext } from '@storybook/addon-docs'
 import { ActionBar, Placeholder } from '@storybook/components'
 import { jsx, styled } from '@storybook/theming'
 
