@@ -18,13 +18,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-          cache: yarn
+          cache: npm
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
       - name: Build addon
-        run: yarn build
+        run: npm run build
       - name: Build examples
-        run: yarn build:example
+        run: npm run build:example
       - name: Deploy examples
         uses: peaceiris/actions-gh-pages@v3
         with:

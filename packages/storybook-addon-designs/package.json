@@ -45,12 +45,12 @@
   },
   "scripts": {
     "dev": "tsc --watch --preserveWatchOutput",
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir cjs",
     "test": "echo 'No tests' && exit 0",
     "clean": "rm -r esm cjs",
-    "prepublishOnly": "cp ../../README.md ./ && yarn build"
+    "prepublishOnly": "cp ../../README.md ./ && npm run build"
   },
   "publishConfig": {
     "tag": "latest"
