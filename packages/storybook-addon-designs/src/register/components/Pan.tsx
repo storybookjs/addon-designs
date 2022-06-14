@@ -1,10 +1,19 @@
 /** @jsx jsx */
-import { useEffect, useMemo, useState, CSSProperties, SFC } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useState,
+  CSSProperties,
+  FC,
+  ReactNode,
+} from 'react'
 import { css, jsx } from '@storybook/theming'
 
 import { usePan, Point2D } from './hooks/usePan'
 
 interface Props {
+  children: ReactNode
+
   className?: string
   style?: CSSProperties
 
@@ -15,13 +24,13 @@ interface Props {
   onChange?(delta: Point2D): any
 }
 
-export const Pan: SFC<Props> = ({
+export const Pan: FC<Props> = ({
   children,
   className,
   style,
   defaultValue,
   value,
-  onChange
+  onChange,
 }) => {
   const [offset, move] = useState<Point2D>([0, 0])
 
@@ -34,12 +43,12 @@ export const Pan: SFC<Props> = ({
   }, [defaultValue])
 
   const panHandlers = usePan(
-    delta => {
+    (delta) => {
       if (onChange) {
         onChange(delta)
       }
 
-      move(prev => [prev[0] + delta[0], prev[1] + delta[1]])
+      move((prev) => [prev[0] + delta[0], prev[1] + delta[1]])
     },
     [move, onChange]
   )
@@ -48,7 +57,7 @@ export const Pan: SFC<Props> = ({
     const vec = value || offset
 
     return {
-      transform: `translate(${vec[0]}px, ${vec[1]}px)`
+      transform: `translate(${vec[0]}px, ${vec[1]}px)`,
     }
   }, [value, offset])
 

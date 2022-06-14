@@ -30,7 +30,10 @@ const fullscreen = css`
 type RenderItem =
   | {
       type: 'file'
-      props: Pick<FigspecFileViewerProps, 'documentNode' | 'renderedImages' | 'link'>
+      props: Pick<
+        FigspecFileViewerProps,
+        'documentNode' | 'renderedImages' | 'link'
+      >
     }
   | {
       type: 'frame'
@@ -50,8 +53,10 @@ type Remote<T, E = Error> =
       state: 'loading'
     }
 
-function unwrapJson(res: Response) {
-  return res.status !== 200 ? Promise.reject(res.statusText) : res.json()
+function unwrapJson<T>(res: Response): Promise<T> {
+  return res.status !== 200
+    ? Promise.reject(res.statusText)
+    : (res.json() as Promise<T>)
 }
 
 /**
@@ -112,10 +117,10 @@ export const Figspec: FC<Props> = ({ config }) => {
       imageUrl.searchParams.set('format', 'svg')
 
       if (!nodeId) {
-        const documentNode: FileResponse = await fetch(nodeUrl.href, {
+        const documentNode = await fetch(nodeUrl.href, {
           headers,
           signal,
-        }).then(unwrapJson)
+        }).then((resp) => unwrapJson<FileResponse>(resp))
 
         const frames = listAllFrames(documentNode.document)
 
@@ -124,10 +129,10 @@ export const Figspec: FC<Props> = ({ config }) => {
           frames.map((frame) => frame.id).join(',')
         )
 
-        const images: FileImageResponse = await fetch(imageUrl.href, {
+        const images = await fetch(imageUrl.href, {
           headers,
           signal,
-        }).then(unwrapJson)
+        }).then((resp) => unwrapJson<FileImageResponse>(resp))
 
         setState({
           state: 'fetched',
@@ -136,7 +141,7 @@ export const Figspec: FC<Props> = ({ config }) => {
             props: {
               documentNode,
               renderedImages: images.images,
-              link: config.url
+              link: config.url,
             },
           },
         })
@@ -148,15 +153,14 @@ export const Figspec: FC<Props> = ({ config }) => {
       nodeUrl.searchParams.set('ids', nodeId)
       imageUrl.searchParams.set('ids', nodeId)
 
-      const [nodes, images] = await Promise.all<
-        FileNodesResponse,
-        FileImageResponse
-      >([
+      const [nodes, images] = await Promise.all([
         fetch(nodeUrl.href, {
           headers,
           signal,
-        }).then(unwrapJson),
-        fetch(imageUrl.href, { headers, signal }).then(unwrapJson),
+        }).then((resp) => unwrapJson<FileNodesResponse>(resp)),
+        fetch(imageUrl.href, { headers, signal }).then((resp) =>
+          unwrapJson<FileImageResponse>(resp)
+        ),
       ])
 
       setState({
@@ -165,8 +169,8 @@ export const Figspec: FC<Props> = ({ config }) => {
           type: 'frame',
           props: {
             nodes,
-            renderedImage: Object.values(images.images)[0],
-            link: config.url
+            renderedImage: Object.values<string>(images.images)[0],
+            link: config.url,
           },
         },
       })
@@ -235,5 +239,5 @@ function listAllFrames(node: Node): Node[] {
     return []
   }
 
-  return node.children.map(listAllFrames).flat()
+  return node.children.map(listAllFrames).reduce((a, b) => a.concat(b), [])
 }

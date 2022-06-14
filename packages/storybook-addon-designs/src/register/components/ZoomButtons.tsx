@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Fragment, SFC } from 'react'
+import { Fragment, FC } from 'react'
 import { jsx } from '@storybook/theming'
 
 import { IconButton, Icons } from '@storybook/components'
@@ -10,7 +10,7 @@ interface Props {
   onReset?(): any
 }
 
-export const ZoomButtons: SFC<Props> = ({ onZoomIn, onZoomOut, onReset }) => (
+export const ZoomButtons: FC<Props> = ({ onZoomIn, onZoomOut, onReset }) => (
   <Fragment>
     <IconButton onClick={onZoomIn}>
       <Icons icon="zoom" />

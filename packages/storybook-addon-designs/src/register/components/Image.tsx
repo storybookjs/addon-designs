@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Fragment, useMemo, CSSProperties, SFC } from 'react'
+import { Fragment, useMemo, CSSProperties, FC } from 'react'
 import { css, jsx } from '@storybook/theming'
 
 import { FlexBar, Separator } from '@storybook/components'
@@ -15,12 +15,12 @@ interface Props {
   config: ImageConfig
 }
 
-export const ImagePreview: SFC<Props> = ({ config }) => {
+export const ImagePreview: FC<Props> = ({ config }) => {
   const zoom = useZoom(config.scale || 1, [config.scale])
 
   const imageStyles = useMemo<CSSProperties>(
     () => ({
-      transform: `scale(${zoom.scale})`
+      transform: `scale(${zoom.scale})`,
     }),
     [zoom.scale]
   )

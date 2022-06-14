@@ -205,14 +205,16 @@ export const Design: FC<DesignProps & Omit<BlocksCommonProps, 'showLink'>> = ({
   placeholder,
   ...rest
 }) => {
-  const { storyStore } = useContext(DocsContext)
+  // Storybook ~v6.3 / v6.4~ is incompatible due to differences of this context value shape.
+  // Because of this, this addon needs Storybook v6.4 at minimum.
+  const { storyById } = useContext(DocsContext)
 
-  const story = storyStore?.fromId(storyId)
+  const story = storyById(storyId)
 
   return (
     <DocBlockBase placeholder={placeholder ?? 'Design'} {...rest}>
       <AbsoluteLocater>
-        <WrapperInternal config={story?.parameters?.[ParameterName]} />
+        <WrapperInternal config={story.parameters[ParameterName]} />
       </AbsoluteLocater>
     </DocBlockBase>
   )

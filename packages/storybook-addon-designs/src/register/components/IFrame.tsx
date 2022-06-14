@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { SFC, useEffect, useState } from 'react'
+import { FC, ReactNode, useEffect, useState } from 'react'
 import { css, jsx } from '@storybook/theming'
 
 import { Placeholder } from '@storybook/components'
@@ -16,7 +16,7 @@ interface Props {
   defer?: boolean
 }
 
-export const IFrame: SFC<Props> = ({ config, defer = false }) => {
+export const IFrame: FC<Props> = ({ config, defer = false }) => {
   const [url, setUrl] = useState(defer ? undefined : config.url)
   const [loaded, setLoaded] = useState(false)
 
@@ -49,7 +49,10 @@ export const IFrame: SFC<Props> = ({ config, defer = false }) => {
 
   return (
     <div css={$container}>
-      {!loaded && <Placeholder css={$loading}>Loading...</Placeholder>}
+      {!loaded && (
+        // @ts-expect-error: @types resolution is completely broken probably due to migration to npm workspace
+        <Placeholder css={$loading}>Loading...</Placeholder>
+      )}
       <iframe
         css={$iframe}
         src={url}

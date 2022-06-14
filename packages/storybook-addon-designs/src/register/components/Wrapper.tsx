@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Fragment, lazy, Suspense, SFC } from 'react'
+import { Fragment, lazy, Suspense, FC } from 'react'
 import { jsx } from '@storybook/theming'
 
 import { Link, Placeholder } from '@storybook/components'
@@ -18,7 +18,7 @@ interface Props {
   config?: Config | Config[]
 }
 
-export const Wrapper: SFC<Props> = ({ config }) => {
+export const Wrapper: FC<Props> = ({ config }) => {
   if (!config || ('length' in config && config.length === 0)) {
     return (
       <Placeholder>
