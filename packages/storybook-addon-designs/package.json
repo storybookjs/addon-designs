@@ -36,6 +36,13 @@
     "react": "^16.8.4",
     "typescript": "^3.7.0"
   },
+  "peerDependencies": {
+    "@storybook/addon-docs": "^6.0.0",
+    "@storybook/addons": "^6.0.0",
+    "@storybook/api": "^6.0.0",
+    "@storybook/components": "^6.0.0",
+    "@storybook/theming": "^6.0.0"
+  },
   "scripts": {
     "dev": "tsc --watch --preserveWatchOutput",
     "build": "yarn build:esm && yarn build:cjs",
