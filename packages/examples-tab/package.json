@@ -3,7 +3,7 @@
   "version": "6.3.1",
   "private": true,
   "dependencies": {
-    "examples": "^6.3.1"
+    "examples": "*"
   },
   "scripts": {
     "storybook": "start-storybook -p 6007 -s ../assets",
