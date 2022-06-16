@@ -41,7 +41,17 @@
     "@storybook/addons": "^6.4.0",
     "@storybook/api": "^6.4.0",
     "@storybook/components": "^6.4.0",
-    "@storybook/theming": "^6.4.0"
+    "@storybook/theming": "^6.4.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "scripts": {
     "dev": "tsc --watch --preserveWatchOutput",
