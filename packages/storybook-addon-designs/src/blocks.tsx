@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { CSSProperties, FC, useContext, useState } from 'react'
-import { DocsContext } from '@storybook/addon-docs'
-import { ActionBar, Placeholder } from '@storybook/components'
-import { jsx, styled } from '@storybook/theming'
+import { CSSProperties, FC, useContext, useState } from "react";
+import { DocsContext } from "@storybook/addon-docs";
+import { ActionBar, Placeholder } from "@storybook/components";
+import { jsx, styled } from "@storybook/theming";
 
-import { Figma as FigmaInternal } from './register/components/Figma'
-import { Figspec as FigspecInternal } from './register/components/Figspec'
-import { IFrame as IFrameInternal } from './register/components/IFrame'
-import { ImagePreview } from './register/components/Image'
-import { Wrapper as WrapperInternal } from './register/components/Wrapper'
+import { Figma as FigmaInternal } from "./register/components/Figma";
+import { Figspec as FigspecInternal } from "./register/components/Figspec";
+import { IFrame as IFrameInternal } from "./register/components/IFrame";
+import { ImagePreview } from "./register/components/Image";
+import { Wrapper as WrapperInternal } from "./register/components/Wrapper";
 
-import * as config from './config'
-import { ParameterName } from './addon'
+import * as config from "./config";
+import { ParameterName } from "./addon";
 
 // Since the exports of `@storybook/components` is unstable, I couldn't manage
 // to import the `components.resetWrapper` while maintaining version requirements.
@@ -24,16 +24,16 @@ const ResetWrapper = styled.div(
   font-size: ${theme.typography.size.s3}px;
   margin: 0;
 `
-)
+);
 
 const Wrapper = styled.div<BlocksCommonProps & { collapsed: boolean }>(
-  ({ theme, height = '60%', collapsed }) => `
+  ({ theme, height = "60%", collapsed }) => `
   position: relative;
   width: 100%;
   height: 0;
   padding: 0;
   padding-top: ${
-    collapsed ? '3em' : typeof height == 'string' ? height : height + 'px'
+    collapsed ? "3em" : typeof height == "string" ? height : height + "px"
   };
   margin: 25px 0 40px;
   border: 1px solid ${theme.appBorderColor};
@@ -41,12 +41,12 @@ const Wrapper = styled.div<BlocksCommonProps & { collapsed: boolean }>(
   border-radius: ${theme.appBorderRadius}px;
   box-shadow:
     ${
-      theme.base === 'light'
-        ? 'rgba(0, 0, 0, 0.10) 0 1px 3px 0'
-        : 'rgba(0, 0, 0, 0.20) 0 2px 5px 0'
+      theme.base === "light"
+        ? "rgba(0, 0, 0, 0.10) 0 1px 3px 0"
+        : "rgba(0, 0, 0, 0.20) 0 2px 5px 0"
     };
 `
-)
+);
 
 const CollapsedText = styled(Placeholder)`
   position: absolute;
@@ -54,7 +54,7 @@ const CollapsedText = styled(Placeholder)`
   left: 50%;
 
   transform: translate(-50%, -50%);
-`
+`;
 
 export interface BlocksCommonProps {
   /**
@@ -62,13 +62,13 @@ export interface BlocksCommonProps {
    *
    * A `class` prop passed down to embed wrapper.
    */
-  className?: string
+  className?: string;
   /**
    * **Doc Block Props**
    *
    * A `style` passed down to embed wrapper.
    */
-  style?: CSSProperties
+  style?: CSSProperties;
 
   /**
    * **Doc Block Props**
@@ -76,7 +76,7 @@ export interface BlocksCommonProps {
    * Height of the block. Numbers will be converted into pixels.
    * Relative value (%) is based on width of the block.
    */
-  height?: string | number
+  height?: string | number;
 
   /**
    * **Doc Block Props**
@@ -84,7 +84,7 @@ export interface BlocksCommonProps {
    * Whether to allow the block to toggle collapse/expand.
    * @default true
    */
-  collapsable?: boolean
+  collapsable?: boolean;
 
   /**
    * **Doc Block Props**
@@ -93,7 +93,7 @@ export interface BlocksCommonProps {
    * Available when `collapsable` is set to `true`.
    * @default false
    */
-  defaultCollapsed?: boolean
+  defaultCollapsed?: boolean;
 
   /**
    * **Doc Block Props**
@@ -101,7 +101,7 @@ export interface BlocksCommonProps {
    * Placeholder text shown when the block is collapsed.
    * Default value differs by a type of the block (e.g. "Design (Figma)").
    */
-  placeholder?: string
+  placeholder?: string;
 
   /**
    * **Doc Block Props**
@@ -109,7 +109,7 @@ export interface BlocksCommonProps {
    * Whether to show an "Open in new tab" button.
    * @default true
    */
-  showLink?: boolean
+  showLink?: boolean;
 }
 
 export const DocBlockBase: FC<BlocksCommonProps> = ({
@@ -120,9 +120,9 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
   showLink = true,
   ...rest
 }) => {
-  const [collapsed, setCollapsed] = useState(!!defaultCollapsed)
+  const [collapsed, setCollapsed] = useState(!!defaultCollapsed);
 
-  const showOpenInNewTab = showLink && 'url' in rest
+  const showOpenInNewTab = showLink && "url" in rest;
 
   return (
     <ResetWrapper>
@@ -135,56 +135,56 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
         <ActionBar
           actionItems={[
             collapsable && {
-              title: collapsed ? 'Show' : 'Hide',
+              title: collapsed ? "Show" : "Hide",
               onClick: () => setCollapsed((v) => !v),
             },
             showOpenInNewTab && {
-              title: 'Open in new tab',
-              onClick: () => window.open((rest as any).url, '_blank'),
+              title: "Open in new tab",
+              onClick: () => window.open((rest as any).url, "_blank"),
             },
           ].filter((s): s is Exclude<typeof s, false> => !!s)}
         />
       </Wrapper>
     </ResetWrapper>
-  )
-}
+  );
+};
 
 export const Figma: FC<
-  Omit<config.FigmaConfig, 'type'> & BlocksCommonProps
+  Omit<config.FigmaConfig, "type"> & BlocksCommonProps
 > = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
-    <FigmaInternal config={{ type: 'figma', ...props }} />
+  <DocBlockBase placeholder={placeholder ?? "Design (Figma)"} {...props}>
+    <FigmaInternal config={{ type: "figma", ...props }} />
   </DocBlockBase>
-)
+);
 
 export const Figspec: FC<
-  Omit<config.FigspecConfig, 'type'> & BlocksCommonProps
+  Omit<config.FigspecConfig, "type"> & BlocksCommonProps
 > = ({ placeholder, ...props }) => {
   return (
-    <DocBlockBase placeholder={placeholder ?? 'Design (Figma-Spec)'} {...props}>
-      <FigspecInternal config={{ type: 'figspec', ...props }} />
+    <DocBlockBase placeholder={placeholder ?? "Design (Figma-Spec)"} {...props}>
+      <FigspecInternal config={{ type: "figspec", ...props }} />
     </DocBlockBase>
-  )
-}
+  );
+};
 
 export const IFrame: FC<
-  Omit<config.IFrameConfig, 'type'> & BlocksCommonProps
+  Omit<config.IFrameConfig, "type"> & BlocksCommonProps
 > = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (iframe)'} {...props}>
+  <DocBlockBase placeholder={placeholder ?? "Design (iframe)"} {...props}>
     <IFrameInternal config={props} />
   </DocBlockBase>
-)
+);
 
 // Image would do shadowing the native variable (Image constructor, which creates
 // HTMLImageElement), but I think it doesn't matter since there is less chance to
 // use Image constructor in MDX.
 export const Image: FC<
-  Omit<config.ImageConfig, 'type'> & BlocksCommonProps
+  Omit<config.ImageConfig, "type"> & BlocksCommonProps
 > = ({ placeholder, ...props }) => (
-  <DocBlockBase placeholder={placeholder ?? 'Design (Image)'} {...props}>
-    <ImagePreview config={{ type: 'image', ...props }} />
+  <DocBlockBase placeholder={placeholder ?? "Design (Image)"} {...props}>
+    <ImagePreview config={{ type: "image", ...props }} />
   </DocBlockBase>
-)
+);
 
 const AbsoluteLocater = styled.div`
   position: absolute;
@@ -194,31 +194,31 @@ const AbsoluteLocater = styled.div`
   left: 0;
 
   overflow: auto;
-`
+`;
 
 export interface DesignProps {
   /**
    * An ID of the story that has `design` parameter to use for rendering.
    */
-  storyId: string
+  storyId: string;
 }
 
-export const Design: FC<DesignProps & Omit<BlocksCommonProps, 'showLink'>> = ({
+export const Design: FC<DesignProps & Omit<BlocksCommonProps, "showLink">> = ({
   storyId,
   placeholder,
   ...rest
 }) => {
   // Storybook ~v6.3 / v6.4~ is incompatible due to differences of this context value shape.
   // Because of this, this addon needs Storybook v6.4 at minimum.
-  const { storyById } = useContext(DocsContext)
+  const { storyById } = useContext(DocsContext);
 
-  const story = storyById(storyId)
+  const story = storyById(storyId);
 
   return (
-    <DocBlockBase placeholder={placeholder ?? 'Design'} {...rest}>
+    <DocBlockBase placeholder={placeholder ?? "Design"} {...rest}>
       <AbsoluteLocater>
         <WrapperInternal config={story.parameters[ParameterName]} />
       </AbsoluteLocater>
     </DocBlockBase>
-  )
-}
+  );
+};

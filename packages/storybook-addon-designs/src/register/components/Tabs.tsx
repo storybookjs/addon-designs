@@ -1,26 +1,26 @@
 /** @jsx jsx */
-import { FC, ReactNode, useEffect, useState } from 'react'
-import { jsx } from '@storybook/theming'
+import { FC, ReactNode, useEffect, useState } from "react";
+import { jsx } from "@storybook/theming";
 
-import { Tabs as SbTabs } from '@storybook/components'
+import { Tabs as SbTabs } from "@storybook/components";
 
 export interface Tab {
-  id: string
-  name: string
-  content: ReactNode
-  offscreen: boolean
+  id: string;
+  name: string;
+  content: ReactNode;
+  offscreen: boolean;
 }
 
 export interface TabsProps {
-  tabs: readonly Tab[]
+  tabs: readonly Tab[];
 }
 
 export const Tabs: FC<TabsProps> = ({ tabs }) => {
-  const [selected, setSelected] = useState(tabs[0].id)
+  const [selected, setSelected] = useState(tabs[0].id);
 
   useEffect(() => {
-    setSelected(tabs[0].id)
-  }, [tabs])
+    setSelected(tabs[0].id);
+  }, [tabs]);
 
   return (
     <SbTabs absolute selected={selected} actions={{ onSelect: setSelected }}>
@@ -30,5 +30,5 @@ export const Tabs: FC<TabsProps> = ({ tabs }) => {
         </div>
       ))}
     </SbTabs>
-  )
-}
+  );
+};

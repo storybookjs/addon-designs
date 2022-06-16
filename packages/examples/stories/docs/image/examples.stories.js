@@ -1,47 +1,47 @@
-import React from 'react'
+import React from "react";
 
-import { config } from 'storybook-addon-designs'
+import { config } from "storybook-addon-designs";
 
-import { Button } from '../../Button'
+import { Button } from "../../Button";
 
-import Docs from './examples.mdx'
+import Docs from "./examples.mdx";
 
-import sampleImage from '@storybook-addon-designs/assets/sample.png'
+import sampleImage from "@storybook-addon-designs/assets/sample.png";
 
 export default {
-  title: 'Docs/Image/Examples',
+  title: "Docs/Image/Examples",
   parameters: {
     docs: {
       page: Docs,
     },
   },
-}
+};
 
-export const embedImage = () => <Button>Button</Button>
+export const embedImage = () => <Button>Button</Button>;
 
 embedImage.parameters = {
   design: config({
-    type: 'image',
-    url: 'https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg',
+    type: "image",
+    url: "https://raw.githubusercontent.com/storybookjs/brand/master/logo/logo-storybook-default.svg",
   }),
-}
+};
 
-export const embedImageWithImport = () => <Button>Button</Button>
+export const embedImageWithImport = () => <Button>Button</Button>;
 
 embedImageWithImport.parameters = {
   design: config({
-    type: 'image',
+    type: "image",
     url: sampleImage,
   }),
-}
+};
 
-export const setScaleAndOffset = () => <Button>Button</Button>
+export const setScaleAndOffset = () => <Button>Button</Button>;
 
 setScaleAndOffset.parameters = {
   design: config({
-    type: 'image',
+    type: "image",
     url: sampleImage,
     offset: [-300, 140],
     scale: 2,
   }),
-}
+};

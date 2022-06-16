@@ -1,7 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks'
-import { Subtitle } from '@storybook/addon-docs/blocks'
-import { LinkTo } from '@storybook/addon-links'
-import { Badge } from '@storybook/components'
+import { Meta } from "@storybook/addon-docs/blocks";
+import { Subtitle } from "@storybook/addon-docs/blocks";
+import { LinkTo } from "@storybook/addon-links";
+import { Badge } from "@storybook/components";
 
 <Meta title="Docs/Image/README" />
 
@@ -17,14 +17,14 @@ Set `type: "image"` and pass the URL to the image.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'image',
-    url: '<URL>',
+    type: "image",
+    url: "<URL>",
   },
-}
+};
 ```
 
 You can also import images and pass them to an `url` option.
@@ -32,16 +32,16 @@ Webpack loaders Storybook configured make this possible.
 
 ```js
 // myStories.stories.jsx
-import myImage from '/path/to/image.png' // or .svg, .jpg, etc...
+import myImage from "/path/to/image.png"; // or .svg, .jpg, etc...
 
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'image',
+    type: "image",
     url: myImage,
   },
-}
+};
 ```
 
 You can find more detailed instructions [here](/?path=/docs/docs-image-examples--embed-image).

@@ -1,4 +1,4 @@
-import { Subtitle } from '@storybook/addon-docs/blocks'
+import { Subtitle } from "@storybook/addon-docs/blocks";
 
 # Figma embeds examples
 
@@ -17,14 +17,14 @@ To embed your Figma files, use `figma` type and put an URL for the file to `url`
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
   },
-}
+};
 ```
 
 The `url` is an URL when you open your Figma file in browser.
@@ -40,14 +40,14 @@ To embed a specific frame in your Figma file, paste an URL for the frame instead
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5',
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5",
   },
-}
+};
 ```
 
 If you're using Figma Desktop App, check `Link to selected frame` in a share dialog and `Copy link` button.
@@ -62,14 +62,14 @@ and copy a browser URL, then paste it at your story parameter's `url` field.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'figma',
-    url: 'https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    type: "figma",
+    url: "https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
   },
-}
+};
 ```
 
 ## Embed with fullscreen button
@@ -80,13 +80,13 @@ To allow Figma embeds frame to go fullscreen, set an `allowFullscreen` option.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     allowFullscreen: true,
   },
-}
+};
 ```

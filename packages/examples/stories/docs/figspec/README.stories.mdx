@@ -1,7 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks'
-import { Subtitle } from '@storybook/addon-docs/blocks'
-import { LinkTo } from '@storybook/addon-links'
-import { Badge } from '@storybook/components'
+import { Meta } from "@storybook/addon-docs/blocks";
+import { Subtitle } from "@storybook/addon-docs/blocks";
+import { LinkTo } from "@storybook/addon-links";
+import { Badge } from "@storybook/components";
 
 <Meta title="Docs/Figma (Figspec)/README" />
 
@@ -29,15 +29,15 @@ Put a `design` parameter into your story with `type: "figspec"` and `url` pointi
 You also provide your [Figma Personal Access Token](https://www.figma.com/developers/api#access-tokens) in `accessToken` field or `STORYBOOK_FIGMA_ACCESS_TOKEN` environment variable.
 
 ```js
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'figspec',
-    url: '<YOUR_FIGMA_ITEM_URL>',
-    accessToken: '<YOUR_FIGMA_ACCESS_TOKEN>',
+    type: "figspec",
+    url: "<YOUR_FIGMA_ITEM_URL>",
+    accessToken: "<YOUR_FIGMA_ACCESS_TOKEN>",
   },
-}
+};
 ```
 
 ```sh

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import { Button } from '../Button'
+import { Button } from "../Button";
 
 export default {
-  title: 'Tests/Disabled',
-}
+  title: "Tests/Disabled",
+};
 
-export const withoutDesign = () => <Button>Button</Button>
+export const withoutDesign = () => <Button>Button</Button>;
 
 withoutDesign.parameters = {
   design: { disabled: true },
-}
+};

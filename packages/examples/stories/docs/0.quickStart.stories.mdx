@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks'
-import { TabsState } from '@storybook/components'
+import { Meta } from "@storybook/addon-docs/blocks";
+import { TabsState } from "@storybook/components";
 
 <Meta title="Docs/Quick start" />
 
@@ -30,8 +30,8 @@ Just put the addon name to `main.js`.
 ```js
 // .storybook/main.js
 module.exports = {
-  addons: ['storybook-addon-designs'],
-}
+  addons: ["storybook-addon-designs"],
+};
 ```
 
 Now, you can embed designs to your Storybook.
@@ -43,21 +43,21 @@ You can also [register the decorator globally][sb-docs-decorators] ([parameters 
 
 ```js
 // myStories.stories.jsx
-import { withDesign } from 'storybook-addon-designs'
+import { withDesign } from "storybook-addon-designs";
 
 export default {
-  title: 'myStories',
+  title: "myStories",
   decorators: [withDesign],
-}
+};
 
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
   },
-}
+};
 ```
 
 ## Documentation notes
@@ -93,16 +93,16 @@ In this document, we use [CSF (Component Story Format)][csf-docs] for all code e
 
 ```js
 // myStories.stories.jsx
-import { withDesign } from 'storybook-addon-designs'
+import { withDesign } from "storybook-addon-designs";
 
-storiesOf('myStories', module)
+storiesOf("myStories", module)
   .addDecorator(withDesign)
-  .add('myStory', () => <MyComponent />, {
+  .add("myStory", () => <MyComponent />, {
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
-  })
+  });
 ```
 
 ## Documentation notes

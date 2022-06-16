@@ -1,7 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks'
-import { Subtitle } from '@storybook/addon-docs/blocks'
-import { LinkTo } from '@storybook/addon-links'
-import { Badge } from '@storybook/components'
+import { Meta } from "@storybook/addon-docs/blocks";
+import { Subtitle } from "@storybook/addon-docs/blocks";
+import { LinkTo } from "@storybook/addon-links";
+import { Badge } from "@storybook/components";
 
 <Meta title="Docs/iframe/README" />
 
@@ -23,14 +23,14 @@ Set `type: "iframe"` and pass the URL.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'iframe',
-    url: '<URL>',
+    type: "iframe",
+    url: "<URL>",
   },
-}
+};
 ```
 
 You can find more detailed instructions [here](/?path=/docs/docs-iframe-examples--embed-site).

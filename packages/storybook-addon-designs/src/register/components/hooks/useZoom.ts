@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, DependencyList } from 'react'
+import { useCallback, useEffect, useState, DependencyList } from "react";
 
 type UseZoom = (
   initialValue: number,
@@ -8,42 +8,42 @@ type UseZoom = (
    * Current scale factor.
    * 0.0 < n < Infinity
    */
-  scale: number
+  scale: number;
 
   /**
    * Zoom in
    */
-  zoomIn(): void
+  zoomIn(): void;
 
   /**
    * Zoom out
    */
-  zoomOut(): void
+  zoomOut(): void;
 
   /**
    * Reset scale factor to 1.
    */
-  resetZoom(): void
-}
+  resetZoom(): void;
+};
 
 export const useZoom: UseZoom = (initialValue, deps) => {
-  const [scale, setScale] = useState<number>(1)
+  const [scale, setScale] = useState<number>(1);
 
   useEffect(() => {
-    setScale(initialValue)
-  }, deps)
+    setScale(initialValue);
+  }, deps);
 
   const zoomIn = useCallback(() => {
-    setScale((prevScale) => prevScale + 0.1)
-  }, [setScale])
+    setScale((prevScale) => prevScale + 0.1);
+  }, [setScale]);
 
   const zoomOut = useCallback(() => {
-    setScale((prevScale) => Math.max(prevScale - 0.1, 0.1))
-  }, [setScale])
+    setScale((prevScale) => Math.max(prevScale - 0.1, 0.1));
+  }, [setScale]);
 
   const resetZoom = useCallback(() => {
-    setScale(1)
-  }, [setScale])
+    setScale(1);
+  }, [setScale]);
 
-  return { scale, zoomIn, zoomOut, resetZoom }
-}
+  return { scale, zoomIn, zoomOut, resetZoom };
+};

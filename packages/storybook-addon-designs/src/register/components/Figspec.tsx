@@ -4,20 +4,20 @@ import type {
   FileNodesResponse,
   FileImageResponse,
   Node,
-} from 'figma-js'
-import { FC, Fragment, useEffect, useMemo, useState } from 'react'
+} from "figma-js";
+import { FC, Fragment, useEffect, useMemo, useState } from "react";
 import {
   FigspecFileViewer,
   FigspecFileViewerProps,
   FigspecFrameViewer,
   FigspecFrameViewerProps,
-} from '@figspec/react'
-import { Placeholder } from '@storybook/components'
-import { css, jsx } from '@storybook/theming'
+} from "@figspec/react";
+import { Placeholder } from "@storybook/components";
+import { css, jsx } from "@storybook/theming";
 
-import { FigspecConfig } from '../../config'
+import { FigspecConfig } from "../../config";
 
-import { figmaURLPattern } from './Figma'
+import { figmaURLPattern } from "./Figma";
 
 const fullscreen = css`
   position: absolute;
@@ -25,38 +25,38 @@ const fullscreen = css`
   right: 0;
   bottom: 0;
   left: 0;
-`
+`;
 
 type RenderItem =
   | {
-      type: 'file'
+      type: "file";
       props: Pick<
         FigspecFileViewerProps,
-        'documentNode' | 'renderedImages' | 'link'
-      >
+        "documentNode" | "renderedImages" | "link"
+      >;
     }
   | {
-      type: 'frame'
-      props: Pick<FigspecFrameViewerProps, 'nodes' | 'renderedImage' | 'link'>
-    }
+      type: "frame";
+      props: Pick<FigspecFrameViewerProps, "nodes" | "renderedImage" | "link">;
+    };
 
 type Remote<T, E = Error> =
   | {
-      state: 'fetched'
-      value: T
+      state: "fetched";
+      value: T;
     }
   | {
-      state: 'failed'
-      error: E
+      state: "failed";
+      error: E;
     }
   | {
-      state: 'loading'
-    }
+      state: "loading";
+    };
 
 function unwrapJson<T>(res: Response): Promise<T> {
   return res.status !== 200
     ? Promise.reject(res.statusText)
-    : (res.json() as Promise<T>)
+    : (res.json() as Promise<T>);
 }
 
 /**
@@ -64,94 +64,94 @@ function unwrapJson<T>(res: Response): Promise<T> {
  */
 function getAccessToken(cfg: FigspecConfig): string | null {
   if (cfg.accessToken) {
-    return cfg.accessToken
+    return cfg.accessToken;
   }
 
   try {
-    return process.env.STORYBOOK_FIGMA_ACCESS_TOKEN ?? null
+    return process.env.STORYBOOK_FIGMA_ACCESS_TOKEN ?? null;
   } catch (err) {
     // The only case here is no DefinePlugin entry for `process.env` nor
     // `process.env.STORYBOOK_FIGMA_ACCESS_TOKEN`. We can safely ignore this.
-    return null
+    return null;
   }
 }
 
 interface Props {
-  config: FigspecConfig
+  config: FigspecConfig;
 }
 
 export const Figspec: FC<Props> = ({ config }) => {
   const [state, setState] = useState<Remote<RenderItem, string>>({
-    state: 'loading',
-  })
+    state: "loading",
+  });
 
   const fetchDetails = async (signal: AbortSignal) => {
-    setState({ state: 'loading' })
+    setState({ state: "loading" });
 
     try {
-      const match = config.url.match(figmaURLPattern)
+      const match = config.url.match(figmaURLPattern);
 
       if (!match) {
-        throw new Error(config.url + ' is not a valid Figma URL.')
+        throw new Error(config.url + " is not a valid Figma URL.");
       }
 
-      const [, , , fileKey] = match
+      const [, , , fileKey] = match;
 
-      const url = new URL(config.url)
+      const url = new URL(config.url);
 
-      const nodeId = url.searchParams.get('node-id')
+      const nodeId = url.searchParams.get("node-id");
 
-      const accessToken = getAccessToken(config)
+      const accessToken = getAccessToken(config);
 
       if (!accessToken) {
-        throw new Error('Personal Access Token is required.')
+        throw new Error("Personal Access Token is required.");
       }
 
       const headers = {
-        'X-FIGMA-TOKEN': accessToken,
-      }
+        "X-FIGMA-TOKEN": accessToken,
+      };
 
-      const nodeUrl = new URL(`https://api.figma.com/v1/files/${fileKey}`)
-      const imageUrl = new URL(`https://api.figma.com/v1/images/${fileKey}`)
+      const nodeUrl = new URL(`https://api.figma.com/v1/files/${fileKey}`);
+      const imageUrl = new URL(`https://api.figma.com/v1/images/${fileKey}`);
 
-      imageUrl.searchParams.set('format', 'svg')
+      imageUrl.searchParams.set("format", "svg");
 
       if (!nodeId) {
         const documentNode = await fetch(nodeUrl.href, {
           headers,
           signal,
-        }).then((resp) => unwrapJson<FileResponse>(resp))
+        }).then((resp) => unwrapJson<FileResponse>(resp));
 
-        const frames = listAllFrames(documentNode.document)
+        const frames = listAllFrames(documentNode.document);
 
         imageUrl.searchParams.set(
-          'ids',
-          frames.map((frame) => frame.id).join(',')
-        )
+          "ids",
+          frames.map((frame) => frame.id).join(",")
+        );
 
         const images = await fetch(imageUrl.href, {
           headers,
           signal,
-        }).then((resp) => unwrapJson<FileImageResponse>(resp))
+        }).then((resp) => unwrapJson<FileImageResponse>(resp));
 
         setState({
-          state: 'fetched',
+          state: "fetched",
           value: {
-            type: 'file',
+            type: "file",
             props: {
               documentNode,
               renderedImages: images.images,
               link: config.url,
             },
           },
-        })
-        return
+        });
+        return;
       }
 
-      nodeUrl.pathname += '/nodes'
+      nodeUrl.pathname += "/nodes";
 
-      nodeUrl.searchParams.set('ids', nodeId)
-      imageUrl.searchParams.set('ids', nodeId)
+      nodeUrl.searchParams.set("ids", nodeId);
+      imageUrl.searchParams.set("ids", nodeId);
 
       const [nodes, images] = await Promise.all([
         fetch(nodeUrl.href, {
@@ -161,83 +161,83 @@ export const Figspec: FC<Props> = ({ config }) => {
         fetch(imageUrl.href, { headers, signal }).then((resp) =>
           unwrapJson<FileImageResponse>(resp)
         ),
-      ])
+      ]);
 
       setState({
-        state: 'fetched',
+        state: "fetched",
         value: {
-          type: 'frame',
+          type: "frame",
           props: {
             nodes,
             renderedImage: Object.values<string>(images.images)[0],
             link: config.url,
           },
         },
-      })
+      });
     } catch (err) {
       if (err instanceof DOMException && err.code === DOMException.ABORT_ERR) {
-        return
+        return;
       }
 
-      console.error(err)
+      console.error(err);
 
       setState({
-        state: 'failed',
+        state: "failed",
         error: err instanceof Error ? err.message : String(err),
-      })
+      });
     }
-  }
+  };
 
   useEffect(() => {
-    let fulfilled = false
+    let fulfilled = false;
     const fulfil = () => {
-      fulfilled = true
-    }
+      fulfilled = true;
+    };
 
-    const ac = new AbortController()
+    const ac = new AbortController();
 
-    fetchDetails(ac.signal).then(fulfil, fulfil)
+    fetchDetails(ac.signal).then(fulfil, fulfil);
 
     return () => {
       if (!fulfilled) {
-        ac.abort()
+        ac.abort();
       }
-    }
-  }, [config.url])
+    };
+  }, [config.url]);
 
   switch (state.state) {
-    case 'loading':
+    case "loading":
       return (
         <Placeholder>
           <Fragment>Loading Figma file...</Fragment>
         </Placeholder>
-      )
-    case 'failed':
+      );
+    case "failed":
       return (
         <Placeholder>
           <Fragment>Failed to load Figma file</Fragment>
           <Fragment>{state.error}</Fragment>
         </Placeholder>
-      )
-    case 'fetched':
-      return state.value.type === 'file' ? (
+      );
+    case "fetched":
+      return state.value.type === "file" ? (
         <FigspecFileViewer css={fullscreen} {...state.value.props} />
       ) : (
         <FigspecFrameViewer css={fullscreen} {...state.value.props} />
-      )
+      );
   }
-}
+};
 
-export default Figspec
+export default Figspec;
 
 function listAllFrames(node: Node): Node[] {
-  if ('absoluteBoundingBox' in node) {
-    return [node]
+  if ("absoluteBoundingBox" in node) {
+    return [node];
   }
 
   if (!node.children || node.children.length === 0) {
-    return []
+    return [];
   }
 
-  return node.children.map(listAllFrames).reduce((a, b) => a.concat(b), [])
+  return node.children.map(listAllFrames).reduce((a, b) => a.concat(b), []);
 }

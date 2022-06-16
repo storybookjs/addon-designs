@@ -38,26 +38,26 @@ npm install --save-dev storybook-addon-designs
 
 ```js
 module.exports = {
-  addons: ['storybook-addon-designs'],
-}
+  addons: ["storybook-addon-designs"],
+};
 ```
 
 ### 3. Add it to story!
 
 ```js
 export default {
-  title: 'My stories',
+  title: "My stories",
   component: Button,
-}
+};
 
-export const myStory = () => <Button>Hello, World!</Button>
+export const myStory = () => <Button>Hello, World!</Button>;
 
 myStory.parameters = {
   design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File',
+    type: "figma",
+    url: "https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File",
   },
-}
+};
 ```
 
 ## Similar projects

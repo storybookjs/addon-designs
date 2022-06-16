@@ -1,17 +1,17 @@
-const main = require('../../examples/.storybook/main')
+const main = require("../../examples/.storybook/main");
 
 module.exports = {
   stories: [
-    '../../examples/stories/**/*.stories.mdx',
-    '../../examples/stories/**/*.stories.{js,jsx,ts,tsx}',
-    '../stories/**/*.stories.{js,jsx,ts,tsx,mdx}',
+    "../../examples/stories/**/*.stories.mdx",
+    "../../examples/stories/**/*.stories.{js,jsx,ts,tsx}",
+    "../stories/**/*.stories.{js,jsx,ts,tsx,mdx}",
   ],
   addons: [
-    '@storybook/addon-docs',
+    "@storybook/addon-docs",
     {
-      name: 'storybook-addon-designs',
+      name: "storybook-addon-designs",
       options: {
-        renderTarget: 'tab',
+        renderTarget: "tab",
       },
     },
   ],
@@ -21,4 +21,4 @@ module.exports = {
   core: {
     disableTelemetry: true,
   },
-}
+};

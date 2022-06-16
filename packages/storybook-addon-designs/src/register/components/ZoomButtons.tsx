@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { Fragment, FC } from 'react'
-import { jsx } from '@storybook/theming'
+import { Fragment, FC } from "react";
+import { jsx } from "@storybook/theming";
 
-import { IconButton, Icons } from '@storybook/components'
+import { IconButton, Icons } from "@storybook/components";
 
 interface Props {
-  onZoomIn?(): any
-  onZoomOut?(): any
-  onReset?(): any
+  onZoomIn?(): any;
+  onZoomOut?(): any;
+  onReset?(): any;
 }
 
 export const ZoomButtons: FC<Props> = ({ onZoomIn, onZoomOut, onReset }) => (
@@ -22,6 +22,6 @@ export const ZoomButtons: FC<Props> = ({ onZoomIn, onZoomOut, onReset }) => (
       <Icons icon="zoomreset" />
     </IconButton>
   </Fragment>
-)
+);
 
-export default ZoomButtons
+export default ZoomButtons;

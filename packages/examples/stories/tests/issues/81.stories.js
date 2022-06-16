@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import { config, withDesign } from 'storybook-addon-designs'
+import { config, withDesign } from "storybook-addon-designs";
 
-import { Button } from '../../Button'
+import { Button } from "../../Button";
 
-import sampleImage from '@storybook-addon-designs/assets/sample.png'
+import sampleImage from "@storybook-addon-designs/assets/sample.png";
 
 export default {
-  title: 'Tests/Issues/#81',
+  title: "Tests/Issues/#81",
   decorators: [withDesign],
-}
+};
 
-export const hideLoadingPlaceholderWhenLoaded = () => <Button>Button</Button>
+export const hideLoadingPlaceholderWhenLoaded = () => <Button>Button</Button>;
 
 hideLoadingPlaceholderWhenLoaded.parameters = {
   design: config({
-    type: 'iframe',
+    type: "iframe",
     url: sampleImage,
   }),
-}
+};

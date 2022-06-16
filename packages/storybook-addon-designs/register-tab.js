@@ -1,3 +1,3 @@
-import register from './esm/register/index'
+import register from "./esm/register/index";
 
-register('tab')
+register("tab");

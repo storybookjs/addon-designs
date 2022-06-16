@@ -1,4 +1,4 @@
-import { Subtitle } from '@storybook/addon-docs/blocks'
+import { Subtitle } from "@storybook/addon-docs/blocks";
 
 # Link embeds examples
 
@@ -16,14 +16,14 @@ To simply display a link, set an URL to an `url` option.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'link',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    type: "link",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
   },
-}
+};
 ```
 
 ## Specify label text
@@ -34,15 +34,15 @@ You can customize display text by providing a `label` option.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'link',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
-    label: 'Open design in new tab',
+    type: "link",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+    label: "Open design in new tab",
   },
-}
+};
 ```
 
 ## Hide an arrow icon
@@ -53,13 +53,13 @@ To hide a right-arrow icon next to the label, turn off `showArrow`.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'link',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    type: "link",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     showArrow: false,
   },
-}
+};
 ```

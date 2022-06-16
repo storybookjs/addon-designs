@@ -1,24 +1,24 @@
 /** @jsx jsx */
-import { FC, ReactNode, useEffect, useState } from 'react'
-import { css, jsx } from '@storybook/theming'
+import { FC, ReactNode, useEffect, useState } from "react";
+import { css, jsx } from "@storybook/theming";
 
-import { Placeholder } from '@storybook/components'
+import { Placeholder } from "@storybook/components";
 
-import { IFrameConfigBase } from '../../config'
+import { IFrameConfigBase } from "../../config";
 
 interface Props {
-  config: IFrameConfigBase
+  config: IFrameConfigBase;
 
   /**
    * Whether to defer loading iframe contents
    * @default false
    */
-  defer?: boolean
+  defer?: boolean;
 }
 
 export const IFrame: FC<Props> = ({ config, defer = false }) => {
-  const [url, setUrl] = useState(defer ? undefined : config.url)
-  const [loaded, setLoaded] = useState(false)
+  const [url, setUrl] = useState(defer ? undefined : config.url);
+  const [loaded, setLoaded] = useState(false);
 
   // Defer loading iframe URL.
   // Some sites (e.g. Figma) detects Fullscreen API capability on
@@ -33,19 +33,19 @@ export const IFrame: FC<Props> = ({ config, defer = false }) => {
   // https://github.com/pocka/storybook-addon-designs/issues/77
   useEffect(() => {
     if (!defer) {
-      return
+      return;
     }
 
     const handle = requestAnimationFrame(() => {
-      setUrl(config.url)
-    })
+      setUrl(config.url);
+    });
 
-    return () => cancelAnimationFrame(handle)
-  }, [defer, config.url])
+    return () => cancelAnimationFrame(handle);
+  }, [defer, config.url]);
 
   useEffect(() => {
-    setLoaded(false)
-  }, [url])
+    setLoaded(false);
+  }, [url]);
 
   return (
     <div css={$container}>
@@ -60,10 +60,10 @@ export const IFrame: FC<Props> = ({ config, defer = false }) => {
         onLoad={() => setLoaded(true)}
       />
     </div>
-  )
-}
+  );
+};
 
-export default IFrame
+export default IFrame;
 
 const $container = css`
   position: absolute;
@@ -73,7 +73,7 @@ const $container = css`
   left: 0;
 
   overflow: hidden;
-`
+`;
 
 const $loading = css`
   position: absolute;
@@ -81,7 +81,7 @@ const $loading = css`
   left: 50%;
 
   transform: translate(-50%, -50%);
-`
+`;
 
 const $iframe = css`
   position: relative;
@@ -90,4 +90,4 @@ const $iframe = css`
   border: none;
 
   z-index: 1;
-`
+`;

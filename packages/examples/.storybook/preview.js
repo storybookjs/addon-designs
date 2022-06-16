@@ -1,6 +1,6 @@
-import { addParameters } from '@storybook/react'
+import { addParameters } from "@storybook/react";
 
 addParameters({
-  viewMode: 'story',
+  viewMode: "story",
   docs: { page: null },
-})
+});

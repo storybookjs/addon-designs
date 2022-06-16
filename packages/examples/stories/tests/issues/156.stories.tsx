@@ -1,8 +1,8 @@
-import React from 'react'
-import { Figma } from 'storybook-addon-designs/blocks'
+import React from "react";
+import { Figma } from "storybook-addon-designs/blocks";
 
 export default {
-  title: 'Tests/Issues/#156',
+  title: "Tests/Issues/#156",
   parameters: {
     docs: {
       page: () => (
@@ -15,8 +15,8 @@ export default {
       ),
     },
   },
-}
+};
 
-const Template = () => <button>Button</button>
+const Template = () => <button>Button</button>;
 
-export const dummy = Template.bind({})
+export const dummy = Template.bind({});

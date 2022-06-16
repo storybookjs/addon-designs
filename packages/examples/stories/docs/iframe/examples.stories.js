@@ -1,35 +1,35 @@
-import React from 'react'
+import React from "react";
 
-import { config } from 'storybook-addon-designs'
+import { config } from "storybook-addon-designs";
 
-import { Button } from '../../Button'
+import { Button } from "../../Button";
 
-import Docs from './examples.mdx'
+import Docs from "./examples.mdx";
 
 export default {
-  title: 'Docs/iframe/Examples',
+  title: "Docs/iframe/Examples",
   parameters: {
     docs: {
       page: Docs,
     },
   },
-}
+};
 
-export const embedSite = () => <Button>Button</Button>
+export const embedSite = () => <Button>Button</Button>;
 
 embedSite.parameters = {
   design: config({
-    type: 'iframe',
-    url: 'https://www.wikipedia.org/',
+    type: "iframe",
+    url: "https://www.wikipedia.org/",
   }),
-}
+};
 
-export const allowFullscreen = () => <Button>😻</Button>
+export const allowFullscreen = () => <Button>😻</Button>;
 
 allowFullscreen.parameters = {
   design: config({
-    type: 'iframe',
-    url: 'https://www.youtube.com/embed/JhpyGdvsApo',
+    type: "iframe",
+    url: "https://www.youtube.com/embed/JhpyGdvsApo",
     allowFullscreen: true,
   }),
-}
+};

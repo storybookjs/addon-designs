@@ -1,4 +1,4 @@
-import { Subtitle } from '@storybook/addon-docs/blocks'
+import { Subtitle } from "@storybook/addon-docs/blocks";
 
 # iframe embeds examples
 
@@ -17,14 +17,14 @@ To simply embed a website, just copy-and-paste an URL of the website.
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'iframe',
-    url: 'https://www.wikipedia.org/',
+    type: "iframe",
+    url: "https://www.wikipedia.org/",
   },
-}
+};
 ```
 
 ## Allowing fullscreen
@@ -35,13 +35,13 @@ myStory.parameters = {
 
 ```js
 // myStories.stories.jsx
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    type: 'iframe',
-    url: 'https://www.youtube.com/embed/JhpyGdvsApo',
+    type: "iframe",
+    url: "https://www.youtube.com/embed/JhpyGdvsApo",
     allowFullscreen: true,
   },
-}
+};
 ```

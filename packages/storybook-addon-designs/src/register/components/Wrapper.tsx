@@ -1,30 +1,30 @@
 /** @jsx jsx */
-import { Fragment, lazy, Suspense, FC } from 'react'
-import { jsx } from '@storybook/theming'
+import { Fragment, lazy, Suspense, FC } from "react";
+import { jsx } from "@storybook/theming";
 
-import { Link, Placeholder } from '@storybook/components'
+import { Link, Placeholder } from "@storybook/components";
 
-import { Config } from '../../config'
+import { Config } from "../../config";
 
-import { Figma } from './Figma'
-import { IFrame } from './IFrame'
-import { ImagePreview } from './Image'
-import { LinkPanel } from './LinkPanel'
-import { Tab, Tabs } from './Tabs'
+import { Figma } from "./Figma";
+import { IFrame } from "./IFrame";
+import { ImagePreview } from "./Image";
+import { LinkPanel } from "./LinkPanel";
+import { Tab, Tabs } from "./Tabs";
 
-const Figspec = lazy(() => import('./Figspec'))
+const Figspec = lazy(() => import("./Figspec"));
 
 interface Props {
-  config?: Config | Config[]
+  config?: Config | Config[];
 }
 
 export const Wrapper: FC<Props> = ({ config }) => {
-  if (!config || ('length' in config && config.length === 0)) {
+  if (!config || ("length" in config && config.length === 0)) {
     return (
       <Placeholder>
         <Fragment>No designs found</Fragment>
         <Fragment>
-          Learn how to{' '}
+          Learn how to{" "}
           <Link
             href="https://github.com/pocka/storybook-addon-designs#usage"
             target="_blank"
@@ -36,35 +36,35 @@ export const Wrapper: FC<Props> = ({ config }) => {
           </Link>
         </Fragment>
       </Placeholder>
-    )
+    );
   }
 
   const tabs = [...(config instanceof Array ? config : [config])].map<Tab>(
     (cfg, i) => {
-      const meta: Omit<Tab, 'content'> = {
+      const meta: Omit<Tab, "content"> = {
         id: JSON.stringify(cfg),
         name: cfg.name || cfg.type.toUpperCase(),
         offscreen: cfg.offscreen ?? true,
-      }
+      };
 
       switch (cfg.type) {
-        case 'iframe':
+        case "iframe":
           return {
             ...meta,
             content: <IFrame config={cfg} />,
-          }
-        case 'figma':
+          };
+        case "figma":
           return {
             ...meta,
             content: <Figma config={cfg} />,
             offscreen: false,
-          }
-        case 'figspec':
-        case 'experimental-figspec':
-          if (cfg.type === 'experimental-figspec') {
+          };
+        case "figspec":
+        case "experimental-figspec":
+          if (cfg.type === "experimental-figspec") {
             console.warn(
-              '[storybook-addon-designs] `experimental-figspec` is deprecated. We will remove it in v7.0. Please replace it to `figspec` type.'
-            )
+              "[storybook-addon-designs] `experimental-figspec` is deprecated. We will remove it in v7.0. Please replace it to `figspec` type."
+            );
           }
 
           return {
@@ -75,17 +75,17 @@ export const Wrapper: FC<Props> = ({ config }) => {
               </Suspense>
             ),
             offscreen: false,
-          }
-        case 'image':
+          };
+        case "image":
           return {
             ...meta,
             content: <ImagePreview config={cfg} />,
-          }
-        case 'link':
+          };
+        case "link":
           return {
             ...meta,
             content: <LinkPanel config={cfg} />,
-          }
+          };
       }
 
       return {
@@ -94,7 +94,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
           <Placeholder>
             <Fragment>Invalid config type</Fragment>
             <Fragment>
-              Config type you set is not supported. Please choose one from{' '}
+              Config type you set is not supported. Please choose one from{" "}
               <Link
                 href="https://github.com/pocka/storybook-addon-designs#available-types"
                 target="_blank"
@@ -107,15 +107,15 @@ export const Wrapper: FC<Props> = ({ config }) => {
             </Fragment>
           </Placeholder>
         ),
-      }
+      };
     }
-  )
+  );
 
   if (tabs.length === 1) {
-    return <div>{tabs[0].content}</div>
+    return <div>{tabs[0].content}</div>;
   }
 
-  return <Tabs tabs={tabs} />
-}
+  return <Tabs tabs={tabs} />;
+};
 
-export default Wrapper
+export default Wrapper;

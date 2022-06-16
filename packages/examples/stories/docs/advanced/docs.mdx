@@ -1,9 +1,9 @@
-import { Subtitle } from '@storybook/addon-docs/blocks'
-import { TabsState } from '@storybook/components'
+import { Subtitle } from "@storybook/addon-docs/blocks";
+import { TabsState } from "@storybook/components";
 
-import { Figma, IFrame } from 'storybook-addon-designs/blocks'
+import { Figma, IFrame } from "storybook-addon-designs/blocks";
 
-import { TabLink } from './TabLink'
+import { TabLink } from "./TabLink";
 
 # Advanced usage
 
@@ -21,15 +21,15 @@ You can change the addon tab title (defaulted to `Design`) by setting `name` pro
 [Example](/?path=/story/docs-advanced-usage--set-tab-name)
 
 ```js
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: {
-    name: 'Wireframe',
-    type: 'figma',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    name: "Wireframe",
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
   },
-}
+};
 ```
 
 ## Embed multiple designs
@@ -39,20 +39,20 @@ You can embed more than one designs by passing an array to the `design` paramete
 [Example](/?path=/story/docs-advanced-usage--embed-multiple-designs)
 
 ```js
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: [
     {
-      type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
     {
-      type: 'link',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      type: "link",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
   ],
-}
+};
 ```
 
 To change the name of tabs, pass `name` option to each object.
@@ -60,22 +60,22 @@ To change the name of tabs, pass `name` option to each object.
 [Example](/?path=/story/docs-advanced-usage--set-tab-names)
 
 ```js
-export const myStory = () => <MyComponent />
+export const myStory = () => <MyComponent />;
 
 myStory.parameters = {
   design: [
     {
-      name: 'Foo',
-      type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      name: "Foo",
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
     {
-      name: 'Bar',
-      type: 'link',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      name: "Bar",
+      type: "link",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
   ],
-}
+};
 ```
 
 Here is a list of tab-related parameter options.
@@ -103,13 +103,13 @@ The default value is `"panel"`.
 module.exports = {
   addons: [
     {
-      name: 'storybook-addon-designs',
+      name: "storybook-addon-designs",
       options: {
-        renderTarget: 'tab',
+        renderTarget: "tab",
       },
     },
   ],
-}
+};
 ```
 
   </div></div>
@@ -117,7 +117,7 @@ module.exports = {
 
 ```js
 // .storybook/addons.js
-import 'storybook-addon-designs/register-tab'
+import "storybook-addon-designs/register-tab";
 ```
 
   </div></div>
@@ -128,7 +128,7 @@ import 'storybook-addon-designs/register-tab'
 The addon provides React components for addon-docs, so you can embed design specs to your Docs:
 
 ```mdx
-import { Figma } from 'storybook-addon-designs/blocks'
+import { Figma } from "storybook-addon-designs/blocks";
 
 <Figma
   height="30%"

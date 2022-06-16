@@ -1,56 +1,56 @@
-import React from 'react'
+import React from "react";
 
-import { config } from 'storybook-addon-designs'
+import { config } from "storybook-addon-designs";
 
-import { Button } from '../../Button'
+import { Button } from "../../Button";
 
-import Docs from './docs.mdx'
+import Docs from "./docs.mdx";
 
 export default {
-  title: 'Docs/Advanced usage',
+  title: "Docs/Advanced usage",
   parameters: {
     docs: { page: Docs },
   },
-}
+};
 
-export const setTabName = () => <Button>Button</Button>
+export const setTabName = () => <Button>Button</Button>;
 
 setTabName.parameters = {
   design: config({
-    name: 'Wireframe',
-    type: 'figma',
-    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    name: "Wireframe",
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
   }),
-}
+};
 
-export const embedMultipleDesigns = () => <Button>Button</Button>
+export const embedMultipleDesigns = () => <Button>Button</Button>;
 
 embedMultipleDesigns.parameters = {
   design: config([
     {
-      type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
     {
-      type: 'link',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      type: "link",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
   ]),
-}
+};
 
-export const setTabNames = () => <Button>Button</Button>
+export const setTabNames = () => <Button>Button</Button>;
 
 setTabNames.parameters = {
   design: config([
     {
-      name: 'Foo',
-      type: 'figma',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      name: "Foo",
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
     {
-      name: 'Bar',
-      type: 'link',
-      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      name: "Bar",
+      type: "link",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
     },
   ]),
-}
+};

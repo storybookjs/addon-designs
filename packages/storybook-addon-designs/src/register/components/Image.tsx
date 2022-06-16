@@ -1,29 +1,29 @@
 /** @jsx jsx */
-import { Fragment, useMemo, CSSProperties, FC } from 'react'
-import { css, jsx } from '@storybook/theming'
+import { Fragment, useMemo, CSSProperties, FC } from "react";
+import { css, jsx } from "@storybook/theming";
 
-import { FlexBar, Separator } from '@storybook/components'
+import { FlexBar, Separator } from "@storybook/components";
 
-import { Pan } from './Pan'
-import { ZoomButtons } from './ZoomButtons'
+import { Pan } from "./Pan";
+import { ZoomButtons } from "./ZoomButtons";
 
-import { ImageConfig } from '../../config'
+import { ImageConfig } from "../../config";
 
-import { useZoom } from './hooks/useZoom'
+import { useZoom } from "./hooks/useZoom";
 
 interface Props {
-  config: ImageConfig
+  config: ImageConfig;
 }
 
 export const ImagePreview: FC<Props> = ({ config }) => {
-  const zoom = useZoom(config.scale || 1, [config.scale])
+  const zoom = useZoom(config.scale || 1, [config.scale]);
 
   const imageStyles = useMemo<CSSProperties>(
     () => ({
       transform: `scale(${zoom.scale})`,
     }),
     [zoom.scale]
-  )
+  );
 
   return (
     <div css={$container}>
@@ -44,10 +44,10 @@ export const ImagePreview: FC<Props> = ({ config }) => {
         <img css={$image} src={config.url} style={imageStyles} />
       </Pan>
     </div>
-  )
-}
+  );
+};
 
-export default ImagePreview
+export default ImagePreview;
 
 const $container = css`
   position: absolute;
@@ -58,11 +58,11 @@ const $container = css`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-`
+`;
 
 const $preview = css`
   flex-grow: 1;
-`
+`;
 
 const $image = css`
   position: absolute;
@@ -75,4 +75,4 @@ const $image = css`
   pointer-events: none;
   border-radius: 1px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
-`
+`;

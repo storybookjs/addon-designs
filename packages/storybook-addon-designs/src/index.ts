@@ -1,33 +1,33 @@
-import addons, { makeDecorator, StoryWrapper } from '@storybook/addons'
+import addons, { makeDecorator, StoryWrapper } from "@storybook/addons";
 
-import { Events, PanelName, ParameterName } from './addon'
-import { Config } from './config'
+import { Events, PanelName, ParameterName } from "./addon";
+import { Config } from "./config";
 
 const wrapper: StoryWrapper = (getStory, context, { parameters }) => {
-  const channel = addons.getChannel()
+  const channel = addons.getChannel();
 
-  channel.emit(Events.UpdateConfig, parameters)
+  channel.emit(Events.UpdateConfig, parameters);
 
-  return getStory(context)
-}
+  return getStory(context);
+};
 
 export const withDesign = makeDecorator({
-  name: 'withDesign',
+  name: "withDesign",
   parameterName: ParameterName,
   skipIfNoParametersOrOptions: true,
   wrapper,
-})
+});
 
 /**
  * Dumb function to ensure typings or enchance IDE auto completion.
  */
-export const config = (c: Config | Config[]) => c
+export const config = (c: Config | Config[]) => c;
 
 if (module && module.hot && module.hot.decline) {
-  module.hot.decline()
+  module.hot.decline();
 }
 
 /**
  * Useful exports for third party developers and advanced usages
  */
-export { Config, ParameterName as PARAM_KEY, PanelName }
+export { Config, ParameterName as PARAM_KEY, PanelName };

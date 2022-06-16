@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { FC } from 'react'
-import { css, jsx } from '@storybook/theming'
+import { FC } from "react";
+import { css, jsx } from "@storybook/theming";
 
-import { Link } from '@storybook/components'
+import { Link } from "@storybook/components";
 
-import { LinkConfig } from '../../config'
+import { LinkConfig } from "../../config";
 
 interface Props {
-  config: LinkConfig
+  config: LinkConfig;
 }
 
 export const LinkPanel: FC<Props> = ({ config }) => (
@@ -15,16 +15,16 @@ export const LinkPanel: FC<Props> = ({ config }) => (
     <Link
       cancel={false}
       href={config.url}
-      target={config.target ?? '_blank'}
-      rel={config.rel ?? 'noopener'}
+      target={config.target ?? "_blank"}
+      rel={config.rel ?? "noopener"}
       withArrow={config.showArrow ?? true}
     >
       {config.label || config.url}
     </Link>
   </div>
-)
+);
 
-export default LinkPanel
+export default LinkPanel;
 
 const $container = css`
   position: absolute;
@@ -35,4 +35,4 @@ const $container = css`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;

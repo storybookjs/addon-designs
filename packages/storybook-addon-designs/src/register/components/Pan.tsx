@@ -6,22 +6,22 @@ import {
   CSSProperties,
   FC,
   ReactNode,
-} from 'react'
-import { css, jsx } from '@storybook/theming'
+} from "react";
+import { css, jsx } from "@storybook/theming";
 
-import { usePan, Point2D } from './hooks/usePan'
+import { usePan, Point2D } from "./hooks/usePan";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 
-  className?: string
-  style?: CSSProperties
+  className?: string;
+  style?: CSSProperties;
 
-  defaultValue?: Point2D
+  defaultValue?: Point2D;
 
-  value?: Point2D
+  value?: Point2D;
 
-  onChange?(delta: Point2D): any
+  onChange?(delta: Point2D): any;
 }
 
 export const Pan: FC<Props> = ({
@@ -32,34 +32,34 @@ export const Pan: FC<Props> = ({
   value,
   onChange,
 }) => {
-  const [offset, move] = useState<Point2D>([0, 0])
+  const [offset, move] = useState<Point2D>([0, 0]);
 
   useEffect(() => {
     if (defaultValue) {
-      move(defaultValue)
+      move(defaultValue);
     } else {
-      move(value || [0, 0])
+      move(value || [0, 0]);
     }
-  }, [defaultValue])
+  }, [defaultValue]);
 
   const panHandlers = usePan(
     (delta) => {
       if (onChange) {
-        onChange(delta)
+        onChange(delta);
       }
 
-      move((prev) => [prev[0] + delta[0], prev[1] + delta[1]])
+      move((prev) => [prev[0] + delta[0], prev[1] + delta[1]]);
     },
     [move, onChange]
-  )
+  );
 
   const transform = useMemo<CSSProperties>(() => {
-    const vec = value || offset
+    const vec = value || offset;
 
     return {
       transform: `translate(${vec[0]}px, ${vec[1]}px)`,
-    }
-  }, [value, offset])
+    };
+  }, [value, offset]);
 
   return (
     <div css={$container} className={className} style={style} {...panHandlers}>
@@ -67,10 +67,10 @@ export const Pan: FC<Props> = ({
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pan
+export default Pan;
 
 const $container = css`
   position: relative;
@@ -79,7 +79,7 @@ const $container = css`
   &:active {
     cursor: move;
   }
-`
+`;
 
 const $transformLayer = css`
   position: absolute;
@@ -87,4 +87,4 @@ const $transformLayer = css`
   right: 0;
   bottom: 0;
   left: 0;
-`
+`;
