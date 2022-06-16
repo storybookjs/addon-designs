@@ -62,9 +62,6 @@
     "clean": "rm -r esm cjs",
     "prepublishOnly": "cp ../../README.md ./ && npm run build"
   },
-  "publishConfig": {
-    "tag": "latest"
-  },
   "keywords": [
     "storybook-addon",
     "design",
