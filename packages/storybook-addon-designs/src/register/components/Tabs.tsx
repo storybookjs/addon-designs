@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FC, ReactNode, useEffect, useState } from "react";
+import { DependencyList, FC, ReactNode, useEffect, useState } from "react";
 import { jsx } from "@storybook/theming";
 
 import { Tabs as SbTabs } from "@storybook/components";
@@ -13,14 +13,20 @@ export interface Tab {
 
 export interface TabsProps {
   tabs: readonly Tab[];
+
+  /**
+   * Effect trigger for tab initialization. Everytime this dependency list is
+   * updated, the selection goes to the first tab.
+   */
+  deps?: DependencyList;
 }
 
-export const Tabs: FC<TabsProps> = ({ tabs }) => {
+export const Tabs: FC<TabsProps> = ({ tabs, deps = [] }) => {
   const [selected, setSelected] = useState(tabs[0].id);
 
   useEffect(() => {
     setSelected(tabs[0].id);
-  }, [tabs]);
+  }, deps);
 
   return (
     <SbTabs absolute selected={selected} actions={{ onSelect: setSelected }}>

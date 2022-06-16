@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import addons, { types, Addon } from "@storybook/addons";
+import addons, { types } from "@storybook/addons";
 import { useParameter } from "@storybook/api";
+import { AddonPanel } from "@storybook/components";
 import { jsx } from "@storybook/theming";
 
 import { AddonName, PanelName, ParameterName } from "../addon";
@@ -30,21 +31,35 @@ export default function register(renderTarget: "panel" | "tab") {
       return (param.name || DEFAULT_TAB_NAME) + " (1)";
     };
 
-    const render: Addon["render"] = ({ active, key }) => (
-      <Wrapper key={key} active={!!active} />
-    );
-
     if (renderTarget === "tab") {
       addons.add(PanelName, {
         title: DEFAULT_TAB_NAME,
-        render,
+        render({ active, key }) {
+          if (!active) {
+            // NOTE: Return type of render is `ReactElement`, hence returning `null` causes
+            //       type error. I'm using `<noscript>` in place of `null`.
+            return <noscript key={key} />;
+          }
+
+          return <Wrapper key={key} active />;
+        },
         type: types.TAB,
         paramKey: ParameterName,
         route: ({ storyId }) => `/design/${storyId}`,
         match: ({ viewMode }) => viewMode === "design",
       });
     } else {
-      addons.addPanel(PanelName, { title, paramKey: ParameterName, render });
+      addons.addPanel(PanelName, {
+        title,
+        paramKey: ParameterName,
+        render({ active, key }) {
+          return (
+            <AddonPanel key={key} active={!!active}>
+              <Wrapper active={!!active} />
+            </AddonPanel>
+          );
+        },
+      });
     }
   });
 }
