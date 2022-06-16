@@ -15,7 +15,6 @@ step1.storyName = 'Do not persist addon panel'
 step1.parameters = {
   design: config({
     type: 'figma',
-    url:
-      'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+    url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
   }),
 }

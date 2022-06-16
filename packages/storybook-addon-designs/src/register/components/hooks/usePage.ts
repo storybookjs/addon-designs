@@ -20,7 +20,7 @@ export const usePage: UsePage = (initialPage = 1) => {
   const [total, setTotal] = useState<number>(1)
 
   const init = useCallback<Page['init']>(
-    total => {
+    (total) => {
       setTotal(total)
       setCurrent(total > 0 ? initialPage : 0)
     },
@@ -28,7 +28,7 @@ export const usePage: UsePage = (initialPage = 1) => {
   )
 
   const jump = useCallback<Page['jump']>(
-    page => {
+    (page) => {
       setCurrent(page > total ? total : page <= 0 ? 1 : page)
     },
     [total, setCurrent]
@@ -46,7 +46,7 @@ export const usePage: UsePage = (initialPage = 1) => {
       return
     }
 
-    setCurrent(page => page + 1)
+    setCurrent((page) => page + 1)
   }, [isLast, setCurrent])
 
   const prev = useCallback(() => {
@@ -54,7 +54,7 @@ export const usePage: UsePage = (initialPage = 1) => {
       return
     }
 
-    setCurrent(page => page - 1)
+    setCurrent((page) => page - 1)
   }, [isFirst, setCurrent])
 
   return {
@@ -65,6 +65,6 @@ export const usePage: UsePage = (initialPage = 1) => {
     next,
     prev,
     jump,
-    init
+    init,
   }
 }

@@ -149,12 +149,13 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
   )
 }
 
-export const Figma: FC<Omit<config.FigmaConfig, 'type'> & BlocksCommonProps> =
-  ({ placeholder, ...props }) => (
-    <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
-      <FigmaInternal config={{ type: 'figma', ...props }} />
-    </DocBlockBase>
-  )
+export const Figma: FC<
+  Omit<config.FigmaConfig, 'type'> & BlocksCommonProps
+> = ({ placeholder, ...props }) => (
+  <DocBlockBase placeholder={placeholder ?? 'Design (Figma)'} {...props}>
+    <FigmaInternal config={{ type: 'figma', ...props }} />
+  </DocBlockBase>
+)
 
 export const Figspec: FC<
   Omit<config.FigspecConfig, 'type'> & BlocksCommonProps
@@ -166,22 +167,24 @@ export const Figspec: FC<
   )
 }
 
-export const IFrame: FC<Omit<config.IFrameConfig, 'type'> & BlocksCommonProps> =
-  ({ placeholder, ...props }) => (
-    <DocBlockBase placeholder={placeholder ?? 'Design (iframe)'} {...props}>
-      <IFrameInternal config={props} />
-    </DocBlockBase>
-  )
+export const IFrame: FC<
+  Omit<config.IFrameConfig, 'type'> & BlocksCommonProps
+> = ({ placeholder, ...props }) => (
+  <DocBlockBase placeholder={placeholder ?? 'Design (iframe)'} {...props}>
+    <IFrameInternal config={props} />
+  </DocBlockBase>
+)
 
 // Image would do shadowing the native variable (Image constructor, which creates
 // HTMLImageElement), but I think it doesn't matter since there is less chance to
 // use Image constructor in MDX.
-export const Image: FC<Omit<config.ImageConfig, 'type'> & BlocksCommonProps> =
-  ({ placeholder, ...props }) => (
-    <DocBlockBase placeholder={placeholder ?? 'Design (Image)'} {...props}>
-      <ImagePreview config={{ type: 'image', ...props }} />
-    </DocBlockBase>
-  )
+export const Image: FC<
+  Omit<config.ImageConfig, 'type'> & BlocksCommonProps
+> = ({ placeholder, ...props }) => (
+  <DocBlockBase placeholder={placeholder ?? 'Design (Image)'} {...props}>
+    <ImagePreview config={{ type: 'image', ...props }} />
+  </DocBlockBase>
+)
 
 const AbsoluteLocater = styled.div`
   position: absolute;

@@ -34,11 +34,11 @@ export const useZoom: UseZoom = (initialValue, deps) => {
   }, deps)
 
   const zoomIn = useCallback(() => {
-    setScale(prevScale => prevScale + 0.1)
+    setScale((prevScale) => prevScale + 0.1)
   }, [setScale])
 
   const zoomOut = useCallback(() => {
-    setScale(prevScale => Math.max(prevScale - 0.1, 0.1))
+    setScale((prevScale) => Math.max(prevScale - 0.1, 0.1))
   }, [setScale])
 
   const resetZoom = useCallback(() => {

@@ -3,7 +3,7 @@ import {
   useState,
   DependencyList,
   MouseEventHandler,
-  TouchEventHandler
+  TouchEventHandler,
 } from 'react'
 
 export type Point2D = [number, number]
@@ -33,7 +33,7 @@ export const usePan: UsePan = (cb, deps) => {
   const [isPanning, setPanState] = useState<boolean>(false)
 
   const onMouseDown = useCallback<PanController['onMouseDown']>(
-    ev => {
+    (ev) => {
       // Ensure to turn on pan mode only for main button down
       if (ev.button !== 0) {
         return
@@ -46,7 +46,7 @@ export const usePan: UsePan = (cb, deps) => {
   )
 
   const onTouchStart = useCallback<PanController['onTouchStart']>(
-    ev => {
+    (ev) => {
       const touch = ev.touches[0]
 
       savePosition([touch.screenX, touch.screenY])
@@ -61,7 +61,7 @@ export const usePan: UsePan = (cb, deps) => {
         return
       }
 
-      savePosition(prev => {
+      savePosition((prev) => {
         cb([p[0] - prev[0], p[1] - prev[1]])
 
         return p
@@ -71,7 +71,7 @@ export const usePan: UsePan = (cb, deps) => {
   )
 
   const onMouseMove = useCallback<PanController['onMouseMove']>(
-    ev => {
+    (ev) => {
       const { screenX, screenY } = ev
 
       move([screenX, screenY])
@@ -80,7 +80,7 @@ export const usePan: UsePan = (cb, deps) => {
   )
 
   const onTouchMove = useCallback<PanController['onTouchMove']>(
-    ev => {
+    (ev) => {
       const { screenX, screenY } = ev.touches[0]
 
       move([screenX, screenY])
@@ -101,6 +101,6 @@ export const usePan: UsePan = (cb, deps) => {
     onTouchStart,
     onTouchMove,
     onTouchCancel: clear,
-    onTouchEnd: clear
+    onTouchEnd: clear,
   }
 }

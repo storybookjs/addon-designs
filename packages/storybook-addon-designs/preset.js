@@ -4,7 +4,7 @@ module.exports = {
       ...entries,
       options.renderTarget === 'tab'
         ? require.resolve('./register-tab')
-        : require.resolve('./register')
+        : require.resolve('./register'),
     ]
-  }
+  },
 }

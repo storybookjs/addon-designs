@@ -16,14 +16,12 @@ doNotRenderInactiveTab.parameters = {
     {
       type: 'figma',
       name: 'Tab1',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample',
     },
     {
       type: 'figma',
       name: 'Tab2',
-      url:
-        'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5',
+      url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5',
     },
   ]),
 }
