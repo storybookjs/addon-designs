@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bump the minimum supported Storybook version to v6.4.x. ([605f751](https://github.com/pocka/storybook-addon-designs/commit/605f75145aca453f8b6d1d3e432b493e3be5bc0c))
+
+### Fixed
+
+- Declare necessary `peerDependencies`. ([#133](https://github.com/pocka/storybook-addon-designs/pull/133), [dc8dac0](https://github.com/pocka/storybook-addon-designs/commit/dc8dac0a66224a2d6842c2e3bd6127860023f078))
+
 ## [6.3.1] - 2022-06-14
 
 ### Fixed
