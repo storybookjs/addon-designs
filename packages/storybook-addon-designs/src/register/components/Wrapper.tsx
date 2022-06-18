@@ -10,6 +10,7 @@ import { Figma } from "./Figma";
 import { IFrame } from "./IFrame";
 import { ImagePreview } from "./Image";
 import { LinkPanel } from "./LinkPanel";
+import { Sketch } from "./Sketch";
 import { Tab, Tabs } from "./Tabs";
 
 const Figspec = lazy(() => import("./Figspec"));
@@ -58,6 +59,11 @@ export const Wrapper: FC<Props> = ({ config }) => {
             ...meta,
             content: <Figma config={cfg} />,
             offscreen: false,
+          };
+        case "sketch":
+          return {
+            ...meta,
+            content: <Sketch config={cfg} />,
           };
         case "figspec":
         case "experimental-figspec":

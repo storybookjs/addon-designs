@@ -2,6 +2,7 @@ export type Config =
   | IFrameConfig
   | FigmaConfig
   | FigspecConfig
+  | SketchConfig
   | ImageConfig
   | LinkConfig;
 
@@ -51,6 +52,13 @@ export interface FigmaConfig extends IFrameConfigBase {
    * A string identifies your site.
    */
   embedHost?: string;
+}
+
+/**
+ * Render Sketch artboard. (experimental)
+ */
+export interface SketchConfig extends IFrameConfigBase {
+  type: "sketch";
 }
 
 /**
