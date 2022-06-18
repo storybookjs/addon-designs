@@ -115,7 +115,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
     return <div>{tabs[0].content}</div>;
   }
 
-  return <Tabs tabs={tabs} />;
+  return <Tabs tabs={tabs} deps={[config]} />;
 };
 
 export default Wrapper;
