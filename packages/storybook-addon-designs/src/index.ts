@@ -1,4 +1,4 @@
-import addons, { makeDecorator, StoryWrapper } from "@storybook/addons";
+import { addons, makeDecorator, StoryWrapper } from "@storybook/addons";
 
 import { Events, PanelName, ParameterName } from "./addon";
 import { Config } from "./config";
