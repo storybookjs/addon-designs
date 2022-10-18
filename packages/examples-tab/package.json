@@ -1,6 +1,6 @@
 {
   "name": "examples-tab",
-  "version": "7.0.0-alpha.2",
+  "version": "7.0.0-alpha.3",
   "private": true,
   "dependencies": {
     "examples": "*"
