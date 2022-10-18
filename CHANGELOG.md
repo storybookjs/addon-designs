@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `sketch` type. ([4e75ddf](https://github.com/pocka/storybook-addon-designs/commit/4e75ddfbc46ec5760db198cbf6d0d8a4074987db))
+- Support for Storybook v7. ([#160](https://github.com/pocka/storybook-addon-designs/pull/160))
 
 ### Fixed
 
