@@ -44,7 +44,10 @@ export const Wrapper: FC<Props> = ({ config }) => {
     (cfg, i) => {
       const meta: Omit<Tab, "content"> = {
         id: JSON.stringify(cfg),
-        name: cfg.name || cfg.type.toUpperCase(),
+        name:
+          cfg.name ||
+          (cfg.type as Config["type"] | undefined)?.toUpperCase() ||
+          "ERROR",
         offscreen: cfg.offscreen ?? true,
       };
 
