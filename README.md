@@ -34,11 +34,11 @@ npm install --save-dev storybook-addon-designs
 # yarn add -D storybook-addon-designs
 ```
 
-To install v7 alpha, use below command instead.
+To install v7 beta, use below command instead.
 
 ```sh
-npm install --save-dev storybook-addon-designs@alpha
-# yarn add -D storybook-addon-designs@alpha
+npm install --save-dev storybook-addon-designs@beta
+# yarn add -D storybook-addon-designs@beta
 ```
 
 ### 2. Register the addon in `main.js`
