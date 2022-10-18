@@ -41,7 +41,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
   }
 
   const tabs = [...(config instanceof Array ? config : [config])].map<Tab>(
-    (cfg, i) => {
+    (cfg) => {
       const meta: Omit<Tab, "content"> = {
         id: JSON.stringify(cfg),
         name:
