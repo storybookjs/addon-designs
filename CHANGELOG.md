@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Declare necessary `peerDependencies`. ([#133](https://github.com/pocka/storybook-addon-designs/pull/133), [dc8dac0](https://github.com/pocka/storybook-addon-designs/commit/dc8dac0a66224a2d6842c2e3bd6127860023f078))
 - Improve content loading performance by retaining loaded content. ([#157](https://github.com/pocka/storybook-addon-designs/pull/157))
+- Fix addon crashes when `type` is not absent. ([9eeb0e2](https://github.com/pocka/storybook-addon-designs/commit/9eeb0e2786f2f3e425df592a28f4fb33af5d00b9))
+- Prevent the entire Storybook UI crash when uncaught error thrown in the addon. ([e51e907](https://github.com/pocka/storybook-addon-designs/commit/e51e90791e4ed71413e023de472a6ead0cae52c2))
 
 ## [6.3.1] - 2022-06-14
 
