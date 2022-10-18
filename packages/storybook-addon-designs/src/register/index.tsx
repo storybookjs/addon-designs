@@ -5,6 +5,7 @@ import { AddonPanel } from "@storybook/components";
 import { jsx } from "@storybook/theming";
 
 import { AddonName, PanelName, ParameterName } from "../addon";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import type { Config } from "../config";
 
 import { Wrapper } from "./containers/Wrapper";
@@ -41,7 +42,11 @@ export default function register(renderTarget: "panel" | "tab") {
             return <noscript key={key} />;
           }
 
-          return <Wrapper key={key} active />;
+          return (
+            <ErrorBoundary key={key}>
+              <Wrapper active />
+            </ErrorBoundary>
+          );
         },
         type: types.TAB,
         paramKey: ParameterName,
@@ -55,7 +60,9 @@ export default function register(renderTarget: "panel" | "tab") {
         render({ active, key }) {
           return (
             <AddonPanel key={key} active={!!active}>
-              <Wrapper active={!!active} />
+              <ErrorBoundary>
+                <Wrapper active={!!active} />
+              </ErrorBoundary>
             </AddonPanel>
           );
         },

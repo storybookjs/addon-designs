@@ -50,3 +50,11 @@ showSketchError3.parameters = {
     url: "http://www.sketch.com/s/foo/a/bar",
   },
 };
+
+export const ErrorBoundary = Template.bind({});
+ErrorBoundary.storyName = "Show error boundary instead of crash the whole page";
+ErrorBoundary.parameters = {
+  design: {
+    type: 1,
+  },
+};
