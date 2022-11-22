@@ -37,11 +37,11 @@
     "typescript": "^4.7.3"
   },
   "peerDependencies": {
-    "@storybook/addon-docs": "^6.4.0",
-    "@storybook/addons": "^6.4.0",
-    "@storybook/api": "^6.4.0",
-    "@storybook/components": "^6.4.0",
-    "@storybook/theming": "^6.4.0",
+    "@storybook/addon-docs": "^6.4.0 || ^7.0.0",
+    "@storybook/addons": "^6.4.0 || ^7.0.0",
+    "@storybook/api": "^6.4.0 || ^7.0.0",
+    "@storybook/components": "^6.4.0 || ^7.0.0",
+    "@storybook/theming": "^6.4.0 || ^7.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
