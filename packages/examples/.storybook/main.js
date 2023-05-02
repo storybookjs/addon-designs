@@ -3,6 +3,7 @@ module.exports = {
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.{js,jsx,ts,tsx}",
   ],
+  staticDirs: ["../../assets"],
   addons: [
     "storybook-addon-designs",
     "@storybook/addon-docs",
@@ -13,5 +14,9 @@ module.exports = {
   },
   core: {
     disableTelemetry: true,
+  },
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
 };

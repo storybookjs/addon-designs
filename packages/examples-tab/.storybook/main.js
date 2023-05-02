@@ -6,6 +6,7 @@ module.exports = {
     "../../examples/stories/**/*.stories.{js,jsx,ts,tsx}",
     "../stories/**/*.stories.{js,jsx,ts,tsx,mdx}",
   ],
+  staticDirs: ["../../assets"],
   addons: [
     "@storybook/addon-docs",
     {

@@ -8,6 +8,7 @@ import Docs from "./examples.mdx";
 
 export default {
   title: "Docs/Figma/Examples",
+  component: Button,
   parameters: {
     docs: {
       page: Docs,
