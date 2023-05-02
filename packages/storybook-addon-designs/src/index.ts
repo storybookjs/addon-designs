@@ -1,4 +1,4 @@
-import { addons, makeDecorator,  } from "@storybook/preview-api";
+import { addons, makeDecorator } from "@storybook/preview-api";
 
 import { Events, PanelName, ParameterName } from "./addon";
 import { Config } from "./config";
@@ -9,9 +9,9 @@ export const withDesign = makeDecorator({
   skipIfNoParametersOrOptions: true,
   wrapper: (getStory, context, { parameters }) => {
     const channel = addons.getChannel();
-  
+
     channel.emit(Events.UpdateConfig, parameters);
-  
+
     return getStory(context);
   },
 });
