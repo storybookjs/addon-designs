@@ -4,16 +4,10 @@ import { config } from "storybook-addon-designs";
 
 import { Button } from "../../Button";
 
-import Docs from "./examples.mdx";
 
 export default {
   title: "Docs/Figma/Examples",
   component: Button,
-  parameters: {
-    docs: {
-      page: Docs,
-    },
-  },
 };
 
 export const embedFile = () => <Button>Button</Button>;

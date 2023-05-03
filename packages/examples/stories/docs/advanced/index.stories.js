@@ -4,13 +4,8 @@ import { config } from "storybook-addon-designs";
 
 import { Button } from "../../Button";
 
-import Docs from "./docs.mdx";
-
 export default {
   title: "Docs/Advanced usage",
-  parameters: {
-    docs: { page: Docs },
-  },
 };
 
 export const setTabName = () => <Button>Button</Button>;

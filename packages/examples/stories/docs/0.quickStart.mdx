@@ -1,0 +1,129 @@
+import { Meta } from "@storybook/blocks";
+import { TabsState } from "@storybook/components";
+
+<Meta title="Docs/Quick start" />
+
+# Quick Start
+
+First you need to install the addon.
+
+<TabsState initial="yarn">
+  <div id="yarn" title="Yarn">
+    <div>
+      ```sh
+      yarn add -D storybook-addon-designs
+      ```
+    </div>
+  </div>
+
+  <div id="npm" title="NPM">
+    <div>
+      ```sh
+      npm i -D storybook-addon-designs
+      ```
+    </div>
+  </div>
+</TabsState>
+
+Then register it.
+Just put the addon name to `main.js`.
+
+```js
+// .storybook/main.js
+module.exports = {
+  addons: ["storybook-addon-designs"],
+};
+```
+
+Now, you can embed designs to your Storybook.
+All you need to do is put a `withDesign` decorator and a `design` parameter to your story.
+You can also [register the decorator globally][sb-docs-decorators] ([parameters too][sb-docs-parameters]).
+
+<TabsState initial="csf">
+  <div id="csf" title="CSF">
+    <div>
+      ```js
+      // myStories.stories.jsx
+      import { withDesign } from "storybook-addon-designs";
+
+      export default {
+        title: "myStories",
+        decorators: [withDesign],
+      };
+
+      export const myStory = () => <MyComponent />;
+
+      myStory.parameters = {
+        design: {
+          type: "figma",
+          url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+        },
+      };
+      ```
+
+      ## Documentation notes
+
+      In this document, we'll write `export default` statement only when it's matter.
+    </div>
+  </div>
+
+  <div id="mdx" title="MDX">
+    <div>
+      ```jsx
+      import { Meta, Story } from '@storybook/addon-docs/blocks'
+      import { withDesign } from 'storybook-addon-designs'
+
+      <Meta title="My stories" decorators={[withDesign]}/>
+
+      <Story
+        name="My story"
+        parameters={{
+          design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample'
+          }
+        }}
+      />
+      ```
+
+      ## Documentation notes
+
+      In this document, we use [CSF (Component Story Format)][csf-docs] for all code examples.
+    </div>
+  </div>
+
+  <div id="storiesof" title="storiesOf API (legacy)">
+    <div>
+      ```js
+      // myStories.stories.jsx
+      import { withDesign } from "storybook-addon-designs";
+
+      storiesOf("myStories", module)
+        .addDecorator(withDesign)
+        .add("myStory", () => <MyComponent />, {
+          design: {
+            type: "figma",
+            url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+          },
+        });
+      ```
+
+      ## Documentation notes
+
+      In this document, we use [CSF (Component Story Format)][csf-docs] for all code examples.
+    </div>
+  </div>
+</TabsState>
+
+[csf-docs]: https://storybook.js.org/docs/formats/component-story-format/
+
+## Resources
+
+For more about decorators API and parameters API, please refer to the Storybook official docs.
+
+*   [Writing Stories#Decorators][sb-docs-decorators]
+*   [Writing Stories#Parameters][sb-docs-parameters]
+
+[sb-docs-decorators]: https://storybook.js.org/docs/basics/writing-stories/#decorators
+
+[sb-docs-parameters]: https://storybook.js.org/docs/basics/writing-stories/#parameters
