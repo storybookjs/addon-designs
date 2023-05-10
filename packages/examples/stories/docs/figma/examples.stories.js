@@ -4,7 +4,6 @@ import { config } from "storybook-addon-designs";
 
 import { Button } from "../../Button";
 
-
 export default {
   title: "Docs/Figma/Examples",
   component: Button,

@@ -1,12 +1,6 @@
-import {
-  Meta,
-  Preview,
-  ArgsTable,
-  Source,
-  Story,
-} from "@storybook/blocks";
+import { Meta, Preview, ArgsTable, Source, Story } from "@storybook/blocks";
 import { Design } from "storybook-addon-designs/blocks";
-import * as $1DesignStories from './1.design.stories';
+import * as $1DesignStories from "./1.design.stories";
 
 <Meta of={$1DesignStories} />
 
@@ -23,4 +17,7 @@ All you need to do is refer to a story you want to display.
 
 <Design storyId="internal-blocks-design--foo" />
 
-<Source language="jsx" code={`<Design storyId="internal-blocks-design--foo" />`} />
+<Source
+  language="jsx"
+  code={`<Design storyId="internal-blocks-design--foo" />`}
+/>

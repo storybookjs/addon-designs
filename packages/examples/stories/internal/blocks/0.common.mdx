@@ -19,19 +19,28 @@ These props and behaviors are same among every Design Doc Blocks.
 You can specify block's height by setting `height` prop.
 Values with percentage (e.g. `50%`) is computed based on the block's width, think as ratio to a width.
 
-<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />`} />
+<Source
+  language="jsx"
+  code={`<IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />`}
+/>
 
 <IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />
 
-***
+---
 
-<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />`} />
+<Source
+  language="jsx"
+  code={`<IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />`}
+/>
 
 <IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />
 
-***
+---
 
-<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />`} />
+<Source
+  language="jsx"
+  code={`<IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />`}
+/>
 
 <IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />
 
@@ -40,13 +49,19 @@ Values with percentage (e.g. `50%`) is computed based on the block's width, thin
 Design Doc Blocks has an ability to toggle collapse / expand itself, which is set to `true` by default.
 You can turn off the feature by passing `false` to `collapsable` prop or change the default state with `defaultCollapsed` prop.
 
-<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />`} />
+<Source
+  language="jsx"
+  code={`<IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />`}
+/>
 
 <IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />
 
-***
+---
 
-<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />`} />
+<Source
+  language="jsx"
+  code={`<IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />`}
+/>
 
 <IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />
 
@@ -62,13 +77,21 @@ Also, you can customize the text shown when the block is collapsed with `placeho
   />`}
 />
 
-<IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed placeholder="Foo" />
+<IFrame
+  url="https://www.wikipedia.org"
+  height={100}
+  defaultCollapsed
+  placeholder="Foo"
+/>
 
 ## Open in new tab
 
 By default, Design Doc Blocks show an `Open in new tab` to allow users to open the embed content in a new tab.
 You can disable it by passing `false` to `showLink` prop.
 
-<Source language="jsx" code={`<IFrame url="https://www.wikipedia.org" height={100} showLink={false} />`} />
+<Source
+  language="jsx"
+  code={`<IFrame url="https://www.wikipedia.org" height={100} showLink={false} />`}
+/>
 
 <IFrame url="https://www.wikipedia.org" height={100} showLink={false} />
