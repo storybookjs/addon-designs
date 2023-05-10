@@ -1,11 +1,14 @@
 import { Meta, Subtitle } from "@storybook/blocks";
-import { LinkTo } from "@storybook/addon-links";
 import { Badge } from "@storybook/components";
 
 <Meta title="Docs/Figma/README" />
 
 # Embedding Figma designs
 
+{/* <Subtitle>
+  This document describes how to embed your Figma files/frames to your
+  Storybook.
+</Subtitle> */}
 
 ## Requirements
 
@@ -28,7 +31,7 @@ myStory.parameters = {
 };
 ```
 
-You can find more detailed instructions [here](/?path=/docs/docs-figma-examples--embed-file).
+You can find more detailed instructions [here](/docs/docs-figma-examples--embed-file).
 
 ## Parameter options
 
@@ -46,4 +49,4 @@ You can find more detailed instructions [here](/?path=/docs/docs-figma-examples-
 ### Can't pass Figma's authentication page
 
 Figma may not be able to authenticate you if your browser blocks third-party cookies.
-In that case, add your Storybook host to the exceptions ([#96](https://github.com/pocka/storybook-addon-designs/issues/96#issuecomment-812481819)).
+In that case, add your Storybook host to the exceptions ([#96](https://github.com/storybookjs/addon-designs/issues/96#issuecomment-812481819)).

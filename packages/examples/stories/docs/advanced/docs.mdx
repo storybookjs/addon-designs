@@ -1,7 +1,7 @@
 import { Meta, Subtitle } from "@storybook/blocks";
 import { TabsState } from "@storybook/components";
 
-import { Figma, IFrame } from "storybook-addon-designs/blocks";
+import { Figma } from "storybook-addon-designs/blocks";
 
 import { TabLink } from "./TabLink";
 import * as AdvancedStories from './index.stories';
@@ -21,7 +21,7 @@ import * as AdvancedStories from './index.stories';
 
 You can change the addon tab title (defaulted to `Design`) by setting `name` property of the `design` parameter.
 
-[Example](/?path=/story/docs-advanced-usage--set-tab-name)
+[Example](/story/docs-advanced-usage--set-tab-name)
 
 ```js
 export const myStory = () => <MyComponent />;
@@ -39,7 +39,7 @@ myStory.parameters = {
 
 You can embed more than one designs by passing an array to the `design` parameter.
 
-[Example](/?path=/story/docs-advanced-usage--embed-multiple-designs)
+[Example](/story/docs-advanced-usage--embed-multiple-designs)
 
 ```js
 export const myStory = () => <MyComponent />;
@@ -60,7 +60,7 @@ myStory.parameters = {
 
 To change the name of tabs, pass `name` option to each object.
 
-[Example](/?path=/story/docs-advanced-usage--set-tab-names)
+[Example](/story/docs-advanced-usage--set-tab-names)
 
 ```js
 export const myStory = () => <MyComponent />;
@@ -152,4 +152,4 @@ In addition to these, the module also exports `Design` special block.
 It takes just a story ID and embeds designs.
 It's useful when you're using customized Docs Page.
 
-For more details, please refer to [Internal/Blocks/Common](/?path=/docs/internal-blocks-common--page).
+For more details, please refer to [Internal/Blocks/Common](/docs/internal-blocks-common--docs).
