@@ -4,17 +4,10 @@ import { config } from "storybook-addon-designs";
 
 import { Button } from "../../Button";
 
-import Docs from "./examples.mdx";
-
 import sampleImage from "@storybook-addon-designs/assets/sample.png";
 
 export default {
   title: "Docs/Image/Examples",
-  parameters: {
-    docs: {
-      page: Docs,
-    },
-  },
 };
 
 export const embedImage = () => <Button>Button</Button>;

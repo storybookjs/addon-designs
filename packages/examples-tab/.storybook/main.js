@@ -2,9 +2,10 @@ const main = require("../../examples/.storybook/main");
 
 module.exports = {
   stories: [
-    "../../examples/stories/**/*.stories.mdx",
+    "../../examples/stories/**/*.mdx",
     "../../examples/stories/**/*.stories.{js,jsx,ts,tsx}",
     "../stories/**/*.stories.{js,jsx,ts,tsx,mdx}",
+    "../stories/**/*.mdx",
   ],
   staticDirs: ["../../assets"],
   addons: [
