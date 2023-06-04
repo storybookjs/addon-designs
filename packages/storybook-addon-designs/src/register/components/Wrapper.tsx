@@ -27,7 +27,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
         <Fragment>
           Learn how to{" "}
           <Link
-            href="https://github.com/pocka/storybook-addon-designs#usage"
+            href="https://github.com/storybookjs/addon-designs#3-add-it-to-story"
             target="_blank"
             rel="noopener"
             withArrow
