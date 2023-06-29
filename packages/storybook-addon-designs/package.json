@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-designs",
+  "name": "@storybook/addon-designs",
   "version": "7.0.0-beta.2",
   "description": "Storybook addon for embedding your design preview in addon panel",
   "main": "cjs/index.js",
@@ -23,12 +23,12 @@
   },
   "devDependencies": {
     "@figspec/components": "^1.0.0",
-    "@storybook/addon-docs": "7.0.7",
-    "@storybook/components": "7.0.7",
-    "@storybook/core-events": "7.0.7",
+    "@storybook/addon-docs": "^7.0.7",
+    "@storybook/components": "^7.0.7",
+    "@storybook/core-events": "^7.0.7",
     "@storybook/manager-api": "^7.0.7",
     "@storybook/preview-api": "^7.0.7",
-    "@storybook/theming": "7.0.7",
+    "@storybook/theming": "^7.0.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/webpack-env": "^1.13.9",
@@ -40,10 +40,10 @@
   "peerDependencies": {
     "@storybook/addon-docs": "^7.0.0",
     "@storybook/addons": "^7.0.0",
-    "@storybook/components": "^6.4.0 || ^7.0.0",
+    "@storybook/components": "^7.0.0",
     "@storybook/manager-api": "^7.0.0",
     "@storybook/preview-api": "^7.0.0",
-    "@storybook/theming": "^6.4.0 || ^7.0.0",
+    "@storybook/theming": "^7.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
