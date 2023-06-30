@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { CSSProperties, FC, useContext, useState } from "react";
+import { CSSProperties, FC, useState } from "react";
 import { ActionBar, Placeholder } from "@storybook/components";
 import { jsx, styled } from "@storybook/theming";
 import { useOf, Of } from "@storybook/blocks";
