@@ -24,13 +24,13 @@ You can change the addon tab title (defaulted to `Design`) by setting `name` pro
 [Example](/story/docs-advanced-usage--set-tab-name)
 
 ```js
-export const myStory = () => <MyComponent />;
-
-myStory.parameters = {
-  design: {
-    name: "Wireframe",
-    type: "figma",
-    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+export const myStory = {
+  parameters: {
+    design: {
+      name: "Wireframe",
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+    },
   },
 };
 ```
@@ -42,19 +42,19 @@ You can embed more than one designs by passing an array to the `design` paramete
 [Example](/story/docs-advanced-usage--embed-multiple-designs)
 
 ```js
-export const myStory = () => <MyComponent />;
-
-myStory.parameters = {
-  design: [
-    {
-      type: "figma",
-      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-    },
-    {
-      type: "link",
-      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-    },
-  ],
+export const myStory = {
+  parameters: {
+    design: [
+      {
+        type: "figma",
+        url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+      },
+      {
+        type: "link",
+        url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+      },
+    ],
+  },
 };
 ```
 
@@ -63,21 +63,21 @@ To change the name of tabs, pass `name` option to each object.
 [Example](/story/docs-advanced-usage--set-tab-names)
 
 ```js
-export const myStory = () => <MyComponent />;
-
-myStory.parameters = {
-  design: [
-    {
-      name: "Foo",
-      type: "figma",
-      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-    },
-    {
-      name: "Bar",
-      type: "link",
-      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-    },
-  ],
+export const myStory = {
+  parameters: {
+    design: [
+      {
+        name: "Foo",
+        type: "figma",
+        url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+      },
+      {
+        name: "Bar",
+        type: "link",
+        url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+      },
+    ],
+  },
 };
 ```
 
@@ -99,39 +99,34 @@ The default value is `"panel"`.
   panelItem={<a href="/tab/">Go to tab mode</a>}
 />
 
-<TabsState initial="mainjs">
-  <div id="mainjs" title="main.js"><div>
+```ts
+// .storybook/main.ts
+import type { StorybookConfig } from "@storybook/your-framework";
 
-```js
-module.exports = {
+const config: StorybookConfig = {
+  stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    {
-      name: "storybook-addon-designs",
-      options: {
-        renderTarget: "tab",
-      },
-    },
+    "@storybook/addon-essentials",
+    { name: "@storybook/addon-designs", options: { renderTarget: "tab" } },
   ],
+  framework: {
+    name: "@storybook/your-framework",
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
 };
+
+export default config;
 ```
-
-  </div></div>
-  <div id="addonsjs" title="addons.js (legacy)"><div>
-
-```js
-// .storybook/addons.js
-import "storybook-addon-designs/register-tab";
-```
-
-  </div></div>
-</TabsState>
 
 ## Doc Blocks
 
 The addon provides React components for addon-docs, so you can embed design specs to your Docs:
 
 ```mdx
-import { Figma } from "storybook-addon-designs/blocks";
+import { Figma } from "@storybook/addon-designs/blocks";
 
 <Figma
   height="30%"
@@ -146,7 +141,7 @@ import { Figma } from "storybook-addon-designs/blocks";
   url="https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample"
 />
 
-The `"storybook-addon-designs/blocks"` module exports `Figma`, `IFrame`, `Image` and `Figspec` blocks, which are corresponds to each design types.
+The `"@storybook/addon-designs/blocks"` module exports `Figma`, `IFrame`, `Image` and `Figspec` blocks, which are corresponds to each design types.
 
 In addition to these, the module also exports `Design` special block.
 It takes just a story ID and embeds designs.
