@@ -1,4 +1,4 @@
-import { Meta, Preview, ArgsTable, Source, Story } from "@storybook/blocks";
+import { Meta, ArgsTable, Source, Canvas } from "@storybook/blocks";
 import { Design } from "@storybook/addon-designs/blocks";
 import * as $1DesignStories from "./1.design.stories";
 
@@ -11,13 +11,8 @@ All you need to do is refer to a story you want to display.
 
 <ArgsTable of={Design} />
 
-<Preview>
-  <Story of={$1DesignStories.Foo} />
-</Preview>
+<Canvas of={$1DesignStories.Foo} />
 
-<Design storyId="internal-blocks-design--foo" />
+<Design of={$1DesignStories.Foo} />
 
-<Source
-  language="jsx"
-  code={`<Design storyId="internal-blocks-design--foo" />`}
-/>
+<Source language="jsx" code={`<Design of={$1DesignStories.Foo} />`} />

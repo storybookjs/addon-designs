@@ -1,6 +1,6 @@
 import React from "react";
 
-import { config } from "storybook-addon-designs";
+import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../Button";
 
