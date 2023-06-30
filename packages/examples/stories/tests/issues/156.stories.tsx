@@ -1,5 +1,5 @@
 import React from "react";
-import { Figma } from "storybook-addon-designs/blocks";
+import { Figma } from "@storybook/addon-designs/blocks";
 
 export default {
   title: "Tests/Issues/#156",

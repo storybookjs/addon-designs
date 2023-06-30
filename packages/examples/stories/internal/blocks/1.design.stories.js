@@ -1,4 +1,4 @@
-import { Design } from "storybook-addon-designs/blocks";
+import { Design } from "@storybook/addon-designs/blocks";
 
 export default {
   title: "Internal/Blocks/Design",
