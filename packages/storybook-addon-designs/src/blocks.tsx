@@ -1,7 +1,7 @@
-/** @jsx jsx */
-import { CSSProperties, FC, useState } from "react";
+import React, { useState } from "react";
+import type { CSSProperties, FC } from "react";
 import { ActionBar, Placeholder } from "@storybook/components";
-import { jsx, styled } from "@storybook/theming";
+import { styled } from "@storybook/theming";
 import { useOf, Of } from "@storybook/blocks";
 
 import { Figma as FigmaInternal } from "./register/components/Figma";

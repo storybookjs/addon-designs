@@ -3,7 +3,7 @@
   "version": "7.0.0-beta.2",
   "private": true,
   "dependencies": {
-    "examples": "*"
+    "examples": "7.0.0-beta.2"
   },
   "scripts": {
     "storybook": "storybook dev -p 6007",
