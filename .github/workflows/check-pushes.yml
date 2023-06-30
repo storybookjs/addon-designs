@@ -13,9 +13,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-          cache: npm
+          cache: yarn
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
       - name: Check files are formatted with Prettier
         run: npx prettier --check README.md CHANGELOG.md CONTRIBUTING.md package.json "packages/**/*.{js,jsx,ts,tsx,md,mdx,json}"
       - name: Check TypeScript typings
