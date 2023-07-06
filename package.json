@@ -13,7 +13,8 @@
     "dev": "npm run dev --workspaces --if-present",
     "example": "npm run storybook --workspace=examples",
     "build:example": "npm run build-storybook --workspace=examples && npm run build-storybook --workspace=examples-tab && cp -r packages/examples-tab/storybook-static packages/examples/storybook-static/tab",
-    "fmt": "prettier --write README.md CHANGELOG.md CONTRIBUTING.md package.json 'packages/**/*.{js,jsx,ts,tsx,md,mdx,json}'"
+    "fmt": "prettier --write README.md CHANGELOG.md CONTRIBUTING.md package.json 'packages/**/*.{js,jsx,ts,tsx,md,mdx,json}'",
+    "release": "npm run release --workspace=@storybook/addon-designs"
   },
   "prettier": {},
   "version": "7.0.0-beta.2"
