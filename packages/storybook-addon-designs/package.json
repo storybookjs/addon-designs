@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-designs",
-  "version": "7.0.0-beta.2",
+  "version": "7.0.0--canary.ca11952.0",
   "description": "Storybook addon for embedding your design preview in addon panel",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -32,6 +32,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/webpack-env": "^1.13.9",
+    "auto": "^10.46.0",
     "figma-js": "^1.13.0",
     "typescript": "^4.7.3"
   },
@@ -60,7 +61,8 @@
     "build:cjs": "tsc --module commonjs --outDir cjs",
     "test": "echo 'No tests' && exit 0",
     "clean": "rm -r esm cjs",
-    "prepublishOnly": "cp ../../README.md ./ && npm run build"
+    "prepublishOnly": "cp ../../README.md ./ && npm run build",
+    "release": "npm run prepublishOnly && auto shipit"
   },
   "keywords": [
     "storybook-addon",
@@ -70,5 +72,8 @@
   "storybook": {
     "icon": "https://raw.githubusercontent.com/pocka/storybook-addon-designs/master/packages/assets/logo.png",
     "displayName": "Designs"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
