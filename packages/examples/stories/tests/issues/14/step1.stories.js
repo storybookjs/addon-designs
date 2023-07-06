@@ -1,12 +1,11 @@
 import React from "react";
 
-import { config, withDesign } from "@storybook/addon-designs";
+import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../../Button";
 
 export default {
   title: "Tests/Issues/#14/Step1",
-  decorators: [withDesign],
 };
 
 export const step1 = () => <Button>Button</Button>;

@@ -1,20 +1,5 @@
-import { addons, makeDecorator } from "@storybook/preview-api";
-
-import { Events, PanelName, ParameterName } from "./addon";
+import { PanelName, ParameterName } from "./addon";
 import { Config } from "./config";
-
-export const withDesign = makeDecorator({
-  name: "withDesign",
-  parameterName: ParameterName,
-  skipIfNoParametersOrOptions: true,
-  wrapper: (getStory, context, { parameters }) => {
-    const channel = addons.getChannel();
-
-    channel.emit(Events.UpdateConfig, parameters);
-
-    return getStory(context);
-  },
-});
 
 /**
  * Dumb function to ensure typings or enchance IDE auto completion.
