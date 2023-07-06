@@ -1,18 +1,11 @@
 import React from "react";
 
-import { config } from "storybook-addon-designs";
+import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../Button";
 
-import Docs from "./examples.mdx";
-
 export default {
   title: "Docs/iframe/Examples",
-  parameters: {
-    docs: {
-      page: Docs,
-    },
-  },
 };
 
 export const embedSite = () => <Button>Button</Button>;

@@ -1,4 +1,7 @@
-import { Subtitle } from "@storybook/addon-docs/blocks";
+import { Meta, Subtitle } from "@storybook/blocks";
+import * as FigmaStories from "./examples.stories";
+
+<Meta of={FigmaStories} />
 
 # Figma embeds examples
 
@@ -13,7 +16,7 @@ import { Subtitle } from "@storybook/addon-docs/blocks";
 
 To embed your Figma files, use `figma` type and put an URL for the file to `url` field.
 
-[Example](/?path=/story/docs-figma-examples--embed-file)
+[Example](/story/docs-figma-examples--embed-file)
 
 ```js
 // myStories.stories.jsx
@@ -30,13 +33,13 @@ myStory.parameters = {
 The `url` is an URL when you open your Figma file in browser.
 If you're using Figma Desktop App, click the `Share` button then `Copy link` button.
 
-You can also embed private files, as same as public ones ([Example](/?path=/story/docs-figma-examples--embed-private-file)).
+You can also embed private files, as same as public ones ([Example](/story/docs-figma-examples--embed-private-file)).
 
 ## Embed frames
 
 To embed a specific frame in your Figma file, paste an URL for the frame instead.
 
-[Example](/?path=/story/docs-figma-examples--embed-frame)
+[Example](/story/docs-figma-examples--embed-frame)
 
 ```js
 // myStories.stories.jsx
@@ -58,7 +61,7 @@ Embedding prototypes is also the same.
 Go to [Presentation View](https://help.figma.com/hc/en-us/articles/360040318013-Set-prototype-Presentation-View-options)
 and copy a browser URL, then paste it at your story parameter's `url` field.
 
-[Example](/?path=/story/docs-figma-examples--embed-prototype)
+[Example](/story/docs-figma-examples--embed-prototype)
 
 ```js
 // myStories.stories.jsx
@@ -76,7 +79,7 @@ myStory.parameters = {
 
 To allow Figma embeds frame to go fullscreen, set an `allowFullscreen` option.
 
-[Example](/?path=/story/docs-figma-examples--allow-fullscreen)
+[Example](/story/docs-figma-examples--allow-fullscreen)
 
 ```js
 // myStories.stories.jsx

@@ -1,22 +1,5 @@
-import { addons, makeDecorator, StoryWrapper } from "@storybook/addons";
-
-import { Events, PanelName, ParameterName } from "./addon";
+import { PanelName, ParameterName } from "./addon";
 import { Config } from "./config";
-
-const wrapper: StoryWrapper = (getStory, context, { parameters }) => {
-  const channel = addons.getChannel();
-
-  channel.emit(Events.UpdateConfig, parameters);
-
-  return getStory(context);
-};
-
-export const withDesign = makeDecorator({
-  name: "withDesign",
-  parameterName: ParameterName,
-  skipIfNoParametersOrOptions: true,
-  wrapper,
-});
 
 /**
  * Dumb function to ensure typings or enchance IDE auto completion.

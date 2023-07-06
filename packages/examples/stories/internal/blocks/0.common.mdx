@@ -1,5 +1,5 @@
-import { Meta, ArgsTable, Source } from "@storybook/addon-docs/blocks";
-import { DocBlockBase, IFrame } from "storybook-addon-designs/blocks";
+import { Meta, ArgsTable, Source } from "@storybook/blocks";
+import { DocBlockBase, IFrame } from "@storybook/addon-designs/blocks";
 
 <Meta title="Internal/Blocks/Common" />
 
@@ -23,6 +23,7 @@ Values with percentage (e.g. `50%`) is computed based on the block's width, thin
   language="jsx"
   code={`<IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />`}
 />
+
 <IFrame url="https://www.wikipedia.org" height="100%" defaultCollapsed />
 
 ---
@@ -31,6 +32,7 @@ Values with percentage (e.g. `50%`) is computed based on the block's width, thin
   language="jsx"
   code={`<IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />`}
 />
+
 <IFrame url="https://www.wikipedia.org" height="200%" defaultCollapsed />
 
 ---
@@ -39,6 +41,7 @@ Values with percentage (e.g. `50%`) is computed based on the block's width, thin
   language="jsx"
   code={`<IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />`}
 />
+
 <IFrame url="https://www.wikipedia.org" height="50%" defaultCollapsed />
 
 ## Collapse / Expand
@@ -50,6 +53,7 @@ You can turn off the feature by passing `false` to `collapsable` prop or change 
   language="jsx"
   code={`<IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />`}
 />
+
 <IFrame url="https://www.wikipedia.org" height={100} collapsable={false} />
 
 ---
@@ -58,6 +62,7 @@ You can turn off the feature by passing `false` to `collapsable` prop or change 
   language="jsx"
   code={`<IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />`}
 />
+
 <IFrame url="https://www.wikipedia.org" height={100} defaultCollapsed />
 
 Also, you can customize the text shown when the block is collapsed with `placeholder` prop.
@@ -65,12 +70,13 @@ Also, you can customize the text shown when the block is collapsed with `placeho
 <Source
   language="jsx"
   code={`<IFrame
-\r  url="https://www.wikipedia.org"
-\r  height={100}
-\r  defaultCollapsed
-\r  placeholder="Foo"
-/>`}
+  \r  url="https://www.wikipedia.org"
+  \r  height={100}
+  \r  defaultCollapsed
+  \r  placeholder="Foo"
+  />`}
 />
+
 <IFrame
   url="https://www.wikipedia.org"
   height={100}
@@ -87,4 +93,5 @@ You can disable it by passing `false` to `showLink` prop.
   language="jsx"
   code={`<IFrame url="https://www.wikipedia.org" height={100} showLink={false} />`}
 />
+
 <IFrame url="https://www.wikipedia.org" height={100} showLink={false} />

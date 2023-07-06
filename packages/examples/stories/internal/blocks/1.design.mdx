@@ -1,0 +1,18 @@
+import { Meta, ArgsTable, Source, Canvas } from "@storybook/blocks";
+import { Design } from "@storybook/addon-designs/blocks";
+import * as $1DesignStories from "./1.design.stories";
+
+<Meta of={$1DesignStories} />
+
+# Design Doc Block
+
+Design Doc Block takes a story ID and shows design embeds based on the story's parameter.
+All you need to do is refer to a story you want to display.
+
+<ArgsTable of={Design} />
+
+<Canvas of={$1DesignStories.Foo} />
+
+<Design of={$1DesignStories.Foo} />
+
+<Source language="jsx" code={`<Design of={$1DesignStories.Foo} />`} />

@@ -1,14 +1,13 @@
 import React from "react";
 
-import { config, withDesign } from "storybook-addon-designs";
+import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../Button";
 
-import sampleImage from "@storybook-addon-designs/assets/sample.png";
+import sampleImage from "@storybook/addon-designs-assets/sample.png";
 
 export default {
   title: "Tests/Issues/#81",
-  decorators: [withDesign],
 };
 
 export const hideLoadingPlaceholderWhenLoaded = () => <Button>Button</Button>;

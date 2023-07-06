@@ -1,8 +1,8 @@
-/** @jsx jsx */
-import { CSSProperties, FC, useContext, useState } from "react";
-import { DocsContext } from "@storybook/addon-docs";
+import React, { useState } from "react";
+import type { CSSProperties, FC } from "react";
 import { ActionBar, Placeholder } from "@storybook/components";
-import { jsx, styled } from "@storybook/theming";
+import { styled } from "@storybook/theming";
+import { useOf, Of } from "@storybook/blocks";
 
 import { Figma as FigmaInternal } from "./register/components/Figma";
 import { Figspec as FigspecInternal } from "./register/components/Figspec";
@@ -198,21 +198,24 @@ const AbsoluteLocater = styled.div`
 
 export interface DesignProps {
   /**
-   * An ID of the story that has `design` parameter to use for rendering.
+   * A reference to a story that has `design` parameter to use for rendering.
    */
-  storyId: string;
+  of: Of;
 }
 
-export const Design: FC<DesignProps & Omit<BlocksCommonProps, "showLink">> = ({
-  storyId,
-  placeholder,
-  ...rest
-}) => {
-  // Storybook ~v6.3 / v6.4~ is incompatible due to differences of this context value shape.
-  // Because of this, this addon needs Storybook v6.4 at minimum.
-  const { storyById } = useContext(DocsContext);
+export const Design: FC<DesignProps & Omit<BlocksCommonProps, "showLink">> = (
+  props
+) => {
+  const { of, placeholder, ...rest } = props;
 
-  const story = storyById(storyId);
+  if ("of" in props && of === undefined) {
+    // MDX isn't always type-safe, it's often that users mistype their imports
+    throw new Error(
+      "Unexpected `of={undefined}`, did you mistype a CSF file reference?"
+    );
+  }
+
+  const { story } = useOf(of || "story", ["story"]);
 
   return (
     <DocBlockBase placeholder={placeholder ?? "Design"} {...rest}>

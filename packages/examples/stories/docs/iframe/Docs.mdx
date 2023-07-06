@@ -1,4 +1,7 @@
-import { Subtitle } from "@storybook/addon-docs/blocks";
+import { Meta, Subtitle } from "@storybook/blocks";
+import * as IFrameStories from "./index.stories";
+
+<Meta of={IFrameStories} />
 
 # iframe embeds examples
 
@@ -13,7 +16,7 @@ import { Subtitle } from "@storybook/addon-docs/blocks";
 
 To simply embed a website, just copy-and-paste an URL of the website.
 
-[Example](/?path=/story/docs-iframe-examples--embed-site)
+[Example](/story/docs-iframe-examples--embed-site)
 
 ```js
 // myStories.stories.jsx
@@ -31,7 +34,7 @@ myStory.parameters = {
 
 `allowFullscreen` option allows `<iframe>` to go fullscreen mode.
 
-[example](/?path=/story/docs-iframe-examples--allow-fullscreen)
+[example](/story/docs-iframe-examples--allow-fullscreen)
 
 ```js
 // myStories.stories.jsx
