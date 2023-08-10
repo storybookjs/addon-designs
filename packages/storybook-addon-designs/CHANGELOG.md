@@ -1,3 +1,20 @@
+# v7.0.1 (Thu Aug 10 2023)
+
+#### 🐛 Bug Fix
+
+- Don't use key anymore for rendering addon [#207](https://github.com/storybookjs/addon-designs/pull/207) ([@kasperpeulen](https://github.com/kasperpeulen))
+
+#### ⚠️ Pushed to `master`
+
+- Create CODEOWNERS ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+#### Authors: 2
+
+- Kasper Peulen ([@kasperpeulen](https://github.com/kasperpeulen))
+- Valentin Palkovic ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+---
+
 # v6.3.2 (Thu Jul 06 2023)
 
 #### 🐛 Bug Fix
