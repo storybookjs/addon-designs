@@ -53,12 +53,13 @@ export default function register(renderTarget: "panel" | "tab") {
         match: ({ viewMode }) => viewMode === "design",
       });
     } else {
-      addons.addPanel(PanelName, {
+      addons.add(PanelName, {
+        type: types.PANEL,
         title,
         paramKey: ParameterName,
-        render({ active, key }) {
+        render({ active }) {
           return (
-            <AddonPanel key={key} active={!!active}>
+            <AddonPanel active={!!active}>
               <ErrorBoundary>
                 <Wrapper active={!!active} />
               </ErrorBoundary>
