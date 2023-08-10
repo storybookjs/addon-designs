@@ -48,7 +48,7 @@ export class ErrorBoundary extends Component {
               See console log for more details. To clear the error state, please
               reload the page.{" "}
               <Link
-                href="https://github.com/pocka/storybook-addon-designs/issues/new?assignees=&labels=category%3A+bug&template=bug_report.yml"
+                href="https://github.com/storybookjs/addon-designs/issues/new?assignees=&labels=category%3A+bug&template=bug_report.yml"
                 target="_blank"
                 rel="noopener"
                 withArrow

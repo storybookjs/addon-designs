@@ -97,6 +97,9 @@ export const Wrapper: FC<Props> = ({ config }) => {
           };
       }
 
+      // FIXME: Link is temporarily set to source code due to "Available config types" section
+      //        had been removed from README. We need to add a list to README or docs site.
+      //        This is very much user-unfriendly, especially for whom not familier with TypeScript.
       return {
         ...meta,
         content: (
@@ -105,7 +108,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
             <Fragment>
               Config type you set is not supported. Please choose one from{" "}
               <Link
-                href="https://github.com/pocka/storybook-addon-designs#available-types"
+                href="https://github.com/storybookjs/addon-designs/blob/master/packages/storybook-addon-designs/src/config.ts"
                 target="_blank"
                 rel="noopener"
                 withArrow

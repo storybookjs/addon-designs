@@ -10,4 +10,4 @@
 6. Run `npm version <new-version> --include-workspace-root --force`. (`<new-version>` is the same one you specified at step 4)
 7. Push the generated commit and tag.
 8. Wait for CI publish the new version to npm.
-9. Create a new release on [GitHub](https://github.com/pocka/storybook-addon-designs/releases).
+9. Create a new release on [GitHub](https://github.com/storybookjs/addon-designs/releases).
