@@ -70,7 +70,7 @@
     "figma"
   ],
   "storybook": {
-    "icon": "https://raw.githubusercontent.com/pocka/storybook-addon-designs/master/packages/assets/logo.png",
+    "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/assets/logo.png",
     "displayName": "Designs"
   },
   "publishConfig": {

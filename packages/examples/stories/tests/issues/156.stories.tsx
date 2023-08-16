@@ -7,7 +7,7 @@ export default {
     docs: {
       page: () => (
         <div>
-          <a href="https://github.com/pocka/storybook-addon-designs/discussions/155">
+          <a href="https://github.com/storybookjs/addon-designs/discussions/155">
             Original discussion
           </a>
           <Figma url="https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample" />
