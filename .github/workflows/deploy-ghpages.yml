@@ -5,11 +5,11 @@ on:
     branches:
       - master
     tags-ignore:
-      - '*'
+      - "*"
 
 jobs:
-  deploy:
-    name: Deploy
+  build:
+    name: Build live examples
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,8 +25,22 @@ jobs:
         run: npm run build
       - name: Build examples
         run: npm run build:example
-      - name: Deploy examples
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/examples/storybook-static
+          path: ./packages/examples/storybook-static
+
+  deploy:
+    name: Deploy
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
