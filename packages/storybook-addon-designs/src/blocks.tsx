@@ -110,6 +110,13 @@ export interface BlocksCommonProps {
    * @default true
    */
   showLink?: boolean;
+
+  /**
+   * **Doc Block Props**
+   *
+   * Will be called when a user changed collapse/expand state of the block.
+   */
+  onCollapsedChange?(newValue: boolean, oldValue: boolean): void;
 }
 
 export const DocBlockBase: FC<BlocksCommonProps> = ({
@@ -118,6 +125,7 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
   defaultCollapsed = false,
   placeholder,
   showLink = true,
+  onCollapsedChange,
   ...rest
 }) => {
   const [collapsed, setCollapsed] = useState(!!defaultCollapsed);
@@ -136,7 +144,15 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
           actionItems={[
             collapsable && {
               title: collapsed ? "Show" : "Hide",
-              onClick: () => setCollapsed((v) => !v),
+              onClick: () => {
+                const newValue = !collapsed;
+
+                if (onCollapsedChange) {
+                  onCollapsedChange(newValue, collapsed);
+                }
+
+                setCollapsed(newValue);
+              },
             },
             showOpenInNewTab && {
               title: "Open in new tab",

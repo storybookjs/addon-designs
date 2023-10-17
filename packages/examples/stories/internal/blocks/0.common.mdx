@@ -84,6 +84,27 @@ Also, you can customize the text shown when the block is collapsed with `placeho
   placeholder="Foo"
 />
 
+You can listen to changes to collapsed state via `onCollapsedChange` event callback (see browser console for working demo).
+
+<Source
+  language="jsx"
+  code={`<IFrame
+  url="https://www.wikipedia.org"
+  height={100}
+  onCollapsedChange={(newValue, oldValue) => {
+    console.log("onCollapsedChange", { newValue, oldValue });
+  }}
+/>`}
+/>
+
+<IFrame
+  url="https://www.wikipedia.org"
+  height={100}
+  onCollapsedChange={(newValue, oldValue) => {
+    console.log("onCollapsedChange", { newValue, oldValue });
+  }}
+/>
+
 ## Open in new tab
 
 By default, Design Doc Blocks show an `Open in new tab` to allow users to open the embed content in a new tab.
