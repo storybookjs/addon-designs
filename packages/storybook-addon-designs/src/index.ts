@@ -6,7 +6,7 @@ import { Config } from "./config";
  */
 export const config = (c: Config | Config[]) => c;
 
-if (typeof module !== 'undefined' && module.hot && module.hot.decline) {
+if (typeof module !== "undefined" && module.hot && module.hot.decline) {
   module.hot.decline();
 }
 
