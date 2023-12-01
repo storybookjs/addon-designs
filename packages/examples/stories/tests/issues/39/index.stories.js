@@ -1,12 +1,11 @@
 import React from "react";
 
-import { config, withDesign } from "storybook-addon-designs";
+import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../../Button";
 
 export default {
   title: "Tests/Issues/#39",
-  decorators: [withDesign],
 };
 
 export const doNotRenderInactiveTab = () => <Button>Button</Button>;

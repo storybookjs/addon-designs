@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { addons, types } from "@storybook/addons";
-import { useParameter } from "@storybook/api";
+import { addons, types, useParameter } from "@storybook/manager-api";
 import { AddonPanel } from "@storybook/components";
 import { jsx } from "@storybook/theming";
 
@@ -54,12 +53,13 @@ export default function register(renderTarget: "panel" | "tab") {
         match: ({ viewMode }) => viewMode === "design",
       });
     } else {
-      addons.addPanel(PanelName, {
+      addons.add(PanelName, {
+        type: types.PANEL,
         title,
         paramKey: ParameterName,
-        render({ active, key }) {
+        render({ active }) {
           return (
-            <AddonPanel key={key} active={!!active}>
+            <AddonPanel active={!!active}>
               <ErrorBoundary>
                 <Wrapper active={!!active} />
               </ErrorBoundary>

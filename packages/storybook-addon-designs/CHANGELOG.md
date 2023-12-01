@@ -1,0 +1,85 @@
+# v7.0.1 (Thu Aug 10 2023)
+
+#### 🐛 Bug Fix
+
+- Don't use key anymore for rendering addon [#207](https://github.com/storybookjs/addon-designs/pull/207) ([@kasperpeulen](https://github.com/kasperpeulen))
+
+#### ⚠️ Pushed to `master`
+
+- Create CODEOWNERS ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+#### Authors: 2
+
+- Kasper Peulen ([@kasperpeulen](https://github.com/kasperpeulen))
+- Valentin Palkovic ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+---
+
+# v6.3.2 (Thu Jul 06 2023)
+
+#### 🐛 Bug Fix
+
+- Add Official Support for Storybook 7.0 [#192](https://github.com/storybookjs/addon-designs/pull/192) ([@thafryer](https://github.com/thafryer) [@Integrayshaun](https://github.com/Integrayshaun) [@shilman](https://github.com/shilman))
+- Add auto release script [#198](https://github.com/storybookjs/addon-designs/pull/198) ([@shilman](https://github.com/shilman))
+- Update usage link [#196](https://github.com/storybookjs/addon-designs/pull/196) ([@dlarroder](https://github.com/dlarroder))
+- Update Docs & Demo link [#188](https://github.com/storybookjs/addon-designs/pull/188) ([@yaronuliel](https://github.com/yaronuliel))
+- chore(deps): Bump decode-uri-component from 0.2.0 to 0.2.2 [#180](https://github.com/storybookjs/addon-designs/pull/180) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): Bump loader-utils from 1.4.1 to 1.4.2 [#176](https://github.com/storybookjs/addon-designs/pull/176) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): Bump loader-utils from 1.4.0 to 1.4.1 [#174](https://github.com/storybookjs/addon-designs/pull/174) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Fix support for Storybook 7.0.0-alpha [#173](https://github.com/storybookjs/addon-designs/pull/173) ([@interphased](https://github.com/interphased))
+- fix: update storybook addons import for Storybook 7.0 [#160](https://github.com/storybookjs/addon-designs/pull/160) ([@yannbf](https://github.com/yannbf))
+- chore(deps): Bump terser from 4.8.0 to 4.8.1 [#159](https://github.com/storybookjs/addon-designs/pull/159) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Do not destroy rendered contents on addon tab changes [#157](https://github.com/storybookjs/addon-designs/pull/157) ([@pocka](https://github.com/pocka))
+- Add missing peer dependencies [#133](https://github.com/storybookjs/addon-designs/pull/133) ([@asmundg](https://github.com/asmundg))
+- docs: Remove `withDesign` from docs and tests ([@pocka](https://github.com/pocka))
+
+#### ⚠️ Pushed to `master`
+
+- chore: Delete publish workflows ([@pocka](https://github.com/pocka))
+- 7.0.0-beta.2 ([@pocka](https://github.com/pocka))
+- chore: Add Storybook v7 to peer deps ([@pocka](https://github.com/pocka))
+- 7.0.0-beta.1 ([@pocka](https://github.com/pocka))
+- docs: Update CHANGELOG.md ([@pocka](https://github.com/pocka))
+- docs: Update README ([@pocka](https://github.com/pocka))
+- 7.0.0-beta.0 ([@pocka](https://github.com/pocka))
+- feat: Add ErrorBoundary ([@pocka](https://github.com/pocka))
+- style: Remove unused function parameter ([@pocka](https://github.com/pocka))
+- fix: Prevent manager UI crashes when `type` is empty ([@pocka](https://github.com/pocka))
+- 7.0.0-alpha.3 ([@pocka](https://github.com/pocka))
+- docs: Update CHANGELOG ([@pocka](https://github.com/pocka))
+- docs: Fix CHANGELOG formatting ([@pocka](https://github.com/pocka))
+- 7.0.0-alpha.2 ([@pocka](https://github.com/pocka))
+- feat: Sketch embeds ([@pocka](https://github.com/pocka))
+- docs: Add alpha installation command ([@pocka](https://github.com/pocka))
+- 7.0.0-alpha.1 ([@pocka](https://github.com/pocka))
+- chore: Add code validity check workflow ([@pocka](https://github.com/pocka))
+- chore: Format files ([@pocka](https://github.com/pocka))
+- chore: Use default Prettier config ([@pocka](https://github.com/pocka))
+- style: Format files ([@pocka](https://github.com/pocka))
+- chore: Add `fmt` script ([@pocka](https://github.com/pocka))
+- chore: Remove publishConfig.tag ([@pocka](https://github.com/pocka))
+- docs: Add release manual ([@pocka](https://github.com/pocka))
+- 7.0.0-alpha.0 ([@pocka](https://github.com/pocka))
+- chore: Use wildcard for version specifier in internal packages ([@pocka](https://github.com/pocka))
+- chore: Add react/react-dom to peerDependencies ([@pocka](https://github.com/pocka))
+- misc: Update import path for Docs Blocks ([@pocka](https://github.com/pocka))
+- feat: Requires Storybook@>=6.4 ([@pocka](https://github.com/pocka))
+- chore: Upgrade devDependencies with config update ([@pocka](https://github.com/pocka))
+- chore: Switch from Yarn v1 to npm v8 ([@pocka](https://github.com/pocka))
+- chore: Upgrade Node.js version for development ([@pocka](https://github.com/pocka))
+- chore: Upgrade ghpages action ([@pocka](https://github.com/pocka))
+- chore: Upgrade and tidy Node.js action ([@pocka](https://github.com/pocka))
+- chore: Upgrade checkout action ([@pocka](https://github.com/pocka))
+
+#### Authors: 10
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Åsmund Grammeltvedt ([@asmundg](https://github.com/asmundg))
+- Dale Larroder ([@dlarroder](https://github.com/dlarroder))
+- Jarel Fryer ([@thafryer](https://github.com/thafryer))
+- Michael Shilman ([@shilman](https://github.com/shilman))
+- Ryan Kent ([@interphased](https://github.com/interphased))
+- Shaun Evening ([@Integrayshaun](https://github.com/Integrayshaun))
+- Shota FUJI ([@pocka](https://github.com/pocka))
+- Yann Braga ([@yannbf](https://github.com/yannbf))
+- Yaron Uliel ([@yaronuliel](https://github.com/yaronuliel))

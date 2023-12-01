@@ -1,6 +1,4 @@
-import { addParameters } from "@storybook/react";
-
-addParameters({
+export const parameters = {
   viewMode: "story",
   docs: { page: null },
-});
+};

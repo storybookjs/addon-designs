@@ -1,17 +1,21 @@
 module.exports = {
-  stories: [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.{js,jsx,ts,tsx}",
-  ],
+  stories: ["../stories/**/*.mdx", "../stories/**/*.stories.{js,jsx,ts,tsx}"],
+  staticDirs: ["../../assets"],
   addons: [
-    "storybook-addon-designs",
+    "@storybook/addon-links",
+    "@storybook/addon-designs",
     "@storybook/addon-docs",
     "@storybook/addon-storysource",
+    "@storybook/addon-mdx-gfm",
   ],
   features: {
     babelModeV7: true,
   },
   core: {
     disableTelemetry: true,
+  },
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
 };

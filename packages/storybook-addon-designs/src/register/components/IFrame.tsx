@@ -30,7 +30,7 @@ export const IFrame: FC<Props> = ({ config, defer = false }) => {
   // statement in the Fulscreen API spec).
   // This side-effect delays the loading of an iframe contents by one frame to
   // make sure the contents gets updated attributes.
-  // https://github.com/pocka/storybook-addon-designs/issues/77
+  // https://github.com/storybookjs/addon-designs/issues/77
   useEffect(() => {
     if (!defer) {
       return;

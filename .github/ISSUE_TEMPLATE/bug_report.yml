@@ -1,7 +1,7 @@
 name: Bug report
 description: File a bug report
 labels:
-  - 'category: bug'
+  - "category: bug"
 body:
   - type: checkboxes
     id: design_types
@@ -62,10 +62,10 @@ body:
     attributes:
       label: Affected versions
       description: |
-        Which version of `storybook-addon-designs` do you use?
-        You can find the installed version by `npm list storybook-addon-designs --depth 0` or `yarn list --pattern storybook-addon-designs --depth 0`.
+        Which version of `@storybook/addon-designs` do you use?
+        You can find the installed version by `npm list @storybook/addon-designs --depth 0` or `yarn list --pattern @storybook/addon-designs --depth 0`.
         If you know which version introduced the bug, please write that instead.
-      placeholder: '6.0.1'
+      placeholder: "6.0.1"
     validations:
       required: true
   - type: input
@@ -73,6 +73,6 @@ body:
     attributes:
       label: Storybook versions
       description: Which version of `@storybook/*` do you use?
-      placeholder: '6.3.0'
+      placeholder: "6.3.0"
     validations:
       required: true

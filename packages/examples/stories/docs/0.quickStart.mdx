@@ -1,0 +1,95 @@
+import { Meta } from "@storybook/blocks";
+import { TabsState } from "@storybook/components";
+
+<Meta title="Docs/Quick start" />
+
+# Quick Start
+
+First you need to install the addon.
+
+<TabsState initial="yarn">
+  <div id="yarn" title="Yarn">
+    <div>
+      ```sh
+      yarn add -D @storybook/addon-designs
+      ```
+    </div>
+  </div>
+
+<div id="npm" title="NPM">
+  {/* prettier-ignore */}
+  <div>
+    ```sh
+    npm i -D @storybook/addon-designs
+    ```
+  </div>
+</div>
+
+  <div id="pnpm" title="PNPM">
+    <div>
+      ```sh
+      pnpm add -D @storybook/addon-designs
+      ```
+    </div>
+  </div>
+</TabsState>
+
+Then register it.
+Just add the addon name to `.storybook/main.ts`.
+
+```ts
+// .storybook/main.ts
+import type { StorybookConfig } from "@storybook/your-framework";
+
+const config: StorybookConfig = {
+  stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: ["@storybook/addon-essentials", "@storybook/addon-designs"],
+  framework: {
+    name: "@storybook/your-framework",
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
+};
+
+export default config;
+```
+
+Now, you can embed designs to your Storybook.
+All you need to do is add the `design` parameter to your story.
+
+```js
+// MyComponent.stories.jsx
+import { MyComponent } from "./MyComponent";
+
+export default {
+  title: "MyComponent",
+  component: MyComponent,
+};
+
+export const myStory = {
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/@storybook/addon-designs-sample",
+    },
+  },
+};
+```
+
+## Documentation notes
+
+In this document, we'll write `export default` statement only when it's relevant.
+
+[csf-docs]: https://storybook.js.org/docs/formats/component-story-format/
+
+## Resources
+
+For more about decorators API and parameters API, please refer to the Storybook official docs.
+
+- [Writing Stories - Decorators][sb-docs-decorators]
+- [Writing Stories - Parameters][sb-docs-parameters]
+
+[sb-docs-decorators]: https://storybook.js.org/docs/react/writing-stories/decorators
+[sb-docs-parameters]: https://storybook.js.org/docs/react/writing-stories/parameters

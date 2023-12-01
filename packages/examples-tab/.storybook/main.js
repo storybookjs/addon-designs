@@ -1,15 +1,15 @@
-const main = require("../../examples/.storybook/main");
-
 module.exports = {
   stories: [
-    "../../examples/stories/**/*.stories.mdx",
+    "../../examples/stories/**/*.mdx",
     "../../examples/stories/**/*.stories.{js,jsx,ts,tsx}",
     "../stories/**/*.stories.{js,jsx,ts,tsx,mdx}",
+    "../stories/**/*.mdx",
   ],
+  staticDirs: ["../../assets"],
   addons: [
     "@storybook/addon-docs",
     {
-      name: "storybook-addon-designs",
+      name: "@storybook/addon-designs",
       options: {
         renderTarget: "tab",
       },
@@ -20,5 +20,9 @@ module.exports = {
   },
   core: {
     disableTelemetry: true,
+  },
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
 };
