@@ -1,3 +1,34 @@
+# v7.0.5 (Sun Jan 07 2024)
+
+#### 🐛 Bug Fix
+
+- Formatting change to debug release flow [#225](https://github.com/storybookjs/addon-designs/pull/225) ([@shilman](https://github.com/shilman))
+- Code formatting change to trigger release [#224](https://github.com/storybookjs/addon-designs/pull/224) ([@shilman](https://github.com/shilman))
+- Correct module check to not throw an error [#190](https://github.com/storybookjs/addon-designs/pull/190) ([@smmccabe](https://github.com/smmccabe) [@yannbf](https://github.com/yannbf))
+- Add `onCollapsedChange` prop for Doc Block [#217](https://github.com/storybookjs/addon-designs/pull/217) ([@pocka](https://github.com/pocka))
+- Re-enable GitHub Pages deploy workflow [#213](https://github.com/storybookjs/addon-designs/pull/213) ([@pocka](https://github.com/pocka))
+- Fix README badge URLs [#205](https://github.com/storybookjs/addon-designs/pull/205) ([@pocka](https://github.com/pocka))
+- Update repository URL to storybookjs/addon-designs [#206](https://github.com/storybookjs/addon-designs/pull/206) ([@pocka](https://github.com/pocka))
+
+#### 🏠 Internal
+
+- Upgrade auto and add released plugin [#210](https://github.com/storybookjs/addon-designs/pull/210) ([@shilman](https://github.com/shilman))
+
+#### 📝 Documentation
+
+- Add more package.json keywords [#223](https://github.com/storybookjs/addon-designs/pull/223) ([@shilman](https://github.com/shilman))
+- README: Fix main.js for 7.0+ [#222](https://github.com/storybookjs/addon-designs/pull/222) ([@shilman](https://github.com/shilman))
+- Archive changelog and link addon changelog to root [#221](https://github.com/storybookjs/addon-designs/pull/221) ([@shilman](https://github.com/shilman))
+
+#### Authors: 4
+
+- Michael Shilman ([@shilman](https://github.com/shilman))
+- Shawn McCabe ([@smmccabe](https://github.com/smmccabe))
+- Shota FUJI ([@pocka](https://github.com/pocka))
+- Yann Braga ([@yannbf](https://github.com/yannbf))
+
+---
+
 # v7.0.1 (Thu Aug 10 2023)
 
 #### 🐛 Bug Fix
