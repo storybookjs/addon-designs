@@ -40,7 +40,7 @@ pnpm add -D @storybook/addon-designs
 ### 2. Register the addon in `main.js`
 
 ```js
-module.exports = {
+export default {
   addons: ["@storybook/addon-designs"],
 };
 ```
