@@ -68,7 +68,10 @@
   "keywords": [
     "storybook-addon",
     "design",
-    "figma"
+    "figma",
+    "figspec",
+    "image",
+    "preview"
   ],
   "storybook": {
     "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/assets/logo.png",
