@@ -146,11 +146,9 @@ export const DocBlockBase: FC<BlocksCommonProps> = ({
               title: collapsed ? "Show" : "Hide",
               onClick: () => {
                 const newValue = !collapsed;
-
                 if (onCollapsedChange) {
                   onCollapsedChange(newValue, collapsed);
                 }
-
                 setCollapsed(newValue);
               },
             },
