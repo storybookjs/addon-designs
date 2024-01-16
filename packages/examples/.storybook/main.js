@@ -6,11 +6,7 @@ module.exports = {
     "@storybook/addon-designs",
     "@storybook/addon-docs",
     "@storybook/addon-storysource",
-    "@storybook/addon-mdx-gfm",
   ],
-  features: {
-    babelModeV7: true,
-  },
   core: {
     disableTelemetry: true,
   },
