@@ -34,15 +34,15 @@ export default function register(renderTarget: "panel" | "tab") {
     if (renderTarget === "tab") {
       addons.add(PanelName, {
         title: DEFAULT_TAB_NAME,
-        render({ active, key }) {
+        render({ active }) {
           if (!active) {
             // NOTE: Return type of render is `ReactElement`, hence returning `null` causes
             //       type error. I'm using `<noscript>` in place of `null`.
-            return <noscript key={key} />;
+            return <noscript />;
           }
 
           return (
-            <ErrorBoundary key={key}>
+            <ErrorBoundary>
               <Wrapper active />
             </ErrorBoundary>
           );
