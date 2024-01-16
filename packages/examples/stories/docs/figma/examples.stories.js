@@ -4,53 +4,56 @@ import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../Button";
 
-export default {
+const meta = {
   title: "Docs/Figma/Examples",
   component: Button,
+  render: () => <Button>Button</Button>,
 };
 
-export const embedFile = () => <Button>Button</Button>;
+export default meta;
 
-embedFile.parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-  }),
+export const embedFile = {
+  parameters: {
+    design: config({
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+    }),
+  },
 };
 
-export const embedFrame = () => <Button>Button</Button>;
-
-embedFrame.parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5",
-  }),
+export const embedFrame = {
+  parameters: {
+    design: config({
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5",
+    }),
+  },
 };
 
-export const embedPrivateFile = () => <Button>Button</Button>;
-
-embedPrivateFile.parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/file/WOpzYgwlTe1UV6MpJP6SMv/private-test",
-  }),
+export const embedPrivateFile = {
+  parameters: {
+    design: config({
+      type: "figma",
+      url: "https://www.figma.com/file/WOpzYgwlTe1UV6MpJP6SMv/private-test",
+    }),
+  },
 };
 
-export const embedPrototype = () => <Button>Button</Button>;
-
-embedPrototype.parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-  }),
+export const embedPrototype = {
+  parameters: {
+    design: config({
+      type: "figma",
+      url: "https://www.figma.com/proto/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+    }),
+  },
 };
 
-export const allowFullscreen = () => <Button>Button</Button>;
-
-allowFullscreen.parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
-    allowFullscreen: true,
-  }),
+export const allowFullscreen = {
+  parameters: {
+    design: config({
+      type: "figma",
+      url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+      allowFullscreen: true,
+    }),
+  },
 };
