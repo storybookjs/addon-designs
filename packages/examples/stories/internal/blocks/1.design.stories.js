@@ -1,3 +1,5 @@
+import React from "react";
+
 export default {
   title: "Internal/Blocks/Design",
 };
