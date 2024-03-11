@@ -1,9 +1,9 @@
 {
   "name": "examples-tab",
-  "version": "7.0.0-beta.2",
+  "version": "8.0.0-alpha.1",
   "private": true,
   "dependencies": {
-    "examples": "7.0.0-beta.2"
+    "examples": "*"
   },
   "scripts": {
     "storybook": "storybook dev -p 6007",

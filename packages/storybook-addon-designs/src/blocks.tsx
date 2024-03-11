@@ -86,6 +86,8 @@ export interface BlocksCommonProps {
    */
   collapsable?: boolean;
 
+  children?: React.ReactNode;
+
   /**
    * **Doc Block Props**
    *

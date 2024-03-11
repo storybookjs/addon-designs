@@ -1,31 +1,28 @@
 {
   "name": "examples",
-  "version": "7.0.0-beta.2",
+  "version": "8.0.0-alpha.1",
   "private": true,
   "dependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
-    "@storybook/addon-actions": "^7.0.7",
-    "@storybook/addon-mdx-gfm": "^7.0.7",
+    "@storybook/addon-actions": "^8.0.0-alpha.10 || ^8.0.0",
     "@storybook/addon-designs": "*",
     "@storybook/addon-designs-assets": "*",
-    "@storybook/addon-docs": "^7.0.7",
-    "@storybook/addon-links": "^7.0.7",
-    "@storybook/addon-storysource": "^7.0.7",
-    "@storybook/addons": "^7.0.7",
-    "@storybook/blocks": "^7.0.7",
-    "@storybook/components": "^7.0.7",
-    "@storybook/mdx1-csf": "^1.0.0",
-    "@storybook/react": "^7.0.7",
-    "@storybook/react-webpack5": "^7.0.7",
-    "@storybook/theming": "^7.0.7",
-    "storybook": "^7.0.7"
+    "@storybook/addon-docs": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/addon-links": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/addon-storysource": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/blocks": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/components": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/react": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/react-webpack5": "^8.0.0-alpha.10 || ^8.0.0",
+    "@storybook/theming": "^8.0.0-alpha.10 || ^8.0.0",
+    "storybook": "^8.0.0-alpha.10 || ^8.0.0"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",

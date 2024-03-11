@@ -5,12 +5,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-designs",
     "@storybook/addon-docs",
-    "@storybook/addon-storysource",
-    "@storybook/addon-mdx-gfm",
+    "@storybook/addon-webpack5-compiler-swc",
   ],
-  features: {
-    babelModeV7: true,
-  },
   core: {
     disableTelemetry: true,
   },

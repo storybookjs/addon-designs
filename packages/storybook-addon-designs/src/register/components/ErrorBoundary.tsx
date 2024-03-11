@@ -12,7 +12,7 @@ type State =
       error: unknown;
     };
 
-export class ErrorBoundary extends Component {
+export class ErrorBoundary extends Component<{ children: React.ReactNode }> {
   public state: State = { hasError: false };
 
   static getDerivedStateFromError(error: unknown): State {
