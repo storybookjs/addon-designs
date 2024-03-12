@@ -4,14 +4,14 @@ import { ActionBar, Placeholder } from "@storybook/components";
 import { styled } from "@storybook/theming";
 import { useOf, Of } from "@storybook/blocks";
 
-import { Figma as FigmaInternal } from "./register/components/Figma";
-import { Figspec as FigspecInternal } from "./register/components/Figspec";
-import { IFrame as IFrameInternal } from "./register/components/IFrame";
-import { ImagePreview } from "./register/components/Image";
-import { Wrapper as WrapperInternal } from "./register/components/Wrapper";
+import { Figma as FigmaInternal } from "./manager/components/Figma";
+import { Figspec as FigspecInternal } from "./manager/components/Figspec";
+import { IFrame as IFrameInternal } from "./manager/components/IFrame";
+import { ImagePreview } from "./manager/components/Image";
+import { Wrapper as WrapperInternal } from "./manager/components/Wrapper";
 
 import * as config from "./config";
-import { ParameterName } from "./addon";
+import { ParameterName } from "./constants";
 
 // Since the exports of `@storybook/components` is unstable, I couldn't manage
 // to import the `components.resetWrapper` while maintaining version requirements.

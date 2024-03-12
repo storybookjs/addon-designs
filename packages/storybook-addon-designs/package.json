@@ -14,23 +14,30 @@
   "repository": "git@github.com:storybookjs/addon-designs.git",
   "license": "MIT",
   "author": "pocka <pockawoooh@gmail.com>",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "types": "esm/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./blocks": "./dist/blocks.mjs",
+    "./preset": "./dist/preset.js",
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "esm",
-    "cjs",
-    "blocks.js",
-    "blocks.d.ts",
-    "register.js",
-    "register-tab.js",
-    "preset.js"
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:cjs": "tsc --module commonjs --outDir cjs",
-    "build:esm": "tsc",
-    "clean": "rm -r esm cjs",
+    "prebuild": "npm run clean",
+    "build": "tsup",
+    "build:watch": "npm run build -- --watch",
+    "clean": "rimraf ./dist",
     "dev": "tsc --watch --preserveWatchOutput",
     "prepublishOnly": "cp ../../README.md ./ && npm run build",
     "release": "npm run prepublishOnly && auto shipit",
@@ -41,8 +48,6 @@
   },
   "devDependencies": {
     "@auto-it/released": "^11.1.1",
-    "@figspec/components": "^1.0.0",
-    "@storybook/addon-docs": "^8.0.0",
     "@storybook/components": "^8.0.0",
     "@storybook/core-events": "^8.0.0",
     "@storybook/manager-api": "^8.0.0",
@@ -52,13 +57,53 @@
     "@types/react-dom": "^18.2.21",
     "@types/webpack-env": "^1.18.4",
     "auto": "^11.1.1",
-    "figma-js": "^1.13.0",
+    "figma-js": "^1.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.2"
+  },
+  "peerDependencies": {
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/components": "^8.0.0",
+    "@storybook/theming": "^8.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@storybook/blocks": {
+      "optional": true
+    },
+    "@storybook/components": {
+      "optional": true
+    },
+    "@storybook/theming": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bundler": {
+    "exportEntries": [
+      "src/index.ts"
+    ],
+    "managerEntries": [
+      "src/register-panel.ts",
+      "src/register-tab.ts"
+    ],
+    "previewEntries": [
+      "src/blocks.tsx"
+    ],
+    "nodeEntries": [
+      "src/preset.ts"
+    ]
   },
   "storybook": {
     "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/assets/logo.png",

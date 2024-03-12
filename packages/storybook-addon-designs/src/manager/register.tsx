@@ -3,7 +3,7 @@ import { addons, types, useParameter } from "@storybook/manager-api";
 import { AddonPanel } from "@storybook/components";
 import { jsx } from "@storybook/theming";
 
-import { AddonName, PanelName, ParameterName } from "../addon";
+import { AddonName, PanelName, ParameterName } from "../constants";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import type { Config } from "../config";
 
@@ -11,7 +11,7 @@ import { Wrapper } from "./containers/Wrapper";
 
 const DEFAULT_TAB_NAME = "Design";
 
-export default function register(renderTarget: "panel" | "tab") {
+export function register(renderTarget: "panel" | "tab") {
   addons.register(AddonName, (api) => {
     const title = function () {
       const param = useParameter<Config | Config[] | undefined>(ParameterName);
@@ -49,8 +49,6 @@ export default function register(renderTarget: "panel" | "tab") {
         },
         type: types.TAB,
         paramKey: ParameterName,
-        route: ({ storyId }) => `/design/${storyId}`,
-        match: ({ viewMode }) => viewMode === "design",
       });
     } else {
       addons.add(PanelName, {

@@ -4,7 +4,7 @@ import { jsx } from "@storybook/theming";
 import { useParameter, useStorybookState } from "@storybook/manager-api";
 
 import { Config } from "../../config";
-import { ParameterName } from "../../addon";
+import { ParameterName } from "../../constants";
 
 import { Wrapper as Pure } from "../components/Wrapper";
 
