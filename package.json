@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^3.2.5"
   },
   "scripts": {
     "build": "npm run build --workspaces --if-present",
@@ -16,6 +16,5 @@
     "fmt": "prettier --write README.md CHANGELOG.md CONTRIBUTING.md package.json 'packages/**/*.{js,jsx,ts,tsx,md,mdx,json}'",
     "release": "npm run release --workspace=@storybook/addon-designs"
   },
-  "prettier": {},
-  "version": "8.0.0-alpha.1"
+  "version": "8.0.0"
 }
