@@ -22,7 +22,7 @@ export const ImagePreview: FC<Props> = ({ config }) => {
     () => ({
       transform: `scale(${zoom.scale})`,
     }),
-    [zoom.scale]
+    [zoom.scale],
   );
 
   return (

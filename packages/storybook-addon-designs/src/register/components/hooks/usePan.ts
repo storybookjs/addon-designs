@@ -25,7 +25,7 @@ interface PanController {
  */
 type UsePan = (
   cb: (movement: Point2D) => any,
-  deps: DependencyList
+  deps: DependencyList,
 ) => PanController;
 
 export const usePan: UsePan = (cb, deps) => {
@@ -42,7 +42,7 @@ export const usePan: UsePan = (cb, deps) => {
       savePosition([ev.screenX, ev.screenY]);
       setPanState(true);
     },
-    [setPanState, savePosition]
+    [setPanState, savePosition],
   );
 
   const onTouchStart = useCallback<PanController["onTouchStart"]>(
@@ -52,7 +52,7 @@ export const usePan: UsePan = (cb, deps) => {
       savePosition([touch.screenX, touch.screenY]);
       setPanState(true);
     },
-    [setPanState, savePosition]
+    [setPanState, savePosition],
   );
 
   const move = useCallback(
@@ -67,7 +67,7 @@ export const usePan: UsePan = (cb, deps) => {
         return p;
       });
     },
-    [savePosition, isPanning, ...deps]
+    [savePosition, isPanning, ...deps],
   );
 
   const onMouseMove = useCallback<PanController["onMouseMove"]>(
@@ -76,7 +76,7 @@ export const usePan: UsePan = (cb, deps) => {
 
       move([screenX, screenY]);
     },
-    [move]
+    [move],
   );
 
   const onTouchMove = useCallback<PanController["onTouchMove"]>(
@@ -85,7 +85,7 @@ export const usePan: UsePan = (cb, deps) => {
 
       move([screenX, screenY]);
     },
-    [savePosition, isPanning, ...deps]
+    [savePosition, isPanning, ...deps],
   );
 
   const clear = useCallback(() => {

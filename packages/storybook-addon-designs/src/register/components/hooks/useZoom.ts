@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState, DependencyList } from "react";
 
 type UseZoom = (
   initialValue: number,
-  deps: DependencyList
+  deps: DependencyList,
 ) => {
   /**
    * Current scale factor.

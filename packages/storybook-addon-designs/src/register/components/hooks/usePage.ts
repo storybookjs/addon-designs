@@ -24,14 +24,14 @@ export const usePage: UsePage = (initialPage = 1) => {
       setTotal(total);
       setCurrent(total > 0 ? initialPage : 0);
     },
-    [initialPage, setTotal, setCurrent]
+    [initialPage, setTotal, setCurrent],
   );
 
   const jump = useCallback<Page["jump"]>(
     (page) => {
       setCurrent(page > total ? total : page <= 0 ? 1 : page);
     },
-    [total, setCurrent]
+    [total, setCurrent],
   );
 
   useEffect(() => {

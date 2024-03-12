@@ -126,7 +126,7 @@ export const Figspec: FC<Props> = ({ config }) => {
 
         imageUrl.searchParams.set(
           "ids",
-          frames.map((frame) => frame.id).join(",")
+          frames.map((frame) => frame.id).join(","),
         );
 
         const images = await fetch(imageUrl.href, {
@@ -159,7 +159,7 @@ export const Figspec: FC<Props> = ({ config }) => {
           signal,
         }).then((resp) => unwrapJson<FileNodesResponse>(resp)),
         fetch(imageUrl.href, { headers, signal }).then((resp) =>
-          unwrapJson<FileImageResponse>(resp)
+          unwrapJson<FileImageResponse>(resp),
         ),
       ]);
 

@@ -50,7 +50,7 @@ export const Pan: FC<Props> = ({
 
       move((prev) => [prev[0] + delta[0], prev[1] + delta[1]]);
     },
-    [move, onChange]
+    [move, onChange],
   );
 
   const transform = useMemo<CSSProperties>(() => {

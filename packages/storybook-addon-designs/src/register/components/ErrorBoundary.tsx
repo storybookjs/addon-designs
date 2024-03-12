@@ -24,7 +24,7 @@ export class ErrorBoundary extends Component<{ children: React.ReactNode }> {
 
   override componentDidCatch(error: unknown, info: ErrorInfo): void {
     console.group(
-      "An error occurred during rendering Addon panel of storybook-addon-designs"
+      "An error occurred during rendering Addon panel of storybook-addon-designs",
     );
     console.log("--- Error ---");
     console.error(error);

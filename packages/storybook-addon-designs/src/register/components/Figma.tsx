@@ -24,7 +24,7 @@ export const Figma: FC<Props> = ({ config }) => {
         "[storybook-addon-designs] " +
           "The URL you specified is not valid Figma URL.\n" +
           "The addon fallbacks to normal iframe mode." +
-          "For more detail, please check <https://www.figma.com/developers/embed>."
+          "For more detail, please check <https://www.figma.com/developers/embed>.",
       );
       return config;
     }

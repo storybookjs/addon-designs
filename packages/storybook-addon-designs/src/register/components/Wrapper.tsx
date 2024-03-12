@@ -72,7 +72,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
         case "experimental-figspec":
           if (cfg.type === "experimental-figspec") {
             console.warn(
-              "[storybook-addon-designs] `experimental-figspec` is deprecated. We will remove it in v7.0. Please replace it to `figspec` type."
+              "[storybook-addon-designs] `experimental-figspec` is deprecated. We will remove it in v7.0. Please replace it to `figspec` type.",
             );
           }
 
@@ -120,7 +120,7 @@ export const Wrapper: FC<Props> = ({ config }) => {
           </Placeholder>
         ),
       };
-    }
+    },
   );
 
   if (tabs.length === 1) {
