@@ -2,13 +2,21 @@
   "name": "@storybook/addon-designs",
   "version": "8.0.0-alpha.1",
   "description": "Storybook addon for embedding your design preview in addon panel",
+  "keywords": [
+    "storybook-addon",
+    "design",
+    "figma",
+    "figspec",
+    "image",
+    "preview"
+  ],
+  "homepage": "https://github.com/storybookjs/addon-designs",
+  "repository": "git@github.com:storybookjs/addon-designs.git",
+  "license": "MIT",
+  "author": "pocka <pockawoooh@gmail.com>",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
-  "repository": "git@github.com:storybookjs/addon-designs.git",
-  "homepage": "https://github.com/storybookjs/addon-designs",
-  "author": "pocka <pockawoooh@gmail.com>",
-  "license": "MIT",
   "files": [
     "esm",
     "cjs",
@@ -18,6 +26,16 @@
     "register-tab.js",
     "preset.js"
   ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:cjs": "tsc --module commonjs --outDir cjs",
+    "build:esm": "tsc",
+    "clean": "rm -r esm cjs",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "cp ../../README.md ./ && npm run build",
+    "release": "npm run prepublishOnly && auto shipit",
+    "test": "echo 'No tests' && exit 0"
+  },
   "dependencies": {
     "@figspec/react": "^1.0.0"
   },
@@ -39,29 +57,11 @@
     "react-dom": "^18.2.0",
     "typescript": "^5.4.2"
   },
-  "scripts": {
-    "dev": "tsc --watch --preserveWatchOutput",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir cjs",
-    "test": "echo 'No tests' && exit 0",
-    "clean": "rm -r esm cjs",
-    "prepublishOnly": "cp ../../README.md ./ && npm run build",
-    "release": "npm run prepublishOnly && auto shipit"
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": [
-    "storybook-addon",
-    "design",
-    "figma",
-    "figspec",
-    "image",
-    "preview"
-  ],
   "storybook": {
     "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/assets/logo.png",
     "displayName": "Designs"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
