@@ -99,8 +99,8 @@ To do this, you need to set `"tab"` to a `renderTarget` preset option.
 The default value is `"panel"`.
 
 {location.pathname.startsWith('/tab/')
-  ? <a href="../?path=/docs/docs-advanced-usage--docs" onClick={undefined}>Go back to panel mode</a>
-  : <a href="./tab/?path=/docs/docs-advanced-usage--docs" onClick={undefined}>Go to tab mode</a>
+? <a href="../?path=/docs/docs-advanced-usage--docs" onClick={undefined}>Go back to panel mode</a>
+: <a href="./tab/?path=/docs/docs-advanced-usage--docs" onClick={undefined}>Go to tab mode</a>
 }
 
 ```ts
