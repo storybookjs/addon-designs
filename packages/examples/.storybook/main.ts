@@ -1,3 +1,4 @@
+import remarkGfm from 'remark-gfm';
 import type { StorybookConfig } from "@storybook/types";
 
 const isTabMode = process.env.STORYBOOK_ADDON_DESIGNS_MODE === "tab";
@@ -8,8 +9,17 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-designs",
-    "@storybook/addon-docs",
     "@storybook/addon-webpack5-compiler-swc",
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
     {
       name: "@storybook/addon-designs",
       options: {
