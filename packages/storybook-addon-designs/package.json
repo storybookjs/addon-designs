@@ -34,11 +34,8 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
-    "clean": "rimraf ./dist",
-    "dev": "tsc --watch --preserveWatchOutput",
     "prepublishOnly": "cp ../../README.md ./ && npm run build",
     "release": "npm run prepublishOnly && auto shipit",
     "test": "echo 'No tests' && exit 0"
