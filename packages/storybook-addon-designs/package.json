@@ -17,8 +17,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
     "./blocks": "./dist/blocks.mjs",
     "./preset": "./dist/preset.js",
@@ -106,7 +106,7 @@
     ]
   },
   "storybook": {
-    "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/assets/logo.png",
+    "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/examples/assets/logo.png",
     "displayName": "Designs"
   }
 }

@@ -4,7 +4,7 @@ import { config } from "@storybook/addon-designs";
 
 import { Button } from "../../Button";
 
-import sampleImage from "@storybook/addon-designs-assets/sample.png";
+import sampleImage from "../../../assets/sample.png";
 
 export default {
   title: "Docs/Image/Examples",

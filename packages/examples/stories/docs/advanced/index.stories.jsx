@@ -1,6 +1,5 @@
 import React from "react";
-
-import { config } from "@storybook/addon-designs";
+import { config, PanelName } from "@storybook/addon-designs";
 
 import { Button } from "../../Button";
 
@@ -52,5 +51,12 @@ export const setTabNames = {
         url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
       },
     ]),
+  },
+};
+
+export const hideTab = {
+  render: () => <Button>Button</Button>,
+  parameters: {
+    previewTabs: { [PanelName]: { hidden: true } },
   },
 };

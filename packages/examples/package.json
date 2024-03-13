@@ -3,16 +3,12 @@
   "version": "8.0.0",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
     "@storybook/addon-actions": "^8.0.0",
     "@storybook/addon-designs": "*",
-    "@storybook/addon-designs-assets": "*",
     "@storybook/addon-docs": "^8.0.0",
     "@storybook/addon-links": "^8.0.0",
     "@storybook/addon-storysource": "^8.0.0",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
     "@storybook/blocks": "^8.0.0",
     "@storybook/components": "^8.0.0",
     "@storybook/react": "^8.0.0",
@@ -24,6 +20,8 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:tab": "STORYBOOK_ADDON_DESIGNS_MODE=tab npm run storybook",
+    "build-storybook": "storybook build",
+    "build-storybook:tab": "STORYBOOK_ADDON_DESIGNS_MODE=tab storybook build --output-dir storybook-static/tab"
   }
 }

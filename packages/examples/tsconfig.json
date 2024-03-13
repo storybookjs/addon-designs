@@ -3,6 +3,10 @@
     "jsx": "react",
     "esModuleInterop": true,
     "strict": true,
-    "allowJs": false
-  }
+    "allowJs": false,
+    "resolvePackageJsonImports": true,
+    "moduleResolution": "bundler",
+    "module": "esnext"
+  },
+  "include": ["types.d.ts", ".storybook/**/*.ts", "stories/**/*"],
 }
