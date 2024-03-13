@@ -3,7 +3,6 @@ import { TabsState } from "@storybook/components";
 
 import { Figma } from "@storybook/addon-designs/blocks";
 
-import { TabLink } from "./TabLink";
 import * as AdvancedStories from "./index.stories";
 
 <Meta of={AdvancedStories} />
@@ -99,10 +98,10 @@ The addon can render contents to `Design` tab instead of in an addon panel.
 To do this, you need to set `"tab"` to a `renderTarget` preset option.
 The default value is `"panel"`.
 
-<TabLink
-  tabItem={<a href="/">Go back to panel mode</a>}
-  panelItem={<a href="/tab/">Go to tab mode</a>}
-/>
+{location.pathname.startsWith('/tab/')
+  ? <a href="../?path=/docs/docs-advanced-usage--docs" onClick={undefined}>Go back to panel mode</a>
+  : <a href="./tab/?path=/docs/docs-advanced-usage--docs" onClick={undefined}>Go to tab mode</a>
+}
 
 ```ts
 // .storybook/main.ts
