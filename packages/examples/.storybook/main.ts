@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/types";
 
-const isTabMode = process.env.STORYBOOK_ADDON_DESIGNS_MODE === 'tab';
+const isTabMode = process.env.STORYBOOK_ADDON_DESIGNS_MODE === "tab";
 
 const config: StorybookConfig = {
   stories: ["../stories/**/*.mdx", "../stories/**/*.stories.{js,jsx,ts,tsx}"],

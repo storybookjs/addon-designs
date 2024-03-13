@@ -8,5 +8,5 @@
     "moduleResolution": "bundler",
     "module": "esnext"
   },
-  "include": ["types.d.ts", ".storybook/**/*.ts", "stories/**/*"],
+  "include": ["types.d.ts", ".storybook/**/*.ts", "stories/**/*"]
 }
