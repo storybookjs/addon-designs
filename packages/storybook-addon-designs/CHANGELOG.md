@@ -1,3 +1,20 @@
+# v8.0.0 (Thu Mar 14 2024)
+
+#### 💥 Breaking Change
+
+- Upgrade to Storybook 8 [#232](https://github.com/storybookjs/addon-designs/pull/232) ([@JReinhold](https://github.com/JReinhold))
+
+#### 🐛 Bug Fix
+
+
+#### Authors: 3
+
+- Jeppe Reinhold ([@JReinhold](https://github.com/JReinhold))
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+- Shaun Evening ([@ShaunEvening](https://github.com/ShaunEvening))
+
+---
+
 # v7.0.5 (Sun Jan 07 2024)
 
 #### 🐛 Bug Fix
