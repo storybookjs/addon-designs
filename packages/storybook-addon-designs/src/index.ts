@@ -1,4 +1,4 @@
-import { PanelName, ParameterName } from "./addon";
+import { PanelName, ParameterName } from "./constants";
 import { Config } from "./config";
 
 /**

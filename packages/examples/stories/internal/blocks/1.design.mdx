@@ -1,4 +1,4 @@
-import { Meta, ArgsTable, Source, Canvas } from "@storybook/blocks";
+import { Meta, ArgTypes, Source, Canvas } from "@storybook/blocks";
 import { Design } from "@storybook/addon-designs/blocks";
 import * as $1DesignStories from "./1.design.stories";
 
@@ -9,7 +9,7 @@ import * as $1DesignStories from "./1.design.stories";
 Design Doc Block takes a story ID and shows design embeds based on the story's parameter.
 All you need to do is refer to a story you want to display.
 
-<ArgsTable of={Design} />
+<ArgTypes of={Design} />
 
 <Canvas of={$1DesignStories.Foo} />
 

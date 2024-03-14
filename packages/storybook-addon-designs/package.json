@@ -2,70 +2,6 @@
   "name": "@storybook/addon-designs",
   "version": "8.0.0-alpha.1",
   "description": "Storybook addon for embedding your design preview in addon panel",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "types": "esm/index.d.ts",
-  "repository": "git@github.com:storybookjs/addon-designs.git",
-  "homepage": "https://github.com/storybookjs/addon-designs",
-  "author": "pocka <pockawoooh@gmail.com>",
-  "license": "MIT",
-  "files": [
-    "esm",
-    "cjs",
-    "blocks.js",
-    "blocks.d.ts",
-    "register.js",
-    "register-tab.js",
-    "preset.js"
-  ],
-  "dependencies": {
-    "@figspec/react": "^1.0.0"
-  },
-  "devDependencies": {
-    "@auto-it/released": "^11.0.1",
-    "@figspec/components": "^1.0.0",
-    "@storybook/addon-docs": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/components": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/core-events": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/manager-api": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/preview-api": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/theming": "^8.0.0-alpha.10 || ^8.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@types/webpack-env": "^1.13.9",
-    "auto": "^11.0.1",
-    "figma-js": "^1.13.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^4.7.3"
-  },
-  "peerDependencies": {
-    "@storybook/addon-docs": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/components": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/manager-api": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/preview-api": "^8.0.0-alpha.10 || ^8.0.0",
-    "@storybook/theming": "^8.0.0-alpha.10 || ^8.0.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "react-dom": {
-      "optional": true
-    }
-  },
-  "scripts": {
-    "dev": "tsc --watch --preserveWatchOutput",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir cjs",
-    "test": "echo 'No tests' && exit 0",
-    "clean": "rm -r esm cjs",
-    "prepublishOnly": "cp ../../README.md ./ && npm run build",
-    "release": "npm run prepublishOnly && auto shipit"
-  },
   "keywords": [
     "storybook-addon",
     "design",
@@ -74,11 +10,100 @@
     "image",
     "preview"
   ],
-  "storybook": {
-    "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/assets/logo.png",
-    "displayName": "Designs"
+  "homepage": "https://github.com/storybookjs/addon-designs",
+  "repository": "git@github.com:storybookjs/addon-designs.git",
+  "license": "MIT",
+  "author": "pocka <pockawoooh@gmail.com>",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./blocks": "./dist/blocks.mjs",
+    "./preset": "./dist/preset.js",
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "npm run build -- --watch",
+    "prepublishOnly": "cp ../../README.md ./ && npm run build",
+    "release": "npm run prepublishOnly && auto shipit",
+    "test": "echo 'No tests' && exit 0"
+  },
+  "dependencies": {
+    "@figspec/react": "^1.0.0"
+  },
+  "devDependencies": {
+    "@auto-it/released": "^11.1.1",
+    "@storybook/components": "^8.0.0",
+    "@storybook/core-events": "^8.0.0",
+    "@storybook/manager-api": "^8.0.0",
+    "@storybook/preview-api": "^8.0.0",
+    "@storybook/theming": "^8.0.0",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "@types/webpack-env": "^1.18.4",
+    "auto": "^11.1.1",
+    "figma-js": "^1.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  },
+  "peerDependencies": {
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/components": "^8.0.0",
+    "@storybook/theming": "^8.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@storybook/blocks": {
+      "optional": true
+    },
+    "@storybook/components": {
+      "optional": true
+    },
+    "@storybook/theming": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bundler": {
+    "exportEntries": [
+      "src/index.ts"
+    ],
+    "managerEntries": [
+      "src/register-panel.ts",
+      "src/register-tab.ts"
+    ],
+    "previewEntries": [
+      "src/blocks.tsx"
+    ],
+    "nodeEntries": [
+      "src/preset.ts"
+    ]
+  },
+  "storybook": {
+    "icon": "https://raw.githubusercontent.com/storybookjs/addon-designs/master/packages/examples/assets/logo.png",
+    "displayName": "Designs"
   }
 }

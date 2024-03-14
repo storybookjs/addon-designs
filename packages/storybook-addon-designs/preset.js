@@ -1,10 +1,4 @@
-module.exports = {
-  managerEntries(entries = [], options = {}) {
-    return [
-      ...entries,
-      options.renderTarget === "tab"
-        ? require.resolve("./register-tab")
-        : require.resolve("./register"),
-    ];
-  },
-};
+// this file is slightly misleading. It needs to be CJS, and thus in this "type": "module" package it should be named preset.cjs
+// but Storybook won't pick that filename up so we have to name it preset.js instead
+
+module.exports = require("./dist/preset.js");

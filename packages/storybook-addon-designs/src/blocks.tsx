@@ -4,14 +4,14 @@ import { ActionBar, Placeholder } from "@storybook/components";
 import { styled } from "@storybook/theming";
 import { useOf, Of } from "@storybook/blocks";
 
-import { Figma as FigmaInternal } from "./register/components/Figma";
-import { Figspec as FigspecInternal } from "./register/components/Figspec";
-import { IFrame as IFrameInternal } from "./register/components/IFrame";
-import { ImagePreview } from "./register/components/Image";
-import { Wrapper as WrapperInternal } from "./register/components/Wrapper";
+import { Figma as FigmaInternal } from "./manager/components/Figma";
+import { Figspec as FigspecInternal } from "./manager/components/Figspec";
+import { IFrame as IFrameInternal } from "./manager/components/IFrame";
+import { ImagePreview } from "./manager/components/Image";
+import { Wrapper as WrapperInternal } from "./manager/components/Wrapper";
 
 import * as config from "./config";
-import { ParameterName } from "./addon";
+import { ParameterName } from "./constants";
 
 // Since the exports of `@storybook/components` is unstable, I couldn't manage
 // to import the `components.resetWrapper` while maintaining version requirements.
@@ -23,7 +23,7 @@ const ResetWrapper = styled.div(
   font-family: ${theme.typography.fonts.base};
   font-size: ${theme.typography.size.s3}px;
   margin: 0;
-`
+`,
 );
 
 const Wrapper = styled.div<BlocksCommonProps & { collapsed: boolean }>(
@@ -45,7 +45,7 @@ const Wrapper = styled.div<BlocksCommonProps & { collapsed: boolean }>(
         ? "rgba(0, 0, 0, 0.10) 0 1px 3px 0"
         : "rgba(0, 0, 0, 0.20) 0 2px 5px 0"
     };
-`
+`,
 );
 
 const CollapsedText = styled(Placeholder)`
@@ -218,14 +218,14 @@ export interface DesignProps {
 }
 
 export const Design: FC<DesignProps & Omit<BlocksCommonProps, "showLink">> = (
-  props
+  props,
 ) => {
   const { of, placeholder, ...rest } = props;
 
   if ("of" in props && of === undefined) {
     // MDX isn't always type-safe, it's often that users mistype their imports
     throw new Error(
-      "Unexpected `of={undefined}`, did you mistype a CSF file reference?"
+      "Unexpected `of={undefined}`, did you mistype a CSF file reference?",
     );
   }
 
