@@ -21,7 +21,7 @@ A [Storybook](https://github.com/storybooks/storybook) addon that embed Figma or
 
 ## Requirements
 
-- Storybook@>=7.0.0
+- Storybook@>=8.0.0 (Version 7 of this addon supports Storybook 7)
 
 This addon should work well with any framework. If you find that the addon does not work, please open an issue.
 
