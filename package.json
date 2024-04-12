@@ -5,10 +5,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
   "devDependencies": {
     "prettier": "^3.2.5"
   },
