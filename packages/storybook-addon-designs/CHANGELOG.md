@@ -1,3 +1,16 @@
+# v8.0.1 (Wed May 01 2024)
+
+#### 🐛 Bug Fix
+
+- Update package-lock file [#238](https://github.com/storybookjs/addon-designs/pull/238) ([@dazuku](https://github.com/dazuku))
+- Set dependencies to avoid using legacy-peer-deps flag [#237](https://github.com/storybookjs/addon-designs/pull/237) ([@dazuku](https://github.com/dazuku))
+
+#### Authors: 1
+
+- Daniel Camilo Daza Díaz ([@dazuku](https://github.com/dazuku))
+
+---
+
 # v8.0.0 (Thu Mar 14 2024)
 
 #### 💥 Breaking Change
