@@ -1,3 +1,15 @@
+# v8.0.2 (Tue May 21 2024)
+
+#### 🐛 Bug Fix
+
+- Ignore auto generated CHANGELOG from formatting [#241](https://github.com/storybookjs/addon-designs/pull/241) ([@pocka](https://github.com/pocka))
+
+#### Authors: 1
+
+- Shota FUJI ([@pocka](https://github.com/pocka))
+
+---
+
 # v8.0.1 (Wed May 01 2024)
 
 #### 🐛 Bug Fix
