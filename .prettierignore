@@ -1,3 +1,6 @@
 storybook-static
 cjs
 esm
+
+# Auto generated file
+/packages/storybook-addon-designs/CHANGELOG.md
