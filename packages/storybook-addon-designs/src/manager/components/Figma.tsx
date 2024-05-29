@@ -7,7 +7,7 @@ import { IFrame } from "./IFrame";
 import { FigmaConfig, IFrameConfigBase } from "../../config";
 
 export const figmaURLPattern =
-  /https:\/\/([w.-]+.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/;
+  /https:\/\/[\w.-]+\.?figma.com\/([\w-]+)\/([0-9a-zA-Z]{22,128})(?:\/.*)?$/;
 
 export const isFigmaURL = (url: string) => figmaURLPattern.test(url);
 

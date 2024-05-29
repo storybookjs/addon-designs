@@ -95,7 +95,7 @@ export const Figspec: FC<Props> = ({ config }) => {
         throw new Error(config.url + " is not a valid Figma URL.");
       }
 
-      const [, , , fileKey] = match;
+      const [, , fileKey] = match;
 
       const url = new URL(config.url);
 
