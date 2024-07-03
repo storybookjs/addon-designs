@@ -1,3 +1,16 @@
+# v8.0.3 (Wed Jul 03 2024)
+
+#### 🐛 Bug Fix
+
+- Support for the new Figma share URL [#240](https://github.com/storybookjs/addon-designs/pull/240) ([@pocka](https://github.com/pocka) [@ghengeveld](https://github.com/ghengeveld))
+
+#### Authors: 2
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+- Shota FUJI ([@pocka](https://github.com/pocka))
+
+---
+
 # v8.0.2 (Tue May 21 2024)
 
 #### 🐛 Bug Fix
