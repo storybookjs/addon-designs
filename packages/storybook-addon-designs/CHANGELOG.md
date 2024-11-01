@@ -1,3 +1,15 @@
+# v8.0.4 (Fri Nov 01 2024)
+
+#### 🐛 Bug Fix
+
+- Allow pre-releases [#248](https://github.com/storybookjs/addon-designs/pull/248) ([@kasperpeulen](https://github.com/kasperpeulen))
+
+#### Authors: 1
+
+- Kasper Peulen ([@kasperpeulen](https://github.com/kasperpeulen))
+
+---
+
 # v8.0.3 (Wed Jul 03 2024)
 
 #### 🐛 Bug Fix
