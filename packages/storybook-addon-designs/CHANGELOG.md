@@ -1,3 +1,15 @@
+# v8.1.0 (Thu Jan 30 2025)
+
+#### 🚀 Enhancement
+
+- Remove react peer dependency [#253](https://github.com/storybookjs/addon-designs/pull/253) ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+#### Authors: 1
+
+- Valentin Palkovic ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+---
+
 # v8.0.4 (Fri Nov 01 2024)
 
 #### 🐛 Bug Fix
