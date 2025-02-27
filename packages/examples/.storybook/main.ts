@@ -1,5 +1,5 @@
 import remarkGfm from "remark-gfm";
-import type { StorybookConfig } from "@storybook/types";
+import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const isTabMode = process.env.STORYBOOK_ADDON_DESIGNS_MODE === "tab";
 

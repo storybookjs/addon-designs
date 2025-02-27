@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { CSSProperties, FC } from "react";
-import { ActionBar, Placeholder } from "@storybook/components";
-import { styled } from "@storybook/theming";
+import { ActionBar, Placeholder } from "storybook/internal/components";
+import { styled } from "storybook/internal/theming";
 import { useOf, Of } from "@storybook/blocks";
 
 import { Figma as FigmaInternal } from "./manager/components/Figma";
@@ -13,7 +13,7 @@ import { Wrapper as WrapperInternal } from "./manager/components/Wrapper";
 import * as config from "./config";
 import { ParameterName } from "./constants";
 
-// Since the exports of `@storybook/components` is unstable, I couldn't manage
+// Since the exports of `storybook/internal/components` is unstable, I couldn't manage
 // to import the `components.resetWrapper` while maintaining version requirements.
 // This component does similar to the official one at minimum.
 // https://github.com/storybookjs/storybook/blob/4bd2fc9b0677190c59e60fd63841294ab88e80c5/lib/components/src/typography/DocumentFormatting.tsx#L364-L372
