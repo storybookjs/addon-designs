@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Link, Placeholder } from "@storybook/components";
+import { Link, Placeholder } from "storybook/internal/components";
 import { jsx } from "@storybook/theming";
 import { FC, Fragment, ReactNode, useMemo } from "react";
 

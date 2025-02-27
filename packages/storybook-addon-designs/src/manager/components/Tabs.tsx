@@ -2,7 +2,7 @@
 import { DependencyList, FC, ReactNode, useEffect, useState } from "react";
 import { jsx } from "@storybook/theming";
 
-import { Tabs as SbTabs } from "@storybook/components";
+import { Tabs as SbTabs } from "storybook/internal/components";
 
 export interface Tab {
   id: string;

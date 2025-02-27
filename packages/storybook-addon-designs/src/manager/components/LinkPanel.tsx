@@ -2,7 +2,7 @@
 import { FC } from "react";
 import { css, jsx } from "@storybook/theming";
 
-import { Link } from "@storybook/components";
+import { Link } from "storybook/internal/components";
 
 import { LinkConfig } from "../../config";
 

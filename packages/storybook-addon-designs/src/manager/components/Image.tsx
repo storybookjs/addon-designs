@@ -2,7 +2,7 @@
 import { Fragment, useMemo, CSSProperties, FC } from "react";
 import { css, jsx } from "@storybook/theming";
 
-import { FlexBar, Separator } from "@storybook/components";
+import { FlexBar, Separator } from "storybook/internal/components";
 
 import { Pan } from "./Pan";
 import { ZoomButtons } from "./ZoomButtons";

@@ -2,7 +2,7 @@
 import { Fragment, FC } from "react";
 import { jsx } from "@storybook/theming";
 
-import { IconButton, Icons } from "@storybook/components";
+import { IconButton, Icons } from "storybook/internal/components";
 
 interface Props {
   onZoomIn?(): any;

@@ -2,7 +2,7 @@
 import { Fragment, lazy, Suspense, FC } from "react";
 import { jsx } from "@storybook/theming";
 
-import { Link, Placeholder } from "@storybook/components";
+import { Link, Placeholder } from "storybook/internal/components";
 
 import { Config } from "../../config";
 

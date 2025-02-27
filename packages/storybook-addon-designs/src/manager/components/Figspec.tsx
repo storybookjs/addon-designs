@@ -12,7 +12,7 @@ import {
   FigspecFrameViewer,
   FigspecFrameViewerProps,
 } from "@figspec/react";
-import { Placeholder } from "@storybook/components";
+import { Placeholder } from "storybook/internal/components";
 import { css, jsx } from "@storybook/theming";
 
 import { FigspecConfig } from "../../config";
