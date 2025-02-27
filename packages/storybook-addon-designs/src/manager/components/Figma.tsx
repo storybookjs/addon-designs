@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, useMemo } from "react";
-import { jsx } from "@storybook/theming";
+import { jsx } from "storybook/internal/theming";
 
 import { IFrame } from "./IFrame";
 

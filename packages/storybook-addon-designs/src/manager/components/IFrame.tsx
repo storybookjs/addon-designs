@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, ReactNode, useEffect, useState } from "react";
-import { css, jsx } from "@storybook/theming";
+import { css, jsx } from "storybook/internal/theming";
 
 import { Placeholder } from "storybook/internal/components";
 

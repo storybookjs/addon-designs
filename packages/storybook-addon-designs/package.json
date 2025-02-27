@@ -64,12 +64,6 @@
     "@storybook/blocks": {
       "optional": true
     },
-    "storybook/internal/components": {
-      "optional": true
-    },
-    "@storybook/theming": {
-      "optional": true
-    },
     "react": {
       "optional": true
     },

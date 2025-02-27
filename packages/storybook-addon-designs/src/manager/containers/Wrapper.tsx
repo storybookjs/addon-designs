@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC, useEffect, useState } from "react";
-import { jsx } from "@storybook/theming";
+import { jsx } from "storybook/internal/theming";
 import { useParameter, useStorybookState } from "@storybook/manager-api";
 
 import { Config } from "../../config";

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Fragment, FC } from "react";
-import { jsx } from "@storybook/theming";
+import { jsx } from "storybook/internal/theming";
 
 import { IconButton, Icons } from "storybook/internal/components";
 

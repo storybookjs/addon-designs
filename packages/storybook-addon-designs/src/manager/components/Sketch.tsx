@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Link, Placeholder } from "storybook/internal/components";
-import { jsx } from "@storybook/theming";
+import { jsx } from "storybook/internal/theming";
 import { FC, Fragment, ReactNode, useMemo } from "react";
 
 import { SketchConfig, IFrameConfigBase } from "../../config";
