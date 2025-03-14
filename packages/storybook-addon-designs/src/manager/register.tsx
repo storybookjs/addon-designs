@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { addons, types, useParameter } from "@storybook/manager-api";
-import { AddonPanel } from "@storybook/components";
-import { jsx } from "@storybook/theming";
+import { addons, types, useParameter } from "storybook/manager-api";
+import { AddonPanel } from "storybook/internal/components";
+import { jsx } from "storybook/theming";
 
 import { AddonName, PanelName, ParameterName } from "../constants";
 import { ErrorBoundary } from "./components/ErrorBoundary";
