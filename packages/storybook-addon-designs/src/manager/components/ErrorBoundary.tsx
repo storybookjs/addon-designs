@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Component, ErrorInfo, Fragment } from "react";
 import { Link, Placeholder } from "storybook/internal/components";
-import { jsx } from "storybook/internal/theming";
+import { jsx } from "storybook/theming";
 
 type State =
   | {

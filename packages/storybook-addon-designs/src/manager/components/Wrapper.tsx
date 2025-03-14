@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Fragment, lazy, Suspense, FC } from "react";
-import { jsx } from "storybook/internal/theming";
+import { jsx } from "storybook/theming";
 
 import { Link, Placeholder } from "storybook/internal/components";
 
