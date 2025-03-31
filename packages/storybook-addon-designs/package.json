@@ -41,7 +41,7 @@
     "test": "echo 'No tests' && exit 0"
   },
   "dependencies": {
-    "@figspec/react": "^1.0.0"
+    "@figspec/react": "^2.0.0"
   },
   "devDependencies": {
     "@auto-it/released": "^11.1.1",
