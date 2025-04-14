@@ -7,7 +7,6 @@
     "@storybook/addon-docs": "^9.0.0-alpha.10",
     "@storybook/addon-links": "^9.0.0-alpha.10",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
-    "@storybook/blocks": "^9.0.0-alpha.10",
     "@storybook/react": "^9.0.0-alpha.10",
     "@storybook/react-webpack5": "^9.0.0-alpha.10",
     "react": "^18.2.0",
