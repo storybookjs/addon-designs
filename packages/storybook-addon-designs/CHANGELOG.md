@@ -1,3 +1,20 @@
+# v8.2.1 (Mon Mar 10 2025)
+
+#### 🐛 Bug Fix
+
+- Support React 19 [#256](https://github.com/storybookjs/addon-designs/pull/256) ([@marvinroger](https://github.com/marvinroger))
+
+#### ⚠️ Pushed to `master`
+
+- Fix lockfile ([@shilman](https://github.com/shilman))
+
+#### Authors: 2
+
+- Marvin ROGER ([@marvinroger](https://github.com/marvinroger))
+- Michael Shilman ([@shilman](https://github.com/shilman))
+
+---
+
 # v8.2.0 (Wed Feb 12 2025)
 
 #### 🚀 Enhancement
