@@ -16,5 +16,5 @@
     "fmt": "prettier --write README.md CHANGELOG.md CONTRIBUTING.md package.json 'packages/**/*.{js,jsx,ts,tsx,md,mdx,json}'",
     "release": "npm run release --workspace=@storybook/addon-designs"
   },
-  "version": "9.0.0"
+  "version": "10.0.0"
 }
