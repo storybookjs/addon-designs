@@ -7,7 +7,7 @@ import {
   FC,
   ReactNode,
 } from "react";
-import { css, jsx } from "@storybook/theming";
+import { css, jsx } from "storybook/theming";
 
 import { usePan, Point2D } from "./hooks/usePan";
 

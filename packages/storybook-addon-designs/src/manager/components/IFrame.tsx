@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { FC, ReactNode, useEffect, useState } from "react";
-import { css, jsx } from "@storybook/theming";
+import { css, jsx } from "storybook/theming";
 
-import { Placeholder } from "@storybook/components";
+import { Placeholder } from "storybook/internal/components";
 
 import { IFrameConfigBase } from "../../config";
 

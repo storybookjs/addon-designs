@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { Fragment, useMemo, CSSProperties, FC } from "react";
-import { css, jsx } from "@storybook/theming";
+import { css, jsx } from "storybook/theming";
 
-import { FlexBar, Separator } from "@storybook/components";
+import { FlexBar, Separator } from "storybook/internal/components";
 
 import { Pan } from "./Pan";
 import { ZoomButtons } from "./ZoomButtons";
@@ -28,17 +28,26 @@ export const ImagePreview: FC<Props> = ({ config }) => {
   return (
     <div css={$container}>
       <FlexBar border>
-        <Fragment key="left">
-          <p>
-            <b>Image</b>
-          </p>
-          <Separator />
-          <ZoomButtons
-            onReset={zoom.resetZoom}
-            onZoomIn={zoom.zoomIn}
-            onZoomOut={zoom.zoomOut}
-          />
-        </Fragment>
+        <div
+          style={{
+            display: "grid",
+            gridAutoFlow: "column",
+            gap: "4px",
+            alignItems: "center",
+          }}
+        >
+          <Fragment key="left">
+            <p>
+              <b>Image</b>
+            </p>
+            <Separator />
+            <ZoomButtons
+              onReset={zoom.resetZoom}
+              onZoomIn={zoom.zoomIn}
+              onZoomOut={zoom.zoomOut}
+            />
+          </Fragment>
+        </div>
       </FlexBar>
       <Pan css={$preview} defaultValue={config.offset}>
         <img css={$image} src={config.url} style={imageStyles} />

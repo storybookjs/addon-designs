@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-designs",
-  "version": "8.0.0-alpha.1",
+  "version": "9.0.0",
   "description": "Storybook addon for embedding your design preview in addon panel",
   "keywords": [
     "storybook-addon",
@@ -45,36 +45,25 @@
   },
   "devDependencies": {
     "@auto-it/released": "^11.1.1",
-    "@storybook/components": "^8.0.0",
-    "@storybook/core-events": "^8.0.0",
-    "@storybook/manager-api": "^8.0.0",
-    "@storybook/preview-api": "^8.0.0",
-    "@storybook/theming": "^8.0.0",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "@types/webpack-env": "^1.18.4",
     "auto": "^11.1.1",
     "figma-js": "^1.16.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^18.0.0",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.2"
+    "storybook": "^9.0.0-alpha.5",
+    "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "@storybook/blocks": "^8.0.0 || ^8.1.0-0 || ^8.2.0-0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0",
-    "@storybook/components": "^8.0.0 || ^8.1.0-0 || ^8.2.0-0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0",
-    "@storybook/theming": "^8.0.0 || ^8.1.0-0 || ^8.2.0-0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta"
+    "@storybook/addon-docs": "^0.0.0-0 || ^9.0.0 || ^9.0.0-0",
+    "storybook": "^0.0.0-0 || ^9.0.0 || ^9.0.0-0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "peerDependenciesMeta": {
-    "@storybook/blocks": {
-      "optional": true
-    },
-    "@storybook/components": {
-      "optional": true
-    },
-    "@storybook/theming": {
+    "@storybook/addon-docs": {
       "optional": true
     },
     "react": {
