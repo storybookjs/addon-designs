@@ -1,3 +1,23 @@
+# v9.0.0 (Wed Apr 16 2025)
+
+#### 💥 Breaking Change
+
+- upgrade to sb9-alpha [#257](https://github.com/storybookjs/addon-designs/pull/257) ([@ndelangen](https://github.com/ndelangen))
+
+#### 🐛 Bug Fix
+
+- Release 9.0.0 [#263](https://github.com/storybookjs/addon-designs/pull/263) ([@ndelangen](https://github.com/ndelangen) [@valentinpalkovic](https://github.com/valentinpalkovic))
+- Refactor imports to use `@storybook/addon-docs` instead of `@storybook/blocks` in various documentation files and update package dependencies to reflect this change. [#261](https://github.com/storybookjs/addon-designs/pull/261) ([@ndelangen](https://github.com/ndelangen))
+- Add `@storybook/blocks` peerDep [#260](https://github.com/storybookjs/addon-designs/pull/260) ([@ndelangen](https://github.com/ndelangen))
+- Remove deprecated Icon usage [#258](https://github.com/storybookjs/addon-designs/pull/258) ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+#### Authors: 2
+
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+- Valentin Palkovic ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+---
+
 # v8.2.1 (Mon Mar 10 2025)
 
 #### 🐛 Bug Fix
