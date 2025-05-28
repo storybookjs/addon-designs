@@ -1,3 +1,21 @@
+# v10.0.1 (Wed May 28 2025)
+
+#### 🐛 Bug Fix
+
+- Use Node.js 22 on CI [#265](https://github.com/storybookjs/addon-designs/pull/265) ([@valentinpalkovic](https://github.com/valentinpalkovic))
+- Update versions to match released version [#264](https://github.com/storybookjs/addon-designs/pull/264) ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+#### ⚠️ Pushed to `master`
+
+- Upgrade to Storybook 9 ([@ghengeveld](https://github.com/ghengeveld))
+
+#### Authors: 2
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+- Valentin Palkovic ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+---
+
 # v9.0.0 (Wed Apr 16 2025)
 
 #### 💥 Breaking Change
