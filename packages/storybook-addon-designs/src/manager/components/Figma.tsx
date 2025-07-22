@@ -29,8 +29,10 @@ export const Figma: FC<Props> = ({ config }) => {
       return config;
     }
 
-    const embedHost = config.embedHost || location.hostname;
-    const url = `https://www.figma.com/embed?embed_host=${embedHost}&url=${config.url}`;
+    const url = createEmbedURL(
+      config.url,
+      config.embedHost || location.hostname,
+    );
 
     return {
       url,
@@ -40,3 +42,15 @@ export const Figma: FC<Props> = ({ config }) => {
 
   return <IFrame defer config={iframeConfig} />;
 };
+
+function createEmbedURL(encodedURL: string, embedHost: string) {
+  const url = new URL(encodedURL);
+  url.hostname = url.hostname.replace(/^www\./, "embed.");
+  url.searchParams.delete("embed_origin");
+  url.searchParams.set("embed-host", embedHost);
+  for (const [key, value] of url.searchParams) {
+    url.searchParams.delete(key);
+    url.searchParams.set(key.replace(/_/g, "-"), value);
+  }
+  return url.href;
+}
