@@ -1,3 +1,15 @@
+# v10.0.2 (Tue Jul 22 2025)
+
+#### 🐛 Bug Fix
+
+- feat(figma): migrate url to use embed kit v2 [#270](https://github.com/storybookjs/addon-designs/pull/270) ([@roigiladi](https://github.com/roigiladi))
+
+#### Authors: 1
+
+- Roi Giladi ([@roigiladi](https://github.com/roigiladi))
+
+---
+
 # v10.0.1 (Wed May 28 2025)
 
 #### 🐛 Bug Fix
