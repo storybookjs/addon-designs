@@ -45,21 +45,12 @@ export const Figma: FC<Props> = ({ config }) => {
 
 function createEmbedURL(encodedURL: string, embedHost: string) {
   const url = new URL(encodedURL);
-
-  if (url.hostname.startsWith("www")) {
-    url.hostname = "embed" + url.hostname.slice(3);
+  url.hostname = url.hostname.replace(/^www\./, "embed.");
+  url.searchParams.delete("embed_origin");
+  url.searchParams.set("embed-host", embedHost);
+  for (const [key, value] of url.searchParams) {
+    url.searchParams.delete(key);
+    url.searchParams.set(key.replace(/_/g, "-"), value);
   }
-
-  const params = new URLSearchParams(url.search);
-  params.set("embed-host", embedHost);
-  params.delete("embed_origin");
-
-  const newParams = new URLSearchParams();
-  for (const [key, value] of params) {
-    // migrating keys from figma's embed kit v1 to v2
-    newParams.append(key.replace(/_/g, "-"), value);
-  }
-
-  url.search = newParams.toString();
-  return url.toString();
+  return url.href;
 }
