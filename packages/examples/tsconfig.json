@@ -6,7 +6,7 @@
     "allowJs": false,
     "resolvePackageJsonImports": true,
     "moduleResolution": "bundler",
-    "module": "esnext"
+    "module": "Preserve"
   },
   "include": ["types.d.ts", ".storybook/**/*.ts", "stories/**/*"]
 }

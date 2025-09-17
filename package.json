@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "prettier": "^3.2.5"
+    "prettier": "^3.6.2"
   },
   "scripts": {
     "build": "npm run build --workspaces --if-present",

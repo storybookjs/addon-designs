@@ -14,19 +14,19 @@
   "repository": "git@github.com:storybookjs/addon-designs.git",
   "license": "MIT",
   "author": "pocka <pockawoooh@gmail.com>",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./blocks": "./dist/blocks.mjs",
+    "./blocks": "./dist/blocks.js",
+    "./register-panel": "./dist/register-panel.js",
+    "./register-tab": "./dist/register-tab.js",
     "./preset": "./dist/preset.js",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
@@ -53,12 +53,12 @@
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^18.0.0",
     "tsup": "^8.0.2",
-    "storybook": "^9.0.0",
-    "typescript": "^5.7.3"
+    "storybook": "^10.0.0-0",
+    "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "@storybook/addon-docs": "^0.0.0-0 || ^9.0.0 || ^9.1.0-0",
-    "storybook": "^0.0.0-0 || ^9.0.0 || ^9.1.0-0",
+    "@storybook/addon-docs": "^10.0.0-0",
+    "storybook": "^10.0.0-0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
