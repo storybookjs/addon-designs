@@ -36,9 +36,8 @@
   "scripts": {
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
-    "prepublishOnly": "cp ../../README.md ./ && npm run build",
-    "release": "npm run prepublishOnly && auto shipit",
-    "test": "echo 'No tests' && exit 0"
+    "prepublishOnly": "cp ../../README.md ./",
+    "release": "npm run prepublishOnly && auto shipit"
   },
   "dependencies": {
     "@figspec/react": "^1.0.0"
