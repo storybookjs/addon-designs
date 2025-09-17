@@ -20,6 +20,14 @@ jobs:
       - name: Install dependencies
         run: npm install --ignore-scripts
 
+      - name: Build
+        run: |
+          npm run build
+
+      - name: No git changes
+        run: |
+          git diff --exit-code
+
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
