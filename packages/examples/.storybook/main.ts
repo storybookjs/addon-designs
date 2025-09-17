@@ -1,5 +1,5 @@
 import remarkGfm from "remark-gfm";
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from "@storybook/react-vite";
 
 const isTabMode = process.env.STORYBOOK_ADDON_DESIGNS_MODE === "tab";
 
@@ -8,7 +8,6 @@ const config: StorybookConfig = {
   staticDirs: ["../assets"],
   addons: [
     "@storybook/addon-designs",
-    "@storybook/addon-webpack5-compiler-swc",
     {
       name: "@storybook/addon-docs",
       options: {
@@ -29,7 +28,7 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
-  framework: "@storybook/react-webpack5",
+  framework: "@storybook/react-vite",
 };
 
 export default config;
