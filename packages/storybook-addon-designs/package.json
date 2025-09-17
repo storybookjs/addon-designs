@@ -18,10 +18,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "default": "./dist/index.js"
     },
-    "./blocks": "./dist/blocks.js",
+    "./blocks": {
+      "types": "./dist/blocks.d.ts",
+      "default": "./dist/blocks.js"
+    },
     "./register-panel": "./dist/register-panel.js",
     "./register-tab": "./dist/register-tab.js",
     "./preset": "./dist/preset.js",
