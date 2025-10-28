@@ -21,9 +21,18 @@ A [Storybook](https://github.com/storybooks/storybook) addon that embed Figma or
 
 ## Requirements
 
-- Storybook@>=9.0.0 (Version 7 of this addon supports Storybook 7, Version 8 supports Storybook 8)
+- Storybook@>=10.0.0
+- This addon should work well with any framework. If you find that the addon does not work, please open an issue.
 
-This addon should work well with any framework. If you find that the addon does not work, please open an issue.
+### Version compatibility
+
+| Addon designs version | Storybook version |
+| --------------------- | ----------------- |
+| ^11.0.0               | ^10.0.0           |
+| ^10.0.0               | ^9.0.0            |
+| ^9.0.0                | ^9.0.0            |
+| ^8.0.0                | ^8.0.0            |
+| ^7.0.0                | ^7.0.0            |
 
 ## Getting started
 
@@ -48,12 +57,13 @@ export default {
 ### 3. Add it to story!
 
 ```js
-export default {
+const meta = {
   title: "My stories",
   component: Button,
 };
+export default meta;
 
-export const myStory = {
+export const MyStory = {
   parameters: {
     design: {
       type: "figma",
