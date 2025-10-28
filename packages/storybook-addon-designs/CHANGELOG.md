@@ -1,3 +1,22 @@
+# v11.0.0 (Tue Oct 28 2025)
+
+#### 💥 Breaking Change
+
+- SB10 (ESM-only) [#272](https://github.com/storybookjs/addon-designs/pull/272) ([@roigiladi](https://github.com/roigiladi) [@ghengeveld](https://github.com/ghengeveld) [@pocka](https://github.com/pocka) [@ndelangen](https://github.com/ndelangen))
+
+#### 🐛 Bug Fix
+
+
+#### Authors: 5
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+- Kasper Peulen ([@kasperpeulen](https://github.com/kasperpeulen))
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+- Roi Giladi ([@roigiladi](https://github.com/roigiladi))
+- Shota FUJI ([@pocka](https://github.com/pocka))
+
+---
+
 # v10.0.2 (Tue Jul 22 2025)
 
 #### 🐛 Bug Fix
