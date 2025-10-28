@@ -18,7 +18,7 @@
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "auto": "^11.3.0",
-    "figma-js": "^1.16.0",
+    "figma-js": "^1.16.1-0",
     "tsup": "^8.0.2",
     "typescript": "^5.9.2"
   },
