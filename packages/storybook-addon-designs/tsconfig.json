@@ -8,8 +8,6 @@
     "moduleResolution": "bundler",
     "jsx": "react",
     "declaration": true,
-    "outDir": "esm",
-    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "removeComments": true
   },

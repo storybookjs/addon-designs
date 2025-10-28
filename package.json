@@ -6,7 +6,21 @@
     "packages/*"
   ],
   "devDependencies": {
-    "prettier": "^3.2.5"
+    "prettier": "^3.6.2",
+    "@storybook/addon-designs": "*",
+    "@storybook/addon-docs": "^10.0.0-0",
+    "@storybook/react-vite": "^10.0.0-0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark-gfm": "^4.0.0",
+    "storybook": "^10.0.0-0",
+    "@auto-it/released": "^11.3.0",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "auto": "^11.3.0",
+    "figma-js": "^1.16.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.9.2"
   },
   "scripts": {
     "build": "npm run build --workspaces --if-present",

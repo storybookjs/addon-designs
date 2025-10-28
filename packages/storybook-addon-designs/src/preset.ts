@@ -1,3 +1,5 @@
+import { fileURLToPath } from "node:url";
+
 export const managerEntries = (
   entries = [],
   options: { renderTarget?: "tab" | "panel" } = {},
@@ -5,7 +7,11 @@ export const managerEntries = (
   return [
     ...entries,
     options.renderTarget === "tab"
-      ? require.resolve("./register-tab.mjs")
-      : require.resolve("./register-panel.mjs"),
+      ? fileURLToPath(
+          import.meta.resolve("@storybook/addon-designs/register-tab"),
+        )
+      : fileURLToPath(
+          import.meta.resolve("@storybook/addon-designs/register-panel"),
+        ),
   ];
 };
