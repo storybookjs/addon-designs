@@ -6,10 +6,6 @@ import { Config } from "./config";
  */
 export const config = (c: Config | Config[]) => c;
 
-if (typeof module !== "undefined" && module.hot && module.hot.decline) {
-  module.hot.decline();
-}
-
 /**
  * Useful exports for third party developers and advanced usages
  */
