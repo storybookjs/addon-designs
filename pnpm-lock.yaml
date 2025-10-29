@@ -73,6 +73,10 @@ importers:
       storybook:
         specifier: ^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0
         version: 10.0.0(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@7.1.12(@types/node@24.9.2))
+    devDependencies:
+      '@storybook/icons':
+        specifier: ^1.6.0
+        version: 1.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
 packages:
 
