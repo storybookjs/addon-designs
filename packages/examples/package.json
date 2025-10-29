@@ -2,11 +2,11 @@
   "name": "examples",
   "version": "10.0.0",
   "private": true,
-  "devDependencies": {},
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "storybook:tab": "STORYBOOK_ADDON_DESIGNS_MODE=tab npm run storybook",
     "build-storybook": "storybook build",
-    "build-storybook:tab": "STORYBOOK_ADDON_DESIGNS_MODE=tab storybook build --output-dir storybook-static/tab"
-  }
+    "build-storybook:tab": "STORYBOOK_ADDON_DESIGNS_MODE=tab storybook build --output-dir storybook-static/tab",
+    "storybook": "storybook dev -p 6006",
+    "storybook:tab": "STORYBOOK_ADDON_DESIGNS_MODE=tab npm run storybook"
+  },
+  "devDependencies": {}
 }

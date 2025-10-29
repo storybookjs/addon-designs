@@ -14,17 +14,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use PNPM
+        uses: pnpm/action-setup@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
       - name: Build addon
-        run: npm run build
+        run: pnpm run build
       - name: Build examples
-        run: npm run build:example
+        run: pnpm run build:example
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
