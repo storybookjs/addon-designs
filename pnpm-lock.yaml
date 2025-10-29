@@ -54,6 +54,26 @@ importers:
         specifier: ^5.9.2
         version: 5.9.3
 
+  packages/examples: {}
+
+  packages/storybook-addon-designs:
+    dependencies:
+      '@figspec/react':
+        specifier: ^1.0.0
+        version: 1.0.4(react@18.3.1)
+      '@storybook/addon-docs':
+        specifier: ^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0
+        version: 10.0.0(@types/react@18.3.26)(esbuild@0.25.11)(rollup@4.52.5)(storybook@10.0.0(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@7.1.12(@types/node@24.9.2)))(vite@7.1.12(@types/node@24.9.2))
+      react:
+        specifier: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+        version: 18.3.1(react@18.3.1)
+      storybook:
+        specifier: ^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0
+        version: 10.0.0(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@7.1.12(@types/node@24.9.2))
+
 packages:
 
   '@adobe/css-tools@4.4.4':
