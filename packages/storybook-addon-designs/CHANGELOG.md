@@ -1,3 +1,15 @@
+# v11.0.1 (Wed Oct 29 2025)
+
+#### 🐛 Bug Fix
+
+- Update peerDependencies for storybook 10.1 beta compatibility [#276](https://github.com/storybookjs/addon-designs/pull/276) ([@ndelangen](https://github.com/ndelangen))
+
+#### Authors: 1
+
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+
+---
+
 # v11.0.0 (Tue Oct 28 2025)
 
 #### 💥 Breaking Change
