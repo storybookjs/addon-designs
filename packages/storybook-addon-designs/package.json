@@ -52,7 +52,8 @@
     "storybook": "^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0"
   },
   "devDependencies": {
-    "@storybook/icons": "^1.6.0"
+    "@storybook/icons": "^1.6.0",
+    "@types/node": "^22.13.5"
   },
   "peerDependenciesMeta": {
     "@storybook/addon-docs": {
