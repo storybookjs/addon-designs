@@ -7,22 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
+      - name: Use PNPM
+        uses: pnpm/action-setup@v4
 
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
-          cache: npm
+          node-version-file: .nvmrc
+
       - name: Install dependencies
-        run: npm install --ignore-scripts
+        run: pnpm install
 
       - name: Build
         run: |
-          npm run build
+          pnpm run build
 
       - name: No git changes
         run: |
@@ -33,4 +36,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm run release
+          pnpm run release

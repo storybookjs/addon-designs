@@ -9,16 +9,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use PNPM
+        uses: pnpm/action-setup@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
       - name: Check files are formatted with Prettier
-        run: npx prettier --check README.md CONTRIBUTING.md package.json "packages/**/*.{js,jsx,ts,tsx,md,mdx,json}"
+        run: pnpm prettier --check README.md CONTRIBUTING.md package.json "packages/**/*.{js,jsx,ts,tsx,md,mdx,json}"
       - name: Check TypeScript typings
         run: |
           cd packages/storybook-addon-designs
-          npx tsc --noEmit
+          pnpm run check

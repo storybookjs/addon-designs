@@ -38,6 +38,7 @@
   "scripts": {
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
+    "check": "tsc --noEmit",
     "prepublishOnly": "cp ../../README.md ./",
     "release": "npm run prepublishOnly && auto shipit"
   },
@@ -45,10 +46,14 @@
     "@figspec/react": "^1.0.0"
   },
   "peerDependencies": {
-    "@storybook/addon-docs": "^10.0.0 || ^10.0.0-0",
-    "storybook": "^10.0.0 || ^10.0.0-0",
+    "@storybook/addon-docs": "^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "storybook": "^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0"
+  },
+  "devDependencies": {
+    "@storybook/icons": "^1.6.0",
+    "@types/node": "^22.13.5"
   },
   "peerDependenciesMeta": {
     "@storybook/addon-docs": {
