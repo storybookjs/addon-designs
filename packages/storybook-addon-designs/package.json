@@ -38,6 +38,7 @@
   "scripts": {
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
+    "check": "tsc --noEmit",
     "prepublishOnly": "cp ../../README.md ./",
     "release": "npm run prepublishOnly && auto shipit"
   },

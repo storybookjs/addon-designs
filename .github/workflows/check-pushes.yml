@@ -24,4 +24,4 @@ jobs:
       - name: Check TypeScript typings
         run: |
           cd packages/storybook-addon-designs
-          pnpm tsc --noEmit
+          pnpm run check
