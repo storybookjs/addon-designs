@@ -1,3 +1,15 @@
+# v11.0.2 (Mon Nov 24 2025)
+
+#### 🐛 Bug Fix
+
+- Fix loading the preset when absolute path is provided [#278](https://github.com/storybookjs/addon-designs/pull/278) ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+#### Authors: 1
+
+- Valentin Palkovic ([@valentinpalkovic](https://github.com/valentinpalkovic))
+
+---
+
 # v11.0.1 (Wed Oct 29 2025)
 
 #### 🐛 Bug Fix
