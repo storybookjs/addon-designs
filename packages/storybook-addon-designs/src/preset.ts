@@ -15,3 +15,11 @@ export const managerEntries = (
         ),
   ];
 };
+
+export const optimizeViteDeps = (deps: string[]) => {
+  return [
+    ...deps,
+    "@storybook/addon-designs/blocks",
+    "storybook/internal/components",
+  ];
+};
