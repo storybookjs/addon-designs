@@ -1,3 +1,15 @@
+# v11.0.3 (Wed Nov 26 2025)
+
+#### 🐛 Bug Fix
+
+- Add optimizeViteDeps function to enhance dependency optimization in preset.ts [#279](https://github.com/storybookjs/addon-designs/pull/279) ([@ndelangen](https://github.com/ndelangen))
+
+#### Authors: 1
+
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+
+---
+
 # v11.0.2 (Mon Nov 24 2025)
 
 #### 🐛 Bug Fix
