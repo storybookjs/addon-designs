@@ -32,12 +32,15 @@ type RenderItem =
       type: "file";
       props: Pick<
         FigspecFileViewerProps,
-        "documentNode" | "renderedImages" | "link"
+        "apiResponse" | "renderedImages" | "link"
       >;
     }
   | {
       type: "frame";
-      props: Pick<FigspecFrameViewerProps, "nodes" | "renderedImage" | "link">;
+      props: Pick<
+        FigspecFrameViewerProps,
+        "apiResponse" | "renderedImage" | "link"
+      >;
     };
 
 type Remote<T, E = Error> =
@@ -139,7 +142,7 @@ export const Figspec: FC<Props> = ({ config }) => {
           value: {
             type: "file",
             props: {
-              documentNode,
+              apiResponse: documentNode,
               renderedImages: images.images,
               link: config.url,
             },
@@ -168,7 +171,11 @@ export const Figspec: FC<Props> = ({ config }) => {
         value: {
           type: "frame",
           props: {
-            nodes,
+            // Type mismatch due to different figma-js versions. As that library is
+            // no longer maintained, upstream should mark this property `unknown` or
+            // provided its own interface.
+            apiResponse:
+              nodes as unknown as FigspecFrameViewerProps["apiResponse"],
             renderedImage: Object.values<string>(images.images)[0],
             link: config.url,
           },

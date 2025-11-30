@@ -43,7 +43,7 @@
     "release": "npm run prepublishOnly && auto shipit"
   },
   "dependencies": {
-    "@figspec/react": "^1.0.0"
+    "@figspec/react": "^2.0.0"
   },
   "peerDependencies": {
     "@storybook/addon-docs": "^10.0.0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0",
