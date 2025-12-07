@@ -1,3 +1,15 @@
+# v11.1.0 (Sun Dec 07 2025)
+
+#### 🚀 Enhancement
+
+- Upgrade figspec to v2 [#280](https://github.com/storybookjs/addon-designs/pull/280) ([@pocka](https://github.com/pocka))
+
+#### Authors: 1
+
+- Shota FUJI ([@pocka](https://github.com/pocka))
+
+---
+
 # v11.0.3 (Wed Nov 26 2025)
 
 #### 🐛 Bug Fix
