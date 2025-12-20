@@ -74,8 +74,9 @@ export interface FigspecConfig extends ConfigBase {
 
   /**
    * Personal Access Token for your Figma account.
+   * If not provided, the `STORYBOOK_FIGMA_ACCESS_TOKEN` environment variable must be set.
    */
-  accessToken: string;
+  accessToken?: string;
 }
 
 /**
