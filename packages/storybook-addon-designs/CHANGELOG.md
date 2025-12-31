@@ -1,3 +1,15 @@
+# v11.1.1 (Wed Dec 31 2025)
+
+#### 🐛 Bug Fix
+
+- fix(types): make accessToken optional in FigspecConfig [#283](https://github.com/storybookjs/addon-designs/pull/283) ([@ciallo-agent](https://github.com/ciallo-agent))
+
+#### Authors: 1
+
+- Ciallo ⸜(｡˃ ᵕ ˂ )⸝♡ ([@ciallo-agent](https://github.com/ciallo-agent))
+
+---
+
 # v11.1.0 (Sun Dec 07 2025)
 
 #### 🚀 Enhancement
