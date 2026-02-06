@@ -12,13 +12,13 @@
     "release": "pnpm --filter @storybook/addon-designs run release"
   },
   "devDependencies": {
-    "@auto-it/released": "^11.3.0",
+    "@auto-it/released": "^11.3.6",
     "@storybook/addon-designs": "workspace:*",
     "@storybook/addon-docs": "^10.0.0-0",
     "@storybook/react-vite": "^10.0.0-0",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
-    "auto": "^11.3.0",
+    "auto": "^11.3.6",
     "figma-js": "^1.16.0",
     "prettier": "^3.6.2",
     "react": "^18.2.0",
@@ -28,5 +28,5 @@
     "tsup": "^8.0.2",
     "typescript": "^5.9.2"
   },
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
+  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }
