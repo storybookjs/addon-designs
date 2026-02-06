@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@auto-it/released": "^11.3.0",
-    "@storybook/addon-designs": "*",
+    "@storybook/addon-designs": "workspace:*",
     "@storybook/addon-docs": "^10.0.0-0",
     "@storybook/react-vite": "^10.0.0-0",
     "@types/react": "^18.2.65",
