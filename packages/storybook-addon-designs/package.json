@@ -39,8 +39,7 @@
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
     "check": "tsc --noEmit",
-    "prepublishOnly": "cp ../../README.md ./",
-    "release": "npm run prepublishOnly && auto shipit"
+    "prepublishOnly": "pnpm run build && cp ../../README.md ./"
   },
   "dependencies": {
     "@figspec/react": "^2.0.0"
@@ -67,7 +66,8 @@
     }
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "bundler": {
     "exportEntries": [

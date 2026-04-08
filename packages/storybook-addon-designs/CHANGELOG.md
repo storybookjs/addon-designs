@@ -1,4 +1,6 @@
-# v11.1.1 (Wed Dec 31 2025)
+# @storybook/addon-designs
+
+## v11.1.1 (Wed Dec 31 2025)
 
 #### 🐛 Bug Fix
 
@@ -10,7 +12,7 @@
 
 ---
 
-# v11.1.0 (Sun Dec 07 2025)
+## v11.1.0 (Sun Dec 07 2025)
 
 #### 🚀 Enhancement
 
@@ -22,7 +24,7 @@
 
 ---
 
-# v11.0.3 (Wed Nov 26 2025)
+## v11.0.3 (Wed Nov 26 2025)
 
 #### 🐛 Bug Fix
 
@@ -34,7 +36,7 @@
 
 ---
 
-# v11.0.2 (Mon Nov 24 2025)
+## v11.0.2 (Mon Nov 24 2025)
 
 #### 🐛 Bug Fix
 
@@ -46,7 +48,7 @@
 
 ---
 
-# v11.0.1 (Wed Oct 29 2025)
+## v11.0.1 (Wed Oct 29 2025)
 
 #### 🐛 Bug Fix
 
@@ -58,14 +60,13 @@
 
 ---
 
-# v11.0.0 (Tue Oct 28 2025)
+## v11.0.0 (Tue Oct 28 2025)
 
 #### 💥 Breaking Change
 
 - SB10 (ESM-only) [#272](https://github.com/storybookjs/addon-designs/pull/272) ([@roigiladi](https://github.com/roigiladi) [@ghengeveld](https://github.com/ghengeveld) [@pocka](https://github.com/pocka) [@ndelangen](https://github.com/ndelangen))
 
 #### 🐛 Bug Fix
-
 
 #### Authors: 5
 
@@ -77,7 +78,7 @@
 
 ---
 
-# v10.0.2 (Tue Jul 22 2025)
+## v10.0.2 (Tue Jul 22 2025)
 
 #### 🐛 Bug Fix
 
@@ -89,7 +90,7 @@
 
 ---
 
-# v10.0.1 (Wed May 28 2025)
+## v10.0.1 (Wed May 28 2025)
 
 #### 🐛 Bug Fix
 
@@ -107,7 +108,7 @@
 
 ---
 
-# v9.0.0 (Wed Apr 16 2025)
+## v9.0.0 (Wed Apr 16 2025)
 
 #### 💥 Breaking Change
 
@@ -127,7 +128,7 @@
 
 ---
 
-# v8.2.1 (Mon Mar 10 2025)
+## v8.2.1 (Mon Mar 10 2025)
 
 #### 🐛 Bug Fix
 
@@ -144,7 +145,7 @@
 
 ---
 
-# v8.2.0 (Wed Feb 12 2025)
+## v8.2.0 (Wed Feb 12 2025)
 
 #### 🚀 Enhancement
 
@@ -156,7 +157,7 @@
 
 ---
 
-# v8.1.0 (Thu Jan 30 2025)
+## v8.1.0 (Thu Jan 30 2025)
 
 #### 🚀 Enhancement
 
@@ -168,7 +169,7 @@
 
 ---
 
-# v8.0.4 (Fri Nov 01 2024)
+## v8.0.4 (Fri Nov 01 2024)
 
 #### 🐛 Bug Fix
 
@@ -180,7 +181,7 @@
 
 ---
 
-# v8.0.3 (Wed Jul 03 2024)
+## v8.0.3 (Wed Jul 03 2024)
 
 #### 🐛 Bug Fix
 
@@ -193,7 +194,7 @@
 
 ---
 
-# v8.0.2 (Tue May 21 2024)
+## v8.0.2 (Tue May 21 2024)
 
 #### 🐛 Bug Fix
 
@@ -205,7 +206,7 @@
 
 ---
 
-# v8.0.1 (Wed May 01 2024)
+## v8.0.1 (Wed May 01 2024)
 
 #### 🐛 Bug Fix
 
@@ -218,14 +219,13 @@
 
 ---
 
-# v8.0.0 (Thu Mar 14 2024)
+## v8.0.0 (Thu Mar 14 2024)
 
 #### 💥 Breaking Change
 
 - Upgrade to Storybook 8 [#232](https://github.com/storybookjs/addon-designs/pull/232) ([@JReinhold](https://github.com/JReinhold))
 
 #### 🐛 Bug Fix
-
 
 #### Authors: 3
 
@@ -235,7 +235,7 @@
 
 ---
 
-# v7.0.5 (Sun Jan 07 2024)
+## v7.0.5 (Sun Jan 07 2024)
 
 #### 🐛 Bug Fix
 
@@ -266,7 +266,7 @@
 
 ---
 
-# v7.0.1 (Thu Aug 10 2023)
+## v7.0.1 (Thu Aug 10 2023)
 
 #### 🐛 Bug Fix
 
@@ -283,7 +283,7 @@
 
 ---
 
-# v6.3.2 (Thu Jul 06 2023)
+## v6.3.2 (Thu Jul 06 2023)
 
 #### 🐛 Bug Fix
 

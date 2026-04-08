@@ -9,20 +9,18 @@
     "dev": "pnpm -r run dev",
     "example": "pnpm --filter examples run storybook",
     "fmt": "prettier --write README.md CHANGELOG.md CONTRIBUTING.md package.json 'packages/**/*.{js,jsx,ts,tsx,md,mdx,json}'",
-    "release": "pnpm --filter @storybook/addon-designs run release"
+    "release": "pnpm --filter @storybook/addon-designs changeset publish"
   },
   "publishConfig": {
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@auto-it/released": "^11.3.6",
     "@storybook/addon-designs": "workspace:*",
     "@storybook/addon-docs": "^10.0.0-0",
     "@storybook/react-vite": "^10.0.0-0",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
-    "auto": "^11.3.6",
     "figma-js": "^1.16.0",
     "prettier": "^3.6.2",
     "react": "^18.2.0",
@@ -30,7 +28,10 @@
     "remark-gfm": "^4.0.0",
     "storybook": "^10.0.0-0",
     "tsup": "^8.0.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.6",
+    "pkg-pr-new": "^0.0.57"
   },
   "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }
