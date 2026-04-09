@@ -2,4 +2,4 @@
 "@storybook/addon-designs": patch
 ---
 
-Add provenance to npm releases
+Add npm provenance and support Storybook canary releases
