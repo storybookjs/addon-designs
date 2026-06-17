@@ -11,7 +11,7 @@
     "preview"
   ],
   "homepage": "https://github.com/storybookjs/addon-designs",
-  "repository": "git@github.com:storybookjs/addon-designs.git",
+  "repository": "git+https://github.com/storybookjs/addon-designs.git",
   "license": "MIT",
   "author": "pocka <pockawoooh@gmail.com>",
   "type": "module",
