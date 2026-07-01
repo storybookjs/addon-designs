@@ -2,7 +2,7 @@
   "name": "root",
   "version": "10.0.0",
   "private": true,
-  "repository": "git@github.com:storybookjs/addon-designs.git",
+  "repository": "git+https://github.com/storybookjs/addon-designs.git",
   "scripts": {
     "build": "pnpm -r run build",
     "build:example": "pnpm --filter examples run build-storybook && pnpm --filter examples run build-storybook:tab",
