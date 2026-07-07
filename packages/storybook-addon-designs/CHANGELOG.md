@@ -1,5 +1,11 @@
 # @storybook/addon-designs
 
+## 10.0.2
+
+### Patch Changes
+
+- [#296](https://github.com/storybookjs/addon-designs/pull/296) [`9824640`](https://github.com/storybookjs/addon-designs/commit/9824640e7d917309e2019c8940ce89e980eaf1ef) Thanks [@ndelangen](https://github.com/ndelangen)! - Fix repository metadata URL.
+
 ## 10.0.1
 
 ### Patch Changes
