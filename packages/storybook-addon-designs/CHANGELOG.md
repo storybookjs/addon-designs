@@ -1,5 +1,15 @@
 # @storybook/addon-designs
 
+## 11.1.4
+
+### Patch Changes
+
+- [#299](https://github.com/storybookjs/addon-designs/pull/299) [`13bb222`](https://github.com/storybookjs/addon-designs/commit/13bb22202e1014d5be1f7d25c21a448924696f42) Thanks [@ndelangen](https://github.com/ndelangen)! - Fix repository metadata URL.
+
+- [#299](https://github.com/storybookjs/addon-designs/pull/299) [`13bb222`](https://github.com/storybookjs/addon-designs/commit/13bb22202e1014d5be1f7d25c21a448924696f42) Thanks [@ndelangen](https://github.com/ndelangen)! - Add Storybook 10.5 and 10.6 canary peer dependency support.
+
+- [#299](https://github.com/storybookjs/addon-designs/pull/299) [`13bb222`](https://github.com/storybookjs/addon-designs/commit/13bb22202e1014d5be1f7d25c21a448924696f42) Thanks [@ndelangen](https://github.com/ndelangen)! - Add npm provenance and support Storybook canary releases.
+
 ## v11.1.1 (Wed Dec 31 2025)
 
 #### 🐛 Bug Fix
