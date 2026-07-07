@@ -1,19 +1,5 @@
 # @storybook/addon-designs
 
-## 10.0.2
-
-### Patch Changes
-
-- [#296](https://github.com/storybookjs/addon-designs/pull/296) [`9824640`](https://github.com/storybookjs/addon-designs/commit/9824640e7d917309e2019c8940ce89e980eaf1ef) Thanks [@ndelangen](https://github.com/ndelangen)! - Fix repository metadata URL.
-
-## 10.0.1
-
-### Patch Changes
-
-- [#294](https://github.com/storybookjs/addon-designs/pull/294) [`be37e3f`](https://github.com/storybookjs/addon-designs/commit/be37e3ff12edd5a507a7e6220c399cef12af5839) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Add Storybook 10.5 and 10.6 canary peer dependency support.
-
-- [#292](https://github.com/storybookjs/addon-designs/pull/292) [`05f57f2`](https://github.com/storybookjs/addon-designs/commit/05f57f2a4a5acc59aee0dcb0a0a2fabd2a344e18) Thanks [@JReinhold](https://github.com/JReinhold)! - Add npm provenance and support Storybook canary releases
-
 ## v11.1.1 (Wed Dec 31 2025)
 
 #### 🐛 Bug Fix
