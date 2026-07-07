@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-designs",
-  "version": "10.0.2",
+  "version": "11.1.3",
   "description": "Storybook addon for embedding your design preview in addon panel",
   "keywords": [
     "storybook-addon",
