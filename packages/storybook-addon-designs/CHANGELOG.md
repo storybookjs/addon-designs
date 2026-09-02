@@ -1,5 +1,11 @@
 # @storybook/addon-designs
 
+## 11.1.5
+
+### Patch Changes
+
+- [#301](https://github.com/storybookjs/addon-designs/pull/301) [`f6de4e1`](https://github.com/storybookjs/addon-designs/commit/f6de4e1e7db4f56f7e3feebc6ac5814883458eef) Thanks [@JReinhold](https://github.com/JReinhold)! - Broaden Storybook peer dependency ranges to include 11.0 canaries.
+
 ## 11.1.4
 
 ### Patch Changes
