@@ -2,7 +2,7 @@
 import { Fragment, FC } from "react";
 import { jsx } from "storybook/theming";
 
-import { IconButton } from "storybook/internal/components";
+import { Button } from "storybook/internal/components";
 import { ZoomIcon, ZoomOutIcon, ZoomResetIcon } from "@storybook/icons";
 
 interface Props {
@@ -13,15 +13,30 @@ interface Props {
 
 export const ZoomButtons: FC<Props> = ({ onZoomIn, onZoomOut, onReset }) => (
   <Fragment>
-    <IconButton onClick={onZoomIn}>
+    <Button
+      variant="ghost"
+      padding="small"
+      ariaLabel="Zoom in"
+      onClick={onZoomIn}
+    >
       <ZoomIcon />
-    </IconButton>
-    <IconButton onClick={onZoomOut}>
+    </Button>
+    <Button
+      variant="ghost"
+      padding="small"
+      ariaLabel="Zoom out"
+      onClick={onZoomOut}
+    >
       <ZoomOutIcon />
-    </IconButton>
-    <IconButton onClick={onReset}>
+    </Button>
+    <Button
+      variant="ghost"
+      padding="small"
+      ariaLabel="Reset zoom"
+      onClick={onReset}
+    >
       <ZoomResetIcon />
-    </IconButton>
+    </Button>
   </Fragment>
 );
 

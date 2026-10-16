@@ -2,7 +2,7 @@
 import { Fragment, useMemo, CSSProperties, FC } from "react";
 import { css, jsx } from "storybook/theming";
 
-import { FlexBar, Separator } from "storybook/internal/components";
+import { Bar, Separator } from "storybook/internal/components";
 
 import { Pan } from "./Pan";
 import { ZoomButtons } from "./ZoomButtons";
@@ -27,7 +27,7 @@ export const ImagePreview: FC<Props> = ({ config }) => {
 
   return (
     <div css={$container}>
-      <FlexBar border>
+      <Bar border innerStyle={{ justifyContent: "space-between" }}>
         <div
           style={{
             display: "grid",
@@ -48,7 +48,7 @@ export const ImagePreview: FC<Props> = ({ config }) => {
             />
           </Fragment>
         </div>
-      </FlexBar>
+      </Bar>
       <Pan css={$preview} defaultValue={config.offset}>
         <img css={$image} src={config.url} style={imageStyles} />
       </Pan>

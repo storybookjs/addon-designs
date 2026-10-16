@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { DependencyList, FC, ReactNode, useEffect, useState } from "react";
-import { jsx } from "storybook/theming";
+import { css, jsx } from "storybook/theming";
 
-import { Tabs as SbTabs } from "storybook/internal/components";
+import { TabsView } from "storybook/internal/components";
 
 export interface Tab {
   id: string;
@@ -29,12 +29,24 @@ export const Tabs: FC<TabsProps> = ({ tabs, deps = [] }) => {
   }, deps);
 
   return (
-    <SbTabs absolute selected={selected} actions={{ onSelect: setSelected }}>
-      {tabs.map((tab) => (
-        <div key={tab.id} id={tab.id} title={tab.name}>
-          {tab.offscreen || selected === tab.id ? tab.content : null}
-        </div>
-      ))}
-    </SbTabs>
+    <TabsView
+      selected={selected}
+      onSelectionChange={setSelected}
+      panelProps={{ renderAllChildren: true, hasScrollbar: false }}
+      tabs={tabs.map((tab) => ({
+        id: tab.id,
+        title: tab.name,
+        children: (
+          <div css={$panel}>
+            {tab.offscreen || selected === tab.id ? tab.content : null}
+          </div>
+        ),
+      }))}
+    />
   );
 };
+
+const $panel = css`
+  position: relative;
+  height: 100%;
+`;
