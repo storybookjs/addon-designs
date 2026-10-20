@@ -1,5 +1,15 @@
 # @storybook/addon-designs
 
+## 12.0.0
+
+### Major Changes
+
+- [#303](https://github.com/storybookjs/addon-designs/pull/303) [`bcd95ad`](https://github.com/storybookjs/addon-designs/commit/bcd95ad49b23b4a27d4ef07b2be1410fae7d677e) Thanks [@valentinpalkovic](https://github.com/valentinpalkovic)! - Support Storybook 11 by replacing the removed `Tabs`, `FlexBar` and `IconButton` UI components with `TabsView`, `Bar` and `Button`. The addon now requires Storybook 10.1 or newer.
+
+### Patch Changes
+
+- [#301](https://github.com/storybookjs/addon-designs/pull/301) [`f6de4e1`](https://github.com/storybookjs/addon-designs/commit/f6de4e1e7db4f56f7e3feebc6ac5814883458eef) Thanks [@JReinhold](https://github.com/JReinhold)! - Broaden Storybook peer dependency ranges to include 11.0 canaries.
+
 ## 11.1.4
 
 ### Patch Changes
