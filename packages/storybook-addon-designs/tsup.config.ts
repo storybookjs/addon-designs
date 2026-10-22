@@ -11,6 +11,16 @@ const BROWSER_TARGET: Options["target"] = [
 ];
 const NODE_TARGET: Options["target"] = ["node18"];
 
+// Storybook 10 manager globals list `storybook/theming` but not
+// `storybook/theming/emotion`. Append the Emotion entry so it stays external
+// until a Storybook 11 install already includes it. tsup also externalizes
+// every `storybook/*` subpath because `storybook` is a peer dependency.
+const THEMING_EMOTION = "storybook/theming/emotion";
+const withThemingEmotion = (packages: readonly string[]) =>
+  packages.includes("storybook/theming") && !packages.includes(THEMING_EMOTION)
+    ? [...packages, THEMING_EMOTION]
+    : [...packages];
+
 type BundlerConfig = {
   bundler?: {
     exportEntries?: string[];
@@ -66,7 +76,10 @@ export default defineConfig(async (options) => {
       format: ["esm"],
       target: [...BROWSER_TARGET, ...NODE_TARGET],
       platform: "neutral",
-      external: [...globalManagerPackages, ...globalPreviewPackages],
+      external: withThemingEmotion([
+        ...globalManagerPackages,
+        ...globalPreviewPackages,
+      ]),
     });
   }
 
@@ -80,7 +93,7 @@ export default defineConfig(async (options) => {
       format: ["esm"],
       target: BROWSER_TARGET,
       platform: "browser",
-      external: globalManagerPackages,
+      external: withThemingEmotion(globalManagerPackages),
     });
   }
 

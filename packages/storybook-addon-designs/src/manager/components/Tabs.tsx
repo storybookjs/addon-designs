@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { DependencyList, FC, ReactNode, useEffect, useState } from "react";
-import { css, jsx } from "storybook/theming";
+import { css, jsx } from "storybook/theming/emotion";
 
 import { TabsView } from "storybook/internal/components";
 
