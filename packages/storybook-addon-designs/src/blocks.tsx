@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { CSSProperties, FC } from "react";
 import { ActionBar, Placeholder } from "storybook/internal/components";
-import { styled } from "storybook/theming";
+import { styled } from "storybook/theming/emotion";
 import { useOf, Of } from "@storybook/addon-docs/blocks";
 
 import { Figma as FigmaInternal } from "./manager/components/Figma";

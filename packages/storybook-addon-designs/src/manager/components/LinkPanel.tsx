@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { FC } from "react";
-import { css, jsx } from "storybook/theming";
+import { css, jsx } from "storybook/theming/emotion";
 
 import { Link } from "storybook/internal/components";
 

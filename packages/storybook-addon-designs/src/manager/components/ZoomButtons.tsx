@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Fragment, FC } from "react";
-import { jsx } from "storybook/theming";
+import { jsx } from "storybook/theming/emotion";
 
 import { Button } from "storybook/internal/components";
 import { ZoomIcon, ZoomOutIcon, ZoomResetIcon } from "@storybook/icons";

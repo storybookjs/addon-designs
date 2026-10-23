@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Fragment, useMemo, CSSProperties, FC } from "react";
-import { css, jsx } from "storybook/theming";
+import { css, jsx } from "storybook/theming/emotion";
 
 import { Bar, Separator } from "storybook/internal/components";
 
